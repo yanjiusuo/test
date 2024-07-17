@@ -1,0 +1,42 @@
+{
+  "tasks": [
+    {
+      "id": "http1",
+      "type": "http",
+      "endpointUrl": ["http://127.0.0.1:6010"],
+      "input":{
+        "method": "post",
+        "url": "/json",
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "children": [
+              {
+                "name": "id",
+                "type": "string",
+                "value": 1
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": "wjf"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "script": "output.body  = {\n  \"id\": 1,\n  \"name\": workflow.input.body.name,\n  \"value\": steps.http1.output.body.id+\"-\"+steps.http1.output.body.name\n} ; \noutput.headers  = {\n  \"token\": 1\n}"
+      }
+    }
+  ]
+}
+
+
+
+

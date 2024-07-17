@@ -1,0 +1,11 @@
+<errors>
+    <error id="json.err_parse_jsonType_miss_type">
+         参数类型不可为空，对应节点:{level}
+    </error>
+    <error id="json.string_xml_or_json_type_child_not_allow_empty">
+        string_xml的子节点不能为空(子节点为空无法确定xml结构),目前{name}节点的子节点为空
+    </error>
+    <error id="json.string_xml_or_json_type_not_allow_nest">
+        string_xml或者string_json类型不允许复合嵌套，目前{name}节点有嵌套
+    </error>
+</errors>

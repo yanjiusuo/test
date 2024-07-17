@@ -1,0 +1,114 @@
+{
+  "tasks": [
+    {
+      "id": "http",
+      "type": "http",
+      "method": "POST",
+      "endpointUrl": ["http://localhost:6010"],
+      "input": {
+        "url": "/echo",
+        "reqType": "json",
+        "method": "post",
+        "headers": [{
+          "name":"token",
+          "type": "string_xml",
+          "value": "${workflow.input.body}",
+          "children": [
+            {
+              "name": "person",
+              "type": "object",
+              "children": [
+                {
+                  "name":"id",
+                  "type": "string"
+                },
+                {
+                  "name":"name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }],
+
+        "params": [{
+          "name":"id",
+          "type": "string_xml",
+          "value": "${workflow.input.body}",
+          "children": [
+            {
+              "name": "person",
+              "type": "object",
+              "children": [
+                {
+                  "name":"id",
+                  "type": "string"
+                },
+                {
+                  "name":"name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }],
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+
+            "children": [
+              {
+                "name": "sid",
+                "type": "long"
+              },{
+                "name": "name",
+                "type": "string_xml",
+                "value": "${workflow.input.body}",
+                "children": [
+                  {
+                    "name": "person",
+                    "type": "object",
+                    "children": [
+                      {
+                        "name":"id",
+                        "type": "string"
+                      },
+                      {
+                        "name":"name",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "body": [{
+          "name": "root",
+          "type": "object",
+          "children": [
+            {
+              "name": "path",
+              "type": "object"
+            },{
+              "name": "body",
+              "type": "object"
+            },{
+              "name": "headers",
+              "type": "object"
+            },{
+              "name": "params",
+              "type": "object"
+            }
+          ]
+        }]
+      }
+
+
+    }
+  ]
+}

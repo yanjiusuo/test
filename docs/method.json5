@@ -1,0 +1,41 @@
+//PUT /flow_method_manage
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "methodId": {
+        "type": "long"
+      },
+      "name": {
+        "type": "keyword"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "methodCode": {
+        "type": "keyword"
+      },
+      "docInfo": {
+        "type": "text",
+        "analyzer": "ik_max_word"
+      },
+      "interfaceId": {
+        "type": "long"
+      },
+      "content": {
+        "type": "text",
+        "analyzer": "ik_max_word"
+      },
+      "path": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+
+
+

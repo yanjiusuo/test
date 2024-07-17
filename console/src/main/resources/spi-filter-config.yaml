@@ -1,0 +1,33 @@
+#示例文件1
+#按照业务域和扩展维度配置扩展点命中的表达式
+spiFilterConfig:
+  #业务域编号
+  - domainCode: order
+    #扩展点接口类名
+    spi: com.jd.matrix.generic.spi.test.CheckSubmitOrderSPI
+    #扩展点命中规则的条件表达式
+    express: orderTag[spec.bizCode]!=null
+    #业务域编号
+  - domainCode: cart
+    #扩展点接口类名
+    spi: com.jd.matrix.generic.spi.test.BizParamValidatorSPI
+    #扩展点命中规则的条件表达式
+    express: skuTag[spec.bizCode]!=null
+#示例文件2
+#按照扩展点维度,分类配置扩展点实现类的命中列表
+spiFilterDetailConfig:
+  #扩展点接口类名
+  com.jd.matrix.generic.spi.test.BlacklistSPI:
+    #分类标签名称
+    - tag: 7fresh
+      #命中规则对应的条件表达式
+      express: bizInfo.buId==305 && (skuTag["7fresh"]!=null || orderTag["fresh"]!=null || sendpay["6"].equals("2"))
+      #命中扩展点实现类列表，运行时按照配置顺序依次执行
+      target: [{ bizCode: 7fresh, group: v1 },{bizCode: generic}]
+    - tag: jdh
+      express: skuTag["jdh"]!=null || orderTag["jdh"]!=nul
+      #命中扩展点实现类列表，运行时按照配置顺序依次执行
+      target: [{ bizCode: jdh, group: v1 },{bizCode: generic}]
+    #未命中上面的规则,默认的兜底策略(可以选择性配置此节点)
+    - tag: default
+      target: [{bizCode: generic}]

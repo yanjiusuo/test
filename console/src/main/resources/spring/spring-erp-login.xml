@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- START SNIPPET: example -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jsf="http://jsf.jd.com/schema/jsf" profile="erpLogin"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://jsf.jd.com/schema/jsf http://jsf.jd.com/schema/jsf/jsf.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    ">
+
+
+
+    <!-- 测试环境-->
+    <!--    <jsf:registry id="jsfRegistry" protocol="jsfRegistry" index="test.i.jsf.jd.local"/>-->
+    <!-- 正式环境-->
+    <jsf:registry id="jsfRegistry" protocol="jsfRegistry" index="i.jsf.jd.com" />
+    <!--单点登录-->
+    <bean id="apiHeader" class="com.jd.up.portal.export.api.common.param.ApiHeader">
+        <property name="appId" value="${up.portal.api.header.appId}"/>
+        <property name="token" value="${up.portal.api.header.token}"/>
+    </bean>
+    <!-- 一体化登录JSF服务接口 -->
+    <jsf:consumer id="upLoginExportApiServiceJsf" interface="com.jd.up.portal.export.api.login.UpLoginExportApiService"
+                  protocol="jsf" alias="${up.portal.login.jsf.alias}" timeout="10000"/>
+    <!-- 单点登录JSF服务接口 -->
+<!--    <jsf:consumer id="ssoService" interface="com.jd.ssa.service.ErpSsoService"-->
+<!--                  protocol="jsf" alias="${sso.jsf.alias}" timeout="10000">-->
+<!--    </jsf:consumer>-->
+    
+    <jsf:filter id="jsfLogFilter" class="com.jd.workflow.console.filter.JsfLogFilter" />
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <!--     天空之城的请求例外跳过       -->
+            <mvc:exclude-mapping path="/client" />
+            <mvc:exclude-mapping path="/serviceConvert/ws2http/**" />
+            <mvc:exclude-mapping path="/api/routeService/**" />
+            <mvc:exclude-mapping path="/pages/**" />
+            <mvc:exclude-mapping path="/login/login" />
+            <mvc:exclude-mapping path="/serviceConvert/getConvertWsdlContent" />
+            <mvc:exclude-mapping path="/appInfo/checkSecret" />
+            <mvc:exclude-mapping path="/doc/**" />
+            <mvc:exclude-mapping path="/plugin/**" />
+            <mvc:exclude-mapping path="/jsfApi/**" />
+            <mvc:exclude-mapping path="/codeActivity/**" />
+            <mvc:exclude-mapping path="/interfaceManage/statisticUserInterfaceCount" />
+            <mvc:exclude-mapping path="/forwardJsf/**" />
+
+
+            <mvc:exclude-mapping path="/appInfo/InitByJdosCode" />
+            <mvc:exclude-mapping path="/appInfo/getUserApp"/>
+            <mvc:exclude-mapping path="/measureData/getRequirementMeasureData"/>
+            <mvc:exclude-mapping path="/measureData/getUserMeasureData"/>
+            <mvc:exclude-mapping path="/measureData/getRequirementInterfaceCount"/>
+            <mvc:exclude-mapping path="/measureData/getRequirementCount"/>
+            <mvc:exclude-mapping path="/export/exportSdkZip"/>
+            <mvc:exclude-mapping path="/interfaceManage/httpList"/>
+            <mvc:exclude-mapping path="/wfFlow/sendJingmeMsg"/>
+            <mvc:exclude-mapping path="/appInfo/findByJdosAppCode"/>
+            <mvc:exclude-mapping path="/local-test-record/**" />
+
+            <bean id="interceptorGroups" class="com.jd.workflow.console.interceptor.InterceptorGroups">
+                <property name="interceptors">
+                    <list>
+<!--                        <ref bean="upCommonLoginInterceptor" />-->
+                        <ref bean="erpInfoInterceptor" />
+                        <ref bean="selfLoginInterceptor" />
+
+                        <ref bean="authorizationInterceptor" />
+
+                    </list>
+                </property>
+            </bean>
+
+
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <bean id="umpInterceptor" class="com.jd.workflow.console.interceptor.UmpInterceptor">
+                <property name="umpAppName" value="${ump.appName}" />
+                <property name="systemKey" value="system.key"/>
+                <property name="jvmKey" value="jvm.key"/>
+            </bean>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+   <!-- <bean id="pinInterceptor" class="com.jd.workflow.console.interceptor.PinInfoInterceptor">
+        <property name="cookieName" value="${passport.checkLogin.cookieName}" />
+        <property name="authenticationKey" value="${passport.checkLogin.authenticationKey}" />
+        <property name="loginUrl" value="${passport.checkLogin.loginUrl}"></property>
+        <property name="charsetName" value="${passport.checkLogin.charsetName}"></property>
+        <property name="URIEncoding" value="${passport.checkLogin.uriEncoding}"></property>
+
+        <property name="needParse" value="true"></property>
+        <property name="appName" value="${client.identity}"></property>
+        <property name="ajaxModel" value="default11"></property>
+        <property name="unLoginPaths">
+            <set>
+                &lt;!&ndash; 不需要登录即可访问的链接，此处不可以为根路径 "/" &ndash;&gt;
+                <value>/cart</value>
+            </set>
+        </property>
+    </bean>-->
+    <!-- 一体化登录拦截器配置 -->
+    <bean id="erpInfoInterceptor" class="com.jd.workflow.console.interceptor.ErpInfoInterceptor">
+        <property name="apiHeader" ref="apiHeader"/>
+        <property name="ajaxCallbackPolicy" value="Referer"/>
+        <property name="upLoginExportApiService" ref="upLoginExportApiServiceJsf"/>
+        <!-- 用于自定义处理 -->
+        <property name="upLoginApiService" ref="upLoginExportApiServiceJsf"/>
+        <property name="excludePath" value="${sso.excludePath}"/>
+        <property name="env" value="${sso.env}"/>
+        <!--        <property name="defaultLoginUrl" value="${up.portal.login.intercepter.defaultLoginUrl}"/>-->
+    </bean>
+    <bean id="selfLoginInterceptor" class="com.jd.workflow.console.interceptor.SelfLoginInterceptor" />
+    <bean id="userInfoInterceptor" class="com.jd.workflow.console.interceptor.UserInfoInterceptor"/>
+
+    <bean id="authorizationInterceptor" class="com.jd.workflow.console.interceptor.AuthorizationInterceptor"/>
+<!--    <bean id="upCommonLoginInterceptor" class="com.jd.up.portal.login.interceptor.UpCommonLoginInterceptor"/>-->
+
+    <!-- 一体化登录拦截器配置 -->
+<!--    <bean id="upCommonLoginInterceptor" class="com.jd.up.portal.login.interceptor.UpCommonLoginInterceptor">-->
+<!--        <property name="apiHeader" ref="apiHeader"/>-->
+<!--        <property name="ajaxCallbackPolicy" value="Referer"/>-->
+<!--        <property name="upLoginExportApiService" ref="upLoginExportApiServiceJsf"/>-->
+<!--        <property name="excludePath" value="${sso.excludePath}"/>-->
+<!--        <property name="env" value="${sso.env}"/>-->
+<!--        &lt;!&ndash;        <property name="defaultLoginUrl" value="${up.portal.login.intercepter.defaultLoginUrl}"/>&ndash;&gt;-->
+<!--    </bean>-->
+
+    <import resource="spring_jsf_consumer.xml" />
+</beans>
+        <!-- END SNIPPET: example -->

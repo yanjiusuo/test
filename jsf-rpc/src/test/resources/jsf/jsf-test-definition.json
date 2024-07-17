@@ -1,0 +1,1364 @@
+{
+  "tasks": [
+    {
+      "id": "jsf",
+      "type": "jsf",
+      "key": null,
+      "input": [{
+        "name": "arg0",
+        "type": "object",
+        "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass",
+        "children": [{
+          "name": "intVar",
+          "type": "integer",
+          "className": "java.lang.Integer",
+          "required": true,
+          "value": 1
+        }, {
+          "name": "shortVar",
+          "type": "integer",
+          "className": "java.lang.Byte",
+          "required": true,
+          "value": 1
+        }, {
+          "name": "longVar",
+          "type": "long",
+          "className": "java.lang.Long",
+          "required": true,
+          "value": 1
+        }, {
+          "name": "floatVar",
+          "type": "float",
+          "className": "java.lang.Float",
+          "required": true,
+          "value": 1.3
+        }, {
+          "name": "doubleVar",
+          "type": "float",
+          "className": "java.lang.Double",
+          "required": true,
+          "value": 1.3
+        }, {
+          "name": "charVar",
+          "type": "string",
+          "className": "java.lang.Character",
+          "required": true,
+          "value": "a"
+        }, {
+          "name": "booleanVar",
+          "type": "boolean",
+          "className": "java.lang.Boolean",
+          "required": true,
+          "value": true
+        }, {
+          "name": "strVar",
+          "type": "string",
+          "className": "java.lang.String"
+        }, {
+          "name": "bigIntegerVar",
+          "type": "string",
+          "className": "java.math.BigInteger"
+        }, {
+          "name": "bigDecimalVar",
+          "type": "string",
+          "className": "java.math.BigDecimal"
+        }, {
+          "name": "byteVar",
+          "type": "integer",
+          "className": "java.lang.Byte",
+          "required": true,
+          "value": "a"
+        }, {
+          "name": "qNameVar",
+          "type": "object",
+          "className": "javax.xml.namespace.QName",
+          "children": [{
+            "name": "namespaceURI",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "localPart",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "prefix",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "dateTimeVar",
+          "type": "object",
+          "className": "javax.xml.datatype.XMLGregorianCalendar",
+          "children": []
+        }, {
+          "name": "timestamp",
+          "type": "long",
+          "className": "java.sql.Timestamp"
+        }, {
+          "name": "date",
+          "type": "string",
+          "className": "java.util.Date"
+        }, {
+          "name": "sqlDate",
+          "type": "string",
+          "className": "java.sql.Date"
+        }, {
+          "name": "bytesVar",
+          "type": "array",
+          "className": "[B",
+          "children": [{
+            "name": null,
+            "type": "integer",
+            "className": "java.lang.Byte",
+            "required": true
+          }
+          ]
+        }, {
+          "name": "childList",
+          "type": "array",
+          "genericTypes": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ],
+          "className": "java.util.ArrayList",
+          "children": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "childHashMap",
+          "type": "object",
+          "allowEdit": true,
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ],
+          "className": "java.util.HashMap",
+          "children": []
+        }, {
+          "name": "stringList",
+          "type": "array",
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "className": "java.util.ArrayList",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "stringHashMap",
+          "type": "object",
+          "allowEdit": true,
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "className": "java.util.HashMap",
+          "children": []
+        }, {
+          "name": "strArray",
+          "type": "array",
+          "className": "[Ljava.lang.String;",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "strArrArr",
+          "type": "array",
+          "className": "[[Ljava.lang.String;",
+          "children": [{
+            "name": null,
+            "type": "array",
+            "className": null,
+            "children": [{
+              "name": null,
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "children",
+          "type": "array",
+          "className": "[Lcom.jd.workflow.jsf.service.test.ComplexTypeClass$Child;",
+          "children": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "childrenChildren",
+          "type": "array",
+          "className": "[[Lcom.jd.workflow.jsf.service.test.ComplexTypeClass$Child;",
+          "children": [{
+            "name": null,
+            "type": "array",
+            "className": null,
+            "children": [{
+              "name": null,
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }, {
+                "name": "shortVar",
+                "type": "integer",
+                "className": "java.lang.Byte",
+                "required": true
+              }, {
+                "name": "longVar",
+                "type": "long",
+                "className": "java.lang.Long",
+                "required": true
+              }, {
+                "name": "floatVar",
+                "type": "float",
+                "className": "java.lang.Float",
+                "required": true
+              }, {
+                "name": "doubleVar",
+                "type": "float",
+                "className": "java.lang.Double",
+                "required": true
+              }, {
+                "name": "charVar",
+                "type": "string",
+                "className": "java.lang.Character",
+                "required": true
+              }, {
+                "name": "booleanVar",
+                "type": "boolean",
+                "className": "java.lang.Boolean",
+                "required": true
+              }, {
+                "name": "strVar",
+                "type": "string",
+                "className": "java.lang.String"
+              }, {
+                "name": "subChild",
+                "type": "object",
+                "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+                "children": [{
+                  "name": "intVar",
+                  "type": "integer",
+                  "className": "java.lang.Integer",
+                  "required": true
+                }
+                ]
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "child",
+          "type": "object",
+          "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+          "children": [{
+            "name": "intVar",
+            "type": "integer",
+            "className": "java.lang.Integer",
+            "required": true
+          }, {
+            "name": "shortVar",
+            "type": "integer",
+            "className": "java.lang.Byte",
+            "required": true
+          }, {
+            "name": "longVar",
+            "type": "long",
+            "className": "java.lang.Long",
+            "required": true
+          }, {
+            "name": "floatVar",
+            "type": "float",
+            "className": "java.lang.Float",
+            "required": true
+          }, {
+            "name": "doubleVar",
+            "type": "float",
+            "className": "java.lang.Double",
+            "required": true
+          }, {
+            "name": "charVar",
+            "type": "string",
+            "className": "java.lang.Character",
+            "required": true
+          }, {
+            "name": "booleanVar",
+            "type": "boolean",
+            "className": "java.lang.Boolean",
+            "required": true
+          }, {
+            "name": "strVar",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "subChild",
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "typeChild",
+          "type": "object",
+          "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass",
+          "children": []
+        }, {
+          "name": "byteBuffer",
+          "type": "string",
+          "className": "java.nio.ByteBuffer"
+        }, {
+          "name": "charArray",
+          "type": "array",
+          "className": "[C",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.Character",
+            "required": true
+          }
+          ]
+        },  {
+          "name": "time",
+          "type": "object",
+          "className": "java.sql.Time",
+          "children": []
+        }, {
+          "name": "file",
+          "type": "object",
+          "className": "java.io.File",
+          "children": [{
+            "name": "path",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "url",
+          "type": "string",
+          "className": "java.net.URL"
+        }, {
+          "name": "uri",
+          "type": "string",
+          "className": "java.net.URI"
+        }, {
+          "name": "clazz",
+          "type": "string",
+          "className": "java.lang.Class"
+        }, {
+          "name": "calendar",
+          "type": "string",
+          "className": "java.util.Calendar"
+        }, {
+          "name": "locale",
+          "type": "string",
+          "className": "java.util.Locale"
+        }, {
+          "name": "timeZone",
+          "type": "string",
+          "className": "java.util.TimeZone"
+        }, {
+          "name": "uuid",
+          "type": "string",
+          "className": "java.util.UUID"
+        }, {
+          "name": "fruit",
+          "type": "string",
+          "className": "java.lang.String"
+        }, {
+          "name": "interfaceTypeEnum",
+          "type": "string",
+          "className": "java.lang.String"
+        }
+        ]
+      }
+      ],
+      "output": {
+        "name": null,
+        "type": "object",
+        "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass",
+        "children": [{
+          "name": "intVar",
+          "type": "integer",
+          "className": "java.lang.Integer",
+          "required": true
+        }, {
+          "name": "shortVar",
+          "type": "integer",
+          "className": "java.lang.Byte",
+          "required": true
+        }, {
+          "name": "longVar",
+          "type": "long",
+          "className": "java.lang.Long",
+          "required": true
+        }, {
+          "name": "floatVar",
+          "type": "float",
+          "className": "java.lang.Float",
+          "required": true
+        }, {
+          "name": "doubleVar",
+          "type": "float",
+          "className": "java.lang.Double",
+          "required": true
+        }, {
+          "name": "charVar",
+          "type": "string",
+          "className": "java.lang.Character",
+          "required": true
+        }, {
+          "name": "booleanVar",
+          "type": "boolean",
+          "className": "java.lang.Boolean",
+          "required": true
+        }, {
+          "name": "strVar",
+          "type": "string",
+          "className": "java.lang.String"
+        }, {
+          "name": "bigIntegerVar",
+          "type": "string",
+          "className": "java.math.BigInteger"
+        }, {
+          "name": "bigDecimalVar",
+          "type": "string",
+          "className": "java.math.BigDecimal"
+        }, {
+          "name": "byteVar",
+          "type": "integer",
+          "className": "java.lang.Byte",
+          "required": true
+        }, {
+          "name": "qNameVar",
+          "type": "object",
+          "className": "javax.xml.namespace.QName",
+          "children": [{
+            "name": "namespaceURI",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "localPart",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "prefix",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "dateTimeVar",
+          "type": "object",
+          "className": "javax.xml.datatype.XMLGregorianCalendar",
+          "children": []
+        }, {
+          "name": "timestamp",
+          "type": "long",
+          "className": "java.sql.Timestamp"
+        }, {
+          "name": "date",
+          "type": "string",
+          "className": "java.util.Date"
+        }, {
+          "name": "sqlDate",
+          "type": "string",
+          "className": "java.sql.Date"
+        }, {
+          "name": "bytesVar",
+          "type": "array",
+          "className": "[B",
+          "children": [{
+            "name": null,
+            "type": "integer",
+            "className": "java.lang.Byte",
+            "required": true
+          }
+          ]
+        }, {
+          "name": "childList",
+          "type": "array",
+          "genericTypes": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ],
+          "className": "java.util.ArrayList",
+          "children": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "childHashMap",
+          "type": "object",
+          "allowEdit": true,
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ],
+          "className": "java.util.HashMap",
+          "children": []
+        }, {
+          "name": "stringList",
+          "type": "array",
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "className": "java.util.ArrayList",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "stringHashMap",
+          "type": "object",
+          "allowEdit": true,
+          "genericTypes": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "className": "java.util.HashMap",
+          "children": []
+        }, {
+          "name": "strArray",
+          "type": "array",
+          "className": "[Ljava.lang.String;",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "strArrArr",
+          "type": "array",
+          "className": "[[Ljava.lang.String;",
+          "children": [{
+            "name": null,
+            "type": "array",
+            "className": null,
+            "children": [{
+              "name": null,
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "children",
+          "type": "array",
+          "className": "[Lcom.jd.workflow.jsf.service.test.ComplexTypeClass$Child;",
+          "children": [{
+            "name": null,
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }, {
+              "name": "shortVar",
+              "type": "integer",
+              "className": "java.lang.Byte",
+              "required": true
+            }, {
+              "name": "longVar",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true
+            }, {
+              "name": "floatVar",
+              "type": "float",
+              "className": "java.lang.Float",
+              "required": true
+            }, {
+              "name": "doubleVar",
+              "type": "float",
+              "className": "java.lang.Double",
+              "required": true
+            }, {
+              "name": "charVar",
+              "type": "string",
+              "className": "java.lang.Character",
+              "required": true
+            }, {
+              "name": "booleanVar",
+              "type": "boolean",
+              "className": "java.lang.Boolean",
+              "required": true
+            }, {
+              "name": "strVar",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "subChild",
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "childrenChildren",
+          "type": "array",
+          "className": "[[Lcom.jd.workflow.jsf.service.test.ComplexTypeClass$Child;",
+          "children": [{
+            "name": null,
+            "type": "array",
+            "className": null,
+            "children": [{
+              "name": null,
+              "type": "object",
+              "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+              "children": [{
+                "name": "intVar",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }, {
+                "name": "shortVar",
+                "type": "integer",
+                "className": "java.lang.Byte",
+                "required": true
+              }, {
+                "name": "longVar",
+                "type": "long",
+                "className": "java.lang.Long",
+                "required": true
+              }, {
+                "name": "floatVar",
+                "type": "float",
+                "className": "java.lang.Float",
+                "required": true
+              }, {
+                "name": "doubleVar",
+                "type": "float",
+                "className": "java.lang.Double",
+                "required": true
+              }, {
+                "name": "charVar",
+                "type": "string",
+                "className": "java.lang.Character",
+                "required": true
+              }, {
+                "name": "booleanVar",
+                "type": "boolean",
+                "className": "java.lang.Boolean",
+                "required": true
+              }, {
+                "name": "strVar",
+                "type": "string",
+                "className": "java.lang.String"
+              }, {
+                "name": "subChild",
+                "type": "object",
+                "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+                "children": [{
+                  "name": "intVar",
+                  "type": "integer",
+                  "className": "java.lang.Integer",
+                  "required": true
+                }
+                ]
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "child",
+          "type": "object",
+          "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$Child",
+          "children": [{
+            "name": "intVar",
+            "type": "integer",
+            "className": "java.lang.Integer",
+            "required": true
+          }, {
+            "name": "shortVar",
+            "type": "integer",
+            "className": "java.lang.Byte",
+            "required": true
+          }, {
+            "name": "longVar",
+            "type": "long",
+            "className": "java.lang.Long",
+            "required": true
+          }, {
+            "name": "floatVar",
+            "type": "float",
+            "className": "java.lang.Float",
+            "required": true
+          }, {
+            "name": "doubleVar",
+            "type": "float",
+            "className": "java.lang.Double",
+            "required": true
+          }, {
+            "name": "charVar",
+            "type": "string",
+            "className": "java.lang.Character",
+            "required": true
+          }, {
+            "name": "booleanVar",
+            "type": "boolean",
+            "className": "java.lang.Boolean",
+            "required": true
+          }, {
+            "name": "strVar",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "subChild",
+            "type": "object",
+            "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass$SubChild",
+            "children": [{
+              "name": "intVar",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "typeChild",
+          "type": "object",
+          "className": "com.jd.workflow.jsf.service.test.ComplexTypeClass",
+          "children": []
+        }, {
+          "name": "byteBuffer",
+          "type": "string",
+          "className": "java.nio.ByteBuffer"
+        }, {
+          "name": "charArray",
+          "type": "array",
+          "className": "[C",
+          "children": [{
+            "name": null,
+            "type": "string",
+            "className": "java.lang.Character",
+            "required": true
+          }
+          ]
+        }, {
+          "name": "throwable",
+          "type": "object",
+          "className": "java.lang.Throwable",
+          "children": [{
+            "name": "detailMessage",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "cause",
+            "type": "object",
+            "className": "java.lang.Throwable",
+            "children": []
+          }, {
+            "name": "stackTrace",
+            "type": "array",
+            "className": "[Ljava.lang.StackTraceElement;",
+            "children": [{
+              "name": null,
+              "type": "object",
+              "className": "java.lang.StackTraceElement",
+              "children": [{
+                "name": "declaringClass",
+                "type": "string",
+                "className": "java.lang.String"
+              }, {
+                "name": "methodName",
+                "type": "string",
+                "className": "java.lang.String"
+              }, {
+                "name": "fileName",
+                "type": "string",
+                "className": "java.lang.String"
+              }, {
+                "name": "lineNumber",
+                "type": "integer",
+                "className": "java.lang.Integer",
+                "required": true
+              }
+              ]
+            }
+            ]
+          }, {
+            "name": "suppressedExceptions",
+            "type": "array",
+            "genericTypes": [{
+              "name": null,
+              "type": "object",
+              "className": null,
+              "children": []
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": null,
+              "type": "object",
+              "className": null,
+              "children": []
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "stackTraceElement",
+          "type": "object",
+          "className": "java.lang.StackTraceElement",
+          "children": [{
+            "name": "declaringClass",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "methodName",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "fileName",
+            "type": "string",
+            "className": "java.lang.String"
+          }, {
+            "name": "lineNumber",
+            "type": "integer",
+            "className": "java.lang.Integer",
+            "required": true
+          }
+          ]
+        }, {
+          "name": "stackTraceElementArr",
+          "type": "array",
+          "className": "[Ljava.lang.StackTraceElement;",
+          "children": [{
+            "name": null,
+            "type": "object",
+            "className": "java.lang.StackTraceElement",
+            "children": [{
+              "name": "declaringClass",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "methodName",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "fileName",
+              "type": "string",
+              "className": "java.lang.String"
+            }, {
+              "name": "lineNumber",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "time",
+          "type": "object",
+          "className": "java.sql.Time",
+          "children": []
+        }, {
+          "name": "file",
+          "type": "object",
+          "className": "java.io.File",
+          "children": [{
+            "name": "path",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ]
+        }, {
+          "name": "url",
+          "type": "string",
+          "className": "java.net.URL"
+        }, {
+          "name": "uri",
+          "type": "string",
+          "className": "java.net.URI"
+        }, {
+          "name": "clazz",
+          "type": "string",
+          "className": "java.lang.Class"
+        }, {
+          "name": "calendar",
+          "type": "string",
+          "className": "java.util.Calendar"
+        }, {
+          "name": "locale",
+          "type": "string",
+          "className": "java.util.Locale"
+        }, {
+          "name": "timeZone",
+          "type": "string",
+          "className": "java.util.TimeZone"
+        }, {
+          "name": "uuid",
+          "type": "string",
+          "className": "java.util.UUID"
+        }, {
+          "name": "fruit",
+          "type": "string",
+          "className": "java.lang.String"
+        }, {
+          "name": "interfaceTypeEnum",
+          "type": "string",
+          "className": "java.lang.String"
+        }
+        ]
+      },
+      "interfaceName": "com.jd.workflow.jsf.service.test.IPersonService",
+      "methodName": "test",
+      "alias": "center",
+      "successCondition": null,
+      "taskDef": null,
+      "site": null,
+      "env": "test",
+      "exceptions": null,
+      "attachments": [
+        {
+          "name": ".token",
+          "type": "string",
+          "value": "123456"
+        }],
+      "protocol": null,
+      "url": "jsf://127.0.0.1:22000?alias=center"
+    }
+  ]
+}

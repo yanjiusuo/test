@@ -1,0 +1,30 @@
+<errors>
+    <error id="expr.err_parse_expr">
+         解析脚本表达式失败：阶段={stage},行号={line},描述={desc}
+    </error>
+    <error id="expr.err_parse_expr">
+        解析脚本表达式失败：阶段={stage},行号={line},描述={desc}
+    </error>
+    <error id="expr.err_eval_script">
+        执行表达式失败：阶段={stage},行号={line},描述={desc}
+    </error>
+    <error id="workflow.err_found_duplicate_stepId">
+        发现重复的步骤id:{id},同一分支下的步骤id不可相同，不同分支下的步骤id允许相同
+    </error>
+    <error id="workflow.err_found_duplicate_key">
+        发现重复的步骤key:{key}
+    </error>
+
+    <error id="step.err_cast_json_step">
+        步骤处理失败，失败原因：{desc}
+    </error>
+    <error id="workflow.err_miss_key_prop">
+        缺少key属性
+    </error>
+    <error id="workflow.err_miss_required_prop">
+        必填属性不可为空:{prop}
+    </error>
+    <error id="flow.err_found_duplicated_flow">
+        子流程出现循环引用，请检查流程配置
+    </error>
+</errors>

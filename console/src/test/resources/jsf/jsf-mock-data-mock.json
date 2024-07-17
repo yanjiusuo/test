@@ -1,0 +1,2106 @@
+[{
+  "name": "identityInfo",
+  "type": "ref",
+  "desc": "身份信息",
+  "className": "com.jd.trade2.base.export.identity.IdentityInfoParam",
+  "parentTypeName": [],
+  "children": [{
+    "name": "businessTags",
+    "type": "ref",
+    "className": "com.jd.trade2.base.export.identity.tag.TagParam",
+    "parentTypeName": [
+      "com.jd.trade2.base.export.identity.IdentityInfoParam"
+    ],
+    "children": [{
+      "name": "orderTags",
+      "type": "array",
+      "genericTypes": [{
+        "name": "root",
+        "type": "string",
+        "typeVariableName": "E",
+        "className": "java.lang.String"
+      }
+      ],
+      "className": "java.util.Set",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.tag.TagParam"
+      ],
+      "children": [{
+        "name": "$$0",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.identity.IdentityInfoParam",
+          "com.jd.trade2.base.export.identity.tag.TagParam"
+        ]
+      }
+      ]
+    }, {
+      "name": "orderTagNamespace",
+      "type": "array",
+      "genericTypes": [{
+        "name": "root",
+        "type": "string",
+        "typeVariableName": "E",
+        "className": "java.lang.String"
+      }
+      ],
+      "className": "java.util.Set",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.tag.TagParam"
+      ],
+      "children": [{
+        "name": "$$0",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.identity.IdentityInfoParam",
+          "com.jd.trade2.base.export.identity.tag.TagParam"
+        ]
+      }
+      ]
+    }
+    ],
+    "refName": "com.jd.trade2.base.export.identity.tag.TagParam"
+  }, {
+    "name": "requestTags",
+    "type": "ref",
+    "className": "com.jd.trade2.base.export.identity.tag.RequestTagParam",
+    "parentTypeName": [
+      "com.jd.trade2.base.export.identity.IdentityInfoParam"
+    ],
+    "children": [{
+      "name": "verticalTag",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+      ]
+    }, {
+      "name": "horizontalTags",
+      "type": "array",
+      "genericTypes": [{
+        "name": "root",
+        "type": "string",
+        "typeVariableName": "E",
+        "className": "java.lang.String"
+      }
+      ],
+      "className": "java.util.Set",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+      ],
+      "children": [{
+        "name": "$$0",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.identity.IdentityInfoParam",
+          "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+        ]
+      }
+      ]
+    }, {
+      "name": "orderTagNamespace",
+      "type": "array",
+      "genericTypes": [{
+        "name": "root",
+        "type": "string",
+        "typeVariableName": "E",
+        "className": "java.lang.String"
+      }
+      ],
+      "className": "java.util.Set",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+      ],
+      "children": [{
+        "name": "$$0",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.identity.IdentityInfoParam",
+          "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+        ]
+      }
+      ]
+    }
+    ],
+    "refName": "com.jd.trade2.base.export.identity.tag.RequestTagParam"
+  }, {
+    "name": "systemInfo",
+    "type": "ref",
+    "className": "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+    "parentTypeName": [
+      "com.jd.trade2.base.export.identity.IdentityInfoParam"
+    ],
+    "children": [{
+      "name": "userAgentId",
+      "type": "integer",
+      "className": "java.lang.Integer",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "businessUnitId",
+      "type": "integer",
+      "className": "java.lang.Integer",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "callerAppName",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "callerDataCenter",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "callerIP",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "sdkVersion",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "language",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "businessType",
+      "type": "integer",
+      "className": "java.lang.Integer",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "buId",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "countryCode",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "languageCode",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "currencyCode",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "timezoneOffset",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "flowField",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "traceId",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "tenantId",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.result.Result",
+        "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+        "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ]
+    }, {
+      "name": "uniformBizInfo",
+      "type": "ref",
+      "className": "com.jd.tp.common.masterdata.UniformBizInfo",
+      "parentTypeName": [
+        "com.jd.trade2.base.export.identity.IdentityInfoParam",
+        "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+      ],
+      "children": [{
+        "name": "data",
+        "type": "map",
+        "genericTypes": [{
+          "name": "key",
+          "type": "string",
+          "typeVariableName": "K",
+          "className": "java.lang.String"
+        }, {
+          "name": "value",
+          "type": "object",
+          "typeVariableName": "V",
+          "className": "java.lang.Object",
+          "children": []
+        }
+        ],
+        "className": "java.util.Map",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.identity.IdentityInfoParam",
+          "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+          "com.jd.tp.common.masterdata.UniformBizInfo"
+        ],
+        "children": [{
+          "name": "key",
+          "type": "string",
+          "typeVariableName": "K",
+          "className": "java.lang.String"
+        }, {
+          "name": "value",
+          "type": "object",
+          "typeVariableName": "V",
+          "className": "java.lang.Object",
+          "children": []
+        }
+        ]
+      }, {
+        "name": "tenantId",
+        "type": "integer",
+        "className": "java.lang.Integer",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.result.Result",
+          "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+          "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+          "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+          "com.jd.tp.common.masterdata.UniformBizInfo"
+        ]
+      }, {
+        "name": "buId",
+        "type": "integer",
+        "className": "java.lang.Integer",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.result.Result",
+          "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+          "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+          "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+          "com.jd.tp.common.masterdata.UniformBizInfo"
+        ]
+      }, {
+        "name": "channelId",
+        "type": "integer",
+        "className": "java.lang.Integer",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.result.Result",
+          "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+          "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+          "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+          "com.jd.tp.common.masterdata.UniformBizInfo"
+        ]
+      }, {
+        "name": "ua",
+        "type": "integer",
+        "className": "java.lang.Integer",
+        "parentTypeName": [
+          "com.jd.trade2.base.export.result.Result",
+          "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+          "com.jd.trade2.base.export.identity.IdentityInfoDTO",
+          "com.jd.trade2.base.export.identity.systeminfo.SystemInfo",
+          "com.jd.tp.common.masterdata.UniformBizInfo"
+        ]
+      }
+      ],
+      "refName": "com.jd.tp.common.masterdata.UniformBizInfo"
+    }
+    ],
+    "refName": "com.jd.trade2.base.export.identity.systeminfo.SystemInfo"
+  }
+  ],
+  "refName": "com.jd.trade2.base.export.identity.IdentityInfoParam"
+}, {
+  "name": "currentOrderParam",
+  "type": "ref",
+  "desc": "入参",
+  "className": "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+  "parentTypeName": [],
+  "children": [{
+    "name": "signParam",
+    "type": "ref",
+    "desc": "signParam 登录param",
+    "className": "com.jd.trade2.base.export.sign.SignParam",
+    "parentTypeName": [
+      "com.jd.trade2.export.param.currentorder.CurrentOrderParam"
+    ],
+    "children": [{
+      "name": "pin",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+        "com.jd.trade2.base.export.sign.SignParam"
+      ]
+    }, {
+      "name": "extendInfoParam",
+      "type": "ref",
+      "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoParam",
+      "parentTypeName": [
+        "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+        "com.jd.trade2.base.export.sign.SignParam"
+      ],
+      "children": [{
+        "name": "domainMap",
+        "type": "map",
+        "genericTypes": [{
+          "name": "key",
+          "type": "string",
+          "typeVariableName": "K",
+          "className": "java.lang.String"
+        }, {
+          "name": "value",
+          "type": "map",
+          "typeVariableName": "V",
+          "genericTypes": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "ref",
+            "typeVariableName": "V",
+            "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+          }
+          ],
+          "className": "java.util.Map",
+          "children": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "ref",
+            "typeVariableName": "V",
+            "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+          }
+          ]
+        }
+        ],
+        "className": "java.util.Map",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.sign.SignParam",
+          "com.jd.trade2.base.export.model.extendinfo.ExtendInfoParam"
+        ],
+        "children": [{
+          "name": "key",
+          "type": "string",
+          "typeVariableName": "K",
+          "className": "java.lang.String"
+        }, {
+          "name": "value",
+          "type": "map",
+          "typeVariableName": "V",
+          "genericTypes": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "ref",
+            "typeVariableName": "V",
+            "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+          }
+          ],
+          "className": "java.util.Map",
+          "children": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "ref",
+            "typeVariableName": "V",
+            "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+          }
+          ]
+        }
+        ]
+      }, {
+        "name": "version",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.sign.SignParam",
+          "com.jd.trade2.base.export.model.extendinfo.ExtendInfoParam"
+        ]
+      }
+      ],
+      "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoParam"
+    }, {
+      "name": "unSignedUUID",
+      "type": "string",
+      "className": "java.lang.String",
+      "parentTypeName": [
+        "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+        "com.jd.trade2.base.export.sign.SignParam"
+      ]
+    }
+    ],
+    "refName": "com.jd.trade2.base.export.sign.SignParam"
+  }, {
+    "name": "domainCollectionParams",
+    "type": "array",
+    "desc": "订单参数",
+    "genericTypes": [{
+      "name": "root",
+      "type": "ref",
+      "typeVariableName": "E",
+      "className": "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+      "children": [{
+        "name": "childList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "object",
+          "typeVariableName": "E",
+          "className": null,
+          "children": []
+        }
+        ],
+        "className": "java.util.List",
+        "children": [{
+          "name": "$$0",
+          "type": "object",
+          "typeVariableName": "T",
+          "className": null,
+          "children": []
+        }
+        ]
+      }, {
+        "name": "info",
+        "type": "ref",
+        "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+        "children": [{
+          "name": "domainMap",
+          "type": "map",
+          "genericTypes": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "map",
+            "typeVariableName": "V",
+            "genericTypes": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ],
+            "className": "java.util.Map",
+            "children": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ]
+          }
+          ],
+          "className": "java.util.Map",
+          "children": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "map",
+            "typeVariableName": "V",
+            "genericTypes": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ],
+            "className": "java.util.Map",
+            "children": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "version",
+          "type": "string",
+          "className": "java.lang.String"
+        }
+        ],
+        "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+      }, {
+        "name": "modelList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "ref",
+          "typeVariableName": "E",
+          "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "modelList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+        }
+        ],
+        "className": "java.util.List",
+        "children": [{
+          "name": "$$0",
+          "type": "ref",
+          "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "modelList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+        }
+        ]
+      }, {
+        "name": "partList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "ref",
+          "typeVariableName": "E",
+          "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "partList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+        }
+        ],
+        "className": "java.util.List",
+        "children": [{
+          "name": "$$0",
+          "type": "ref",
+          "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "partList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+        }
+        ]
+      }, {
+        "name": "type",
+        "type": "ref",
+        "className": "com.jd.trade2.base.export.model.domain.Type",
+        "children": [],
+        "refName": "com.jd.trade2.base.export.model.domain.Type"
+      }, {
+        "name": "childEmpty",
+        "type": "boolean",
+        "className": "boolean",
+        "required": true
+      }, {
+        "name": "decorators",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "string",
+          "typeVariableName": "E",
+          "className": "java.lang.String"
+        }
+        ],
+        "className": "java.util.Set",
+        "children": [{
+          "name": "$$0",
+          "type": "string",
+          "className": "java.lang.String"
+        }
+        ]
+      }, {
+        "name": "version",
+        "type": "string",
+        "className": "java.lang.String"
+      }
+      ],
+      "refName": "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+    }
+    ],
+    "className": "java.util.List",
+    "parentTypeName": [
+      "com.jd.trade2.export.param.currentorder.CurrentOrderParam"
+    ],
+    "children": [{
+      "name": "$$0",
+      "type": "ref",
+      "className": "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+      "parentTypeName": [
+        "com.jd.trade2.export.param.currentorder.CurrentOrderParam"
+      ],
+      "children": [{
+        "name": "childList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "object",
+          "typeVariableName": "E",
+          "className": null,
+          "children": []
+        }
+        ],
+        "className": "java.util.List",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [{
+          "name": "$$0",
+          "type": "object",
+          "typeVariableName": "T",
+          "className": null,
+          "parentTypeName": [
+            "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+          ],
+          "children": []
+        }
+        ]
+      }, {
+        "name": "info",
+        "type": "ref",
+        "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [{
+          "name": "domainMap",
+          "type": "map",
+          "genericTypes": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "map",
+            "typeVariableName": "V",
+            "genericTypes": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ],
+            "className": "java.util.Map",
+            "children": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ]
+          }
+          ],
+          "className": "java.util.Map",
+          "parentTypeName": [
+            "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+            "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          ],
+          "children": [{
+            "name": "key",
+            "type": "string",
+            "typeVariableName": "K",
+            "className": "java.lang.String"
+          }, {
+            "name": "value",
+            "type": "map",
+            "typeVariableName": "V",
+            "genericTypes": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ],
+            "className": "java.util.Map",
+            "children": [{
+              "name": "key",
+              "type": "string",
+              "typeVariableName": "K",
+              "className": "java.lang.String"
+            }, {
+              "name": "value",
+              "type": "ref",
+              "typeVariableName": "V",
+              "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+            }
+            ]
+          }
+          ]
+        }, {
+          "name": "version",
+          "type": "string",
+          "className": "java.lang.String",
+          "parentTypeName": [
+            "com.jd.trade2.base.export.result.Result",
+            "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionDTO",
+            "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+            "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          ]
+        }
+        ],
+        "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+      }, {
+        "name": "modelList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "ref",
+          "typeVariableName": "E",
+          "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "modelList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+        }
+        ],
+        "className": "java.util.List",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [{
+          "name": "$$0",
+          "type": "ref",
+          "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+          "parentTypeName": [
+            "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+          ],
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            ],
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "parentTypeName": [
+                "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+                "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+                "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+              ],
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String",
+              "parentTypeName": [
+                "com.jd.trade2.base.export.result.Result",
+                "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionDTO",
+                "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+                "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+              ]
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "modelList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            ],
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO",
+              "parentTypeName": [
+                "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+                "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+              ],
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            ],
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String",
+            "parentTypeName": [
+              "com.jd.trade2.base.export.result.Result",
+              "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionDTO",
+              "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+            ]
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainExtendModelDTO"
+        }
+        ]
+      }, {
+        "name": "partList",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "ref",
+          "typeVariableName": "E",
+          "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String"
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "partList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String"
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+        }
+        ],
+        "className": "java.util.List",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [{
+          "name": "$$0",
+          "type": "ref",
+          "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+          "parentTypeName": [
+            "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+          ],
+          "children": [{
+            "name": "info",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            ],
+            "children": [{
+              "name": "domainMap",
+              "type": "map",
+              "genericTypes": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ],
+              "className": "java.util.Map",
+              "parentTypeName": [
+                "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+                "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+                "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+              ],
+              "children": [{
+                "name": "key",
+                "type": "string",
+                "typeVariableName": "K",
+                "className": "java.lang.String"
+              }, {
+                "name": "value",
+                "type": "map",
+                "typeVariableName": "V",
+                "genericTypes": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ],
+                "className": "java.util.Map",
+                "children": [{
+                  "name": "key",
+                  "type": "string",
+                  "typeVariableName": "K",
+                  "className": "java.lang.String"
+                }, {
+                  "name": "value",
+                  "type": "ref",
+                  "typeVariableName": "V",
+                  "className": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue",
+                  "children": [],
+                  "refName": "com.jd.trade2.base.export.model.extendinfo.base.BaseValue"
+                }
+                ]
+              }
+              ]
+            }, {
+              "name": "version",
+              "type": "string",
+              "className": "java.lang.String",
+              "parentTypeName": [
+                "com.jd.trade2.base.export.result.Result",
+                "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionDTO",
+                "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+                "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+              ]
+            }
+            ],
+            "refName": "com.jd.trade2.base.export.model.extendinfo.ExtendInfoDTO"
+          }, {
+            "name": "partList",
+            "type": "array",
+            "genericTypes": [{
+              "name": "root",
+              "type": "ref",
+              "typeVariableName": "E",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ],
+            "className": "java.util.List",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            ],
+            "children": [{
+              "name": "$$0",
+              "type": "ref",
+              "className": "com.jd.trade2.base.export.model.domain.DomainPartDTO",
+              "parentTypeName": [
+                "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+                "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+                "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+              ],
+              "children": [],
+              "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            }
+            ]
+          }, {
+            "name": "type",
+            "type": "ref",
+            "className": "com.jd.trade2.base.export.model.domain.Type",
+            "parentTypeName": [
+              "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionParam",
+              "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            ],
+            "children": [],
+            "refName": "com.jd.trade2.base.export.model.domain.Type"
+          }, {
+            "name": "version",
+            "type": "string",
+            "className": "java.lang.String",
+            "parentTypeName": [
+              "com.jd.trade2.base.export.result.Result",
+              "com.jd.trade2.export.result.query.GetCurrentOrderResult",
+              "com.jd.trade2.base.export.model.domain.DomainCollectionDTO",
+              "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+            ]
+          }
+          ],
+          "refName": "com.jd.trade2.base.export.model.domain.DomainPartDTO"
+        }
+        ]
+      }, {
+        "name": "type",
+        "type": "ref",
+        "className": "com.jd.trade2.base.export.model.domain.Type",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [],
+        "refName": "com.jd.trade2.base.export.model.domain.Type"
+      }, {
+        "name": "childEmpty",
+        "type": "boolean",
+        "className": "boolean",
+        "required": true,
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ]
+      }, {
+        "name": "decorators",
+        "type": "array",
+        "genericTypes": [{
+          "name": "root",
+          "type": "string",
+          "typeVariableName": "E",
+          "className": "java.lang.String"
+        }
+        ],
+        "className": "java.util.Set",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ],
+        "children": [{
+          "name": "$$0",
+          "type": "string",
+          "className": "java.lang.String",
+          "parentTypeName": [
+            "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+            "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+          ]
+        }
+        ]
+      }, {
+        "name": "version",
+        "type": "string",
+        "className": "java.lang.String",
+        "parentTypeName": [
+          "com.jd.trade2.export.param.currentorder.CurrentOrderParam",
+          "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+        ]
+      }
+      ],
+      "refName": "com.jd.trade2.base.export.model.domain.DomainCollectionParam"
+    }
+    ]
+  }
+  ],
+  "refName": "com.jd.trade2.export.param.currentorder.CurrentOrderParam"
+}
+]

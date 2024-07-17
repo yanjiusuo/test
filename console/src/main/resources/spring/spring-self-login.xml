@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- START SNIPPET: example -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jsf="http://jsf.jd.com/schema/jsf" profile="selfLogin"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://jsf.jd.com/schema/jsf http://jsf.jd.com/schema/jsf/jsf.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    ">
+
+
+
+
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <!--     天空之城的请求例外跳过       -->
+            <mvc:exclude-mapping path="/client" />
+            <mvc:exclude-mapping path="/serviceConvert/ws2http/**" />
+            <mvc:exclude-mapping path="/api/routeService/**" />
+            <mvc:exclude-mapping path="/pages/**" />
+            <mvc:exclude-mapping path="/login/login" />
+            <mvc:exclude-mapping path="/serviceConvert/getConvertWsdlContent" />
+            <mvc:exclude-mapping path="/appInfo/checkSecret" />
+            <mvc:exclude-mapping path="/doc/**" />
+
+            <bean id="interceptorGroups" class="com.jd.workflow.console.interceptor.InterceptorGroups">
+                <property name="interceptors">
+                    <list>
+
+
+                        <ref bean="selfLoginInterceptor" />
+
+                        <ref bean="authorizationInterceptor" />
+                    </list>
+                </property>
+            </bean>
+
+
+        </mvc:interceptor>
+
+
+    </mvc:interceptors>
+
+    <bean id="selfLoginInterceptor" class="com.jd.workflow.console.interceptor.SelfLoginInterceptor" />
+    <bean id="userInfoInterceptor" class="com.jd.workflow.console.interceptor.UserInfoInterceptor"/>
+
+    <bean id="authorizationInterceptor" class="com.jd.workflow.console.interceptor.AuthorizationInterceptor"/>
+
+</beans>
+        <!-- END SNIPPET: example -->

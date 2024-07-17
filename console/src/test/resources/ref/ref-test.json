@@ -1,0 +1,492 @@
+{
+  "models": {
+    "CommonResult": {
+      "name": "root",
+      "type": "object",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "ref",
+          "desc": "数据"
+        }
+      ]
+    },
+
+    "Page": {
+      "name": "root",
+      "type": "object",
+      "className": "Page",
+      "children":[
+        {
+          "name": "pageNo",
+          "type": "long"
+        },
+        {
+          "name": "pageSize",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "array",
+          "children": [
+            {
+              "name": "$$0",
+              "type": "ref",
+              "refName": null
+            }
+          ]
+        }
+      ]
+    },
+    "OnlyRoot": {
+      "name": "root",
+      "type": "object",
+      "className": "OnlyRoot"
+    },
+
+    "Person": {
+      "name": "root",
+      "type": "object",
+      "className": "Person",
+      "desc": "人员基本信息",
+      "children":[
+        {
+          "name": "sid",
+          "type": "long"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "tests": [
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "OnlyRoot",
+      "className": "OnlyRoot",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "long",
+          "desc": "数据"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "OnlyRoot",
+      "className": "OnlyRoot",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "long",
+          "desc": "数据"
+        }
+      ]
+    },
+
+
+
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer",
+          "desc": "xxxxxx"
+        },
+        {
+          "name": "msg111",
+          "type": "string",
+          "desc": "xxxxxx"
+        },
+        {
+          "name": "data",
+          "type": "ref",
+          "refName": "Person"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "ref",
+          "refName": "Person",
+          "className": "Person",
+          "desc": "人员基本信息",
+          "children":[
+            {
+              "name": "sid",
+              "type": "long"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "long",
+          "desc": "数据"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "long",
+          "desc": "数据"
+        }
+      ]
+    },
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code123",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "array",
+
+          "children": [
+            {
+              "name": "person",
+              "type": "ref",
+              "refName": "Person",
+              "className": "Person",
+              "desc": "人员信息",
+              "children":[
+                {
+                  "name": "sid123",
+                  "type": "long"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "array",
+
+          "children": [
+            {
+              "name": "person",
+              "type": "ref",
+              "refName": "Person",
+              "desc": "人员基本信息",
+
+              "className": "Person",
+              "children":[
+                {
+                  "name": "sid",
+                  "type": "long"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code123",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "array",
+
+          "children": [
+            {
+              "name": "person",
+              "type": "object",
+              "className": "Person",
+              "desc": "人员信息",
+              "children":[
+                {
+                  "name": "sid123",
+                  "type": "long"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "array",
+
+          "children": [
+            {
+              "name": "person",
+              "type": "object",
+              "className": "Person",
+              "desc": "人员信息",
+              "children":[
+                {
+                  "name": "sid123",
+                  "type": "long"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code123",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "ref",
+            "refName": "Page",
+          "children": [
+
+            {
+              "name": "data",
+              "type": "array",
+              "children": [
+                {
+                  "name": "$$0",
+                  "type": "ref",
+                  "refName": "Person"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "className": "CommonResult",
+      "children": [{
+        "name": "code",
+        "type": "integer",
+        "className": null
+      }, {
+        "name": "msg",
+        "type": "string",
+        "className": null
+      }, {
+        "name": "data",
+        "type": "ref",
+        "className": "Page",
+        "children": [{
+          "name": "pageNo",
+          "type": "long",
+          "className": null
+        }, {
+          "name": "pageSize",
+          "type": "string",
+          "className": null
+        }, {
+          "name": "data",
+          "type": "array",
+          "className": null,
+          "children": [{
+            "name": "$$0",
+            "type": "ref",
+            "desc": "人员基本信息",
+            "className": "Person",
+            "children": [{
+              "name": "sid",
+              "type": "long",
+              "className": null
+            }, {
+              "name": "name",
+              "type": "string",
+              "className": null
+            }
+            ],
+            "refName": "Person",
+            "refType": "object"
+          }
+          ]
+        }
+        ],
+        "refName": "Page",
+        "refType": "object"
+      }
+      ],
+      "refName": "CommonResult",
+      "refType": "object"
+    }
+
+  ]
+}

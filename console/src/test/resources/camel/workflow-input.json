@@ -1,0 +1,18 @@
+{
+  "reqType": "json",
+  "body": [{
+    "name": "root",
+    "type": "object",
+    "children": [
+      {
+        "name": "sid",
+        "type": "long",
+        "value": "1"
+      },{
+        "name": "name",
+        "type": "string",
+        "value": "name"
+      }
+    ]
+  }]
+}

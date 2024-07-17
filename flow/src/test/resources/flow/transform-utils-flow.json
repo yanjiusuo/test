@@ -1,0 +1,81 @@
+{
+  "tasks": [
+    {
+      "id": "http",
+      "type": "http",
+      "method": "POST",
+      "endpointUrl": ["http://localhost:6010/json"],
+      "input": {
+        "reqType": "json",
+        "method": "post",
+        "headers": [{
+          "name":"token",
+          "type": "string",
+          "value": "${workflow.input.headers.token}"
+        }],
+        "params": [{
+          "name":"id",
+          "type": "string",
+          "value": "${workflow.input.params.id}"
+        }],
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "value": "${workflow.input.body}",
+            "children": [
+              {
+                "name": "sid",
+                "type": "long"
+              },{
+                "name": "name",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "body": [{
+          "name": "root",
+          "type": "object",
+          "children": [
+            {
+              "name": "sid",
+              "type": "long"
+            },{
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }],
+        "headers":  [{
+          "name":"token",
+          "type": "string"
+        }]
+      }
+
+
+    }
+  ],
+  "failOutput": {
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "type":"integer",
+            "name": "code",
+            "value": 400
+          },
+          {
+            "type":"string",
+            "name": "message",
+            "value": "${workflow.exception.message}"
+          }
+        ]
+      }
+    ]
+  }
+}

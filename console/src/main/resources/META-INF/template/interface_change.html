@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div>
+    <p>Dear ：</p>
+    <p th:text="${manage.name}+ '接口信息已发生变化，请于接口详情页查看接口变更记录'"></p>
+    <p th:text="'接口链接：http://console.paas.jd.com/idt/online/interface/interfaceDetail/'+${manage.type}+'/'+${manage.id}"></p>
+     <p><br/></p>
+    <div>感谢您对一体化-在线联调的信赖和支持！</div>
+    <br/>
+</div>
+</body>
+
+</html>

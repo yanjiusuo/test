@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jmq="http://code.jd.com/schema/jmq"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.jd.com/schema/jmq
+       http://code.jd.com/schema/jmq/jmq-1.1.xsd"
+       default-autowire="byName" profile="jmqConsumer">
+
+
+    <!--- ##############藏经阁jmq4通用transport 没有特殊诉求，不允许自己新建一个应用的transport######################### -->
+    <jmq:transport id="jmq4Transport"
+                   address="${jmq.address}"
+                   user="${jmq.user}"
+                   password="${jmq.password}"
+                   app="${jmq.app}"/>
+
+    <!--业务域流程xbp listener-->
+    <bean id="baseXbpJMQ4MessageListener" class="com.jd.flow.xbp.listener.BaseXbpJMQ4MessageListener">
+        <property name="xbpJMQ4MessageContext" ref="xbpJMQ4MessageContext"/>
+    </bean>
+    <jmq:consumer id="xbpJmq4Consumer" transport="jmq4Transport">
+        <jmq:listener topic="${jmq.xbp.topic}" listener="baseXbpJMQ4MessageListener"/>
+    </jmq:consumer>
+    <jmq:consumer id="cjgAppJmqConsumer" transport="jmq4Transport">
+        <jmq:listener topic="${jmq.cjg.app.topic}" listener="cjgAppInfoListener"/>
+    </jmq:consumer>
+    <jmq:consumer id="cjgAppMemberJmqConsumer" transport="jmq4Transport">
+        <jmq:listener topic="${jmq.cjg.appMember.topic}" listener="cjgAppMemberListener"/>
+    </jmq:consumer>
+
+    <jmq:consumer id="cjgFlowMemberChangeConsumer" transport="jmq4Transport">
+        <jmq:listener topic="${jmq.cjg.flowMemberChange.topic}" listener="flowMemberChangeListener"/>
+    </jmq:consumer>
+
+    <!--cjg flowmemberchange listener-->
+    <bean id="flowMemberChangeListener" class="com.jd.workflow.console.listener.cjg.flow.FlowChangeListener">
+    </bean>
+    <!--cjg app listener-->
+    <bean id="cjgAppInfoListener" class="com.jd.workflow.console.listener.cjg.CjgAppInfoListener">
+    </bean>
+    <!--cjg app member listener-->
+    <bean id="cjgAppMemberListener" class="com.jd.workflow.console.listener.cjg.CjgAppMemberListener">
+    </bean>
+
+</beans>

@@ -1,0 +1,76 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/json",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "body": [
+    {
+      "name": "root",
+      "type": "array",
+      "children": [
+        {
+          "name": "person",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "friends",
+              "type": "array",
+              "children": [
+                {
+                  "name": "ids",
+                  "type": "array",
+                  "children": [
+                    {
+                      "name": "$$0",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "respBody": [
+    {
+      "name": "root",
+      "type": "array",
+      "children": [
+        {
+          "name": "person",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "friends",
+              "type": "array",
+              "children": [
+                {
+                  "name": "ids",
+                  "type": "array",
+                  "children": [
+                    {
+                      "name": "$$0",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

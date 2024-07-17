@@ -1,0 +1,88 @@
+{
+  "id": "queryUser",
+  "type": "http",
+  "key": "queryUser",
+  "input": {
+    "url": "/healthUsers",
+    "method": "GET",
+    "reqType": "form",
+    "params": [
+      {
+        "name": "roleName",
+        "value": "",
+        "exprType": "expr",
+        "type": "string"
+      }
+    ],
+    "headers": [],
+    "path": [],
+    "body": [],
+    "script": null,
+    "preProcess": null
+  },
+  "output": {
+    "headers": [],
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "status",
+            "type": "double"
+          },
+          {
+            "name": "msg",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "type": "array",
+            "children": [
+              {
+                "name": "$$0",
+                "type": "object",
+                "children": [
+                  {
+                    "name": "id",
+                    "type": "string"
+                  },
+                  {
+                    "name": "roleName",
+                    "type": "string"
+                  },
+                  {
+                    "name": "userName",
+                    "type": "string"
+                  },
+                  {
+                    "name": "userNick",
+                    "type": "string"
+                  },
+                  {
+                    "name": "createDate",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "script": null
+  },
+  "env": "online",
+  "endpointUrl": [
+    "http://11.138.0.94/"
+  ],
+  "successCondition": null,
+  "taskDef": {
+    "timeout": 0,
+    "fallbackStrategy": "stop",
+    "fallback": null
+  },
+  "name": "queryHealthUser",
+  "entityId": 404,
+  "interfaceID": 85
+}

@@ -1,0 +1,23 @@
+<errors>
+    <error id="xml.err_mixed_content_not_support">
+        wsdl里有mixed节点，暂时不支持该节点，因为这种节点无法进行数据转换
+    </error>
+
+    <error id="xml.err_anyType_not_support">
+        wsdl里有any类型，暂时不支持该节点，因为这种节点无法进行数据转换
+    </error>
+    <error id="wsdl.err_transform_cause_exist_array_type">
+        转换失败：参数里有数组类型的参数，但是数组元素的每一项类型不一致，这种类型会导致无法解析，节点名称：{name}
+    </error>
+    <error id="wsdl.err_object_type_exist_same_name">
+        校验失败：对象类型里的参数名不可以一致，节点名称：{name}
+    </error>
+    <error id="xml.err_wildcard_type_is_not_support">
+        wsdl里有any节点，不支持该节点，因为这种节点无法进行数据转换
+    </error>
+
+    <error id="xml.err_array_type_children_is_not_allow_empty">
+        xml转换时类型转换失败：数组节点的子节点不可为空，节点{level}
+    </error>
+
+</errors>

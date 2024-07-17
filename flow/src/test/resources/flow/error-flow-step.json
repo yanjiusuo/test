@@ -1,0 +1,79 @@
+{
+  "input": {},
+  "tasks": [
+    {
+      "type": "choice",
+      "id": "choice",
+      "children": [
+        {
+          "when":"workflow.input.params.id==1",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },{
+      "type": "",
+      "id": "choice"
+    },{
+      "type": "http",
+      "id": "http"
+    },{
+      "type": "http2ws",
+      "id": "http"
+    },{
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "value": "condition1"
+          }
+        ]
+      }
+    },{
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "type": "string",
+            "value": "condition1"
+          }
+        ]
+      }
+    }
+
+  ]
+}

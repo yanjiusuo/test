@@ -1,0 +1,21 @@
+{
+  "input": {
+
+  },
+  "tasks": [
+    {
+      "id": "http1",
+      "type": "http",
+      "endpointUrl": [
+        "http://127.0.0.1:6010"
+      ],
+      "input": {
+        "method": "get",
+        "url": "/error"
+      }
+    }
+  ],
+  "failOutput":{
+    "script": "output.body = {\n  \"message\": workflow.exception.message,\n  \"data\": steps.http1.output.body}"
+  }
+}

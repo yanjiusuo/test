@@ -1,0 +1,29 @@
+<errors>
+    <error id="typeconvert.err_exception_param_not_support">
+        异常参数不支持映射
+    </error>
+    <error id="typeconvert.err_stacktrace_param_not_support">
+        堆栈参数不支持映射
+    </error>
+    <error id="typeconvert.err_invalid_url_pattern">
+        无效的url：{value}
+    </error>
+    <error id="typeconvert.err_invalid_uri_pattern">
+        无效的url：{value}
+    </error>
+    <error id="typeconvert.err_invalid_class_name">
+        无效的类名：{className}
+    </error>
+    <error id="jsf.err_miss_required_param">
+        缺失必填参数：{value}
+    </error>
+    <error id="jsf.err_only_zh_site_is_support">
+     目前站点仅支持中国站
+    </error>
+    <error id="jsf.err_no_alive_provider">
+        无可用的provider，接口名称：{interface},alias:{alias},环境:{env}
+    </error>
+    <error id="jsf.err_jsf_input_must_be_array_and_args_count_must_match">
+       编排方法的脚本执行的入参必须是数组并且该方法的参数格式必须为：{count}
+    </error>
+</errors>

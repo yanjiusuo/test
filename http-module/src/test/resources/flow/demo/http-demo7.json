@@ -1,0 +1,147 @@
+{
+  "tasks": [{
+    "id": "ws",
+    "type": "http2ws",
+    "key": "a3Hkka",
+    "entityId": 458,
+    "opName": "getCountryCityByIp",
+    "endpointUrl": ["http://www.webxml.com.cn"],
+    "url": "/WebServices/IpAddressSearchWebService.asmx",
+    "taskDef": {
+      "timeout": 0,
+      "fallbackStrategy": "stop",
+      "fallback": null
+    },
+    "successCondition": null,
+    "input": {
+      "schemaType": {
+        "name": "Envelope",
+        "namespacePrefix": "soapenv",
+        "attrs": {
+          "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+          "xmlns:web": "http://WebXml.com.cn/"
+        },
+        "type": "object",
+        "children": [{
+          "name": "Header",
+          "namespacePrefix": "soapenv",
+          "type": "object",
+          "children": []
+        }, {
+          "name": "Body",
+          "namespacePrefix": "soapenv",
+          "type": "object",
+          "children": [{
+            "name": "getCountryCityByIp",
+            "rowType": "JSON_ROOT",
+            "namespacePrefix": "web",
+            "exprType": "expr",
+            "type": "object",
+            "children": [{
+              "name": "theIpAddress",
+              "value": "${workflow.input.params.address}",
+              "rowType": "FIELD_ROOT",
+              "namespacePrefix": "web",
+              "exprType": "expr",
+              "type": "string"
+            }
+            ]
+          }
+          ]
+        }
+        ]
+      },
+      "header": null,
+      "body": null
+    },
+    "output": {
+      "schemaType": {
+        "name": "Envelope",
+        "namespacePrefix": "soapenv",
+        "attrs": {
+          "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+          "xmlns:web": "http://WebXml.com.cn/"
+        },
+        "type": "object",
+        "children": [{
+          "name": "Header",
+          "namespacePrefix": "soapenv",
+          "type": "object",
+          "children": []
+        }, {
+          "name": "Body",
+          "namespacePrefix": "soapenv",
+          "type": "object",
+          "children": [{
+            "name": "getCountryCityByIpResponse",
+            "namespacePrefix": "web",
+            "type": "object",
+            "children": [{
+              "name": "getCountryCityByIpResult",
+              "namespacePrefix": "web",
+              "type": "object",
+              "children": [{
+                "name": "string",
+                "namespacePrefix": "web",
+                "type": "array",
+                "children": [{
+                  "name": "string",
+                  "namespacePrefix": "web",
+                  "type": "string"
+                }
+                ]
+              }
+              ]
+            }
+            ]
+          }
+          ]
+        }
+        ]
+      },
+      "header": null,
+      "body": null
+    },
+    "name": "getCountryCityByIp",
+    "interfaceID": 141,
+    "env": "正式环境"
+  }
+  ],
+  "taskDef": null,
+  "input": {
+    "headers": [],
+    "params": [{
+      "name": "address",
+      "type": "string"
+    }
+    ],
+    "reqType": "form",
+    "body": [],
+    "preProcess": null
+  },
+  "output": {
+    "headers": [],
+    "body": [{
+      "name": "root",
+      "value": "${steps.ws.output}",
+      "exprType": "expr",
+      "type": "object",
+      "children": []
+    }
+    ],
+    "script": null,
+    "empty": false
+  },
+  "failOutput": {
+    "headers": [],
+    "body": [{
+      "name": "root",
+      "exprType": "expr",
+      "type": "object",
+      "children": []
+    }
+    ],
+    "script": null,
+    "empty": false
+  }
+}

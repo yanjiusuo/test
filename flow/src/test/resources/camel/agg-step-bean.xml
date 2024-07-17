@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <multicast id="fdssfd" parallelProcessing="true"   stopOnException="true" >
+        <process ref="test"/>
+        <process ref="test"/>
+        <process ref="test"/>
+
+    </multicast>
+
+</route>

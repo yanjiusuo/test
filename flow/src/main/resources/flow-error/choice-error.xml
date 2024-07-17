@@ -1,0 +1,7 @@
+<errors>
+    <error id="choice.err_when_is_required">
+         {stage}的判断条件不可为空
+    </error>
+
+
+</errors>

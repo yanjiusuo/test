@@ -1,0 +1,37 @@
+*,*:before,*:after{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+
+#app{
+    height:100%;
+    padding-top: 200px;
+}
+#login{
+
+    width: 600px;
+    margin: 0 auto;
+}
+body{
+    background: #f0f5f9;
+    font-family: 'Microsoft YaHei';
+    color: gray;
+
+}
+.login-card{
+    width:410px;
+}
+.login-btn{
+    width:100%;
+}
+.color-price{
+    height: 40px;
+    color: red;
+    line-height: 30px;
+    padding-left: 10px;
+}

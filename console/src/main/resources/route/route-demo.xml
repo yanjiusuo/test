@@ -1,0 +1,6 @@
+<camelContext>
+    <route>
+        <from uri="direct:start"/>
+        <processor />
+    </route>
+</camelContext>

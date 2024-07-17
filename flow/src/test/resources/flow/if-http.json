@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+    "id": "if",
+    "type": "if",
+    "expr": "workflow.input.pageNo==1",
+    "matched": [{
+      "id": "step1",
+      "type": "http",
+      "input": {
+        "url": "http://jap-mock-data.jd.local/treeList?_page=${workflow.input.pageNo}&_limit=${workflow.input.pageSize}",
+        "method": "GET"
+      },
+      "taskDef": {
+        "timeout": 10000
+      }
+    }],
+    "unmatched": [{
+      "id": "step2",
+      "type": "http",
+      "input": {
+        "url": "http://jap-mock-data.jd.local/html/1",
+        "method": "GET"
+      },
+      "taskDef": {}
+    }]
+  }],
+  "output": {
+    "data": "${steps.step1.response.data}",
+    "code": "${steps.step1.response.status}",
+    "message": "${steps.step1.response.message}"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/json",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "headers": [{
+    "name":"token",
+    "type": "string"
+  }],
+  "params": [{
+    "name":"id",
+    "type": "string"
+  }],
+  "body": [
+    {
+      "name": "root",
+      "type": "object",
+      "children": [
+        {
+          "name": "sid",
+          "type": "long"
+        },{
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "respBody": [{
+    "name": "root",
+    "type": "object",
+    "children": [
+      {
+        "name": "sid",
+        "type": "long"
+      },{
+        "name": "name",
+        "type": "string"
+      }
+    ]
+  }],
+  "respHeaders":  [{
+    "name":"token",
+    "type": "string"
+  }]
+}

@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "name": "root",
+  "children": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "jsonMap",
+      "type": "string_json",
+      "children": [
+        {
+          "name": "jsonMap",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer",
+              "exprType": "expr",
+              "value": "${workflow.input.body.person.id}"
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "exprType": "expr",
+              "value": "${workflow.input.body.person.name}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonArray",
+      "type": "string_json",
+
+      "children": [
+        {
+          "name": "jsonArray",
+          "type": "array",
+          "value": "${workflow.input.body.persons}",
+          "children": [
+            {
+              "type": "object",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "integer"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

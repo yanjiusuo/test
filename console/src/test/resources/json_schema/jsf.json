@@ -1,0 +1,128 @@
+{
+  "id": null,
+  "type": null,
+  "key": null,
+  "input": [
+    {
+      "name": "arg0",
+      "type": "object",
+      "className": "com.jd.mpaas.console.jsf.model.param.AppCreateParam",
+      "children": [
+        {
+          "name": "nameEn",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "nameCn",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "packageName",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "repositoryGroup",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "bundleId",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "microAppNameEnPrefix",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "microAppPackageNamePrefix",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        },
+        {
+          "name": "appTechTypes",
+          "type": "string",
+          "className": "java.lang.String",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "arg1",
+      "type": "string",
+      "className": "java.lang.String",
+      "required": true
+    }
+  ],
+  "output": {
+    "name": null,
+    "type": "object",
+    "genericTypes": [
+      {
+        "name": null,
+        "type": "object",
+        "className": "com.jd.mpaas.console.jsf.model.vo.AppCreateResult",
+        "children": [
+          {
+            "name": "appKey",
+            "type": "string",
+            "className": "java.lang.String",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "className": "com.jd.mpaas.console.jsf.model.vo.MpaasCallResult",
+    "children": [
+      {
+        "name": "code",
+        "type": "integer",
+        "className": "java.lang.Integer",
+        "required": true
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "className": "java.lang.String",
+        "required": true
+      },
+      {
+        "name": "data",
+        "type": "object",
+        "className": "com.jd.mpaas.console.jsf.model.vo.AppCreateResult",
+        "children": [
+          {
+            "name": "appKey",
+            "type": "string",
+            "className": "java.lang.String",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "interfaceName": "com.jd.mpaas.console.jsf.service.MpaasRemoteService",
+  "methodName": "createApp",
+  "alias": null,
+  "exceptions": null,
+  "attachments": null,
+  "protocol": null,
+  "url": null
+}

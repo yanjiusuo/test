@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "agg1",
+      "type": "aggregate",
+      "children": [
+        {
+          "id": "step1",
+          "type": "transform",
+          "output": {
+            "arg1": "value1"
+          },
+          "taskDef": {}
+        },
+        {
+          "id": "step2",
+          "type": "transform",
+          "output": {
+            "arg2": "value2"
+          },
+          "taskDef": {}
+        }
+      ],
+      "output": {},
+      "taskDef": {}
+    }
+  ]
+}

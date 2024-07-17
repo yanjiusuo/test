@@ -1,0 +1,19 @@
+package {{pkgName}};
+{{#imports}}import {{this}};
+{{/imports}}
+public class {{name}} {
+    {{#fields}}
+        {{#if desc}}/**
+        * {{desc}}
+        */{{/if}}
+        private {{type.reference}} {{name}};
+    {{/fields}}
+
+    {{#fields}}public {{type.reference}} {{getMethodName}}(){
+      return {{name}};
+    }
+    public void {{setMethodName}}({{type.reference}} {{name}}){
+       this.{{name}} = {{name}};
+    }
+    {{/fields}}
+}

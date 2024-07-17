@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.FlowParamMapper">
+    <select id="queryParamList" resultType="com.jd.workflow.console.entity.FlowParam">
+        select f.*,g.name groupName from flow_param f
+        left join flow_param_group g on g.id = f.group_id
+        where f.yn = 1
+        <if test="query.paramName !=null">
+            and f.name like concat('%',#{query.paramName},'%')
+        </if>
+        and f.group_id in
+        <foreach item="groupId" collection="groupList" open="(" separator="," close=")">
+            #{groupId}
+        </foreach>
+        order by f.modified desc
+        limit #{query.offset}, #{query.pageSize}
+    </select>
+
+
+    <select id="queryParamCount" resultType="long">
+        select count(*) from flow_param f
+        where f.yn = 1
+        <if test="query.paramName !=null">
+            and f.name like concat('%',#{query.paramName},'%')
+        </if>
+        and f.group_id in
+        <foreach item="groupId" collection="groupList" open="(" separator="," close=")">
+            #{groupId}
+        </foreach>
+    </select>
+
+
+</mapper>

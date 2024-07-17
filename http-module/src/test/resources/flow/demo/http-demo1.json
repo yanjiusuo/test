@@ -1,0 +1,91 @@
+{
+  "input": {
+    "body":[
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "id1",
+            "type": "long"
+          },{
+            "name": "id2",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "mul",
+      "type": "multicast",
+      "children": [
+        {
+          "id": "http1",
+          "type": "http",
+
+          "endpointUrl": ["http://jap-mock-data.jd.local"],
+          "input": {
+            "url": "/html/{id}",
+            "reqType": "json",
+            "method": "get",
+            "path": [
+              {
+                "name": "id",
+                "type": "string",
+                "value": "${workflow.input.body.id1}"
+              }
+            ]
+          }
+        },{
+          "id": "http2",
+          "type": "http",
+
+          "endpointUrl": ["http://jap-mock-data.jd.local"],
+          "input": {
+            "reqType": "json",
+            "method": "GET",
+            "url": "/html/{id}",
+            "path": [
+              {
+                "name": "id",
+                "type": "string",
+                "value": "${workflow.input.body.id2}"
+              }
+            ]
+          }
+        }
+      ],
+      "output": {
+        "body": [{
+          "name": "root",
+          "type": "object",
+          "children": [
+            {
+              "name": "code",
+              "type": "string",
+              "value": "0"
+            },{
+              "name": "message",
+              "type": "string",
+              "value": "获取成功"
+            },{
+              "name": "data",
+              "type": "array",
+              "children": [{
+                "name": "resp1",
+                "type": "object",
+                "value": "${steps.http1.output.body.data}"
+              },{
+                "name": "resp2",
+                "type": "object",
+                "value": "${steps.http2.output.body.data}"
+              }]
+            }
+          ]
+        }]
+      }
+    }
+  ]
+}

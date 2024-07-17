@@ -1,0 +1,70 @@
+{
+  "tasks": [
+    {
+      "id": "http",
+      "type": "http",
+      "method": "POST",
+      "endpointUrl": ["http://localhost:6010"],
+      "input": {
+        "url": "/echo/{id}",
+        "reqType": "json",
+        "method": "post",
+        "headers": [{
+          "name":"token",
+          "type": "string_json",
+          "value": "${workflow.input.body}"
+        }],
+        "path": [{
+          "name":"id",
+          "type": "string",
+          "value": "${workflow.input.body.id}"
+        }],
+        "params": [{
+          "name":"id",
+          "type": "string_json",
+          "value": "${workflow.input.body}"
+        }],
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+
+            "children": [
+              {
+                "name": "sid",
+                "type": "long"
+              },{
+                "name": "name",
+                "type": "string_json",
+                "value": "${workflow.input.body}"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "body": [{
+          "name": "root",
+          "type": "object",
+          "children": [
+            {
+              "name": "path",
+              "type": "object"
+            },{
+              "name": "body",
+              "type": "object"
+            },{
+              "name": "headers",
+              "type": "object"
+            },{
+              "name": "params",
+              "type": "object"
+            }
+          ]
+        }]
+      }
+
+
+    }
+  ]
+}

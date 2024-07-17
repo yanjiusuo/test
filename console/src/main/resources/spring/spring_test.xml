@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="testRemoteCaller" class="com.jd.workflow.console.service.test.DeepTestRemoteCaller">
+        <property name="token" value="65d04a406985f5cf57372c5df38168f16f6e21347435ce0b"/>
+        <property name="appId" value="data-flow"/>
+        <property name="url" value="http://test.intest-client.jd.com"/>
+        <!--<property name="url" value="http://localhost:8080"/>-->
+    </bean>
+    <bean id="onlineRemoteCaller" class="com.jd.workflow.console.service.test.DeepTestRemoteCaller">
+        <property name="token" value="cd123456"/>
+        <property name="appId" value=""/>
+        <property name="url" value="http://intest-manager.jd.com"/>
+       <!-- <property name="url" value="http://localhost:8080"/>-->
+    </bean>
+    <bean id="jagileApiConfig" class="com.jd.workflow.console.service.test.JagileApiConfig">
+        <property name="acceptanceUrl" value="${jagile.acceptance.url}"/>
+        <property name="token" value="${jagile.api.security.token}"/>
+        <property name="host" value="${jagile.api.gw.host}"/>
+        <property name="appId" value="${jagile.api.security.appid}"/>
+    </bean>
+    <bean id="jagileRemoteCaller" class="com.jd.workflow.console.service.test.JagileRemoteCaller">
+        <property name="config" ref="jagileApiConfig"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,1 @@
+export const ONLINE_URL :string = "http://data-flow.jd.com"

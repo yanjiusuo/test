@@ -1,0 +1,55 @@
+{
+  "input": {},
+  "tasks": [
+    {
+      "id": "subflow",
+      "type": "subflow",
+      "entityId": "123",
+      "input": {
+        "params": [
+          {
+            "type": "string",
+            "name": "id",
+            "value": "${workflow.input.params.id}"
+          }
+        ]
+      },
+      "definition": {
+        "tasks": [
+          {
+            "id": "transform1",
+            "type": "transform",
+            "output": {
+              "body": [
+                {
+                  "name": "root",
+                  "type": "string",
+                  "exprType": "script",
+                  "value": "a.a=true"
+                }
+              ]
+            }
+          }
+        ],
+        "output": {
+          "body": [
+            {
+              "type": "string",
+              "name": "root",
+              "value": "1"
+            }
+          ]
+        },
+        "failOutput": {
+          "body": [
+            {
+              "type": "string",
+              "name": "root",
+              "value": "-1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

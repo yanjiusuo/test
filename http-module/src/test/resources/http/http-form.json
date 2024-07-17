@@ -1,0 +1,23 @@
+{
+  "id": "http1",
+  "type": "http",
+  "successCondition": "output.status==200",
+  "endpointUrl": ["http://127.0.0.1:6010"],
+  "input":{
+    "method": "post,get,delete",
+    "url": "/form",
+    "reqType": "form",
+    "body": [
+      {
+        "name": "id",
+        "type": "string",
+        "value": 1
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "value": "wjf"
+      }
+    ]
+  }
+}

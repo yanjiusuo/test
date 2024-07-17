@@ -1,0 +1,37 @@
+{
+  "name": "flow_metric_rule_group",
+  "labels": {
+    "for": "bar"
+  },
+  "tags": [
+  ],
+  "notifyTemplates": {
+    "TIMLINE": {
+      "title": "(在线联调)服务出现异常",
+      "content": "(在线联调)线上接口出现异常"
+    },
+    "EMAIL": {
+      "title": "(在线联调)服务出现异常",
+      "content": "(在线联调)线上接口出现异常",
+      "url": [
+        "http://debug.tool.jd.com"
+      ],
+      "suggestion": "请立即修复"
+    },
+    "JDME": {
+      "title": "(在线联调)服务出现异常",
+      "content": "(在线联调)服务出现异常"
+    },
+    "VOICE_CALL": {
+      "content": "(在线联调)线上接口出现异常"
+    },
+    "WEBHOOK": {
+      "content": "(在线联调)线上接口出现异常",
+      "urls": [
+        "http://debug.tool.jd.com"
+      ]
+    }
+  },
+  "updateBy": "wangjingfang3",
+  "createBy": "wangjingfang3"
+}

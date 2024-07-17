@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "serve": "npx honkit serve",
+    "build": "npx honkit build"
+  },
+  "dependencies": {
+    "gitbook-plugin-abook-pagefooter": "git+https://coding.jd.com/abook-plugins/pagefooter.git",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-flexible-alerts": "^1.0.3",
+    "gitbook-plugin-medium-zoom": "^1.1.0",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-search-plus": "^1.0.4-alpha-3",
+    "gitbook-plugin-yahei": "git+https://coding.jd.com/abook-plugins/yahei.git",
+    "honkit": "^3.6.20"
+  }
+}

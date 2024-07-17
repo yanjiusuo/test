@@ -1,0 +1,38 @@
+{
+  "input": {},
+  "tasks": [
+    {
+      "id": "subflow",
+      "type": "subflow",
+      "entityId": "123",
+      "input": {
+        "script": "input.params = ['id':workflow.input.params.id] ",
+        "params": [
+          {
+            "type": "string",
+            "name": "id",
+            "exprType": "script",
+            "value": "123"
+          }
+        ]
+      },
+      "definition": {
+        "tasks": [
+          {
+            "id": "transform1",
+            "type": "transform",
+            "output": {
+              "body": [
+                {
+                  "name": "root",
+                  "type": "string",
+                  "value": "${workflow.input.params.id}"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

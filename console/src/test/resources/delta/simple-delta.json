@@ -1,0 +1,57 @@
+[
+  {
+    "name": "desc",
+    "type": "string",
+    "required": false,
+    "desc": "描述1"
+  },
+  {
+    "name": "desc",
+    "type": "double",
+    "required": true,
+    "desc": "描述2"
+  },
+  {
+    "name": "desc",
+    "type": "double",
+    "extAttrs": {
+      "_delta": {
+        "required": true,
+        "type": "double",
+        "desc": "描述2"
+      }
+    }
+  },
+
+
+  {
+    "name": "desc",
+    "type": "string",
+    "required": false,
+    "desc": "描述1"
+  },
+  null,
+  {
+    "name": "desc",
+    "type": "string",
+    "required": false,
+    "desc": "描述1",
+    "_del": true
+  },
+
+
+  null,
+  {
+    "name": "desc",
+    "type": "string",
+    "required": false,
+    "desc": "描述1"
+  },
+  {
+    "name": "desc",
+    "type": "string",
+    "required": false,
+    "desc": "描述1",
+    "_add": true
+  }
+]

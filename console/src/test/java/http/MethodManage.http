@@ -1,0 +1,84 @@
+###
+GET {{host}}/methodManage/pageMethod?interfaceId=1
+Accept: application/json
+
+###
+#新增方法 json
+POST {{host}}/methodManage/add
+Content-Type: application/json
+Cookie: jd.erp.lang=zh_CN; jdd69fo72b8lfeoe=U5MZXG63V4BJXPCIRKSA5LTYYJLKH4LSYTTMXTJPAKEEBHFZTUFYAB74PEY5ZMMDPECVHHVH75JY77JHV67LGCXDJE; sso.jd.com=BJ.0683047C68EAE7C9C448B01A1FE206314020220617152332
+
+{
+  "interfaceId": 1,
+  "type": 1,
+  "name": "测试方法6171",
+  "desc": "测试方法的描述3",
+  "httpMethod": "POST",
+  "path": "/test2/{id}",
+  "content": "{ \"type\":\"http\", \"input\":{ \"method\":\"POST\", \"url\":\"/test2/{id}\", \"path\":[{\"name\":\"id\",\"type\":\"long\",\"required\":true,\"desc\":null}], \"params\":[{\"name\":\"type\",\"type\":\"string\",\"required\":false,\"desc\":null},{\"name\":\"type2\",\"type\":\"integer\",\"required\":false,\"desc\":null}], \"headers\":[{\"name\":\"Content-Type\",\"type\":\"string\",\"required\":false,\"desc\":null}], \"reqType\":\"json\", \"body\":[{ \"name\": \"root\", \"type\":\"object\", \"children\":[{\"name\":\"id\",\"type\":\"long\",\"required\":true,\"desc\":\"主键id\"}, {\"name\":\"userCode\",\"type\":\"string\",\"required\":false,\"desc\":\"用户编码\"} ] }] }, \"successCondition\":\"response.code==0\", \"output\":{ \"headers\":[], \"body\":[{ \"name\": \"root\", \"type\":\"object\", \"children\":[{\"name\":\"code\",\"type\":\"long\",\"required\":true,\"desc\":\"返回码\"}, {\"name\":\"msg\",\"type\":\"string\",\"required\":false,\"desc\":\"返回信息\"} ] }] } }"
+}
+
+###
+#新增方法 form
+POST {{host}}/methodManage/add
+Content-Type: application/json
+
+{
+  "interfaceId": 1,
+  "type": 1,
+  "name": "测试方法Form",
+  "desc": "测试方法Form的描述",
+  "httpMethod": "POST",
+  "path": "/demo/test3/{id}",
+  "content": "{\"type\":\"http\",\"input\":{\"method\":\"POST\",\"url\":\"/demo/test3/{id}\",\"path\":[{\"name\":\"id\",\"type\":\"long\",\"required\":true,\"desc\":null,\"value\":1}],\"params\":[{\"name\":\"type\",\"type\":\"string\",\"required\":false,\"desc\":null,\"value\":\"test\"},{\"name\":\"type2\",\"type\":\"integer\",\"required\":false,\"desc\":null,\"value\":2}],\"headers\":[{\"name\":\"Content-Type\",\"type\":\"string\",\"required\":false,\"desc\":null,\"value\":\"application/x-www-form-urlencoded\"}],\"reqType\":\"form\",\"body\":[{\"name\":\"dept\",\"type\":\"string\",\"value\":\"部门\"},{\"name\":\"id\",\"type\":\"integer\",\"value\":321}]},\"successCondition\":\"response.code==0\",\"output\":{\"headers\":[],\"body\":[{\"name\":\"root\",\"type\":\"object\",\"children\":[{\"name\":\"code\",\"type\":\"long\",\"required\":true,\"desc\":\"返回码\"},{\"name\":\"msg\",\"type\":\"string\",\"required\":false,\"desc\":\"返回信息\"}]}]}}"
+}
+
+###
+#修改方法
+POST {{host}}/methodManage/edit
+Content-Type: application/json
+#Cookie: __jdu=1642500753523305183739; shshshfpb=hw_czJ327sTCit8mz1dsGbQ; shshshfpa=0ccf1d53-574b-e25f-b13a-48cdab755840-1634287152; unpl=JF8EAN1uNSttDBtRAkwEGUIRQ1VVW1VfHB4BbGcDXVULTQRSSAIaEkd7XlVdXhRKEx9sYhRVVVNKXQ4ZAisQEU5cVVZtCEoWAm5mAlZZW3tkBRoDGhMRTF9QXW0LSycCX2cCUV5cSlUDHwAfERJJXFBeVApNFQtfVwVcWmhLVQQaAh4QFEhZUVptCEoWAGljBlVdXCVWBR4FGBF-SVxVXlkKShUHaFcMV11aTGQFGAEdFiBIXFVfXAlKJ1UBZwRVXFlKVQUYBFYSF05eUF9cDk8VB2xlB1VZWEJWAxkKKxMgSA; __jdv=61302002|direct|-|none|-|1654651909898; areaId=1; ipLoc-djd=1-2802-0-0; shshshfp=93513c172a151645d0bc3ecb048b41e6; joyya=1655115486.0.20.0myfosi; jd.erp.lang=zh_CN; RT="sl=0&ss=l4c2bmkv&tt=0&z=1&dm=jd.com&si=vzvf8g3dgz&hd=2yjvf8"; X-JACP-TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJtb2JpbGUiOiIxNzcyNDIzNjA4NyIsInVzZXJJZCI6Ind1YmFpemhhbzEiLCJlbWFpbCI6Ind1YmFpemhhbzFAamQuY29tIiwidXNlcm5hbWUiOiJ3dWJhaXpoYW8xIiwiaWF0IjoxNjU1MzU5NTU0LCJpc3MiOiJqYWdpbGUuamQuY29tIiwic3ViIjoic3NvIiwiZXhwIjoxNjU1NDQ1OTU0fQ.jRJysYeDQWG4zoFpqkiK2zjnisPttQBjCRveSXd3sXo33KcvP-W7W2-hbqUtC5B0-TxViBFadulqzt1es27_BgosQ0URLFx3doYF8OJ85Uvaadm_oT3BKiB9D1PcEF61V71c-btkMAw3FMy7NjLLDNS3puzhBF0MVXhn8MvhlIqdTwjmKGMnjgg6oLNTPpogSi8f7JgPcXDkTFLJBxHObH2u3Kt2vNklnAHI4-2OKGXsjKxhOr9_XeEufwKwLoLQ7rPuRJh9ZvhrTlm2GTbNng8S1GRgRflYVlsyyjz6VPxCzw67zrxGSIyk6ZeAqmQWqfV4wt16eZDPbuV0A-PT1Q; sso.jd.com=BJ.BD5DAAF0F03354D18EAAC2C50A03651B3920220616140944; __jda=122270672.1642500753523305183739.1642500754.1655356723.1655359555.450; __jdb=122270672.2.1642500753523305183739|450.1655359555; __jdc=122270672; 3AB9D23F7A4B3C9B=GZZMZIGEYB6AKG3HG4NR5WJKRN257SUYKHLN66ZQWEC4UL5QCSTVUXEHE566ILMEYFHNQ67YVOVRLCRN2O3VV23W7U; jdd69fo72b8lfeoe=FVUJTCBMYH5I2LDQEQEA6FF4IHRYREOZZIHZIYUD5VV3R6Y5N2WE66P4SX7DI2FXC2QRHYBB2JFCKRODMBN3XPJORU; vertx-web.session=23e7ddcdb533c1ced500c65af62ec0cc
+Cookie: jd.erp.lang=zh_CN; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd4c3l6R040eExrWDVaZ1lrTUI5IiwiaWF0IjoxNjU1MTcyODM4LCJleHAiOjE2NTU3Nzc2Mzh9.7fvdBETYmvQLmjsma0A6RCkyMQ0vWaAT9qm6z5m9LE4; focus-team-id=00046419; focus-client=WEB; __jdu=1655124287397233994238; sensorsdata2015session={}; sensorsdata2015jssdkcross={"distinct_id":"115457","$device_id":"1815ffd43a214b-028a3351e4d207-1e525635-2007040-1815ffd43a3ccf","props":{},"first_id":"1815ffd43a214b-028a3351e4d207-1e525635-2007040-1815ffd43a3ccf"}; EBSAuthCookie=51127|ZHS|http://ebs.jd.com/OA_HTML/AppsLogin|N; erp1.jd.com=aaabbb; jd_erp_preAuthCookie=BJ.4DE981CCBB5A5378B48233A89776263F8820220614152657; jd_ebs_ssoproxy=success; PROD=SOABijU7lexpBLN7dcy4zRCo0d; eos2.jd.com=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlcnAiOiJmYW53ZWkyNiIsImV4cCI6MTY1NTI4NDA1NX0.UjEJgUkJSfVDX9LwTOQjgLIAGZNbzxzz4iLscH5IvZk; focus-token=34a01a39c1b4988c6f529a1c1d308b92; logbook_u=fanwei26; CCC_SE=ADC_EhNSeKoNyQ/ljIxhdmONqJCnPB15PZYH8zlBxUb2FYMjZ2gcxq6RL44ZkuZ4+yHGVGO1YGcNKgdOBA4t6Y4eiyVBL0JtPyivDbmU3RJ/5Bv9HxdrdO+MhwUXkfEu+2RsPdQgLU/YeytgZZ5KGUpbxFgCRd6XU+zVgDt5F7iT3iyLlu/az9vVl+DKHjwugFtSjMtn9EZsLX0VI3UDBhUffUkok1nPDBJzmsiXviXFrqM3SiLW3HGVznww1wwCvtRpacX1CNz2pbTlhp5o24JFKN6iSg/4vGCyb9uGbn9Ngig/4VcAEBHo2ZhyMJQ0hUmgZ/erWtrNyxt2F9xt5GH1lj6v0eaNeR2FwHaaDTnT2I7/y2KeUufb7dxfHBrQiN94LQqZJSYn1cLkdXzDD41ZnvYCIxObIHFokt4gXsa+IyXkQSfm7gN1YqzV5BEQEGWUlSQNc2EzXDcNNB6+YdnSp+1rwRyHU+fx7Ht2a9pOqA0Eo5yK56qsWy5cnLZtJhGe; unpl=JF8EAKVnNSttCE1TAR0KGxAXTFVVW10LSh5WPDMBVQ4NGV0MSFAeQUR7XlVdXhRKEB9vYxRXXFNKXA4ZACsSEHtdVV9fDksWAmdgNWReWUoZBRoDdRBde15Ublw4SxAHa2cGUV5RTVYNHQEZEBhDWFdcVDh7FwpsVwFXVVxOVAUrMhoiEEheUlptCXtcbW4qBVNZXEtXABgLHRAYTV5WXFUAThQBZlcEZF4; visitkey=4581898536471549; wxa_level=1; retina=1; cid=9; jxsid=16552949739905519000; webp=1; mba_muid=1655124287397233994238; __wga=1655294974773.1655294974773.1655294974773.1655294974773.1.1; __jdv=61302002|kong|t_1003710096_|jingfen|a7657913669041208dbe50bdc88bc4be|1655294974778; PPRD_P=UUID.1655124287397233994238-LOGID.1655294974787.148247189; sc_width=1792; _gia_s_local_fingerprint=c59e583ee91a86eee367c9d4ac994292; shshshfp=da98c541e31121c61557182db9c9ec36; shshshfpa=6f995d2e-c399-4262-ef9e-43a7d372e991-1655294975; equipmentId=Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU; fingerprint=c59e583ee91a86eee367c9d4ac994292; deviceVersion=101.0.0.0; deviceOS=; deviceOSVersion=; deviceName=Chrome; _gia_s_e_joint={"eid":"Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU","ma":"","im":"","os":"Mac OS X","ip":"111.202.148.49","ia":"","uu":"","at":"5"}; shshshfpb=d6yVu72IwqgInoBJpqi2j6A; sk_history=5295411,; RT="sl=0&ss=l4fhl3qu&tt=0&z=1&dm=jd.com&si=t61vt46kk2k&ld=2vu&ul=5qiur&hd=5qiyg"; wlfstk_smdl=gw9t8vb5td3orvf8uzxmo2itd3y6ohc4; 3AB9D23F7A4B3C9B=Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU; X-JACP-TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJtb2JpbGUiOiIxODIwNjE4Nzc3NiIsInVzZXJJZCI6ImZhbndlaTI2IiwiZW1haWwiOiJmYW53ZWkyNkBqZC5jb20iLCJ1c2VybmFtZSI6ImZhbndlaTI2IiwiaWF0IjoxNjU1MzYzMTQ3LCJpc3MiOiJqYWdpbGUuamQuY29tIiwic3ViIjoic3NvIiwiZXhwIjoxNjU1NDQ5NTQ3fQ.kqciVGRVDaXpHZoVqHz1VY4yg_x6fOXYMjtWomPGp_RJ8nANmJa5xwo3vSOPo-qm7S3Rfz9qvyzIJUbb-LZ5RN2kxNKQowQmLxarFgip0c8Np2Z55AwXbUqlYJQ3x-jKg2UNdOjYzgs2HrI1SWdAE9QI26ACB_hHuYpiH7_UdTP862o5tPjzDKDtugrnGqqQrZwZbrLFXhrtVWilANWMcMVCNnuwkTmfifTB4bAoIgbqgd71wFOeNJKvzzP416ZTCPwqUuIrnjy2qsglEKcX6oIzyiRlG0QdLD_NBY9jWJ6JYi54JiWKSLx6hDD3jps3HS4f137zPL-BJH_0HEAMZg; __jda=101385626.1655124287397233994238.1655124287.1655304336.1655362862.18; __jdc=101385626; __jdb=101385626.4.1655124287397233994238|18.1655362862; jdd69fo72b8lfeoe=UYFY2HZ7HGWC67MDTH2ATKIL7T5MJO2IYY33WFDFZ5EJDCFEICVG7JLHUBZ4EPOYSF6WMMMUDCAXSS5TVHRMMM5DZM; sso.jd.com=BJ.69282B97C3EF450977459D534BF764022820220616151920
+
+
+{
+  "id": 2,
+  "interfaceId": 6,
+  "type": 1,
+  "name": "测试方法-修改1",
+  "desc": "测试方法的描述-修改1",
+  "httpMethod": "GET",
+  "path": "www.baidu.com",
+  "content": "json"
+}
+
+###
+#修改方法
+POST {{host}}/methodManage/edit
+Content-Type: application/json
+#Cookie: __jdu=1642500753523305183739; shshshfpb=hw_czJ327sTCit8mz1dsGbQ; shshshfpa=0ccf1d53-574b-e25f-b13a-48cdab755840-1634287152; unpl=JF8EAN1uNSttDBtRAkwEGUIRQ1VVW1VfHB4BbGcDXVULTQRSSAIaEkd7XlVdXhRKEx9sYhRVVVNKXQ4ZAisQEU5cVVZtCEoWAm5mAlZZW3tkBRoDGhMRTF9QXW0LSycCX2cCUV5cSlUDHwAfERJJXFBeVApNFQtfVwVcWmhLVQQaAh4QFEhZUVptCEoWAGljBlVdXCVWBR4FGBF-SVxVXlkKShUHaFcMV11aTGQFGAEdFiBIXFVfXAlKJ1UBZwRVXFlKVQUYBFYSF05eUF9cDk8VB2xlB1VZWEJWAxkKKxMgSA; __jdv=61302002|direct|-|none|-|1654651909898; areaId=1; ipLoc-djd=1-2802-0-0; shshshfp=93513c172a151645d0bc3ecb048b41e6; joyya=1655115486.0.20.0myfosi; jd.erp.lang=zh_CN; RT="sl=0&ss=l4c2bmkv&tt=0&z=1&dm=jd.com&si=vzvf8g3dgz&hd=2yjvf8"; X-JACP-TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJtb2JpbGUiOiIxNzcyNDIzNjA4NyIsInVzZXJJZCI6Ind1YmFpemhhbzEiLCJlbWFpbCI6Ind1YmFpemhhbzFAamQuY29tIiwidXNlcm5hbWUiOiJ3dWJhaXpoYW8xIiwiaWF0IjoxNjU1MzU5NTU0LCJpc3MiOiJqYWdpbGUuamQuY29tIiwic3ViIjoic3NvIiwiZXhwIjoxNjU1NDQ1OTU0fQ.jRJysYeDQWG4zoFpqkiK2zjnisPttQBjCRveSXd3sXo33KcvP-W7W2-hbqUtC5B0-TxViBFadulqzt1es27_BgosQ0URLFx3doYF8OJ85Uvaadm_oT3BKiB9D1PcEF61V71c-btkMAw3FMy7NjLLDNS3puzhBF0MVXhn8MvhlIqdTwjmKGMnjgg6oLNTPpogSi8f7JgPcXDkTFLJBxHObH2u3Kt2vNklnAHI4-2OKGXsjKxhOr9_XeEufwKwLoLQ7rPuRJh9ZvhrTlm2GTbNng8S1GRgRflYVlsyyjz6VPxCzw67zrxGSIyk6ZeAqmQWqfV4wt16eZDPbuV0A-PT1Q; sso.jd.com=BJ.BD5DAAF0F03354D18EAAC2C50A03651B3920220616140944; __jda=122270672.1642500753523305183739.1642500754.1655356723.1655359555.450; __jdb=122270672.2.1642500753523305183739|450.1655359555; __jdc=122270672; 3AB9D23F7A4B3C9B=GZZMZIGEYB6AKG3HG4NR5WJKRN257SUYKHLN66ZQWEC4UL5QCSTVUXEHE566ILMEYFHNQ67YVOVRLCRN2O3VV23W7U; jdd69fo72b8lfeoe=FVUJTCBMYH5I2LDQEQEA6FF4IHRYREOZZIHZIYUD5VV3R6Y5N2WE66P4SX7DI2FXC2QRHYBB2JFCKRODMBN3XPJORU; vertx-web.session=23e7ddcdb533c1ced500c65af62ec0cc
+Cookie: jd.erp.lang=zh_CN; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd4c3l6R040eExrWDVaZ1lrTUI5IiwiaWF0IjoxNjU1MTcyODM4LCJleHAiOjE2NTU3Nzc2Mzh9.7fvdBETYmvQLmjsma0A6RCkyMQ0vWaAT9qm6z5m9LE4; focus-team-id=00046419; focus-client=WEB; __jdu=1655124287397233994238; sensorsdata2015session={}; sensorsdata2015jssdkcross={"distinct_id":"115457","$device_id":"1815ffd43a214b-028a3351e4d207-1e525635-2007040-1815ffd43a3ccf","props":{},"first_id":"1815ffd43a214b-028a3351e4d207-1e525635-2007040-1815ffd43a3ccf"}; EBSAuthCookie=51127|ZHS|http://ebs.jd.com/OA_HTML/AppsLogin|N; erp1.jd.com=aaabbb; jd_erp_preAuthCookie=BJ.4DE981CCBB5A5378B48233A89776263F8820220614152657; jd_ebs_ssoproxy=success; PROD=SOABijU7lexpBLN7dcy4zRCo0d; eos2.jd.com=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlcnAiOiJmYW53ZWkyNiIsImV4cCI6MTY1NTI4NDA1NX0.UjEJgUkJSfVDX9LwTOQjgLIAGZNbzxzz4iLscH5IvZk; focus-token=34a01a39c1b4988c6f529a1c1d308b92; logbook_u=fanwei26; CCC_SE=ADC_EhNSeKoNyQ/ljIxhdmONqJCnPB15PZYH8zlBxUb2FYMjZ2gcxq6RL44ZkuZ4+yHGVGO1YGcNKgdOBA4t6Y4eiyVBL0JtPyivDbmU3RJ/5Bv9HxdrdO+MhwUXkfEu+2RsPdQgLU/YeytgZZ5KGUpbxFgCRd6XU+zVgDt5F7iT3iyLlu/az9vVl+DKHjwugFtSjMtn9EZsLX0VI3UDBhUffUkok1nPDBJzmsiXviXFrqM3SiLW3HGVznww1wwCvtRpacX1CNz2pbTlhp5o24JFKN6iSg/4vGCyb9uGbn9Ngig/4VcAEBHo2ZhyMJQ0hUmgZ/erWtrNyxt2F9xt5GH1lj6v0eaNeR2FwHaaDTnT2I7/y2KeUufb7dxfHBrQiN94LQqZJSYn1cLkdXzDD41ZnvYCIxObIHFokt4gXsa+IyXkQSfm7gN1YqzV5BEQEGWUlSQNc2EzXDcNNB6+YdnSp+1rwRyHU+fx7Ht2a9pOqA0Eo5yK56qsWy5cnLZtJhGe; unpl=JF8EAKVnNSttCE1TAR0KGxAXTFVVW10LSh5WPDMBVQ4NGV0MSFAeQUR7XlVdXhRKEB9vYxRXXFNKXA4ZACsSEHtdVV9fDksWAmdgNWReWUoZBRoDdRBde15Ublw4SxAHa2cGUV5RTVYNHQEZEBhDWFdcVDh7FwpsVwFXVVxOVAUrMhoiEEheUlptCXtcbW4qBVNZXEtXABgLHRAYTV5WXFUAThQBZlcEZF4; visitkey=4581898536471549; wxa_level=1; retina=1; cid=9; jxsid=16552949739905519000; webp=1; mba_muid=1655124287397233994238; __wga=1655294974773.1655294974773.1655294974773.1655294974773.1.1; __jdv=61302002|kong|t_1003710096_|jingfen|a7657913669041208dbe50bdc88bc4be|1655294974778; PPRD_P=UUID.1655124287397233994238-LOGID.1655294974787.148247189; sc_width=1792; _gia_s_local_fingerprint=c59e583ee91a86eee367c9d4ac994292; shshshfp=da98c541e31121c61557182db9c9ec36; shshshfpa=6f995d2e-c399-4262-ef9e-43a7d372e991-1655294975; equipmentId=Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU; fingerprint=c59e583ee91a86eee367c9d4ac994292; deviceVersion=101.0.0.0; deviceOS=; deviceOSVersion=; deviceName=Chrome; _gia_s_e_joint={"eid":"Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU","ma":"","im":"","os":"Mac OS X","ip":"111.202.148.49","ia":"","uu":"","at":"5"}; shshshfpb=d6yVu72IwqgInoBJpqi2j6A; sk_history=5295411,; RT="sl=0&ss=l4fhl3qu&tt=0&z=1&dm=jd.com&si=t61vt46kk2k&ld=2vu&ul=5qiur&hd=5qiyg"; wlfstk_smdl=gw9t8vb5td3orvf8uzxmo2itd3y6ohc4; 3AB9D23F7A4B3C9B=Q3P4UJHRB5T3Y65VDMGOTRUP7R354MMBND6CJVSIFCBNF2JWTHNMNKYRAKHDW2CR4PTUOKX522TGFPDD24J35PRSRU; X-JACP-TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJtb2JpbGUiOiIxODIwNjE4Nzc3NiIsInVzZXJJZCI6ImZhbndlaTI2IiwiZW1haWwiOiJmYW53ZWkyNkBqZC5jb20iLCJ1c2VybmFtZSI6ImZhbndlaTI2IiwiaWF0IjoxNjU1MzYzMTQ3LCJpc3MiOiJqYWdpbGUuamQuY29tIiwic3ViIjoic3NvIiwiZXhwIjoxNjU1NDQ5NTQ3fQ.kqciVGRVDaXpHZoVqHz1VY4yg_x6fOXYMjtWomPGp_RJ8nANmJa5xwo3vSOPo-qm7S3Rfz9qvyzIJUbb-LZ5RN2kxNKQowQmLxarFgip0c8Np2Z55AwXbUqlYJQ3x-jKg2UNdOjYzgs2HrI1SWdAE9QI26ACB_hHuYpiH7_UdTP862o5tPjzDKDtugrnGqqQrZwZbrLFXhrtVWilANWMcMVCNnuwkTmfifTB4bAoIgbqgd71wFOeNJKvzzP416ZTCPwqUuIrnjy2qsglEKcX6oIzyiRlG0QdLD_NBY9jWJ6JYi54JiWKSLx6hDD3jps3HS4f137zPL-BJH_0HEAMZg; __jda=101385626.1655124287397233994238.1655124287.1655304336.1655362862.18; __jdc=101385626; __jdb=101385626.4.1655124287397233994238|18.1655362862; jdd69fo72b8lfeoe=UYFY2HZ7HGWC67MDTH2ATKIL7T5MJO2IYY33WFDFZ5EJDCFEICVG7JLHUBZ4EPOYSF6WMMMUDCAXSS5TVHRMMM5DZM; sso.jd.com=BJ.69282B97C3EF450977459D534BF764022820220616151920
+
+
+{
+  "id": 2,
+  "name": "测试方法-修改2",
+  "desc": "测试方法的描述-修改2",
+  "httpMethod": "post",
+  "path": "/json/{name}"
+}
+
+###
+#删除方法
+POST {{host}}/methodManage/remove
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+
+###
+# 获取方法详情
+GET {{host}}/methodManage/getById?id=342
+Cookie: {{Cookie}}

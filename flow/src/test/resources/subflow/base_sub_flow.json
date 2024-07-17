@@ -1,0 +1,18 @@
+{
+  "input": {},
+  "tasks": [
+    {
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "type": "string",
+            "value": "${workflow.input.params.id}"
+          }
+        ]
+      }
+    }
+  ]
+}

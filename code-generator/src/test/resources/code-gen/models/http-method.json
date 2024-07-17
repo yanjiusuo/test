@@ -1,0 +1,582 @@
+{
+  "type": "http",
+  "methodCode": "saveUser",
+  "methodId": null,
+  "envName": null,
+  "authKeys": null,
+  "input": {
+    "method": "GET",
+    "url": "/interfaceManage/pageListInterface",
+    "path": [],
+    "params": [
+      {
+        "name": "current",
+        "type": "long",
+        "desc": "当前页号",
+        "className": "java.lang.Long"
+      },
+      {
+        "name": "size",
+        "type": "long",
+        "desc": "页大小 最大100条",
+        "className": "java.lang.Long"
+      },
+      {
+        "name": "appId",
+        "type": "long",
+        "desc": "应用id",
+        "className": "java.lang.Long"
+      },
+      {
+        "name": "tenantId",
+        "type": "string",
+        "className": "java.lang.String"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "desc": "接口名称",
+        "className": "java.lang.String"
+      },
+      {
+        "name": "adminCode",
+        "type": "string",
+        "desc": "负责人code",
+        "className": "java.lang.String"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "desc": "类型过滤条件，以,分割",
+        "className": "java.lang.String"
+      },
+      {
+        "name": "nodeType",
+        "type": "integer",
+        "desc": "编排类型0-默认1-单节点2-多节点,@date:20226116:03,@authorwubaizhao1",
+        "className": "java.lang.Integer"
+      }
+    ],
+    "headers": [],
+    "reqType": "json",
+    "body": null
+  },
+  "output": {
+    "headers": null,
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "className": "com.jd.workflow.console.base.CommonResult",
+        "children": [
+          {
+            "name": "traceId",
+            "type": "string",
+            "desc": "日志跟踪uuid",
+            "className": "java.lang.String"
+          },
+          {
+            "name": "code",
+            "type": "integer",
+            "desc": "返回值",
+            "className": "java.lang.Integer"
+          },
+          {
+            "name": "data",
+            "type": "object",
+            "desc": "返回数据",
+            "className": "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+            "children": [
+              {
+                "name": "total",
+                "type": "long",
+                "desc": "总数",
+                "className": null
+              },
+              {
+                "name": "current",
+                "type": "long",
+                "desc": "当前页",
+                "className": null
+              },
+              {
+                "name": "pages",
+                "type": "long",
+                "className": null
+              },
+              {
+                "name": "size",
+                "type": "long",
+                "desc": "每页显示条数，默认10",
+                "className": null
+              },
+              {
+                "name": "records",
+                "typeVariableName": "T",
+                "type": "array",
+                "desc": "查询数据列表",
+                "className": "java.util.List",
+                "children": [
+                  {
+                    "name": "$$0",
+                    "type": "object",
+                    "className": "com.jd.workflow.console.entity.InterfaceManage",
+                    "children": [
+                      {
+                        "name": "deptName",
+                        "type": "string",
+                        "desc": "所属部门名称",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "serviceCode",
+                        "type": "string",
+                        "desc": "服务编码,,@date:20226215:56,@authorwubaizhao1",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "envList",
+                        "type": "array",
+                        "desc": "环境输出的时候赋值,List<EnvModel>",
+                        "className": "java.util.List",
+                        "children": [
+                          {
+                            "name": "$$0",
+                            "type": "object",
+                            "className": "com.jd.workflow.console.dto.EnvModel",
+                            "children": [
+                              {
+                                "name": "headers",
+                                "type": "array",
+                                "className": "java.util.List",
+                                "children": [
+                                  {
+                                    "name": "$$0",
+                                    "type": "object",
+                                    "className": "com.jd.workflow.soap.common.xml.schema.SimpleJsonType",
+                                    "children": [
+                                      {
+                                        "name": "exprType",
+                                        "type": "string",
+                                        "desc": "constant\nexpr\nscript\n",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "exprValue",
+                                        "type": "object",
+                                        "className": "java.lang.Object",
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "className",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "type",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "namespacePrefix",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "className": null
+                                      },
+                                      {
+                                        "name": "attrs",
+                                        "type": "object",
+                                        "desc": "json转xml的时候使用，xmlattrs主要是name",
+                                        "className": "java.util.Map",
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "xmlns",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "typeClass",
+                                        "type": "string",
+                                        "className": "java.lang.Class"
+                                      },
+                                      {
+                                        "name": "name",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      },
+                                      {
+                                        "name": "value",
+                                        "type": "object",
+                                        "desc": "转换的时候使用此属性",
+                                        "className": "java.lang.Object",
+                                        "children": []
+                                      },
+                                      {
+                                        "name": "desc",
+                                        "type": "string",
+                                        "className": "java.lang.String"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "hostIp",
+                                "type": "string",
+                                "className": "java.lang.String"
+                              },
+                              {
+                                "name": "envName",
+                                "type": "string",
+                                "desc": "环境名称",
+                                "className": "java.lang.String"
+                              },
+                              {
+                                "name": "type",
+                                "type": "string",
+                                "desc": "环境的类型",
+                                "className": "java.lang.String"
+                              },
+                              {
+                                "name": "url",
+                                "type": "array",
+                                "desc": "基础url列表,@date:202253014:51,@authorwubaizhao1",
+                                "className": "java.util.List",
+                                "children": [
+                                  {
+                                    "name": "$$0",
+                                    "type": "string",
+                                    "className": "java.lang.String"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "groupId",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "modifier",
+                        "type": "string",
+                        "desc": "修改者",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "appCode",
+                        "type": "string",
+                        "desc": "应用编码:appCode关联的应用编码",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "type",
+                        "type": "integer",
+                        "desc": "接口类型1-http、2-webservice、3-jsf10-编排,link{@com.jd.workflow.console.base.enums.InterfaceTypeEnum}",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "userCode",
+                        "type": "string",
+                        "desc": "用户Code",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "path",
+                        "type": "string",
+                        "desc": "地址,,@date:202251714:44,@authorwubaizhao1",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "docConfig",
+                        "type": "object",
+                        "className": "com.jd.workflow.console.dto.doc.InterfaceDocConfig",
+                        "children": [
+                          {
+                            "name": "invokeConfig",
+                            "type": "string",
+                            "className": "java.lang.String"
+                          },
+                          {
+                            "name": "docType",
+                            "type": "string",
+                            "className": "java.lang.String"
+                          },
+                          {
+                            "name": "noticeStatus",
+                            "type": "integer",
+                            "desc": "变更通知状态：1-开启非1为关闭",
+                            "className": "java.lang.Integer"
+                          },
+                          {
+                            "name": "type",
+                            "type": "string",
+                            "className": "java.lang.String"
+                          },
+                          {
+                            "name": "pomConfig",
+                            "type": "string",
+                            "className": "java.lang.String"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "hasLicense",
+                        "type": "boolean",
+                        "desc": "是否鉴权接口，true:是false:否",
+                        "className": "java.lang.Boolean"
+                      },
+                      {
+                        "name": "yn",
+                        "type": "integer",
+                        "desc": "逻辑删除标示0、删除1、有效,link{@com.jd.workflow.console.base.enums.DataYnEnum}",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "appId",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "isPublic",
+                        "type": "integer",
+                        "desc": "是否设置为demo1-是2-否",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "modified",
+                        "type": "string",
+                        "desc": "修改时间",
+                        "className": "java.util.Date"
+                      },
+                      {
+                        "name": "artifactId",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "id",
+                        "type": "long",
+                        "desc": "主键",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "latestDocVersion",
+                        "type": "string",
+                        "desc": "最新文档的版本",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "cjgBusinessDomainTrace",
+                        "type": "string",
+                        "desc": "藏经阁业务域的trace字段，规则为：-0--1--4--8-这种，需要查询时，直接like前缀查询即可",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "hasAuth",
+                        "type": "integer",
+                        "desc": "是否有操作权限（不存入表中）1-有2-无",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "creator",
+                        "type": "string",
+                        "desc": "创建者",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "autoReport",
+                        "type": "integer",
+                        "desc": "是否自动上报：1-是0-否",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "followStatus",
+                        "type": "integer",
+                        "desc": "关注状态：1-已关注0-未关注",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "editable",
+                        "type": "boolean",
+                        "desc": "是否有权限编辑false-不能,,@date:202261910:38,@authorwubaizhao1",
+                        "className": "java.lang.Boolean"
+                      },
+                      {
+                        "name": "appName",
+                        "type": "string",
+                        "desc": "应用名称:appId关联的应用名称",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "created",
+                        "type": "string",
+                        "desc": "创建时间",
+                        "className": "java.util.Date"
+                      },
+                      {
+                        "name": "cjgAppId",
+                        "type": "string",
+                        "desc": "关联藏经阁appId",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "docInfo",
+                        "type": "string",
+                        "desc": "文档信息",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "cjgBusinessDomainTraceName",
+                        "type": "string",
+                        "desc": "藏经阁业务域名称",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "env",
+                        "type": "string",
+                        "desc": "大json串,,EnvModel[envName(环境名称),url(基础url列表,@date:202253014:51,@authorwubaizhao1),type(环境的类型),hostIp,headers]",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "nodeType",
+                        "type": "integer",
+                        "desc": "编排类型0-默认1-单节点2-多节点,,@date:20226116:03,@authorwubaizhao1",
+                        "className": "java.lang.Integer"
+                      },
+                      {
+                        "name": "userName",
+                        "type": "string",
+                        "desc": "用户名称",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "version",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "relatedId",
+                        "type": "long",
+                        "desc": "关联记录id,目前用来保存mock记录关联的id。也可以是j-api的接口或者方法id",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "sortGroupTree",
+                        "type": "object",
+                        "className": "com.jd.workflow.console.dto.MethodGroupTreeModel",
+                        "children": [
+                          {
+                            "name": "treeItems",
+                            "type": "array",
+                            "className": "java.util.List",
+                            "children": [
+                              {
+                                "name": "$$0",
+                                "type": "object",
+                                "className": "com.jd.workflow.console.dto.doc.TreeSortModel",
+                                "children": [
+                                  {
+                                    "name": "path",
+                                    "type": "string",
+                                    "className": "java.lang.String"
+                                  },
+                                  {
+                                    "name": "opType",
+                                    "type": "string",
+                                    "className": "java.lang.String"
+                                  },
+                                  {
+                                    "name": "name",
+                                    "type": "string",
+                                    "className": "java.lang.String"
+                                  },
+                                  {
+                                    "name": "id",
+                                    "type": "long",
+                                    "className": "java.lang.Long"
+                                  },
+                                  {
+                                    "name": "type",
+                                    "type": "string",
+                                    "className": "java.lang.String"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "cjgAppName",
+                        "type": "string",
+                        "desc": "关联藏经阁appName",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "groupLastVersion",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "latestReportTime",
+                        "type": "string",
+                        "className": "java.util.Date"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "desc": "接口名称",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "tenantId",
+                        "type": "string",
+                        "desc": "租户id",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "needApply",
+                        "type": "boolean",
+                        "className": "java.lang.Boolean"
+                      },
+                      {
+                        "name": "config",
+                        "type": "object",
+                        "desc": "配置信息",
+                        "className": "java.util.Map",
+                        "children": []
+                      },
+                      {
+                        "name": "desc",
+                        "type": "string",
+                        "desc": "接口描述",
+                        "className": "java.lang.String"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "desc": "错误信息",
+            "className": "java.lang.String"
+          }
+        ]
+      }
+    ]
+  },
+  "successCondition": null,
+  "desc": "接口分页查询       入参 必传租户id ,搜索条件有 接口名称(模糊),类型,负责人       出参 Page<InterfaceManage>",
+  "summary": "接口列表"
+}

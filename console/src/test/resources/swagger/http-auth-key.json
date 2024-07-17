@@ -1,0 +1,379 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "默认文档",
+    "version": "1.0",
+    "title": "默认信息"
+  },
+  "host": "",
+  "basePath": "/",
+  "tags": [{
+    "name": "用户管理123",
+    "description": "Demo Controller"
+  }
+  ],
+  "schemes": [],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/demo/addUser": {
+      "post": {
+        "tags": ["用户管理123"],
+        "summary": "添加用户123",
+        "operationId": "addUserUsingPOST",
+        "schemes": [],
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "name": "id",
+          "in": "query",
+          "description": "id信息",
+          "required": false,
+          "type": "integer",
+          "format": "int32",
+          "allowEmptyValue": false,
+          "x-example": ""
+        }, {
+          "in": "body",
+          "name": "user",
+          "description": "基本信息",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {},
+            "headers": {},
+            "schema": {
+              "$ref": "#/definitions/CommonResult?long?"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/CommonResult?long?"
+            },
+            "x-returnInfo": "添加后的人员id"
+          },
+          "201": {
+            "description": "Created",
+            "examples": {},
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {},
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {},
+            "headers": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {},
+            "headers": {}
+          }
+        },
+        "security": [],
+        "deprecated": false,
+        "x-authKey": "demo.cont"
+      }
+    },
+    "/demo/updateUser": {
+      "post": {
+        "tags": ["用户管理123"],
+        "summary": "修改用户信息",
+        "operationId": "updateUserUsingPOST",
+        "schemes": [],
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "name": "id",
+          "in": "query",
+          "description": "用户id",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }, {
+          "name": "name",
+          "in": "query",
+          "description": "名称信息",
+          "required": false,
+          "type": "string",
+          "x-example": ""
+        }, {
+          "name": "pageNo",
+          "in": "query",
+          "description": "页码",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }, {
+          "name": "pageSize",
+          "in": "query",
+          "description": "每页大小",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {},
+            "headers": {},
+            "schema": {
+              "$ref": "#/definitions/CommonResult?User?"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/CommonResult?User?"
+            },
+            "x-returnInfo": "修改后的人员信息"
+          },
+          "201": {
+            "description": "Created",
+            "examples": {},
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {},
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {},
+            "headers": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {},
+            "headers": {}
+          }
+        },
+        "security": [],
+        "deprecated": false,
+        "x-authKey": "demo.cont"
+      }
+    },
+    "/user/addUser": {
+      "post": {
+        "tags": ["用户管理123"],
+        "summary": "添加用户123",
+        "operationId": "addUserUsingPOST_1",
+        "schemes": [],
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "name": "id",
+          "in": "query",
+          "description": "id信息",
+          "required": false,
+          "type": "integer",
+          "format": "int32",
+          "allowEmptyValue": false,
+          "x-example": ""
+        }, {
+          "in": "body",
+          "name": "user",
+          "description": "基本信息",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {},
+            "headers": {},
+            "schema": {
+              "$ref": "#/definitions/CommonResult?long?"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/CommonResult?long?"
+            },
+            "x-returnInfo": "添加后的人员id"
+          },
+          "201": {
+            "description": "Created",
+            "examples": {},
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {},
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {},
+            "headers": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {},
+            "headers": {}
+          }
+        },
+        "security": [],
+        "deprecated": false,
+        "x-authKey": "user.addUser"
+      }
+    },
+    "/user/updateUser": {
+      "post": {
+        "tags": ["用户管理123"],
+        "summary": "更新用户",
+        "operationId": "updateUserUsingPOST_1",
+        "schemes": [],
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [{
+          "name": "id",
+          "in": "query",
+          "description": "用户id",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }, {
+          "name": "name",
+          "in": "query",
+          "description": "名称信息",
+          "required": false,
+          "type": "string",
+          "x-example": ""
+        }, {
+          "name": "pageNo",
+          "in": "query",
+          "description": "页码",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }, {
+          "name": "pageSize",
+          "in": "query",
+          "description": "每页大小",
+          "required": false,
+          "type": "integer",
+          "format": "int64"
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {},
+            "headers": {},
+            "schema": {
+              "$ref": "#/definitions/CommonResult?User?"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/CommonResult?User?"
+            },
+            "x-returnInfo": "修改后的人员信息"
+          },
+          "201": {
+            "description": "Created",
+            "examples": {},
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {},
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {},
+            "headers": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {},
+            "headers": {}
+          }
+        },
+        "security": [],
+        "deprecated": false
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "definitions": {
+    "CommonResult?User?": {
+      "type": "object",
+      "discriminator": "",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "错误码：0-成功 1-失败"
+        },
+        "data": {
+          "description": "返回的数据",
+          "$ref": "#/definitions/User"
+        },
+        "message": {
+          "type": "string",
+          "description": "返回0为正确消息，非0为错误消息"
+        }
+      },
+      "title": "CommonResult?User?",
+      "description": "返回结果"
+    },
+    "CommonResult?long?": {
+      "type": "object",
+      "discriminator": "",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "错误码：0-成功 1-失败"
+        },
+        "data": {
+          "type": "integer",
+          "format": "int64",
+          "description": "返回的数据"
+        },
+        "message": {
+          "type": "string",
+          "description": "返回0为正确消息，非0为错误消息"
+        }
+      },
+      "title": "CommonResult?long?",
+      "description": "返回结果"
+    },
+    "User": {
+      "type": "object",
+      "discriminator": "",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "name": {
+          "type": "string",
+          "example": "",
+          "description": "名称信息"
+        },
+        "pageNo": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "description": "每页大小"
+        }
+      },
+      "title": "User",
+      "description": "用户基本信息123"
+    }
+  }
+}

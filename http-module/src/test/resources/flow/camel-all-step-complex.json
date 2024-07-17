@@ -1,0 +1,321 @@
+{
+  "input": {
+    "headers": [
+      {
+        "type": "long",
+        "name": "a1"
+      },{
+        "type": "long",
+        "name": "a2"
+      }
+    ],
+    "body": [
+      {
+        "type": "string",
+        "children": [
+          {
+            "name": "id",
+            "type": "long",
+            "required": true
+          },
+          {
+            "name": "b1",
+            "type": "long",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "step1",
+      "type": "multicast",
+      "children": [
+        {
+          "id": "http1",
+          "type": "http",
+          "successCondition": "output.status==200",
+          "endpointUrl": [
+            "http://127.0.0.1:6010"
+          ],
+          "input": {
+            "method": "post",
+            "url": "/json",
+            "body": [
+              {
+                "name": "root",
+                "type": "object",
+                "children": [
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "exprType": "script",
+                    "value": "workflow.input.body.id+11"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "value": "${workflow.input.body.name}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "ws",
+          "opName": "hasHeader",
+          "endpointUrl": [
+            "http://127.0.0.1:7001/FullTypedWebService"
+          ],
+          "type": "http2ws",
+          "url": "",
+          "output": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:ser": "http://service.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "b1",
+                      "namespacePrefix": "ser",
+                      "type": "integer"
+                    }
+                  ]
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "hasHeaderResponse",
+                      "namespacePrefix": "ser",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "retValue",
+                          "type": "object",
+                          "children": [
+                            {
+                              "name": "id",
+                              "type": "long"
+                            },
+                            {
+                              "name": "name",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "input": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:ser": "http://service.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "a1",
+                      "value": "${workflow.input.headers.a1}",
+                      "namespacePrefix": "ser",
+                      "type": "integer"
+                    },
+                    {
+                      "name": "a2",
+                      "value": "${workflow.input.headers.a2}",
+                      "namespacePrefix": "ser",
+                      "type": "integer"
+                    },
+                    {
+                      "name": "a3",
+                      "exprType": "script",
+                      "value": "workflow.input.body",
+                      "namespacePrefix": "ser",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "id",
+                          "type": "long"
+                        },
+                        {
+                          "name": "name",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "hasHeader",
+                      "namespacePrefix": "ser",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "typed",
+                          "value": "${workflow.input.body}",
+                          "type": "object",
+                          "children": [
+                            {
+                              "name": "id",
+                              "type": "long"
+                            },
+                            {
+                              "name": "name",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "output": {
+        "script": " output.body = {\n      \"http1Res\": steps.http1.output.body,\n      \"wsRes\":  steps.ws.output.body }"
+      }
+    },
+    {
+      "type": "choice",
+      "id": "choice",
+      "children": [
+        {
+          "when": "steps.step1.output.body.wsRes.retValue.id==1",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "output": {
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "data",
+            "type": "object",
+            "children": [
+              {
+                "type": "object",
+                "name": "res1",
+                "exprType": "script",
+                "value": "steps.transform1.output.body"
+              },
+              {
+                "type": "object",
+                "name": "res2",
+                "exprType": "script",
+                "value": "steps.step1.output.body"
+              }
+            ]
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "value": "200"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "value": "${steps.transform1.output.body}"
+          }
+        ]
+      }
+    ]
+  },
+  "failOutput": {
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "data",
+            "type": "object",
+            "exprType": "expr",
+            "value": ""
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "value": "400"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "value": "${workflow.exception.message}"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+###
+#成员管理 删除成员
+POST {{host}}/memberRelation/unBinding
+Content-Type: application/json
+
+{
+  "tenantId": 1024,
+  "id": 6
+}

@@ -1,0 +1,18 @@
+<errors>
+    <error id="task.err_task_def_not_allow_empty">
+        流程定义不可为空
+    </error>
+    <error id="workflow.err_tasks_is_not_allow_empty">
+        任务不可为空
+    </error>
+    <error id="task.err_task_id_not_allow_empty">
+        任务id不可为空
+    </error>
+    <error id="workflow.err_tasks_only_allow_list">
+        tasks只能为数组
+    </error>
+    <error id="task.err_task_type_not_allow_empty">
+        任务类型不可为空
+    </error>
+
+</errors>

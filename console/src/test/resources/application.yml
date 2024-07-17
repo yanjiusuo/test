@@ -1,0 +1,291 @@
+
+# 服务端口
+server:
+  servlet:
+    context-path: /
+  port: 80
+spring:
+  profiles:
+    active: dev,erpLogin
+  # 是否开启thymeleaf缓存
+  thymeleaf.cache: true
+  web:
+    resources: # 指定静态资源的路径
+      static-locations: classpath:/static/
+  #数据库配置
+datasource:
+  master:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://gate6.local.jed.jddb.com:3306/flow_db?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: flow_db_rw
+    password: mW40LF42tr4fDqFs
+    connectionProperties: useUnicode=true;characterEncoding=utf-8;useSSL=false;serverTimezone=UTC+8
+
+  initial-size: 10
+  max-active: 100
+  min-idle: 10
+  max-wait: 60000
+  pool-prepared-statements: true
+  max-pool-prepared-statement-per-connection-size: 20
+  time-between-eviction-runs-millis: 60000
+  min-evictable-idle-time-millis: 300000
+  #Oracle需要打开注释
+  validation-query: SELECT 1 FROM DUAL
+  test-while-idle: true
+  test-on-borrow: false
+  test-on-return: false
+  filter:
+    stat:
+      log-slow-sql: true
+      slow-sql-millis: 1000
+      merge-sql: false
+    wall:
+      config:
+        multi-statement-allow: true
+
+
+#  #JSS配置
+#jss.accessKey: jIIRRlrcL6Rvb2gY
+#jss.secretKey: 8VkMCvVQvNysClUOHfuK4B6a9fZSR3aQrsPM3umn
+#jss.hostName: test.storage.jd.com
+#jss.connectionTimeout: 30000
+#jss.bucket: test20150416
+#jss.inner.url: http://test.storage.jd.local
+
+# 是否检查租户管理员
+memberRelation.checkTenantAdminFlag: true
+
+publish.address.prefix: http://11.138.2.200
+
+
+camel:
+  config:
+    appId: integration-paas
+
+
+
+#ERP登录体系
+# 调用放应用
+up.portal.api.header.appId: data-transform
+up.portal.api.header.token:
+up.portal.login.jsf.alias: up-portal-test
+sso.excludePath: /jsfAlias/allByName,/jsfAlias/all,/debug/debugHttpNew,/debug/debugJsfNew,/methodManage/invokeWebService
+sso.env: dev
+
+
+
+#PIN登录体系
+#如果接入方域名为 baitiao.com 或 jdpay.com 结尾的，则passport.checkLogin.cookieName值为 jr_ceshi
+passport.checkLogin.cookieName: thor
+#联系直属的应用运维配置，具体值可参考j-one 应用 passport.jd.com 配置中 important.properties
+#passport.login.cookie.md5.key 属性的值,如果接入方域名为 baitiao.com 或 jdpay.com 结尾的，则以下配置值为：
+#8B6697227CBCA902B1A0925D40FAA00B353F2DF4359D2088
+passport.checkLogin.authenticationKey: C196FA243B92A634E69E58421D3A69881E0361DE75D6C663
+#登录地址：http://passport.jd.com/uc/login (线上为：https://passport.jd.com/uc/login）
+passport.checkLogin.loginUrl: https://passport.jd.com/new/login.aspx
+#https://passport.jd.com/new/login.aspx
+passport.checkLogin.charsetName: GBK
+passport.checkLogin.uriEncoding: GBK
+remote.type: jsf
+client.identity: datatransform
+
+# 登录体系配置 {@link LoginTypeEnum}
+# ERP(0),
+# PIN(1),
+# PHONE(2),
+# HEALTH(3),
+interceptor.loginType: 0
+
+# 默认的pin - 租户管理员 不能配置erp账号进去
+user:
+  origin:
+    tenant:
+      admin:
+        userCodeList:
+          - default
+        userNameList:
+          - 默认
+
+cors:
+  filter:
+    path: /**
+    configuration:
+      allowCredentials: true
+      allowedOrigins:
+        - http://test.debug-tool.jd.com
+        - http://local.jd.com:8118
+        - http://local.jd.com:8998
+        - http://local.jd.com
+        - http://debug.jd.com
+        - http://pre.debug.jd.com
+        - http://local.jd.com:8998
+        - http://test.console.paas.jd.com
+        - http://test-console.paas.jd.com
+        - http://console.paas.jd.com
+        - http://pre-console.paas.jd.com
+        - http://console.paas.jd.com
+        - http://debug.tool.jd.com
+        - http://cjg.jd.com
+        - http://cjg-m.jd.com
+        - http://beta.cjg-m.jd.com
+        - https://cjg.jd.com
+        - https://cjg-m.jd.com
+        - https://beta.cjg-m.jd.com
+        - http://test.dp.jd.com
+        - http://interface-debug-tool-test1.local-pf.jd.com
+        - http://interface-debug-tool-test2.local-pf.jd.com
+        - http://test.cjg-isv.jd.com
+        - http://cjg-admin-test1.local-pf.jd.com/
+        - http://test.debug.tool.jd.com
+        - http://test.console.paas.jd.com
+        - http://console.paas.jd.com
+        - http://pre-console.paas.jd.com
+        - http://console.paas.jd.com
+        - http://debug.tool.jd.com
+        - http://cjg.jd.com
+        - http://cjg-m.jd.com
+        - http://beta.cjg-m.jd.com
+        - https://cjg.jd.com
+        - https://cjg-m.jd.com
+        - https://beta.cjg-m.jd.com
+        - http://pre.dp.jd.com/
+        - http://interface-debug-tool-beta.local-pf.jd.com
+        - http://dp.jd.com/
+        - http://interface-debug-tool-pro.local-pf.jd.com
+        - http://paas-web-beta.local-pf.jd.com
+        - http://cjg-admin-beta.local-pf.jd.com
+        - https://cjg-admin-pro.local-pf.jd.com
+        - http://cjg-admin-pro.local-pf.jd.com
+        - http://work-flow-test1.local-pf.jd.com/
+        - http://test-console.paas.jd.com
+        - http://interface-debug-tool-test1.local-pf.jd.com
+        - http://interface-debug-tool-test2.local-pf.jd.com
+
+route.useDuccPublisher: false
+
+
+cache:
+  cacheImpl: memory
+
+redis:
+  pool:
+    host: 127.0.0.1
+    port: 6379
+    pass:
+    timeout: 50000
+
+# 测试环境EasyData配置
+EasyData:
+  appToken: 0078a8505d8a0ce8888cb75c2ccf99c2
+  apiGroupName: console-log-pre
+  url: http://pre.fds.jd.com/query/api-list/
+  pageUrl: http://pre.fds.jd.com/query/api-page/
+
+
+ump.appName: data-flow
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+easymock.alias: easymock-local
+
+hr:
+  appCode: 001
+  businessId: 002
+  safetyKey: abc123
+  alias:
+    user: ZYX_HR_USER_SERVICE_JSF
+    organization: HR_ORGANIZATION_SERVICE_JSF
+
+tenant.fixTenantId: 10001
+
+
+
+
+cjg:
+  alias:
+    workflow: flow-dev
+    app: cjg-dev
+    component: cjg-test
+    domain: cjg-test
+    jcf: cjg-dev-fix
+  appName: debug-tool-platform
+  umpAppName: debug-tool-platform
+  environment: DEV
+  deployGroupName: test
+  debugModel: true
+#xbp配置
+xbp.alias: TEST
+xbp.apiUser: zjfn_cangjingge
+xbp.apiSign: 1afc830300
+xbp.env: TEST
+xbp.httpAuth.processId: 3748
+
+#ducc配置
+ducc.domain: test.ducc-api.jd.local
+ducc.appName: jdos_cjg-config
+ducc.appToken: 5e321b2070584ca491094ca1bd4c4365
+
+#email配置
+mail.host: smtp.jd.local
+mail.username: cjgjszx
+mail.password: Zjptjs@0987
+mail.from.user: cjgjszx@jd.com
+mail.to.user: wangwenguang@jd.com,ext.heyang12@jd.com,tangqianqian11@jd.com,wangjingfang3@jd.com,yumiao3@jd.com
+
+#jmq配置
+jmq.address: test-nameserver.jmq.jd.local:50088
+jmq.user: dataflow
+jmq.password: f82e65db358a48bc9bba14d1cff8561a
+jmq.app: dataflow
+jmq.xbp.topic: XBP_EVENT_TEST
+
+jmq.cjg.app.topic: data_flow_app
+jmq.cjg.appMember.topic: test
+jmq.cjg.flowMemberChange.topic: CJG_WORKFLOW_TOPIC
+
+
+
+
+#jsf api
+jsf.api.alias: jsf-open-api
+jsf:
+  api:
+    site: 测试站
+    env: test
+
+tenant:
+  fixTenantId: 10001
+
+
+
+
+server.jsf.appName: debug-tool-platform
+server.jsf.alias: test1
+server.jsf.env: DEV
+
+
+#行云对接藏经阁接口信息
+jagile.api.gw.host: http://api-gateway.jd.com
+jagile.api.security.appid: cjg
+jagile.api.security.token: 36836bb0-6ae0-4b8d-ae0e-89725137d041
+jagile.acceptance.url: http://jagile.jd.com/to/be/confirm
+
+jim:
+  url: jim://2914173422341158041/110000259
+  cfs: http://cfs.jim.jd.local/
+
+es:
+  userName: jiesi-jdos-cjg-jiesi
+  password: 5CB03CA8B62D1F70
+  ipAndPorts: prod-3-40000-jiesi-jdos-cjg-jiesi.jd.com:40000,prod-2-40000-jiesi-jdos-cjg-jiesi.jd.com:40000,prod-1-40000-jiesi-jdos-cjg-jiesi.jd.com:40000
+
+
+jss:
+  accessKey: ZDcl7q0ygh8Asm9a
+  secretKey: uqrdal5WRv7BC8iqJIUPwox76xdBK3r1BgGgxkpP
+  hostName: storage.jd.local
+  connectionTimeout: 50000
+
+

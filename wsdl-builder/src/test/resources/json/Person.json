@@ -1,0 +1,14 @@
+{
+  "id": "String",
+  "name":"String",
+  "age": "Integer",
+  "tags": ["String"],
+  "friends": [{
+    "name": "String",
+    "id": "Long",
+    "Sub": {
+      "id": "Integer"
+    }
+  }],
+  "arrArr": [["String"]]
+}

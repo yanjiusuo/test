@@ -1,0 +1,12 @@
+###
+# 添加webservice接口
+POST {{host}}/serviceConvert/addHttpToWebService
+Content-Type: application/json
+
+{
+  "type":1,
+  "name": "测试接口1",
+  "desc": "测试接口的描述1",
+  "env": "地址1",
+  "adminCode": "system"
+}

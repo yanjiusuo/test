@@ -1,0 +1,23 @@
+<errors>
+    <error id="webservice.err_input_is_required">
+        webservice的input不可为空
+    </error>
+    <error id="webservice.err_output_is_required">
+        webservice的input不可为空
+    </error>
+    <error id="step.err_endpoint_url_is_required">
+        服务端地址不可为空
+    </error>
+
+    <error id="webservice.err_miss_req_type">
+        reqType字段不可为空
+    </error>
+    <error id="webservice.err_miss_http_method">
+        http方法不可为空
+    </error>
+    <error id="webservice.err_response_is_empty">
+        响应体为空
+    </error>
+
+
+</errors>

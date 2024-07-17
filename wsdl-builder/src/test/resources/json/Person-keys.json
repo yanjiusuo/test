@@ -1,0 +1,14 @@
+{
+  "x-id": "String",
+  "x-name_Name":"String",
+  "Age_A": "Integer",
+  "Tags_x_1": ["String"],
+  "Friends": [{
+    "Name_fjs": "String",
+    "id": "Long",
+    "Sub": {
+      "id": "Integer"
+    }
+  }],
+  "arr_Arr": [["String"]]
+}

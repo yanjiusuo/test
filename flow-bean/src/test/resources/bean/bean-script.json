@@ -1,0 +1,10 @@
+{
+  "tasks": [{
+    "id": "ducc1",
+    "type": "transform",
+    "output": {
+      "script": "output.body = demoService.echo(workflow.input.body.c)"
+    }
+
+  }]
+}

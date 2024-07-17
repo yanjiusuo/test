@@ -1,0 +1,447 @@
+[
+  {
+    "groupName": "test-controller",
+    "pkgName": "com.jd.wjf.test",
+    "groupDesc": "分组描述",
+    "methods": [
+      {
+        "type": null,
+        "methodCode": "addUser",
+        "methodId": null,
+        "envName": null,
+        "authKeys": [
+          "wjfUserTest"
+        ],
+        "input": {
+          "method": "POST",
+          "url": "/user/addUser",
+          "path": [],
+          "params": [
+            {
+              "name": "id",
+              "type": "integer",
+              "desc": "id信息",
+              "className": null,
+              "required": true
+            }
+          ],
+          "headers": [],
+          "reqType": "json",
+          "body": null
+        },
+        "output": {
+          "headers": null,
+          "body": [
+            {
+              "name": "root",
+              "type": "object",
+              "desc": "添加后的人员id",
+              "genericTypes": [
+                {
+                  "name": "root",
+                  "type": "long",
+                  "typeVariableName": "T",
+                  "className": "java.lang.Long"
+                }
+              ],
+              "className": "com.jd.workflow.common.CommonResult",
+              "children": [
+                {
+                  "name": "code",
+                  "type": "integer",
+                  "desc": "错误码：0-成功 1-失败",
+                  "className": "java.lang.Integer"
+                },
+                {
+                  "name": "data",
+                  "type": "long",
+                  "desc": "返回的数据",
+                  "typeVariableName": "T",
+                  "className": "java.lang.Long"
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "desc": "返回0为正确消息，非0为错误消息",
+                  "className": "java.lang.String"
+                }
+              ]
+            }
+          ]
+        },
+        "successCondition": null,
+        "desc": "添加用户",
+        "summary": "添加用户123"
+      },
+      {
+        "type": null,
+        "methodCode": "getUser",
+        "methodId": null,
+        "envName": null,
+        "authKeys": [
+          "wjfUserTest"
+        ],
+        "input": {
+          "method": "POST",
+          "url": "/user/getUser",
+          "path": [],
+          "params": [
+            {
+              "name": "id",
+              "type": "integer",
+              "desc": "id信息",
+              "className": null,
+              "required": true
+            }
+          ],
+          "headers": [],
+          "reqType": "json",
+          "body": null
+        },
+        "output": {
+          "headers": null,
+          "body": [
+            {
+              "name": "root",
+              "type": "object",
+              "desc": "修改后的人员信息",
+              "genericTypes": [
+                {
+                  "name": "root",
+                  "type": "object",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                }
+              ],
+              "className": "com.jd.workflow.common.CommonResult",
+              "children": [
+                {
+                  "name": "code",
+                  "type": "integer",
+                  "desc": "错误码：0-成功 1-失败",
+                  "className": "java.lang.Integer"
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "desc": "返回的数据",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "desc": "返回0为正确消息，非0为错误消息",
+                  "className": "java.lang.String"
+                }
+              ]
+            }
+          ]
+        },
+        "successCondition": null,
+        "desc": "更新用户",
+        "summary": "查询用户123"
+      },
+      {
+        "type": null,
+        "methodCode": "updateUser",
+        "methodId": null,
+        "envName": null,
+        "authKeys": [
+          "wjfUserTest"
+        ],
+        "input": {
+          "method": "POST",
+          "url": "/user/updateUser",
+          "path": [],
+          "params": [
+            {
+              "name": "id",
+              "type": "integer",
+              "desc": "id信息",
+              "className": null,
+              "required": true
+            }
+          ],
+          "headers": [],
+          "reqType": "json",
+          "body": null
+        },
+        "output": {
+          "headers": null,
+          "body": [
+            {
+              "name": "root",
+              "type": "object",
+              "desc": "修改后的人员信息",
+              "genericTypes": [
+                {
+                  "name": "root",
+                  "type": "object",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                }
+              ],
+              "className": "com.jd.workflow.common.CommonResult",
+              "children": [
+                {
+                  "name": "code",
+                  "type": "integer",
+                  "desc": "错误码：0-成功 1-失败",
+                  "className": "java.lang.Integer"
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "desc": "返回的数据",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "desc": "返回0为正确消息，非0为错误消息",
+                  "className": "java.lang.String"
+                }
+              ]
+            }
+          ]
+        },
+        "successCondition": null,
+        "desc": "更新用户",
+        "summary": "更新用户123"
+      },
+      {
+        "type": null,
+        "methodCode": "deleteUser",
+        "methodId": null,
+        "envName": null,
+        "authKeys": [
+          "wjfUserTest"
+        ],
+        "input": {
+          "method": "POST",
+          "url": "/user/deleteUser",
+          "path": [],
+          "params": [
+            {
+              "name": "id",
+              "type": "integer",
+              "desc": "id信息",
+              "className": null,
+              "required": true
+            }
+          ],
+          "headers": [],
+          "reqType": "json",
+          "body": null
+        },
+        "output": {
+          "headers": null,
+          "body": [
+            {
+              "name": "root",
+              "type": "object",
+              "desc": "修改后的人员信息",
+              "genericTypes": [
+                {
+                  "name": "root",
+                  "type": "object",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                }
+              ],
+              "className": "com.jd.workflow.common.CommonResult",
+              "children": [
+                {
+                  "name": "code",
+                  "type": "integer",
+                  "desc": "错误码：0-成功 1-失败",
+                  "className": "java.lang.Integer"
+                },
+                {
+                  "name": "data",
+                  "type": "object",
+                  "desc": "返回的数据",
+                  "typeVariableName": "T",
+                  "className": "com.jd.workflow.dto.User",
+                  "children": [
+                    {
+                      "name": "pageNo",
+                      "type": "long",
+                      "desc": "页码",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "desc": "用户名称",
+                      "className": "java.lang.String",
+                      "required": true
+                    },
+                    {
+                      "name": "pageSize",
+                      "type": "long",
+                      "desc": "每页大小",
+                      "className": "java.lang.Long"
+                    },
+                    {
+                      "name": "id",
+                      "type": "long",
+                      "desc": "用户id",
+                      "className": "java.lang.Long"
+                    }
+                  ]
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "desc": "返回0为正确消息，非0为错误消息",
+                  "className": "java.lang.String"
+                }
+              ]
+            }
+          ]
+        },
+        "successCondition": null,
+        "desc": "更新用户",
+        "summary": "删除用户123"
+      }
+    ]
+  }
+]

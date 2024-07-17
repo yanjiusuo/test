@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "type": "object",
+  "className": "Person",
+  "desc": "人员信息",
+  "children":[
+    {
+      "name": "sid",
+      "type": "long",
+      "desc": "id主键",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "desc": "姓名"
+    }
+  ]
+}

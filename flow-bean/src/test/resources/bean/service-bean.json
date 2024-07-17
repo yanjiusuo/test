@@ -1,0 +1,23 @@
+{
+  "tasks": [{
+    "id": "ducc1",
+    "type": "bean",
+    "beanType": "ducc",
+    "ref": "demoService",
+    "input": [
+      {
+        "name": "str",
+        "type": "string",
+        "value": "${workflow.input.body.c}",
+        "className": "java.lang.String"
+      }
+    ],
+
+    "output": {
+      "name": "root",
+      "type": "string",
+      "className": "java.lang.String"
+    },
+    "methodName": "echo"
+  }]
+}

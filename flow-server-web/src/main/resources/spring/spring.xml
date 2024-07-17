@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jsf="http://jsf.jd.com/schema/jsf"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://jsf.jd.com/schema/jsf http://jsf.jd.com/schema/jsf/jsf.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+    ">
+    <!--数据源模板-->
+    <bean id="abstractDataSourcePool" class="com.alibaba.druid.pool.DruidDataSource" abstract="true"
+          init-method="init" destroy-method="close">
+        <property name="dbType" value="mysql"/>
+        <property name="driverClassName" value="${datasource.master.driverClassName}"/>
+        <property value="15000" name="maxWait"/>
+        <property value="true" name="useUnfairLock"/>
+        <!--初始化连接数量-->
+        <property value="3" name="initialSize"/>
+        <!--最小空闲连接数-->
+        <property value="3" name="minIdle"/>
+        <!--最大并发连接数-->
+        <property value="20" name="maxActive"/>
+        <!--是否销毁${removeAbandonedTimeout?300s}时间内未被回收的连接,详见com.alibaba.druid.pool.DruidDataSource.removeAbandoned
+        回收：connection.close()，从activeConnections进行移除-->
+        <property name="removeAbandoned" value="false"/>
+        <!--配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒，默认60s-->
+        <property value="60000" name="timeBetweenEvictionRunsMillis"/>
+        <!--配置一个连接在池中最小生存的时间，单位是毫秒,详见com.alibaba.druid.pool.DruidDataSource.shrink(boolean)
+        minEvictableIdleTimeMillis 大于等于 当前时间-最后一次使用时间，进行连接关闭-->
+        <property value="180000" name="minEvictableIdleTimeMillis"/>
+        <property value="SELECT 'x'" name="validationQuery"/>
+        <property value="true" name="testWhileIdle"/>
+        <property value="false" name="testOnBorrow"/>
+        <property value="false" name="testOnReturn"/>
+        <property value="false" name="poolPreparedStatements"/>
+        <property value="-1" name="maxPoolPreparedStatementPerConnectionSize"/>
+        <property value="stat" name="filters"/>
+    </bean>
+
+    <!--主库连接池-->
+    <bean id="masterDataSourcePool" parent="abstractDataSourcePool">
+        <property name="url" value="${datasource.master.url}"/>
+        <property name="username" value="${datasource.master.username}"/>
+        <property name="password" value="${datasource.master.password}"/>
+        <property name="name" value="ctp_master"/>
+    </bean>
+
+    <!--主库代理连接池-->
+    <bean id="masterDataSource" primary="true" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <property name="targetDataSource" ref="masterDataSourcePool"/>
+    </bean>
+
+    <import resource="./spring-metric.xml"/>
+</beans>

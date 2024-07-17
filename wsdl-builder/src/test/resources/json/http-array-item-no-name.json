@@ -1,0 +1,85 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/echo",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "body": [
+    {
+      "name": "root",
+      "type": "array",
+      "children": [
+        {
+          "name": "x-token_x",
+          "type": "object",
+          "children": [
+            {
+              "name": "X-TOKEN_D",
+              "type": "string"
+            },
+            {
+              "name": "X-TOKEN_XX",
+              "type": "array",
+              "children": [
+                {
+                  "name": "$$0",
+                  "type": "array",
+                  "children": [
+                    {
+                      "name": "$$0",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "respBody": [{
+    "name": "root",
+    "exprType": "expr",
+    "type": "object",
+    "children": [{
+      "name": "status",
+      "type": "double",
+      "exprType": "expr",
+      "value": ""
+    }, {
+      "name": "msg",
+      "type": "string",
+      "exprType": "expr",
+      "value": ""
+    }, {
+      "name": "data",
+      "type": "array",
+      "children": [{
+        "name": "$$0",
+        "type": "object",
+        "children": [{
+          "name": "id",
+          "type": "double",
+          "exprType": "expr",
+          "value": ""
+        }, {
+          "name": "name",
+          "type": "string",
+          "exprType": "expr",
+          "value": ""
+        }
+        ],
+        "exprType": "expr",
+        "value": "",
+        "className": "Province"
+      }
+      ],
+      "exprType": "expr",
+      "value": ""
+    }
+    ]
+  }
+  ]
+}

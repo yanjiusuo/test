@@ -1,0 +1,10 @@
+{
+  "id": "step1",
+  "type": "transform",
+  "input": {
+    "name": "${workflow.input}"
+  },
+  "output": {
+    "name": "${steps.step1.input.name}"
+   }
+}

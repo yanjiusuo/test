@@ -1,0 +1,28 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/echo",
+  "reqType": "form",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "body": [
+    {
+      "name": "code",
+      "exprType": "expr",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "exprType": "expr",
+      "type": "string"
+    }
+  ],
+  "respBody": [
+    {
+      "name": "root",
+      "exprType": "expr",
+      "type": "object",
+      "children": []
+    }
+  ]
+}

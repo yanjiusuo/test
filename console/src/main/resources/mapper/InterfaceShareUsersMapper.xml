@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.share.InterfaceShareUsersMapper">
+
+
+    <select id="getSharedUserCodeList" resultType="string">
+        select shared_user_code
+        from interface_share_user
+        where yn = 1
+        AND group_id = #{groupId}
+
+    </select>
+
+
+</mapper>

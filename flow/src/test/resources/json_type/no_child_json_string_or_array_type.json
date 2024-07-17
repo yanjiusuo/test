@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "name": "root",
+  "children": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "jsonMap1",
+      "type": "string_json",
+      "value": "${workflow.input.body.persons}"
+    },
+    {
+      "name": "jsonMap2",
+      "type": "string_json",
+      "value": "${workflow.input.body.personString}"
+    }
+  ]
+}

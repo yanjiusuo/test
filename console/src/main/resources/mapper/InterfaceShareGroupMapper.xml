@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.share.InterfaceShareGroupMapper">
+
+    <resultMap id="interfaceShareGroupResultMap" type="com.jd.workflow.console.entity.share.InterfaceShareGroup">
+        <id column="id" property="id" jdbcType="VARCHAR" javaType="long" />
+
+        <result column="sort_interface_share_tree" jdbcType="VARCHAR" property="sortInterfaceShareTree" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler" />
+
+    </resultMap>
+
+
+    <select id="queryShareGroupList"   resultMap="interfaceShareGroupResultMap">
+        select g.id,g.share_group_name,g.across_app,g.last_version,
+        g.yn,g.creator,g.modifier,g.created,g.modified
+        from interface_share_group g
+        where
+        g.yn = 1
+        <choose>
+            <when test="query.type == 0">
+                and g.creator = #{query.creator}
+            </when>
+            <otherwise>
+                and g.id in
+                (select group_id from interface_share_user where shared_user_code = #{query.creator})
+            </otherwise>
+        </choose>
+
+        <if test="query.shareGroupName !=null">
+            and g.share_group_name like concat('%',#{query.shareGroupName},'%')
+        </if>
+
+
+        order by g.created desc
+        limit #{query.offset}, #{query.pageSize}
+    </select>
+
+
+    <select id="queryShareGroupCount"  resultType="long">
+        select count(1)
+        from interface_share_group g
+        where
+        g.yn = 1
+        <choose>
+            <when test="query.type == 0">
+                and g.creator = #{query.creator}
+            </when>
+            <otherwise>
+                and g.id in
+                (select group_id from interface_share_user where shared_user_code = #{query.creator})
+            </otherwise>
+        </choose>
+
+        <if test="query.shareGroupName !=null">
+            and g.share_group_name like concat('%',#{query.shareGroupName},'%')
+        </if>
+
+        order by g.created desc
+        limit #{query.offset}, #{query.pageSize}
+    </select>
+
+
+</mapper>

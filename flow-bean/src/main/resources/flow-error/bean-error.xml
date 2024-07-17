@@ -1,0 +1,8 @@
+<errors>
+    <error id="bean.err_invoke_bean_method">
+       执行{type}编排失败：{message}
+    </error>
+
+
+
+</errors>

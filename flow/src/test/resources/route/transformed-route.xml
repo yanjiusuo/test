@@ -1,0 +1,30 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <step id="__step_args__">
+        <setProperty name="args_step1">
+            <constant><![CDATA[
+                {
+                  "type":"http",
+                    "input": {
+                        "url": "http://jap-mock-data.jd.local/treeList?_page=${workflow.input.pageNo}&_limit=${workflow.input.pageSize}",
+                        "method":  "GET"
+                    },
+                }
+            ]]></constant>
+        </setProperty>
+    </step>
+    <bean ref="httpProcessor" id="step2" />
+    <choice>
+        <when>
+            <mvel></mvel>
+            <step>
+
+            </step>
+        </when>
+        <otherwise>
+
+        </otherwise>
+    </choice>
+</route>
+
+

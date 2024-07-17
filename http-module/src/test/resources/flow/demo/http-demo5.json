@@ -1,0 +1,282 @@
+{
+  "input": {
+    "params": [
+      {
+        "name": "roleName",
+        "type": "string"
+      },
+      {
+        "name": "userSystem",
+        "type": "integer"
+      },
+      {
+        "name": "pageNo",
+        "type": "long"
+      },
+      {
+        "name": "pageSize",
+        "type": "long"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "agg",
+      "type": "multicast",
+      "children": [
+        {
+          "id": "queryRole",
+          "opName": "queryRole",
+          "endpointUrl": [
+            "http://127.0.0.1:7001/FullTypedWebService"
+          ],
+          "type": "http2ws",
+          "url": "",
+          "output": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:ser": "http://service.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": []
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "queryRoleResponse",
+                      "namespacePrefix": "ser",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "return",
+                          "type": "object",
+                          "children": [
+                            {
+                              "name": "createBy",
+                              "type": "string"
+                            },
+                            {
+                              "name": "createDate",
+                              "type": "string"
+                            },
+                            {
+                              "name": "id",
+                              "type": "long"
+                            },
+                            {
+                              "name": "level",
+                              "type": "string"
+                            },
+                            {
+                              "name": "roleDesc",
+                              "type": "string"
+                            },
+                            {
+                              "name": "roleName",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "input": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:ser": "http://service.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": []
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "queryRole",
+                      "namespacePrefix": "ser",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "roleName",
+                          "type": "string",
+                          "value": "${workflow.input.params.roleName}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "queryUserList",
+          "type": "choice",
+          "children": [
+            {
+              "when": "workflow.input.params.userSystem==1",
+              "children": [
+                {
+                  "id": "queryUser",
+                  "type": "http",
+                  "endpointUrl": [
+                    "http://jap-mock-data.jd.local"
+                  ],
+                  "input": {
+                    "reqType": "json",
+                    "method": "GET",
+                    "url": "/retailUsers",
+                    "params": [
+                      {
+                        "name": "roleName",
+                        "type": "string",
+                        "value": "${workflow.input.params.roleName}"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "children": [
+                {
+                  "id": "queryUser",
+                  "type": "http",
+                  "endpointUrl": [
+                    "http://jap-mock-data.jd.local"
+                  ],
+                  "input": {
+                    "reqType": "json",
+                    "method": "GET",
+                    "url": "/healthUsers",
+                    "params": [
+                      {
+                        "name": "roleName",
+                        "type": "string",
+                        "value": "${workflow.input.params.roleName}"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "children": [ {
+              "name": "roleInfo",
+              "type": "object",
+              "exprType": "script",
+              "value": "var roleInfo = steps.queryRole.output.body.return;\nroleInfo.createDate = utils.formatDate(roleInfo.createDate,\"yyyy-MM-dd\",\"yyyy年MM月dd日\");roleInfo"
+            },
+              {
+                "name": "userList",
+                "type": "object",
+                "value": "${steps.queryUser.output.body.data}"
+              }]
+          }
+        ]
+      }
+    },
+    {
+      "id": "querySubRoles",
+      "type": "http",
+      "endpointUrl": [
+        "http://jap-mock-data.jd.local"
+      ],
+      "input": {
+        "reqType": "json",
+        "method": "GET",
+        "url": "/subRoles",
+        "params": [
+          {
+            "name": "_page",
+            "type": "long",
+            "value": "${workflow.input.params.pageNo}"
+          },
+          {
+            "name": "_limit",
+            "type": "long",
+            "value": "${workflow.input.params.pageSize}"
+          },
+          {
+            "name": "roleId",
+            "type": "long",
+            "value": "${steps.queryRole.output.body.return.id}"
+          }
+        ]
+      }
+    }
+  ],
+  "output": {
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "code",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "value": "获取成功"
+          },
+          {
+            "name": "data",
+            "type": "object",
+            "children": [
+              {
+                "name": "roleInfo",
+                "type": "object",
+                "value": "${steps.agg.output.body.roleInfo}"
+              },
+              {
+                "name": "userList",
+                "type": "object",
+                "value": "${steps.agg.output.body.userList}"
+              },
+              {
+                "name": "subRoleList",
+                "type": "object",
+                "value": "${steps.querySubRoles.output.body.data}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

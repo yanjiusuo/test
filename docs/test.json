@@ -1,0 +1,48 @@
+{
+  "name": "Envelope",
+  "namespacePrefix": "soapenv",
+  "attrs": {
+    "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+    "xmlns:ser": "http://service.workflow.jd.com/"
+  },
+  "type": "object",
+  "children": [
+    {
+      "name": "Body",
+      "namespacePrefix": "soapenv",
+      "type": "object",
+      "children": [
+        {
+          "name": "test",
+          "namespacePrefix": "ser",
+          "type": "object",
+          "children": [
+            {
+              "name": "arg0",
+              "type": "object",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Header",
+      "namespacePrefix": "soapenv",
+      "attrs": {
+        "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/"
+      },
+      "type": "object",
+      "children": []
+    }
+  ]
+}

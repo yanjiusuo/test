@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <!--能力地图-->
+    <bean id="matrixTrace" class="com.jd.matrix.metadata.trace.bootstrap.MatrixTraceBean">
+<!--        <property name="version" value="多版本（可选）" />-->
+    </bean>
+
+    <!--泛paas-->
+    <bean class="com.jd.matrix.generic.spi.bootstrap.GenericSPIBean">
+        <!--泛paas扩展点定义扫包路径(非必填，不填时上报有实现的扩展点)-->
+        <property name="params">
+            <map>
+                <entry key="spiScanPackage" value="com.jd.workflow.matrix"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <!--matrix-->
+    <bean id="matrix" class="com.jd.matrix.core.Matrix">
+        <property name="exportClassConfig">
+            <bean class="com.jd.matrix.core.spec.ExportClassConfig">
+                <property name="packageSet">
+                    <list>
+                        <value>org.slf4j.</value><!--这里代表的可能不是一个jar包，slf4j-api,slf4j-impl-log4j-->
+                    </list>
+                </property>
+            </bean>
+        </property>
+        <property name="matrixEnvConfig">
+            <bean class="com.jd.matrix.core.spec.MatrixEnvConfig">
+                <!--在藏经阁中应用名称，扩展点相关信息自动注册到藏经阁 -->
+                <property name="cjgAppName">
+                    <value>${cjg.appName}</value>
+                </property>
+                <!--ump中应用名称 -->
+                <property name="umpAppName">
+                    <value>${cjg.umpAppName}</value>
+                </property>
+                <!--matrix所在环境 -->
+                <!-- DEV: 大陆机房测试环境  ON_LINE:大陆机房线上环境  ON_LINE_ID: 印尼机房线上环境 ON_LINE_TH: 线上香港机房环境（泰国站正式）-->
+                <property name="environment">
+                    <value>${cjg.environment}</value>
+                </property>
+                <!-- 三方业务包按分组发布时使用 这个分组是藏经阁维度的分组，和j-one和jdos没有关系，建议保持一致-->
+                <property name="deployGroupName">
+                    <value>${cjg.deployGroupName}</value>
+                </property>
+                <!-- 是否开启调试模式(默认false)，线上请配置为 false-->
+                <property name="debugModel" value="${cjg.debugModel}" />
+            </bean>
+        </property>
+    </bean>
+
+
+
+</beans>

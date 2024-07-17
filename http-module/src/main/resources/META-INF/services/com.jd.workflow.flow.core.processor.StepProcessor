@@ -1,0 +1,3 @@
+com.jd.workflow.flow.core.processor.impl.Ws2HttpStepProcessor
+com.jd.workflow.flow.core.processor.impl.Http2WsStepProcessor
+com.jd.workflow.flow.core.processor.impl.HttpStepProcessor

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jsf="http://jsf.jd.com/schema/jsf"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://jsf.jd.com/schema/jsf
+       http://jsf.jd.com/schema/jsf/jsf.xsd">
+
+
+
+    <jsf:consumer id="hrUserService" interface="com.jd.official.omdm.is.hr.HrUserService" alias="${hr.alias.user}" protocol="jsf" timeout="20000" retries="0" />
+    <jsf:consumer id="hrOrganizationService" interface="com.jd.official.omdm.is.hr.HrOrganizationService" alias="${hr.alias.organization}" protocol="jsf" timeout="5000" retries="0" />
+    <!-- 测试环境easymock服务，线上环境连接测试环境需要直连才行 -->
+    <jsf:consumer id="testHttpMockJsf" url="jsf://test.easymock.jd.com:22000?alias=easymock-pre"   interface="com.jd.y.jsf.HttpMckJsf" protocol="jsf" alias="easymock-pre" timeout="10000"/>
+    <jsf:consumer id="testJsfMockOpenApi" url="jsf://test.easymock.jd.com:22000?alias=easymock-pre"   interface="com.jd.y.jsf.JsfMockOpenAPI" protocol="jsf" alias="easymock-pre" timeout="10000"/>
+
+    <jsf:consumer id="busInterfaceRpcService" interface="com.jd.jcf.sdk.service.BusInterfaceRpcService" alias="${cjg.alias.jcf}" />
+
+    <bean id="cjgJsfAliasSyncListener" class="com.jd.workflow.console.service.listener.impl.CjgJsfAliasSyncListener"/>
+
+    <bean id="cjgMethodSyncListener" class="com.jd.workflow.console.service.listener.impl.CjgMethodSyncListener"/>
+
+    <bean id="testEasyMockRemoteService" class="com.jd.workflow.console.service.remote.EasyMockRemoteService" >
+        <property name="httpMockJsf" ref="testHttpMockJsf"/>
+        <property name="jsfMockOpenAPI" ref="testJsfMockOpenApi"/>
+    </bean>
+
+    <!-- 线上环境easymock服务 -->
+    <jsf:consumer id="onlineHttpMockJsf"   interface="com.jd.y.jsf.HttpMckJsf" protocol="jsf" alias="${easymock.alias}" timeout="10000"/>
+    <jsf:consumer id="onlineJsfMockOpenApi"   interface="com.jd.y.jsf.JsfMockOpenAPI" protocol="jsf" alias="${easymock.alias}" timeout="10000"/>
+
+    <bean id="onlineEasyMockRemoteService" class="com.jd.workflow.console.service.remote.EasyMockRemoteService" >
+        <property name="httpMockJsf" ref="onlineHttpMockJsf"/>
+        <property name="jsfMockOpenAPI" ref="onlineJsfMockOpenApi"/>
+    </bean>
+
+
+
+
+    <jsf:consumer id="busAppInterfaceRpcService" interface="com.jd.cjg.bus.BusInterfaceRpcService" alias="${cjg.alias.app}" />
+    <jsf:consumer id="kgBusinessDomainProvider" interface="com.jd.cjg.kg.KgBusinessDomainProvider" alias="${cjg.alias.domain}" />
+    <jsf:consumer id="cjgWorkflowService" interface="com.jd.cjg.flow.sdk.client.WorkFlowClient" alias="${cjg.alias.workflow}" />
+
+    <!--  申请单相关  -->
+    <jsf:consumer
+            id="xbpTicketService"
+            interface="com.jd.xbp.jsf.api.TicketService"
+            protocol="jsf"
+            alias="${xbp.alias}"
+            timeout="10000"
+            retries="0">
+    </jsf:consumer>
+
+    <!--  流程相关  -->
+    <jsf:consumer
+            id="xbpProcessService"
+            interface="com.jd.xbp.jsf.api.ProcessService"
+            protocol="jsf"
+            alias="${xbp.alias}"
+            timeout="10000"
+            retries="0">
+    </jsf:consumer>
+
+    <!-- 藏经阁应用查询接口 -->
+    <jsf:consumer id="componentProvider" interface="com.jd.cjg.component.ComponentProvider" alias="${cjg.alias.component}"/>
+
+    <jsf:consumer id="providerAliaService" interface="com.jd.jsf.open.api.ProviderAliaService" alias="${jsf.api.alias}" protocol="jsf" timeout="20000" retries="0" />
+    <jsf:consumer id="providerService" interface="com.jd.jsf.open.api.ProviderService" alias="${jsf.api.alias}" protocol="jsf" timeout="20000" retries="0" />
+
+
+</beans>

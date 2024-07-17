@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--业务域流程xbp上下文 -->
+    <bean id="xbpJMQ4MessageContext" class="com.jd.flow.xbp.XbpJMQ4MessageContext">
+        <property name="processId2MessageListenerMap">
+            <map>
+                <entry key="${xbp.httpAuth.processId}" value-ref="httpAuthApplyXbpListener"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- xbpService配置 start -->
+    <util:map id="xbpTicket2ProcessIdMap" >
+        <entry key="com.jd.workflow.console.entity.HttpAuthApplyXbpParam" value="${xbp.httpAuth.processId}"/>
+    </util:map>
+
+    <bean id="xbpService" class="com.jd.flow.xbp.service.XbpServiceImpl">
+        <constructor-arg index="0" value="${xbp.apiUser}"/>
+        <constructor-arg index="1" value="${xbp.apiSign}"/>
+        <constructor-arg index="2" value="${xbp.env}"/>
+        <constructor-arg index="3" ref="xbpTicket2ProcessIdMap"/>
+    </bean>
+    <!-- xbpService配置 end -->
+</beans>

@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "type": "choice",
+      "id": "choice",
+      "children": [
+        {
+          "when":"workflow.input.params.id==1",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

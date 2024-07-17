@@ -1,0 +1,20 @@
+#if($c.packageName )
+    package $c.packageName;
+#end
+import java.util.List;
+import java.util.ArrayList;
+
+public class $c.name{
+   #foreach($field in $c.getFields())
+       private $field.fullTypeName $field.name;
+   #end
+
+    #foreach($field in $c.fields)
+    public  $field.fullTypeName get$field.capitalizeName()(){
+      return this.$field.name;
+    }
+    public void set$field.capitalizeName()($field.fullTypeName $field.name){
+        this.$field.name = $field.name;
+    }
+    #end
+}

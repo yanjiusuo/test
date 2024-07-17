@@ -1,0 +1,29 @@
+<errors>
+    <error id="httpstep.err_invalid_http_uri">
+        请求url无效，url={url},
+    </error>
+    <error id="httpstep.err_invalid_response_code">
+        响应处理错误，statusCode={statusCode},body={body}
+    </error>
+    <error id="step.err_exec_step">
+        调用出错：message={message}
+    </error>
+    <error id="httpstep.err_body_root_is_required">
+        body校验失败,只能有一个根节点，且名称只能为root
+    </error>
+
+    <error id="httpstep.err_method_is_required">
+        http method不可为空
+    </error>
+
+    <error id="httpstep.err_connect_timeout">
+        连接 {url} 超时
+    </error>
+    <error id="httpstep.err_req_timeout">
+        请求 {url} 超时
+    </error>
+
+    <error id="httpstep.err_exec_success_condition">
+        是否成功判别为false:body={body}
+    </error>
+</errors>

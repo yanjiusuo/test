@@ -1,0 +1,58 @@
+[
+  {
+    "name": "person",
+    "type": "object",
+    "desc": "人员",
+    "children": [
+      {
+        "name": "id",
+        "type": "integer",
+        "required": false,
+        "desc": "id主键"
+      },
+      {
+        "name": "desc",
+        "type": "string",
+        "required": false,
+        "desc": "描述1"
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "array",
+    "children": [
+      {
+        "name": "id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "name": "desc",
+        "type": "string",
+        "required": false,
+        "desc": "描述1"
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "array",
+    "desc": null,
+    "className": null,
+    "_delta":{"type":"array","desc":null},
+    "children": [{
+      "name": "id",
+      "type": "integer",
+      "className": null,
+      "required": true
+    }, {
+      "name": "desc",
+      "type": "string",
+      "desc": "描述1",
+      "className": null
+    }
+    ]
+  }
+
+]

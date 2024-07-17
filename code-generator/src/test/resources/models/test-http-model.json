@@ -1,0 +1,408 @@
+{
+  "type": null,
+  "methodCode": "queryRequirementList",
+  "methodId": null,
+  "envName": null,
+  "authKeys": [],
+  "input": {
+    "method": "POST",
+    "url": "/interfaceDetail/queryRequirementList",
+    "path": [],
+    "params": [
+      {
+        "name": "name",
+        "type": "string",
+        "desc": "名称搜索条件",
+        "className": "java.lang.String",
+        "required": true
+      },
+      {
+        "name": "current",
+        "type": "integer",
+        "desc": "当前页数",
+        "className": null
+      },
+      {
+        "name": "size",
+        "type": "integer",
+        "desc": "分页大小",
+        "className": null
+      }
+    ],
+    "headers": [],
+    "reqType": "json",
+    "body": null
+  },
+  "output": {
+    "headers": null,
+    "body": [
+      {
+        "name": "root",
+        "type": "ref",
+        "genericTypes": [
+          {
+            "name": "root",
+            "type": "ref",
+            "typeVariableName": "T",
+            "genericTypes": [
+              {
+                "name": "root",
+                "type": "ref",
+                "typeVariableName": "T",
+                "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                "children": [
+                  {
+                    "name": "id",
+                    "type": "long",
+                    "className": "java.lang.Long"
+                  },
+                  {
+                    "name": "flowId",
+                    "type": "long",
+                    "className": "java.lang.Long"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "templateCode",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "code",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "status",
+                    "type": "integer",
+                    "desc": "状态：1-处理中 2-已完成",
+                    "className": "java.lang.Integer"
+                  }
+                ],
+                "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+              }
+            ],
+            "className": "com.baomidou.mybatisplus.core.metadata.IPage",
+            "children": [
+              {
+                "name": "pages",
+                "type": "long",
+                "desc": "当前分页总页数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "records",
+                "type": "array",
+                "desc": "分页记录列表",
+                "genericTypes": [
+                  {
+                    "name": "root",
+                    "type": "ref",
+                    "typeVariableName": "E",
+                    "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                    "children": [
+                      {
+                        "name": "id",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "flowId",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "templateCode",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "code",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "status",
+                        "type": "integer",
+                        "desc": "状态：1-处理中 2-已完成",
+                        "className": "java.lang.Integer"
+                      }
+                    ],
+                    "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+                  }
+                ],
+                "className": "java.util.List",
+                "children": [
+                  {
+                    "name": "$$0",
+                    "type": "ref",
+                    "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                    "children": [
+                      {
+                        "name": "id",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "flowId",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "templateCode",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "code",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "status",
+                        "type": "integer",
+                        "desc": "状态：1-处理中 2-已完成",
+                        "className": "java.lang.Integer"
+                      }
+                    ],
+                    "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+                  }
+                ]
+              },
+              {
+                "name": "total",
+                "type": "long",
+                "desc": "当前满足条件总行数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "size",
+                "type": "long",
+                "desc": "获取每页显示条数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "current",
+                "type": "long",
+                "desc": "当前页",
+                "className": "long",
+                "required": true
+              }
+            ],
+            "refName": "com.baomidou.mybatisplus.core.metadata.IPage"
+          }
+        ],
+        "className": "com.jd.workflow.console.base.CommonResult",
+        "children": [
+          {
+            "name": "code",
+            "type": "integer",
+            "desc": "返回值:0为成功，非0为失败",
+            "className": "java.lang.Integer"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "desc": "错误信息",
+            "className": "java.lang.String"
+          },
+          {
+            "name": "data",
+            "type": "ref",
+            "typeVariableName": "T",
+            "genericTypes": [
+              {
+                "name": "root",
+                "type": "ref",
+                "typeVariableName": "T",
+                "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                "children": [
+                  {
+                    "name": "id",
+                    "type": "long",
+                    "className": "java.lang.Long"
+                  },
+                  {
+                    "name": "flowId",
+                    "type": "long",
+                    "className": "java.lang.Long"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "templateCode",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "code",
+                    "type": "string",
+                    "className": "java.lang.String"
+                  },
+                  {
+                    "name": "status",
+                    "type": "integer",
+                    "desc": "状态：1-处理中 2-已完成",
+                    "className": "java.lang.Integer"
+                  }
+                ],
+                "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+              }
+            ],
+            "className": "com.baomidou.mybatisplus.core.metadata.IPage",
+            "children": [
+              {
+                "name": "pages",
+                "type": "long",
+                "desc": "当前分页总页数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "records",
+                "type": "array",
+                "desc": "分页记录列表",
+                "genericTypes": [
+                  {
+                    "name": "root",
+                    "type": "ref",
+                    "typeVariableName": "E",
+                    "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                    "children": [
+                      {
+                        "name": "id",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "flowId",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "templateCode",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "code",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "status",
+                        "type": "integer",
+                        "desc": "状态：1-处理中 2-已完成",
+                        "className": "java.lang.Integer"
+                      }
+                    ],
+                    "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+                  }
+                ],
+                "className": "java.util.List",
+                "children": [
+                  {
+                    "name": "$$0",
+                    "type": "ref",
+                    "className": "com.jd.workflow.console.dto.requirement.FlowInstanceVo",
+                    "children": [
+                      {
+                        "name": "id",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "flowId",
+                        "type": "long",
+                        "className": "java.lang.Long"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "templateCode",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "code",
+                        "type": "string",
+                        "className": "java.lang.String"
+                      },
+                      {
+                        "name": "status",
+                        "type": "integer",
+                        "desc": "状态：1-处理中 2-已完成",
+                        "className": "java.lang.Integer"
+                      }
+                    ],
+                    "refName": "com.jd.workflow.console.dto.requirement.FlowInstanceVo"
+                  }
+                ]
+              },
+              {
+                "name": "total",
+                "type": "long",
+                "desc": "当前满足条件总行数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "size",
+                "type": "long",
+                "desc": "获取每页显示条数",
+                "className": "long",
+                "required": true
+              },
+              {
+                "name": "current",
+                "type": "long",
+                "desc": "当前页",
+                "className": "long",
+                "required": true
+              }
+            ],
+            "refName": "com.baomidou.mybatisplus.core.metadata.IPage"
+          },
+          {
+            "name": "traceId",
+            "type": "string",
+            "desc": "日志跟踪uuid",
+            "className": "java.lang.String"
+          }
+        ],
+        "refName": "com.jd.workflow.console.base.CommonResult"
+      }
+    ]
+  },
+  "successCondition": null,
+  "desc": "查询需求列表",
+  "summary": "查询需求列表"
+}

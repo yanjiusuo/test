@@ -1,0 +1,42 @@
+[
+  {
+    "name": "root",
+    "type":"object",
+    "children":[
+      {"name":"id","type":"long","required":true,"desc":null,"value":"321"},
+      {"name":"dept","type":"string","required":false,"desc":null,"value":"部门"},
+      {"name":"deep1","type":"object","required":false,"desc":null,
+        "children":[
+          {"name":"code","type":"long","required":true,"desc":null,"value":"321"},
+          {"name":"desc","type":"string","required":false,"desc":null,"value":"描述"}
+        ]},
+      {"name":"deep2List","type":"array","required":false,"desc":null,
+        "children":[
+          {
+            "name": "0",
+            "type":"object",
+            "children":[
+              {"name":"code","type":"long","required":true,"desc":null,"value":"3211"},
+              {"name":"desc","type":"string","required":false,"desc":null,"value":"描述1"}
+            ]
+          },
+          {
+            "name": "1",
+            "type":"object",
+            "children":[
+              {"name":"code","type":"long","required":true,"desc":null,"value":"3212"},
+              {"name":"desc","type":"string","required":false,"desc":null,"value":"描述2"}
+            ]
+          }
+        ]},
+      {"name":"deep3List","type":"array","required":false,"desc":null,
+        "children":[
+          {
+            "name": "0",
+            "type":"string",
+             "value": "213"
+          }
+        ]}
+    ]
+  }
+]

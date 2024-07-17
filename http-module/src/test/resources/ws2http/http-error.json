@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/error",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "headers": [{
+    "name":"token",
+    "type": "string"
+  }]
+}

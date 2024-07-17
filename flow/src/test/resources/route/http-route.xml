@@ -1,0 +1,39 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <multicast>
+        <step>
+            <transform>
+                <mvel></mvel>
+            </transform>
+            <choice>
+                <when>
+                    <mvel></mvel>
+                     <process ref=""></process>
+                </when>
+            </choice>
+            <transform>
+                <mvel></mvel>
+            </transform>
+            <to uri="http://jap-mock-data.jd.local/apps">
+                <setHeader name="CamelHttpMethod">
+                    <constant>get</constant>
+                </setHeader>
+                <setHeader name="CamelHttpQuery">
+                    <constant>id=1</constant>
+                </setHeader>
+            </to>
+            <log message="${body}" />
+        </step>
+        <step>
+            <setHeader name="CamelHttpMethod">
+                <constant>get</constant>
+            </setHeader>
+            <to uri="http://jap-mock-data.jd.local/html/1"/>
+            <log message="${body}" />
+        </step>
+
+    </multicast>
+
+</route>
+
+

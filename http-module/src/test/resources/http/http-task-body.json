@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": "http1",
+      "type": "http",
+      "successCondition": "output.status==200",
+      "endpointUrl": ["http://127.0.0.1:6010"],
+      "input":{
+        "method": "post",
+        "url": "/json",
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "children": [
+              {
+                "name": "id",
+                "type": "string",
+                "value": 1
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": "wjf"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

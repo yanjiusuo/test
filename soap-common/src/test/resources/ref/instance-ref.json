@@ -1,0 +1,116 @@
+{
+  "models": {
+    "CommonResult": {
+      "name": "root",
+      "type": "object",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "ref"
+        }
+      ]
+    },
+    "Page": {
+      "name": "root",
+      "type": "object",
+      "className": "Page",
+      "children":[
+        {
+          "name": "pageNo",
+          "type": "long"
+        },
+        {
+          "name": "pageSize",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "ref"
+        }
+      ]
+    },
+    "Person": {
+      "name": "root",
+      "type": "object",
+      "className": "Person",
+      "children":[
+        {
+          "name": "sid",
+          "type": "long"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "tests": [
+    {
+      "name": "root",
+      "type": "ref",
+      "refName": "CommonResult",
+      "children": [
+        {
+          "name": "data",
+          "type": "array",
+          "children": [
+            {
+              "name": "$$0",
+              "type": "ref",
+              "refName": "Person",
+              "desc": "人员信息"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "type": "ref",
+      "className": "CommonResult",
+      "children":[
+        {
+          "name": "code",
+          "type": "integer"
+        },
+        {
+          "name": "msg",
+          "type": "string"
+        },
+        {
+            "name": "data",
+            "type": "array",
+            "children": [
+              {
+                "name": "person",
+                "type": "ref",
+                "refName": "Person",
+                "className": "Person",
+                "desc": "人员信息",
+                "children":[
+                  {
+                    "name": "sid",
+                    "type": "long"
+                  },
+                  {
+                    "name": "name",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+        }
+      ]
+    }
+  ]
+}

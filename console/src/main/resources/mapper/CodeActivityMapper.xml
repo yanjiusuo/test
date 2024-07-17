@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.watch.CodeActivityMapper">
+    <resultMap id="CodeActivityResultMap" type="com.jd.workflow.console.entity.watch.dto.DayBuildActivityDto">
+        <result column="costTime" jdbcType="VARCHAR" property="costTime"  />
+        <result column="erp" jdbcType="VARCHAR" property="erp"  />
+    </resultMap>
+
+    <select id="queryDayBuildTime" resultType="com.jd.workflow.console.entity.watch.dto.DayBuildActivityDto"  resultMap="CodeActivityResultMap"><![CDATA[
+select sum(o.cost_time) as costTime,erp,date_format(o.time,'%Y-%m-%d') as 'day'
+ from code_activity o          WHERE
+    date_format(o.time,'%Y-%m-%d') = #{day}          group by date_format(o.time,'%y-%M-%d'),o.erp
+
+    ]]></select>
+</mapper>

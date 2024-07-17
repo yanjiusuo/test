@@ -1,0 +1,55 @@
+<h1>{{project.name}}</h1>
+
+{{ project.desc }}
+
+# {{groupName}}
+
+## {{method.summary}}
+<a id={{method.summary}}> </a>
+### 基本信息
+
+**Path：** {{method.input.url}}
+
+**Method：** {{method.input.method}}
+
+**接口描述：**
+{{method.desc}}
+
+### 请求参数
+**Body**
+
+| 字段名  |  是否必须 | 类型  | 备注  |
+| ------------ | ------------ | ------------ | ------------ |
+<table>
+               <thead class="ant-table-thead">
+                              <tr>
+                                             <th key=name>字段名</th>
+                                             <th key=type>是否必须</th>
+                                             <th key=required>类型</th>
+                                             <th key=default>备注</th>
+
+                              </tr>
+               </thead>
+
+               <tbody>
+                    {{#each parameters}}
+
+                     {{/each}}
+               </tbody>
+
+
+<table>
+### 请求示例
+{inputExample}
+
+### 响应参数
+**Headers**
+| 字段名  |  是否必须 | 类型  | 备注  |
+| ------------ | ------------ | ------------ | ------------ |
+{{#each output.children}}
+| '{{name}}'  | {{#if required}}是{{else}} 否{{/if}}   |   {{type}}  | {{desc}}
+{{/each}}
+
+
+### 响应应示例
+{outputExample}

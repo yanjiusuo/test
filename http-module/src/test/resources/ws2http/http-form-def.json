@@ -1,0 +1,30 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/form",
+  "reqType": "form",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "body": [
+    {
+      "name": "sid",
+      "type": "long"
+    },{
+      "name": "name",
+      "type": "string"
+    }
+  ],
+  "respBody": [{
+    "name": "root",
+    "type": "object",
+    "children": [
+      {
+        "name": "sid",
+        "type": "long"
+      },{
+        "name": "name",
+        "type": "string"
+      }
+    ]
+  }]
+}

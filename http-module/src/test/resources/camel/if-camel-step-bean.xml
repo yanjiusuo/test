@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ webservice转http
+ 给一个json —>
+-->
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <choice>
+        <when>
+            <mvel >
+                <![CDATA[
+                StepContext stepContext = exchange.properties["stepContext"];
+                Map workflow = stepContext.buildEnv().get("workflow");
+                Map steps = stepContext.buildEnv().get("steps");
+                workflow.input.pageNo.ss==1 && steps.size() == 1
+            ]]>
+            </mvel>
+            <step>
+                <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+                    <description>
+                        <![CDATA[
+                        {"id":"step1","type":"http","endpointUrl":["http://jap-mock-data.jd.local"],"input":{"preProcess":"workflow.attr(id,workflow.input.body.id+1)","url":"/treeList","method":"GET"}}
+                        ]]>
+                    </description>
+                </bean>
+            </step>
+        </when>
+        <otherwise>
+            <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+                <description>
+                    <![CDATA[
+                    {"id":"step1","type":"http","endpointUrl":["http://jap-mock-data.jd.local"],"input":{"preProcess":"workflow.attr(id,workflow.input.body.id+1)","url":"/html/1","method":"GET"}}
+
+    ]]>
+                </description>
+            </bean>
+        </otherwise>
+    </choice>
+</route>

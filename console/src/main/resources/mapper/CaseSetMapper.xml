@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.usecase.CaseSetMapper">
+
+    <select id="pageList" resultType="com.jd.workflow.console.dto.usecase.CaseSetDTO">
+        select cs.*, app.app_name, app.app_code
+        from case_set cs left join app_info app on cs.app_id = app.id
+        where cs.yn = 1 and app.yn = 1
+        <if test="name != null and name != ''">
+            and cs.name like concat('%', #{name}, '%')
+        </if>
+        <if test="requirementId != null and requirementId > 0">
+            and cs.requirement_id = #{requirementId}
+        </if>
+        order by cs.id desc
+    </select>
+
+</mapper>

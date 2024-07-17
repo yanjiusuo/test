@@ -1,0 +1,84 @@
+{
+  "input": {
+    "headers": []
+  },
+  "tasks": [
+    {
+      "key": "step1",
+      "id": "step1",
+      "type": "multicast",
+      "ext1": "123",
+      "children": [
+        {
+          "id": "http1",
+          "type": "http",
+          "ext1": "123",
+          "successCondition": "output.status==200",
+          "endpointUrl": [
+            "http://127.0.0.1:6010"
+          ],
+          "input": {
+            "method": "post",
+            "url": "/json"
+          }
+        }
+      ],
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "value":"${steps.http1.output.body}"
+          }
+        ]
+      }
+    },
+    {
+      "type": "choice",
+      "id": "choice",
+      "ext1": "123",
+      "key": "step2",
+      "children": [
+        {
+          "when": "workflow.input.params.id==1",
+          "type": "condition",
+          "key": "abc123",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        },{
+          "when": "workflow.input.params.id==1",
+          "type": "condition",
+          "key": "abc456",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

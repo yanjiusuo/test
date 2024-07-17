@@ -1,0 +1,24 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <!--<step id="httpProcessor">
+
+    </step>-->
+
+    <process ref="httpProcessor" customId="true" id="step1"  />
+    <pipeline>
+       <bean ref="httpProcessor" ></bean>
+        <bean beanType="" />
+    </pipeline>
+    <choice>
+        <when>
+            <mvel>
+                def stepContext = exchange.getProperty("context")
+
+                steps.step1.input.param1;
+                steps.step1.output.param1;
+            </mvel>
+        </when>
+    </choice>
+</route>
+
+

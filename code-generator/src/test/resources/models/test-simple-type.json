@@ -1,0 +1,84 @@
+{
+  "type": null,
+  "methodCode": "queryRequirementList",
+  "methodId": null,
+  "envName": null,
+  "authKeys": [],
+  "input": {
+    "method": "POST",
+    "url": "/interfaceDetail/queryRequirementList",
+    "path": [],
+    "params": [
+      {
+        "name": "name",
+        "type": "string",
+        "desc": "名称搜索条件",
+        "className": "java.lang.String",
+        "required": true
+      },
+      {
+        "name": "current",
+        "type": "integer",
+        "desc": "当前页数",
+        "className": null
+      },
+      {
+        "name": "size",
+        "type": "integer",
+        "desc": "分页大小",
+        "className": null
+      }
+    ],
+    "headers": [],
+    "reqType": "json",
+    "body": null
+  },
+  "output": {
+    "headers": null,
+    "body": [
+      {
+        "name": "root",
+        "type": "ref",
+        "genericTypes": [
+          {
+            "name": "root",
+            "type": "boolean",
+            "typeVariableName": "T"
+          }
+        ],
+        "className": "com.jd.workflow.console.base.CommonResult",
+        "children": [
+          {
+            "name": "code",
+            "type": "integer",
+            "desc": "返回值:0为成功，非0为失败",
+            "className": "java.lang.Integer"
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "desc": "错误信息",
+            "className": "java.lang.String"
+          },
+          {
+            "name": "data",
+            "type": "boolean",
+            "typeVariableName": "T"
+
+
+          },
+          {
+            "name": "traceId",
+            "type": "string",
+            "desc": "日志跟踪uuid",
+            "className": "java.lang.String"
+          }
+        ],
+        "refName": "com.jd.workflow.console.base.CommonResult"
+      }
+    ]
+  },
+  "successCondition": null,
+  "desc": "查询需求列表",
+  "summary": "查询需求列表"
+}

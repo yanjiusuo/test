@@ -1,0 +1,23 @@
+{
+  "jsfConfig": [
+    {
+      "serialization": "hessian",//重要:需要明确指定
+      "protocol": "jsf",
+      "alias": "{jsf服务的分组}",
+      "interface": "com.jd.ab.api.service.TouchstoneProductLineJsfService",
+      "timeout": "10000",
+      //可以对比理解为spring方式调用jsf时候的<jsf:consumer>标签下的"<jsf:parameter>"标签，
+      //结合jsf服务端的要求按需配置，藏经阁场景可能会用到的key有：.token、.authToken、.clientName等
+      "parameters": [
+        {
+          "key": "{key1}",
+          "value": "{value1}"
+        },
+        {
+          "key": "{key2}",
+          "value": "{value2}"
+        }
+      ]
+    }
+  ]
+}

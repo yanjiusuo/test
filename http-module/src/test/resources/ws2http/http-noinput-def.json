@@ -1,0 +1,13 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/test",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+
+  "respBody": [{
+    "name": "root",
+    "type": "string"
+  }]
+}

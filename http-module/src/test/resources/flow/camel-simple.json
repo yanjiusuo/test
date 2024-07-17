@@ -1,0 +1,40 @@
+{
+  "input": {
+    "headers": [],
+    "body": [{
+      "name": "Person",
+      "type": "object",
+      "children": [
+        {
+          "name": "id",
+          "type": "long"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }]
+  },
+  "tasks": [{
+    "id": "step1",
+    "type": "http",
+    "endpointUrl": ["http://jap-mock-data.jd.local"],
+
+    "input": {
+      "preProcess": "workflow.attr(id,workflow.input.body.id+1)",
+      "url": "/html/{id}",
+      "path":[{
+        "name": "id",
+        "type": "string",
+        "value": "${workflow.attr.id}"
+      }],
+      "method": "GET"
+    }
+    }],
+  "output": {
+    "data": "${steps.step1.response.data}",
+    "code": "200",
+    "message": "${steps.step1.response.message}"
+  }
+}

@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.HttpAuthApplyDetailMapper">
+
+    <select id="queryList" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select  o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,o.token,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from http_auth_apply_detail o
+        left join app_info app on o.call_app_code = app.app_code
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="hasToken !=null">
+            and (o.token is not null and o.token !='')
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="path !=null">
+            and o.path = #{path}
+        </if>
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+        <if test="methodName !=null">
+            and o.method_name = #{methodName}
+        </if>
+        <if test="methodCode !=null">
+            and o.method_code = #{methodCode}
+        </if>
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="callAppCode != null">
+            and o.call_app_code = #{callAppCode}
+        </if>
+
+        <if test="callAppName !=null">
+            and o.call_app_name = #{callAppName}
+        </if>
+
+        <if test="creator !=null">
+            and o.creator = like concat('%',#{creator},'%')
+        </if>
+
+        <if test="pin !=null">
+            and ( o.creator = #{pin} or app.members = like concat('%-',#{pin},',%') )
+        </if>
+
+        <if test="userInfo !=null">
+            and o.creator like concat('%',#{userInfo},'%')
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceInfo !=null">
+            and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like concat('%',#{interfaceInfo},'%'))
+        </if>
+
+        <if test="methodInfo !=null">
+            and (o.method_code like concat('%',#{methodInfo},'%') or o.method_name like concat('%',#{methodInfo},'%'))
+        </if>
+
+        order by o.id desc
+        limit #{offset}, #{pageSize}
+    </select>
+
+
+    <select id="queryListCount" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="long">
+        select count( distinct o.id)
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="hasToken !=null">
+            and (o.token is not null and o.token !='')
+        </if>
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="path !=null">
+            and o.path = #{path}
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+        <if test="methodName !=null">
+            and o.method_name = #{methodName}
+        </if>
+        <if test="methodCode !=null">
+            and o.method_code = #{methodCode}
+        </if>
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="callAppCode != null">
+            and o.call_app_code = #{callAppCode}
+        </if>
+
+        <if test="callAppName !=null">
+            and o.call_app_name = #{callAppName}
+        </if>
+
+        <if test="creator !=null">
+            and o.creator = like concat('%',#{creator},'%')
+        </if>
+
+        <if test="pin !=null">
+            and ( o.creator = #{pin} or app.members  like concat('%-',#{pin},',%') )
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceInfo !=null">
+            and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like concat('%',#{interfaceInfo},'%'))
+        </if>
+        <if test="methodInfo !=null">
+            and (o.method_code like concat('%',#{methodInfo},'%') or o.method_name like concat('%',#{methodInfo},'%'))
+        </if>
+
+    </select>
+
+    <select id="queryAllList" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select  o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        order by o.id desc
+    </select>
+
+
+    <select id="queryListGroupByInterface" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select  o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+        group  by o.interface_id
+    </select>
+
+    <select id="queryListPageGroupByInterface" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select  o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+        group  by interface_id
+        limit #{offset}, #{pageSize}
+    </select>
+
+    <select id="queryCountPageGroupByInterface" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="long">
+        select count(1) from (select distinct o.id
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+        group by o.interface_id) d
+
+    </select>
+
+    <select id="queryListGroupByMethod" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select  o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from http_auth_apply_detail o
+        where
+        o.yn = 1
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="methodId !=null">
+            and o.method_id = #{methodId}
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceId !=null">
+            and o.interface_id = #{interfaceId}
+        </if>
+        group  by o.method_id
+    </select>
+
+
+
+    <select id="queryListPageGroupByAuthCode" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select
+            d.id,d.site,d.app_code,d.app_name,d.auth_code,d.call_app_code,d.call_app_name,d.ticket_id,d.token,
+            d.method_id, d.method_code,d.method_name, d.path,d.interface_id,d.interface_name,d.interface_code,
+            d.yn,d.creator,d.modifier,d.created,d.modified
+        from
+        (
+            select
+                o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,o.token,
+                o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+                o.yn,o.creator,o.modifier,o.created,o.modified
+            from
+                http_auth_apply_detail o
+            left join app_info app on o.call_app_code = app.app_code
+            where
+            o.yn = 1
+            and o.token is not null
+
+            <if test="site !=null">
+                and o.site = #{site}
+            </if>
+
+            <if test="ticketId !=null">
+                and o.ticket_id = #{ticketId}
+            </if>
+
+            <if test="authCode !=null">
+                and o.auth_code = #{authCode}
+            </if>
+
+            <if test="authInfo !=null">
+                and (o.auth_code like concat('%',#{authInfo},'%'))
+            </if>
+
+            <if test="appCode != null">
+                and o.app_code = #{appCode}
+            </if>
+
+            <if test="appName !=null">
+                and o.app_name = #{appName}
+            </if>
+
+            <if test="creator !=null">
+                and o.creator  like concat('%',#{creator},'%')
+            </if>
+
+            <if test="pin !=null">
+                and ( o.creator = #{pin} or app.members  like concat('%-',#{pin},',%') )
+            </if>
+
+            <if test="userInfo !=null">
+                and o.creator like concat('%',#{userInfo},'%')
+            </if>
+
+            <if test="appInfo !=null">
+                and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+            </if>
+
+            <if test="callAppInfo !=null">
+                and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+            </if>
+
+            <if test="interfaceInfo !=null">
+                and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like concat('%',#{interfaceInfo},'%'))
+            </if>
+
+            <if test="methodInfo !=null">
+                and (o.method_code like concat('%',#{methodInfo},'%') or o.method_name like concat('%',#{methodInfo},'%'))
+            </if>
+
+            group  by o.app_code,o.auth_code,o.call_app_code,o.ticket_id
+        ) d
+        order by  d.id desc
+
+        limit #{offset}, #{pageSize}
+    </select>
+
+
+    <select id="queryCountPageGroupByAuthCode" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="long">
+        select count(1)
+        from (
+            select distinct o.id
+            from http_auth_apply_detail o
+            left join app_info app on o.call_app_code = app.app_code
+            where
+            o.yn = 1
+            and o.token is not null
+
+            <if test="site !=null">
+                and o.site = #{site}
+            </if>
+
+            <if test="ticketId !=null">
+                and o.ticket_id = #{ticketId}
+            </if>
+
+            <if test="authCode !=null">
+                and o.auth_code = #{authCode}
+            </if>
+
+            <if test="authInfo !=null">
+                and (o.auth_code like concat('%',#{authInfo},'%'))
+            </if>
+
+            <if test="appCode != null">
+                and o.app_code = #{appCode}
+            </if>
+
+            <if test="appName !=null">
+                and o.app_name = #{appName}
+            </if>
+
+            <if test="creator !=null">
+                and o.creator like concat('%',#{creator},'%')
+            </if>
+
+            <if test="pin !=null">
+                and ( o.creator = #{pin} or app.members like concat('%-',#{pin},',%') )
+            </if>
+
+            <if test="appInfo !=null">
+                and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+            </if>
+
+            <if test="callAppInfo !=null">
+                and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like
+                concat('%',#{callAppInfo},'%'))
+            </if>
+
+            <if test="interfaceInfo !=null">
+                and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like
+                concat('%',#{interfaceInfo},'%'))
+            </if>
+            <if test="methodInfo !=null">
+                and (o.method_code like concat('%',#{methodInfo},'%') or o.method_name like concat('%',#{methodInfo},'%'))
+            </if>
+
+            group by o.app_code,o.auth_code,o.call_app_code,o.ticket_id
+        ) c
+
+    </select>
+
+    <select id="queryListPageGroupByAuthCodeAndMethod" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="com.jd.workflow.console.entity.HttpAuthApplyDetail">
+        select
+        d.id,d.site,d.app_code,d.app_name,d.auth_code,d.call_app_code,d.call_app_name,d.ticket_id,d.token,
+        d.method_id, d.method_code,d.method_name, d.path,d.interface_id,d.interface_name,d.interface_code,
+        d.yn,d.creator,d.modifier,d.created,d.modified
+        from
+        (
+        select
+        o.id,o.site,o.app_code,o.app_name,o.auth_code,o.call_app_code,o.call_app_name,o.ticket_id,o.token,
+        o.method_id, o.method_code,o.method_name, o.path,o.interface_id,o.interface_name,o.interface_code,
+        o.yn,o.creator,o.modifier,o.created,o.modified
+        from
+        http_auth_apply_detail o
+        join app_info app on o.app_code = app.app_code
+        join app_info callApp on o.call_app_code = callApp.app_code
+        where
+        o.yn = 1
+        and o.token is not null
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="creator !=null">
+            and o.creator  like concat('%',#{creator},'%')
+        </if>
+
+        <if test="pin !=null">
+            and app.members  like concat('%-',#{pin},',%')
+        </if>
+
+        <if test="callPin !=null">
+            and  ( o.creator = #{callPin} or callApp.members  like concat('%-',#{callPin},',%') )
+        </if>
+
+        <if test="userInfo !=null">
+            and app.members  like concat('%-',#{userInfo},',%')
+        </if>
+
+        <if test="callUserInfo !=null">
+            and  ( o.creator = #{callUserInfo} or callApp.members  like concat('%-',#{callUserInfo},',%') )
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceInfo !=null">
+            and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like concat('%',#{interfaceInfo},'%'))
+        </if>
+
+        <if test="methodInfo !=null">
+            and (o.method_code like concat('%',#{methodInfo},'%')
+                 or o.method_name like concat('%',#{methodInfo},'%')
+                 or o.path like concat('%',#{methodInfo},'%')
+               )
+        </if>
+
+          group  by o.app_code, o.call_app_code, o.ticket_id, o.method_id
+        ) d
+        order by  d.id desc
+
+        limit #{offset}, #{pageSize}
+    </select>
+
+
+    <select id="queryCountPageGroupByAuthCodeAndMethod" parameterType="com.jd.workflow.console.dto.QueryHttpAuthApplyDetailReqDTO" resultType="long">
+        select count(1)
+        from (
+        select distinct o.id
+        from http_auth_apply_detail o
+        join app_info app on o.app_code = app.app_code
+        join app_info callApp on o.call_app_code = callApp.app_code
+        where
+        o.yn = 1
+        and o.token is not null
+
+        <if test="site !=null">
+            and o.site = #{site}
+        </if>
+
+        <if test="ticketId !=null">
+            and o.ticket_id = #{ticketId}
+        </if>
+
+        <if test="authCode !=null">
+            and o.auth_code = #{authCode}
+        </if>
+
+        <if test="authInfo !=null">
+            and (o.auth_code like concat('%',#{authInfo},'%'))
+        </if>
+
+        <if test="appCode != null">
+            and o.app_code = #{appCode}
+        </if>
+
+        <if test="appName !=null">
+            and o.app_name = #{appName}
+        </if>
+
+        <if test="creator !=null">
+            and o.creator like concat('%',#{creator},'%')
+        </if>
+
+        <if test="pin !=null">
+            and app.members  like concat('%-',#{pin},',%')
+        </if>
+
+        <if test="callPin !=null">
+            and  ( o.creator = #{callPin} or callApp.members  like concat('%-',#{callPin},',%') )
+        </if>
+
+        <if test="userInfo !=null">
+            and app.members  like concat('%-',#{userInfo},',%')
+        </if>
+
+        <if test="callUserInfo !=null">
+            and  ( o.creator = #{callUserInfo} or callApp.members  like concat('%-',#{callUserInfo},',%') )
+        </if>
+
+        <if test="appInfo !=null">
+            and (o.app_code like concat('%',#{appInfo},'%') or o.app_name like concat('%',#{appInfo},'%'))
+        </if>
+
+        <if test="callAppInfo !=null">
+            and (o.call_app_code like concat('%',#{callAppInfo},'%') or o.call_app_name like
+            concat('%',#{callAppInfo},'%'))
+        </if>
+
+        <if test="interfaceInfo !=null">
+            and (o.interface_code like concat('%',#{interfaceInfo},'%') or o.interface_name like
+            concat('%',#{interfaceInfo},'%'))
+        </if>
+        <if test="methodInfo !=null">
+            and (o.method_code like concat('%',#{methodInfo},'%')
+                or o.method_name like concat('%',#{methodInfo},'%')
+                or o.path like concat('%',#{methodInfo},'%')
+                )
+        </if>
+
+        group by o.app_code, o.call_app_code, o.ticket_id, o.method_id
+        ) c
+
+    </select>
+
+
+</mapper>

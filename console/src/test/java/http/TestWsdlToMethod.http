@@ -1,0 +1,44 @@
+###
+#添加WebService接口
+POST {{host}}/interfaceManage/addInterface
+Content-Type: application/json
+
+{
+  "type":2,
+  "name": "WebService4",
+  "desc": "WebService4的描述",
+  "env": "WebService4的地址",
+  "tenantId": 1024,
+  "path": "http://127.0.0.1:7001/FullTypedWebService?wsdl",
+  "adminCode": "system"
+}
+
+###
+# 刷新webservice 方法列表
+POST {{host}}/methodManage/updateWebService
+Content-Type: application/json
+
+{
+  "interfaceId": 6
+}
+
+###
+# 获取方法详情
+GET {{host}}/methodManage/getById?id=28
+
+
+###
+# 检查
+GET {{host}}/methodManage/checkWsdlPath?path=http://11.138.18.164:7001/FullTypedWebService?wsdl
+Cookie: {{Cookie}}
+
+
+###
+##Long interfaceId, String str, String operator
+#POST http://localhost:8010/demo/wsdlToSoap
+#Content-Type: application/x-www-form-urlencoded
+#
+#interfaceId=6&str=http://127.0.0.1:7001/FullTypedWebService?wsdl&operator=test
+
+###
+GET {{host}}/demo/open

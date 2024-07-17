@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.group.RequirementInterfaceGroupMapper">
+
+    <select id="getAppCodeByRequirementId" resultType="com.jd.workflow.console.dto.AppInfoDTO">
+        select distinct ai.app_code,ai.id,ai.app_name from requirement_interface_group im
+        inner join interface_manage im2 on im.interface_id = im2.id and im2.yn = 1
+        inner join app_info ai  on ai.id = im2.app_id  and ai.yn = 1
+        where  im.requirement_id =#{requirementId}
+    </select>
+
+    <select id="getRequirementInterfaceCount" resultType="java.lang.String">
+        select json_extract(rig.sort_group_tree, '$.treeItems[*].count') as interfaceCountArr
+        from requirement_interface_group rig
+        left join user_info ui on rig.creator = ui.user_code
+        where 1=1
+        <if test="department != null">
+            and ui.dept like concat('%',#{department},'%')
+        </if>
+        <if test="timeStart != null">
+            <![CDATA[
+              and rig.created >= #{timeStart}
+            ]]>
+        </if>
+        <if test="timeEnd != null">
+            <![CDATA[
+              and rig.created <= #{timeEnd}
+            ]]>
+        </if>
+    </select>
+
+</mapper>

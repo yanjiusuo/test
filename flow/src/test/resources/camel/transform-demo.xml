@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ webservice转http
+ 给一个json —>
+-->
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+        <description>
+            <![CDATA[{"id":"step2","type":"transform",
+                "output":{
+                   "body":[{
+                    "name":"root",
+                    "type":"string",
+                    "value":"aa-123"
+                   }]}
+                 }]]>
+        </description>
+    </bean>
+</route>

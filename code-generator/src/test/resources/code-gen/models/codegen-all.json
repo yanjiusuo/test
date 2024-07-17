@@ -1,0 +1,222 @@
+[
+  {
+    "path": "/xml/formatXml",
+    "authKeys": [],
+    "methodCode": "formatXml",
+    "params": [],
+    "header": [],
+    "title": "xml格式化",
+    "response": {
+      "name": "root",
+      "type": "object",
+      "genericTypes": [
+        {
+          "name": "root",
+          "type": "string",
+          "typeVariableName": "T",
+          "className": "java.lang.String"
+        }
+      ],
+      "className": "com.jd.workflow.console.base.CommonResult",
+      "children": [
+        {
+          "name": "code",
+          "type": "integer",
+          "desc": "返回值:0为成功，非0为失败",
+          "className": "java.lang.Integer"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "desc": "错误信息",
+          "className": "java.lang.String"
+        },
+        {
+          "name": "data",
+          "type": "string",
+          "desc": "返回数据",
+          "typeVariableName": "T",
+          "className": "java.lang.String"
+        },
+        {
+          "name": "traceId",
+          "type": "string",
+          "desc": "日志跟踪uuid",
+          "className": "java.lang.String"
+        }
+      ]
+    },
+    "requestBody": {
+      "name": "root",
+      "type": "string",
+      "className": "java.lang.String"
+    },
+    "method": "POST",
+    "reqBodyType": "json",
+    "reqBodyForm": [],
+    "menu": "xml管理",
+    "pathParams": []
+  },
+  {
+    "path": "/xml/parseXml",
+    "authKeys": [],
+    "methodCode": "parseXml",
+    "params": [],
+    "header": [],
+    "title": "xml解析",
+    "response": {
+      "name": "root",
+      "type": "object",
+      "genericTypes": [
+        {
+          "name": "root",
+          "type": "object",
+          "typeVariableName": "T",
+          "className": "com.jd.workflow.soap.common.xml.schema.JsonType",
+          "children": [
+            {
+              "name": "desc",
+              "type": "string",
+              "desc": "字段描述",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "desc": "字段名称",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "required",
+              "type": "boolean",
+              "desc": "手必填",
+              "className": "boolean",
+              "required": true
+            },
+            {
+              "name": "value",
+              "type": "object",
+              "desc": "默认值以及mock属性。前端录入的时候为mock值.以@开头的为mock规则",
+              "className": "java.lang.Object",
+              "children": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "desc": "实际类型名",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "exprType",
+              "type": "string",
+              "desc": "constant\nexpr\nscript\n",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "type",
+              "type": "string",
+              "desc": "字段类型复杂类型有array和object，array和object可以有children节点简单类型有： long、double、string、float、file、integer、boolean",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "exprValue",
+              "type": "object",
+              "className": "java.lang.Object",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "className": "com.jd.workflow.console.base.CommonResult",
+      "children": [
+        {
+          "name": "code",
+          "type": "integer",
+          "desc": "返回值:0为成功，非0为失败",
+          "className": "java.lang.Integer"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "desc": "错误信息",
+          "className": "java.lang.String"
+        },
+        {
+          "name": "data",
+          "type": "object",
+          "desc": "返回数据",
+          "typeVariableName": "T",
+          "className": "com.jd.workflow.soap.common.xml.schema.JsonType",
+          "children": [
+            {
+              "name": "desc",
+              "type": "string",
+              "desc": "字段描述",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "desc": "字段名称",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "required",
+              "type": "boolean",
+              "desc": "手必填",
+              "className": "boolean",
+              "required": true
+            },
+            {
+              "name": "value",
+              "type": "object",
+              "desc": "默认值以及mock属性。前端录入的时候为mock值.以@开头的为mock规则",
+              "className": "java.lang.Object",
+              "children": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "desc": "实际类型名",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "exprType",
+              "type": "string",
+              "desc": "constant\nexpr\nscript\n",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "type",
+              "type": "string",
+              "desc": "字段类型复杂类型有array和object，array和object可以有children节点简单类型有： long、double、string、float、file、integer、boolean",
+              "className": "java.lang.String"
+            },
+            {
+              "name": "exprValue",
+              "type": "object",
+              "className": "java.lang.Object",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "traceId",
+          "type": "string",
+          "desc": "日志跟踪uuid",
+          "className": "java.lang.String"
+        }
+      ]
+    },
+    "requestBody": {
+      "name": "root",
+      "type": "string",
+      "className": "java.lang.String"
+    },
+    "method": "POST",
+    "reqBodyType": "json",
+    "reqBodyForm": [],
+    "menu": "xml管理",
+    "pathParams": []
+  }
+]

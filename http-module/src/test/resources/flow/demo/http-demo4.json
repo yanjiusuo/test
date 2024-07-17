@@ -1,0 +1,31 @@
+{
+  "input": {
+  },
+  "tasks": [
+    {
+      "id": "queryData",
+      "type": "http",
+
+      "endpointUrl": ["http://jap-mock-data.jd.local"],
+      "input": {
+        "reqType": "json",
+        "method": "GET",
+        "url": "/allTypeData/{id}",
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "script":  "var body = steps.queryData.output.body.data;\n        var mapping = {\n                \"1\":\"男\",\n                \"2\":\"女\"\n        };\n        output.body= {\n             \"date\":utils.formatDate(body.date,\"yyyy-MM-dd\",\"yyyy年MM月dd日\"),   \n             \"sex\":mapping[body.sex],   \n             \"json\":utils.parseJson(body.json),   \n             \"xml\":utils.parseXml(body.xml)   \n                \n        };"
+      }
+    }
+  ]
+}

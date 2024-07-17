@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.AppInfoMapper">
+
+    <select id="selectByRequirementId" resultType="com.jd.workflow.console.entity.AppInfo">
+        select * from app_info where id in (
+            select t.app_id from interface_manage t where id in (
+                select interface_id from requirement_interface_group where requirement_id = #{requirementId}
+            )
+        )
+    </select>
+</mapper>

@@ -1,0 +1,85 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/echo/{x-token}/{x-Id_token}",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "headers": [{
+    "name":"x-token",
+    "type": "string"
+  }],
+  "params": [{
+    "name":"x_id",
+    "type": "string"
+  }],
+  "path": [{
+    "name":"x-token",
+    "type": "string"
+  },{
+    "name":"x-Id_token",
+    "type": "string"
+  }],
+  "body": [
+    {
+      "name": "root",
+      "type": "object",
+      "children": [
+        {
+          "name": "x-token_x",
+          "type": "long"
+        },{
+          "name": "X-TOKEN_D",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "respBody": [{
+    "name": "root",
+    "type": "object",
+    "children": [
+      {
+        "name": "headers",
+        "type": "object",
+        "children": [
+          {
+            "name": "x-token",
+            "type": "long"
+          }
+        ]
+      },
+      {
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "name": "body",
+        "type": "object",
+        "children": [
+          {
+            "name": "x-token_x",
+            "type": "long"
+          },{
+            "name": "X-TOKEN_D",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "params",
+        "type": "object",
+        "children": [
+          {
+            "name": "x_id",
+            "type": "long"
+          }
+        ]
+      }
+    ]
+  }],
+  "respHeaders":  [{
+    "name":"x-token",
+    "type": "string"
+  }]
+}

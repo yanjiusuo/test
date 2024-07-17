@@ -1,0 +1,41 @@
+{
+
+  "tasks": [
+    {
+      "id": "mock",
+      "type": "mock",
+      "output": {
+        "body":  {
+          "code": 0,
+          "message": "获取成功",
+          "data": 1
+        }
+      }
+    },{
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "type": "object",
+            "name": "root",
+            "children": [{
+              "name": "code",
+              "type": "string",
+              "value": "${steps.mock.output.body.code}"
+            },{
+              "name": "message",
+              "type": "string",
+              "value": "${steps.mock.output.body.message}"
+            },{
+              "name": "data",
+              "type": "string",
+              "value": "${steps.mock.output.body.data}"
+            }]
+          }
+        ]
+      }
+    }
+
+  ]
+}

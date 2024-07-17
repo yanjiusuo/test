@@ -1,0 +1,68 @@
+{
+  "tasks": [
+    {
+      "id": "http1",
+      "type": "http",
+      "endpointUrl": ["http://127.0.0.1:6010"],
+      "input":{
+        "method": "post",
+        "url": "/json",
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "children": [
+              {
+                "name": "id",
+                "type": "string",
+                "value": 1
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": "wjf"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "headers": [{
+          "type": "integer",
+          "name": "token",
+          "value": 1
+        }],
+        "body": [{
+          "type": "object",
+          "name": "root",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer",
+              "value": 1
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "exprType": "script",
+              "value": "workflow.input.body.name"
+            },{
+              "name": "value",
+              "type": "string",
+              "exprType": "script",
+              "value": "steps.http1.output.body.id+\"-\"+steps.http1.output.body.name"
+            }
+          ]
+        }]
+      }
+    }
+  ]
+}
+
+
+
+

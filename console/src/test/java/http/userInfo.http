@@ -1,0 +1,92 @@
+
+###
+POST {{host}}/userInfo/addUser
+Content-Type: application/json
+
+{
+  "userName":"吴柏钊",
+  "userCode":"wubaizhao1",
+  "dept":"京东集团",
+  "loginType":0
+}
+
+###
+# 登陆后自动校验新增用户
+POST {{host}}/userInfo/autoCheckAndAddUser
+Content-Type: application/json
+
+{
+  "dept":"部门",
+  "loginType":0
+}
+
+###
+#普通修改 修改名称\修改部门
+POST {{host}}/userInfo/editUser
+Content-Type: application/json
+#唯一索引 id  或者 用户编码
+
+{
+"userName":"测试修改名字3",
+"userCode":"test3",
+"dept":"修改新的部门3",
+"loginType":1
+}
+
+###
+#特殊修改 根据id 修改,包括修改usercode
+POST {{host}}/userInfo/editUser
+Content-Type: application/json
+#唯一索引 id 或者 [唯一索引]租户，登录类型，用户编码
+
+{
+  "id": 4,
+  "userName":"测试修改名字3-1",
+  "userCode":"test3-1",
+  "dept":"修改新的部门2",
+  "loginType":2
+}
+
+###
+# 删除
+# 入参: id  或者 usercode
+POST {{host}}/userInfo/removeUser
+Content-Type: application/json
+
+{
+  "userCode":"test3-1"
+}
+
+###
+# 删除
+# 入参: id  或者 usercode
+POST {{host}}/userInfo/removeUser
+Content-Type: application/json
+
+{
+  "id": 4
+}
+
+###
+# 寻找一个
+# 用户编码
+GET {{host}}/userInfo/getOneUser?userCode=test2
+Accept: application/json
+
+###
+# 模糊搜索
+# 必填:[用户编码]模糊
+GET {{host}}/userInfo/listUserByCode?userCode=wu
+Accept: application/json
+###
+GET {{host}}/userInfo/listUserByCode?loginType=0&userCode=st&userName=测
+Accept: application/json
+###
+# 模糊搜索
+# 必填:[key]模糊搜索用户code以及用户名
+GET {{host}}/userInfo/listUserByCode?key=wu
+Accept: application/json
+
+###
+# 返回登录的用户信息
+GET http://localhost:8010/userInfo/getLoginOne

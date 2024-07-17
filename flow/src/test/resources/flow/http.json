@@ -1,0 +1,33 @@
+{
+  "input": {
+    "pageNo": 1,
+    "pageSize": 10
+  },
+  "tasks": [{
+    "id": "step1",
+    "type": "http",
+    "input": {
+      "url": "http://jap-mock-data.jd.local/treeList?_page=${workflow.input.pageNo}&_limit=${workflow.input.pageSize}",
+      "method": "GET"
+    },
+    "output": {
+      "headers": [],
+      "response": {
+        "data": "${response.data}",
+        "code": "${response.status}",
+        "message": "${response.msg}"
+      }
+    },
+    "taskDef": {
+      "timeout": 10000
+    }
+  }],
+  "output": {
+    "data": "${steps.step1.response.data}",
+    "code": "${steps.step1.response.status}",
+    "message": "${steps.step1.response.message}"
+  },
+  "headers": {
+
+  }
+}

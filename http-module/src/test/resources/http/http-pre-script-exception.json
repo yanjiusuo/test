@@ -1,0 +1,29 @@
+{
+  "id": "http1",
+  "type": "http",
+  "successCondition": "output.status==200",
+  "endpointUrl": ["http://127.0.0.1:6010"],
+  "input":{
+    "method": "post",
+    "url": "/json",
+    "preProcess": "if(workflow.input.body.id == 1){\n  input.error(\"入参不符合格式\");\n}",
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "${input.attrs.sid}"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+
+
+

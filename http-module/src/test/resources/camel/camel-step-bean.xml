@@ -1,0 +1,11 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean" scope="Prototype"   id="step1">
+        <description><![CDATA[
+            {"id":"step1","type":"http","endpointUrl":["http://jap-mock-data.jd.local"],"input":{"preProcess":"workflow.attr(id,workflow.input.body.id+1)","url":"/html/{id}","path":[{"name":"id","type":"string","value":"${workflow.attr.id}"}],"method":"GET"}}
+            ]]></description>
+    </bean>
+
+</route>
+
+

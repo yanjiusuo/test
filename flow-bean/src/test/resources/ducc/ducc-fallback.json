@@ -1,0 +1,52 @@
+{
+  "tasks": [{
+    "id": "ducc",
+    "type": "bean",
+    "beanType": "ducc",
+    "initConfig": {
+      "name": "root",
+      "type": "object",
+      "className": "com.jd.workflow.flow.bean.ducc.DuccConfig",
+      "children": [
+        {
+          "name": "url",
+          "type": "string",
+          "desc": "ducc配置链接",
+          "className": "java.lang.String",
+          "value": "ucc://jd-components:c44cb57c-c69e-41d9-a8cf-45633343b620@test.ducc.jd.local/v1/namespace/flow_assemble/config/app.integration-paas/profiles/dev?longPolling=60000&necessary=false"
+        }
+      ]
+    },
+    "input": [
+      {
+        "name": "key",
+        "type": "string",
+        "desc": "ducc配置key",
+        "className": "java.lang.String"
+      }
+    ],
+    "script": "input.body = 'history';",
+    "taskDef": {
+      "fallbackStrategy": "continue",
+      "fallback": {
+        "a": 1
+      }
+    },
+    "desc": "获取key对应的ducc属性配置",
+    "output": {
+      "name": "root",
+      "type": "string",
+      "className": "java.lang.String"
+    },
+    "methodName": "getProperty"
+  }],
+  "output": {
+    "body": [
+      {
+        "name": "root",
+        "type": "string",
+        "value": "${steps.ducc.output.body}"
+      }
+    ]
+  }
+}

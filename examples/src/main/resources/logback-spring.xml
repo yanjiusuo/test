@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LEVEL" value="info" />
+
+    <property name="PRINT_LOG_BASE_PATH" value="/export/Logs/live-coupon.live.com/" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${PRINT_LOG_BASE_PATH}stdout.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${PRINT_LOG_BASE_PATH}stdout.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- maxHistory>30</maxHistory -->
+        </rollingPolicy>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${LEVEL}</level>
+        </filter>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%date [%file:%line] [%level] %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%date [%file:%line] [%level] %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="info" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="com.jd.vd.explain" level="info" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

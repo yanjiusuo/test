@@ -1,0 +1,4782 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "流程编排管理端服务",
+    "version" : "1.0.0",
+    "title" : "流程编排管理端服务",
+    "contact" : {
+      "name" : "刘慧卿",
+      "email" : "liuhuiqing@imdada.cn"
+    }
+  },
+  "tags" : [ {
+    "name" : "流程执行",
+    "description" : ""
+  }, {
+    "name" : "流程管理",
+    "description" : ""
+  } ],
+  "paths" : {
+    "/jsf/com.jd.o2o.design.api.FlowExecuteService/callByFlowTask" : {
+      "post" : {
+        "tags" : [ "流程执行" ],
+        "summary" : "流程运行-任务",
+        "description" : "ServiceResponse callByFlowTask(com.jd.o2o.design.domain.entity.FlowTaskEntity)",
+        "operationId" : "callByFlowTask",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowTaskEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowTaskEntity",
+            "$ref" : "#/definitions/FlowTaskEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowExecuteService/execute" : {
+      "post" : {
+        "tags" : [ "流程执行" ],
+        "summary" : "流程运行-不带日志",
+        "description" : "ServiceResponse execute(com.jd.o2o.design.dto.FlowExecuteInput)",
+        "operationId" : "execute",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowExecuteInput",
+          "description" : "",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowExecuteInput",
+            "$ref" : "#/definitions/FlowExecuteInput"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowExecuteService/executeWithContext" : {
+      "post" : {
+        "tags" : [ "流程执行" ],
+        "summary" : "流程运行-带日志",
+        "description" : "ServiceResponse executeWithContext(com.jd.o2o.design.dto.FlowExecuteInput)",
+        "operationId" : "executeWithContext",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowExecuteInput",
+          "description" : "",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowExecuteInput",
+            "$ref" : "#/definitions/FlowExecuteInput"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseRunResponse",
+              "$ref" : "#/definitions/ServiceResponseRunResponse"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseRunResponse",
+              "$ref" : "#/definitions/ServiceResponseRunResponse"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowExecuteService/expireFlowTask" : {
+      "post" : {
+        "tags" : [ "流程执行" ],
+        "summary" : "expireFlowTask",
+        "description" : "ServiceResponse expireFlowTask(com.jd.o2o.module.domain.context.ScheduleInput)",
+        "operationId" : "expireFlowTask",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "scheduleInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/ScheduleInput",
+            "$ref" : "#/definitions/ScheduleInput"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "headers" : { },
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseInteger",
+              "$ref" : "#/definitions/ServiceResponseInteger"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseInteger",
+              "$ref" : "#/definitions/ServiceResponseInteger"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowExecuteService/getSession" : {
+      "post" : {
+        "tags" : [ "流程执行" ],
+        "summary" : "获取系统会话态",
+        "description" : "ServiceResponse getSession(com.jd.o2o.design.domain.runtime.shoot.SessionContext)",
+        "operationId" : "getSession",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "sessionContext",
+          "description" : "",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/SessionContext",
+            "$ref" : "#/definitions/SessionContext"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseMapStringString",
+              "$ref" : "#/definitions/ServiceResponseMapStringString"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseMapStringString",
+              "$ref" : "#/definitions/ServiceResponseMapStringString"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addEnvInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "环境保存",
+        "description" : "ServiceResponse addEnvInfo(com.jd.o2o.design.domain.entity.EnvInfoEntity)",
+        "operationId" : "addEnvInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "envInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/EnvInfoEntity",
+            "$ref" : "#/definitions/EnvInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addFlowCase" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程用例新增",
+        "description" : "ServiceResponse addFlowCase(com.jd.o2o.design.domain.entity.FlowCaseEntity)",
+        "operationId" : "addFlowCase",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowCaseEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowCaseEntity",
+            "$ref" : "#/definitions/FlowCaseEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addFlowConfig" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程配置保存",
+        "description" : "ServiceResponse addFlowConfig(com.jd.o2o.design.domain.entity.FlowConfigEntity)",
+        "operationId" : "addFlowConfig",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowConfigEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowConfigEntity",
+            "$ref" : "#/definitions/FlowConfigEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addFlowInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程保存",
+        "description" : "ServiceResponse addFlowInfo(com.jd.o2o.design.domain.entity.FlowInfoEntity)",
+        "operationId" : "addFlowInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowInfoEntity",
+            "$ref" : "#/definitions/FlowInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addFlowTask" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "新增任务",
+        "description" : "ServiceResponse addFlowTask(com.jd.o2o.design.domain.entity.FlowTaskEntity)",
+        "operationId" : "addFlowTask",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowTaskEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowTaskEntity",
+            "$ref" : "#/definitions/FlowTaskEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addPlaceholder" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化配置保存",
+        "description" : "ServiceResponse addPlaceholder(com.jd.o2o.design.domain.entity.PlaceholderEntity)",
+        "operationId" : "addPlaceholder",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "placeholderEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/PlaceholderEntity",
+            "$ref" : "#/definitions/PlaceholderEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addProjectInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "工程保存",
+        "description" : "ServiceResponse addProjectInfo(com.jd.o2o.design.domain.entity.ProjectInfoEntity)",
+        "operationId" : "addProjectInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "projectInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/ProjectInfoEntity",
+            "$ref" : "#/definitions/ProjectInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/addStepInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤保存",
+        "description" : "ServiceResponse addStepInfo(com.jd.o2o.design.domain.entity.StepInfoEntity)",
+        "operationId" : "addStepInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "stepInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/StepInfoEntity",
+            "$ref" : "#/definitions/StepInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/clearSession" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "清空登录会话",
+        "description" : "ServiceResponse clearSession(java.lang.String)",
+        "operationId" : "clearSession",
+        "parameters" : [ {
+          "name" : "erp",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteEnvInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "环境删除",
+        "description" : "ServiceResponse deleteEnvInfo(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteEnvInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteFlowCase" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程用例删除",
+        "description" : "ServiceResponse deleteFlowCase(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteFlowCase",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteFlowConfig" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程配置删除",
+        "description" : "ServiceResponse deleteFlowConfig(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteFlowConfig",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteFlowInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程删除",
+        "description" : "ServiceResponse deleteFlowInfo(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteFlowInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteFlowInfoAndStepInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程删除(包含关联步骤)",
+        "description" : "ServiceResponse deleteFlowInfoAndStepInfo(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteFlowInfoAndStepInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteFlowTask" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务删除",
+        "description" : "ServiceResponse deleteFlowTask(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteFlowTask",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deletePlaceholder" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化配置删除",
+        "description" : "ServiceResponse deletePlaceholder(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deletePlaceholder",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteProjectInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "工程删除",
+        "description" : "ServiceResponse deleteProjectInfo(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteProjectInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/deleteStepInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤删除",
+        "description" : "ServiceResponse deleteStepInfo(com.jd.o2o.design.domain.support.KeyInput)",
+        "operationId" : "deleteStepInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "keyInput",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/KeyInputLong",
+            "$ref" : "#/definitions/KeyInputLong"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findEnvInfoList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "环境查询",
+        "description" : "ServiceResponse findEnvInfoList(com.jd.o2o.design.domain.entity.EnvInfoEntity)",
+        "operationId" : "findEnvInfoList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "envInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/EnvInfoEntity",
+            "$ref" : "#/definitions/EnvInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListEnvInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListEnvInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListEnvInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListEnvInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findFlowCaseList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程用例列表",
+        "description" : "ServiceResponse findFlowCaseList(com.jd.o2o.design.domain.entity.FlowCaseEntity)",
+        "operationId" : "findFlowCaseList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowCaseEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowCaseEntity",
+            "$ref" : "#/definitions/FlowCaseEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowCaseEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowCaseEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowCaseEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowCaseEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findFlowConfigList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程配置查询",
+        "description" : "ServiceResponse findFlowConfigList(com.jd.o2o.design.domain.entity.FlowConfigEntity)",
+        "operationId" : "findFlowConfigList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowConfigEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowConfigEntity",
+            "$ref" : "#/definitions/FlowConfigEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowConfigEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowConfigEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowConfigEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowConfigEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findFlowInfoList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程查询",
+        "description" : "ServiceResponse findFlowInfoList(com.jd.o2o.design.domain.entity.FlowInfoEntity)",
+        "operationId" : "findFlowInfoList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowInfoEntity",
+            "$ref" : "#/definitions/FlowInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findFlowLogList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务执行记录查询",
+        "description" : "ServiceResponse findFlowLogList(com.jd.o2o.design.domain.entity.FlowLogEntity)",
+        "operationId" : "findFlowLogList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowLogEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowLogEntity",
+            "$ref" : "#/definitions/FlowLogEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanFlowLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanFlowLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findFlowTaskList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务查询",
+        "description" : "ServiceResponse findFlowTaskList(com.jd.o2o.design.domain.entity.FlowTaskEntity)",
+        "operationId" : "findFlowTaskList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowTaskEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowTaskEntity",
+            "$ref" : "#/definitions/FlowTaskEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanFlowTaskEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanFlowTaskEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanFlowTaskEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanFlowTaskEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findOperationLogList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "操作日志查询",
+        "description" : "ServiceResponse findOperationLogList(com.jd.o2o.design.domain.entity.OperationLogEntity)",
+        "operationId" : "findOperationLogList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "operationLogEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/OperationLogEntity",
+            "$ref" : "#/definitions/OperationLogEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListOperationLogEntity",
+              "$ref" : "#/definitions/ServiceResponseListOperationLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListOperationLogEntity",
+              "$ref" : "#/definitions/ServiceResponseListOperationLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findPlaceholderList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化配置查询",
+        "description" : "ServiceResponse findPlaceholderList(com.jd.o2o.design.domain.entity.PlaceholderEntity)",
+        "operationId" : "findPlaceholderList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "placeholderEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/PlaceholderEntity",
+            "$ref" : "#/definitions/PlaceholderEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListPlaceholderEntity",
+              "$ref" : "#/definitions/ServiceResponseListPlaceholderEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListPlaceholderEntity",
+              "$ref" : "#/definitions/ServiceResponseListPlaceholderEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findProjectInfoList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "工程列表查询",
+        "description" : "ServiceResponse findProjectInfoList(com.jd.o2o.design.domain.entity.ProjectInfoEntity)",
+        "operationId" : "findProjectInfoList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "projectInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/ProjectInfoEntity",
+            "$ref" : "#/definitions/ProjectInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListProjectInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListProjectInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListProjectInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListProjectInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findRefFlowInfoList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程引用",
+        "description" : "ServiceResponse findRefFlowInfoList(java.lang.Long)",
+        "operationId" : "findRefFlowInfoList",
+        "parameters" : [ {
+          "name" : "refFlowId",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListFlowInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findStepInfoList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤查询",
+        "description" : "ServiceResponse findStepInfoList(com.jd.o2o.design.domain.entity.StepInfoEntity)",
+        "operationId" : "findStepInfoList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "stepInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/StepInfoEntity",
+            "$ref" : "#/definitions/StepInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseListStepInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListStepInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseListStepInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseListStepInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/findStepLogList" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤执行记录查询",
+        "description" : "ServiceResponse findStepLogList(com.jd.o2o.design.domain.entity.StepLogEntity)",
+        "operationId" : "findStepLogList",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "stepLogEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/StepLogEntity",
+            "$ref" : "#/definitions/StepLogEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanStepLogEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanStepLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponsePageBeanStepLogEntity",
+              "$ref" : "#/definitions/ServiceResponsePageBeanStepLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getEnvInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "环境查询byId",
+        "description" : "ServiceResponse getEnvInfo(java.lang.Long)",
+        "operationId" : "getEnvInfo",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseEnvInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseEnvInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseEnvInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseEnvInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowCase" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程用例查询byId",
+        "description" : "ServiceResponse getFlowCase(java.lang.Long)",
+        "operationId" : "getFlowCase",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowCaseEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowCaseEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowCaseEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowCaseEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowConfig" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程配置查询byId",
+        "description" : "ServiceResponse getFlowConfig(java.lang.Long)",
+        "operationId" : "getFlowConfig",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowConfigEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowConfigEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowConfigEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowConfigEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程查询byId",
+        "description" : "ServiceResponse getFlowInfo(java.lang.Long)",
+        "operationId" : "getFlowInfo",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowLog" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务执行记录查询byId",
+        "description" : "ServiceResponse getFlowLog(java.lang.Long)",
+        "operationId" : "getFlowLog",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowLogByTraceId" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "getFlowLogByTraceId",
+        "description" : "ServiceResponse getFlowLogByTraceId(java.lang.String)",
+        "operationId" : "getFlowLogByTraceId",
+        "parameters" : [ {
+          "name" : "traceId",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "headers" : { },
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowLogEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getFlowTask" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务查询byId",
+        "description" : "ServiceResponse getFlowTask(java.lang.Long)",
+        "operationId" : "getFlowTask",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowTaskEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowTaskEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseFlowTaskEntity",
+              "$ref" : "#/definitions/ServiceResponseFlowTaskEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getPlaceholder" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化配置查询byId",
+        "description" : "ServiceResponse getPlaceholder(java.lang.Long)",
+        "operationId" : "getPlaceholder",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponsePlaceholderEntity",
+              "$ref" : "#/definitions/ServiceResponsePlaceholderEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponsePlaceholderEntity",
+              "$ref" : "#/definitions/ServiceResponsePlaceholderEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getProjectInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "工程查询byId",
+        "description" : "ServiceResponse getProjectInfo(java.lang.Long)",
+        "operationId" : "getProjectInfo",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseProjectInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseProjectInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseProjectInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseProjectInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getSequenceNum" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "查看序列当前值",
+        "description" : "ServiceResponse getSequenceNum(java.lang.Long,java.lang.String)",
+        "operationId" : "getSequenceNum",
+        "parameters" : [ {
+          "name" : "envId",
+          "in" : "query",
+          "required" : false
+        }, {
+          "name" : "sequenceName",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseLong",
+              "$ref" : "#/definitions/ServiceResponseLong"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getStepInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤查询byId",
+        "description" : "ServiceResponse getStepInfo(java.lang.Long)",
+        "operationId" : "getStepInfo",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseStepInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseStepInfoEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseStepInfoEntity",
+              "$ref" : "#/definitions/ServiceResponseStepInfoEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/getStepLog" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤执行记录查询byId",
+        "description" : "ServiceResponse getStepLog(java.lang.Long)",
+        "operationId" : "getStepLog",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseStepLogEntity",
+              "$ref" : "#/definitions/ServiceResponseStepLogEntity"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseStepLogEntity",
+              "$ref" : "#/definitions/ServiceResponseStepLogEntity"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/parseParam4VarAndFunc" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化变量函数取值",
+        "description" : "ServiceResponse parseParam4VarAndFunc(com.jd.o2o.design.domain.runtime.parse.DynamicParam)",
+        "operationId" : "parseParam4VarAndFunc",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "dynamicParam",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/DynamicParam",
+            "$ref" : "#/definitions/DynamicParam"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponse",
+              "$ref" : "#/definitions/ServiceResponse"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/saveOrUpdateAccountInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "账号绑定",
+        "description" : "ServiceResponse saveOrUpdateAccountInfo(com.jd.o2o.design.domain.core.env.AccountInfo)",
+        "operationId" : "saveOrUpdateAccountInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "accountInfo",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/AccountInfo",
+            "$ref" : "#/definitions/AccountInfo"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateEnvInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "环境更新",
+        "description" : "ServiceResponse updateEnvInfo(com.jd.o2o.design.domain.entity.EnvInfoEntity)",
+        "operationId" : "updateEnvInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "envInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/EnvInfoEntity",
+            "$ref" : "#/definitions/EnvInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateFlowCase" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程用例更新",
+        "description" : "ServiceResponse updateFlowCase(com.jd.o2o.design.domain.entity.FlowCaseEntity)",
+        "operationId" : "updateFlowCase",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowCaseEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowCaseEntity",
+            "$ref" : "#/definitions/FlowCaseEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateFlowConfig" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程配置更新",
+        "description" : "ServiceResponse updateFlowConfig(com.jd.o2o.design.domain.entity.FlowConfigEntity)",
+        "operationId" : "updateFlowConfig",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowConfigEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowConfigEntity",
+            "$ref" : "#/definitions/FlowConfigEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateFlowInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "流程更新",
+        "description" : "ServiceResponse updateFlowInfo(com.jd.o2o.design.domain.entity.FlowInfoEntity)",
+        "operationId" : "updateFlowInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowInfoEntity",
+            "$ref" : "#/definitions/FlowInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateFlowStepMapping" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤关联关系更新",
+        "description" : "ServiceResponse updateFlowStepMapping(com.jd.o2o.design.domain.core.flow.FlowStepMapping)",
+        "operationId" : "updateFlowStepMapping",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowStepMapping",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowStepMapping",
+            "$ref" : "#/definitions/FlowStepMapping"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateFlowTask" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "任务更新",
+        "description" : "ServiceResponse updateFlowTask(com.jd.o2o.design.domain.entity.FlowTaskEntity)",
+        "operationId" : "updateFlowTask",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "flowTaskEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/FlowTaskEntity",
+            "$ref" : "#/definitions/FlowTaskEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updatePlaceholder" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "参数化配置更新",
+        "description" : "ServiceResponse updatePlaceholder(com.jd.o2o.design.domain.entity.PlaceholderEntity)",
+        "operationId" : "updatePlaceholder",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "placeholderEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/PlaceholderEntity",
+            "$ref" : "#/definitions/PlaceholderEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateProjectInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "工程更新",
+        "description" : "ServiceResponse updateProjectInfo(com.jd.o2o.design.domain.entity.ProjectInfoEntity)",
+        "operationId" : "updateProjectInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "projectInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/ProjectInfoEntity",
+            "$ref" : "#/definitions/ProjectInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jsf/com.jd.o2o.design.api.FlowManageService/updateStepInfo" : {
+      "post" : {
+        "tags" : [ "流程管理" ],
+        "summary" : "步骤更新",
+        "description" : "ServiceResponse updateStepInfo(com.jd.o2o.design.domain.entity.StepInfoEntity)",
+        "operationId" : "updateStepInfo",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "stepInfoEntity",
+          "required" : false,
+          "schema" : {
+            "originalRef" : "#/definitions/StepInfoEntity",
+            "$ref" : "#/definitions/StepInfoEntity"
+          }
+        } ],
+        "responses" : {
+          "0" : {
+            "description" : "调用成功"
+          },
+          "200" : {
+            "description" : "",
+            "responseSchema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            },
+            "schema" : {
+              "originalRef" : "#/definitions/ServiceResponseBoolean",
+              "$ref" : "#/definitions/ServiceResponseBoolean"
+            }
+          }
+        },
+        "deprecated" : false
+      }
+    }
+  },
+  "definitions" : {
+    "ParamSourceEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "REF" : {
+          "description" : "{\"code\":\"ref\",\"name\":\"引用参数\"}"
+        },
+        "VAR" : {
+          "description" : "{\"code\":\"var\",\"name\":\"数据变量\"}"
+        },
+        "FUN" : {
+          "description" : "{\"code\":\"fun\",\"name\":\"内置函数\"}"
+        }
+      }
+    },
+    "ParamScopeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "GLOBAL" : {
+          "description" : "{\"code\":\"all\",\"name\":\"全局\"}"
+        },
+        "PROJECT" : {
+          "description" : "{\"code\":\"project\",\"name\":\"工程\"}"
+        },
+        "FLOW" : {
+          "description" : "{\"code\":\"flow\",\"name\":\"流程\"}"
+        }
+      }
+    },
+    "PlatCodeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "ANDROID" : {
+          "description" : "{\"code\":\"ANDROID\",\"name\":\"ANDROID\",\"pinKey\":\"o2o_app_mobile_pin\",\"sid\":\"o2o_app_mobile_sid\"}"
+        },
+        "IOS" : {
+          "description" : "{\"code\":\"IOS\",\"name\":\"IOS\",\"pinKey\":\"o2o_app_mobile_pin\",\"sid\":\"o2o_app_mobile_sid\"}"
+        },
+        "H5" : {
+          "description" : "{\"code\":\"H5\",\"name\":\"H5\",\"pinKey\":\"PDJ_H5_PIN\",\"sid\":\"o2o_m_h5_sid\"}"
+        },
+        "RN" : {
+          "description" : "{\"code\":\"RN\",\"name\":\"RN\",\"pinKey\":\"PDJ_RN_PIN\",\"sid\":\"o2o_m_rn_sid\"}"
+        },
+        "MINI" : {
+          "description" : "{\"code\":\"MINI\",\"name\":\"MINI\",\"pinKey\":\"PDJ_MINI_PIN\",\"sid\":\"o2o_m_h5_sid\"}"
+        }
+      }
+    },
+    "AppTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "NONE" : {
+          "description" : "{\"code\":\"none\",\"name\":\"无需认证(JSF)\",\"desc\":\"不需要认证\"}"
+        },
+        "GW" : {
+          "description" : "{\"code\":\"gw\",\"name\":\"到家App认证(到家APP)\",\"desc\":\"到家App认证\"}"
+        },
+        "SSO4DD" : {
+          "description" : "{\"code\":\"sso4dd\",\"name\":\"达达认证（运营平台）\",\"desc\":\"达达SSO认证\"}"
+        },
+        "SSO4DJ" : {
+          "description" : "{\"code\":\"sso4dj\",\"name\":\"到家认证（商家中心）\",\"desc\":\"到家SSO认证\"}"
+        },
+        "SSO4DJ_APP" : {
+          "description" : "{\"code\":\"sso4djApp\",\"name\":\"精明管家\",\"desc\":\"到家APP认证\"}"
+        },
+        "SSO4JD" : {
+          "description" : "{\"code\":\"sso4jd\",\"name\":\"京东认证（京东ERP）\",\"desc\":\"京东SSO认证\"}"
+        },
+        "GW4JD" : {
+          "description" : "{\"code\":\"gw4jd\",\"name\":\"京东APP认证（小时购）\",\"desc\":\"京东APP认证\"}"
+        },
+        "GW4HB" : {
+          "description" : "{\"code\":\"gw4hb\",\"name\":\"海博认证（APP端）\",\"desc\":\"海博APP端\"}"
+        },
+        "SSO4HB" : {
+          "description" : "{\"code\":\"sso4hb\",\"name\":\"海博认证（商家端）\",\"desc\":\"海博商家端\"}"
+        }
+      }
+    },
+    "OperationTargetEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "PROJECT" : {
+          "description" : "{\"code\":\"project\",\"name\":\"工程\"}"
+        },
+        "PROJECT_ENV" : {
+          "description" : "{\"code\":\"project_env\",\"name\":\"环境\"}"
+        },
+        "PROJECT_MEMBER" : {
+          "description" : "{\"code\":\"project_member\",\"name\":\"成员\"}"
+        },
+        "FLOW" : {
+          "description" : "{\"code\":\"flow\",\"name\":\"流程\"}"
+        },
+        "FLOW_CONFIG" : {
+          "description" : "{\"code\":\"flow_config\",\"name\":\"配置\"}"
+        },
+        "STEP" : {
+          "description" : "{\"code\":\"step\",\"name\":\"步骤\"}"
+        },
+        "PARAMETERS" : {
+          "description" : "{\"code\":\"parameters\",\"name\":\"参数化\"}"
+        }
+      }
+    },
+    "ContentTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "JSON" : {
+          "description" : "{\"code\":\"application/json\",\"name\":\"application/json\",\"desc\":\"JSON数据格式\"}"
+        },
+        "FORM" : {
+          "description" : "{\"code\":\"application/x-www-form-urlencoded\",\"name\":\"application/x-www-form-urlencoded\",\"desc\":\"表单数据\"}"
+        },
+        "STREAM" : {
+          "description" : "{\"code\":\"application/octet-stream\",\"name\":\"application/octet-stream\",\"desc\":\"二进制流数据-文件下载\"}"
+        },
+        "MULTIPART" : {
+          "description" : "{\"code\":\"multipart/form-data\",\"name\":\"multipart/form-data\",\"desc\":\"支持流数据-文件上传\"}"
+        }
+      }
+    },
+    "StepTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "HTTP" : {
+          "description" : "{\"code\":\"http\",\"name\":\"http\"}"
+        },
+        "JSF" : {
+          "description" : "{\"code\":\"jsf\",\"name\":\"jsf\"}"
+        },
+        "FLOW" : {
+          "description" : "{\"code\":\"flow\",\"name\":\"flow\"}"
+        }
+      }
+    },
+    "FlowPhaseEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "START" : {
+          "description" : "{\"code\":\"start\",\"name\":\"流程开始\"}"
+        },
+        "STEP_BUILD" : {
+          "description" : "{\"code\":\"stepBuild\",\"name\":\"构建步骤\"}"
+        },
+        "PARAM_BUILDER" : {
+          "description" : "{\"code\":\"paramBuilder\",\"name\":\"入参构建\"}"
+        },
+        "EXECUTE" : {
+          "description" : "{\"code\":\"execute\",\"name\":\"流程执行\"}"
+        },
+        "OUT_PARAM_BUILDER" : {
+          "description" : "{\"code\":\"outParamBuilder\",\"name\":\"出参构建\"}"
+        },
+        "AFTER_PROCESSOR" : {
+          "description" : "{\"code\":\"afterProcessor\",\"name\":\"后置处理\"}"
+        },
+        "FINISHED" : {
+          "description" : "{\"code\":\"finished\",\"name\":\"流程结束\"}"
+        }
+      }
+    },
+    "FailOverEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "BREAK" : {
+          "description" : "{\"code\":\"break\",\"name\":\"阻断\"}"
+        },
+        "CONTINUE" : {
+          "description" : "{\"code\":\"continue\",\"name\":\"继续\"}"
+        },
+        "RETRY" : {
+          "description" : "{\"code\":\"retry\",\"name\":\"重试\"}"
+        }
+      }
+    },
+    "FunDateUnitEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "DAY" : {
+          "description" : "{\"code\":\"day\",\"name\":\"天\"}"
+        },
+        "HOUR" : {
+          "description" : "{\"code\":\"hour\",\"name\":\"时\"}"
+        },
+        "MINUS" : {
+          "description" : "{\"code\":\"minute\",\"name\":\"分\"}"
+        }
+      }
+    },
+    "FlowConfigEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "GROUP" : {
+          "description" : "{\"code\":1,\"name\":\"流程分组\"}"
+        },
+        "LABEL" : {
+          "description" : "{\"code\":2,\"name\":\"流程标签\"}"
+        },
+        "ACCOUNT" : {
+          "description" : "{\"code\":5,\"name\":\"账号认证\"}"
+        },
+        "SHARE_PARAM" : {
+          "description" : "{\"code\":6,\"name\":\"公共参数\"}"
+        }
+      }
+    },
+    "DateFormatTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "TYPE1" : {
+          "description" : "{\"code\":1,\"name\":\"yyyy-MM-dd HH:mm:ss\"}"
+        },
+        "TYPE2" : {
+          "description" : "{\"code\":2,\"name\":\"yyyy/MM/dd HH:mm:ss\"}"
+        },
+        "TYPE3" : {
+          "description" : "{\"code\":3,\"name\":\"yyyy-MM-dd\"}"
+        },
+        "TYPE4" : {
+          "description" : "{\"code\":4,\"name\":\"yyyy/MM/dd\"}"
+        }
+      }
+    },
+    "ProcessorPhaseEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "BEFORE" : {
+          "description" : "{\"code\":\"before\",\"name\":\"前置处理器\"}"
+        },
+        "AFTER" : {
+          "description" : "{\"code\":\"after\",\"name\":\"后置处理器\"}"
+        }
+      }
+    },
+    "ParamFuncEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "SEQUENCE" : {
+          "description" : "{\"code\":\"sequence\",\"name\":\"自增序列\"}"
+        },
+        "RANDOM" : {
+          "description" : "{\"code\":\"random\",\"name\":\"随机数\"}"
+        },
+        "UUID" : {
+          "description" : "{\"code\":\"uuid\",\"name\":\"随机串\"}"
+        },
+        "DATE" : {
+          "description" : "{\"code\":\"date\",\"name\":\"当前日期\"}"
+        },
+        "TIME" : {
+          "description" : "{\"code\":\"time\",\"name\":\"时间毫秒数\"}"
+        },
+        "DATETIME" : {
+          "description" : "{\"code\":\"dateTime\",\"name\":\"当前时间\"}"
+        }
+      }
+    },
+    "FlowTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "AGGREGATION" : {
+          "description" : "{\"code\":\"aggregation\",\"name\":\"聚合型\"}"
+        },
+        "TRANSACTION" : {
+          "description" : "{\"code\":\"transaction\",\"name\":\"事务型\"}"
+        }
+      }
+    },
+    "ConfigCodeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "SETTING_CONFIG" : {
+          "description" : "{\"code\":\"setting\",\"name\":\"系统配置\"}"
+        },
+        "BUSINESS_CONFIG" : {
+          "description" : "{\"code\":\"businessConfig\",\"name\":\"业务配置\"}"
+        }
+      }
+    },
+    "RetryPolicyEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "ALWAYS" : {
+          "description" : "{\"code\":\"always\",\"name\":\"无限重试\",\"desc\":\"允许无限重试，直到成功\"}"
+        },
+        "SIMPLE" : {
+          "description" : "{\"code\":\"simple\",\"name\":\"固定次数\",\"desc\":\"固定次数[maxNum]重试策略\"}"
+        },
+        "TIMEOUT" : {
+          "description" : "{\"code\":\"timeout\",\"name\":\"限时重试\",\"desc\":\"限定时间内重试策略[timeout],单位:秒\"}"
+        }
+      }
+    },
+    "ProtocolEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "HTTP" : {
+          "description" : "{\"code\":\"http\",\"name\":\"HTTP应用\"}"
+        },
+        "JSF" : {
+          "description" : "{\"code\":\"jsf\",\"name\":\"JSF应用\"}"
+        }
+      }
+    },
+    "ProcessorTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "BREAK_CHECK" : {
+          "description" : "{\"code\":\"break_check\",\"name\":\"阻塞校验\",\"desc\":\"前置处理器中决定当前步骤是否会执行\"}"
+        },
+        "PARAM_PREPARE" : {
+          "description" : "{\"code\":\"param_prepare\",\"name\":\"数据清洗\",\"desc\":\"执行上下文的参数处理\"}"
+        }
+      }
+    },
+    "HttpActionEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "GET" : {
+          "description" : "{\"code\":\"GET\",\"name\":\"GET\"}"
+        },
+        "POST" : {
+          "description" : "{\"code\":\"POST\",\"name\":\"POST\"}"
+        },
+        "DELETE" : {
+          "description" : "{\"code\":\"DELETE\",\"name\":\"DELETE\"}"
+        }
+      }
+    },
+    "EnvTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "PRE_PRODUCT" : {
+          "description" : "{\"code\":3,\"name\":\"预发布\"}"
+        },
+        "PRODUCT" : {
+          "description" : "{\"code\":4,\"name\":\"正式\"}"
+        }
+      }
+    },
+    "DataTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "STRING" : {
+          "description" : "{\"code\":\"string\",\"name\":\"string\",\"desc\":\"java.lang.String\"}"
+        },
+        "INT" : {
+          "description" : "{\"code\":\"int\",\"name\":\"int\",\"desc\":\"java.lang.Integer\"}"
+        },
+        "LONG" : {
+          "description" : "{\"code\":\"long\",\"name\":\"long\",\"desc\":\"java.lang.Long\"}"
+        },
+        "BOOLEAN" : {
+          "description" : "{\"code\":\"boolean\",\"name\":\"boolean\",\"desc\":\"java.lang.Boolean\"}"
+        },
+        "DATE_TIME" : {
+          "description" : "{\"code\":\"dateTime\",\"name\":\"dateTime\",\"desc\":\"java.util.Date\"}"
+        },
+        "BYTE" : {
+          "description" : "{\"code\":\"byte\",\"name\":\"byte\",\"desc\":\"java.lang.Byte\"}"
+        },
+        "SHORT" : {
+          "description" : "{\"code\":\"short\",\"name\":\"short\",\"desc\":\"java.lang.Short\"}"
+        },
+        "FLOAT" : {
+          "description" : "{\"code\":\"float\",\"name\":\"float\",\"desc\":\"java.lang.Float\"}"
+        },
+        "DOUBLE" : {
+          "description" : "{\"code\":\"double\",\"name\":\"double\",\"desc\":\"java.lang.Double\"}"
+        },
+        "CHAR" : {
+          "description" : "{\"code\":\"char\",\"name\":\"char\",\"desc\":\"java.lang.Character\"}"
+        },
+        "OBJECT" : {
+          "description" : "{\"code\":\"object\",\"name\":\"object\",\"desc\":\"java.lang.Object\"}"
+        }
+      }
+    },
+    "OperationTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "ADD" : {
+          "description" : "{\"code\":1,\"name\":\"新增\"}"
+        },
+        "UPDATE" : {
+          "description" : "{\"code\":2,\"name\":\"更新\"}"
+        },
+        "DELETE" : {
+          "description" : "{\"code\":3,\"name\":\"删除\"}"
+        },
+        "OTHER" : {
+          "description" : "{\"code\":4,\"name\":\"其它\"}"
+        }
+      }
+    },
+    "ParamTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "BASE" : {
+          "description" : "{\"code\":\"base\",\"name\":\"基本类型\"}"
+        },
+        "ARRAY" : {
+          "description" : "{\"code\":\"array\",\"name\":\"数组类型\"}"
+        },
+        "OBJECT" : {
+          "description" : "{\"code\":\"object\",\"name\":\"对象类型\"}"
+        }
+      }
+    },
+    "ProjectRoleEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "ADMIN" : {
+          "description" : "{\"code\":1,\"name\":\"管理员\"}"
+        },
+        "RW" : {
+          "description" : "{\"code\":2,\"name\":\"读写\"}"
+        },
+        "R" : {
+          "description" : "{\"code\":3,\"name\":\"只读\"}"
+        }
+      }
+    },
+    "StepPhaseEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "START" : {
+          "description" : "{\"code\":\"start\",\"name\":\"步骤开始\"}"
+        },
+        "RUNNABLE" : {
+          "description" : "{\"code\":\"runnable\",\"name\":\"执行校验\"}"
+        },
+        "PRE_PARAM_WRAPPER" : {
+          "description" : "{\"code\":\"preParamWrapper\",\"name\":\"前置参数\"}"
+        },
+        "PARAM_BUILDER" : {
+          "description" : "{\"code\":\"paramBuilder\",\"name\":\"参数构建\"}"
+        },
+        "EXECUTE" : {
+          "description" : "{\"code\":\"execute\",\"name\":\"步骤执行\"}"
+        },
+        "AFTER_PROCESSOR" : {
+          "description" : "{\"code\":\"afterProcessor\",\"name\":\"后置处理\"}"
+        },
+        "FINISHED" : {
+          "description" : "{\"code\":\"finished\",\"name\":\"步骤结束\"}"
+        }
+      }
+    },
+    "LockedCodeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "SEQUENCE" : {
+          "description" : "{\"code\":\"design_seq_\",\"name\":\"自增序列\"}"
+        },
+        "SESSION" : {
+          "description" : "{\"code\":\"session_\",\"name\":\"登录会话\"}"
+        }
+      }
+    },
+    "EnvDataEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "JSF_CONFIG" : {
+          "description" : "{\"code\":\"jsfConfig\",\"name\":\"JSF别名配置\"}"
+        },
+        "HTTP_CONFIG" : {
+          "description" : "{\"code\":\"httpConfig\",\"name\":\"HTTP域名配置\"}"
+        },
+        "VARIABLES" : {
+          "description" : "{\"code\":\"variables\",\"name\":\"全局环境变量\"}"
+        }
+      }
+    },
+    "PipelineTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "FLOW" : {
+          "description" : "{\"code\":\"flow\",\"name\":\"流程\"}"
+        },
+        "STEP" : {
+          "description" : "{\"code\":\"step\",\"name\":\"步骤\"}"
+        }
+      }
+    },
+    "CheckPointTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "EQUALS" : {
+          "description" : "{\"code\":1,\"name\":\"等于\"}"
+        },
+        "NOT_EQUALS" : {
+          "description" : "{\"code\":2,\"name\":\"不等于\"}"
+        },
+        "GREAT" : {
+          "description" : "{\"code\":3,\"name\":\"大于\"}"
+        },
+        "GREAT_EQUALS" : {
+          "description" : "{\"code\":4,\"name\":\"大于等于\"}"
+        },
+        "LITTLE" : {
+          "description" : "{\"code\":5,\"name\":\"小于\"}"
+        },
+        "LITTLE_EQUALS" : {
+          "description" : "{\"code\":6,\"name\":\"小于等于\"}"
+        },
+        "INCLUDE" : {
+          "description" : "{\"code\":7,\"name\":\"包含\"}"
+        },
+        "EXCLUDE" : {
+          "description" : "{\"code\":8,\"name\":\"不包含\"}"
+        }
+      }
+    },
+    "RuleEngineEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "AVIATOR" : {
+          "description" : "{\"code\":\"aviator\",\"name\":\"Aviator\"}"
+        },
+        "SPRING_EL" : {
+          "description" : "{\"code\":\"springEL\",\"name\":\"SpringEL\"}"
+        }
+      }
+    },
+    "CaseStatusEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "UNDO" : {
+          "description" : "{\"code\":-1,\"name\":\"未执行\"}"
+        },
+        "SUCCESS" : {
+          "description" : "{\"code\":0,\"name\":\"执行成功\"}"
+        },
+        "BACKUP" : {
+          "description" : "{\"code\":1,\"name\":\"降级处理\"}"
+        },
+        "TIMEOUT" : {
+          "description" : "{\"code\":2,\"name\":\"执行超时\"}"
+        },
+        "FAILURE" : {
+          "description" : "{\"code\":3,\"name\":\"执行失败\"}"
+        }
+      }
+    },
+    "CaseTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "TEST" : {
+          "description" : "{\"code\":1,\"name\":\"测试用例\"}"
+        },
+        "TASK" : {
+          "description" : "{\"code\":2,\"name\":\"任务用例\"}"
+        }
+      }
+    },
+    "RespStorageEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "PLATFORM" : {
+          "description" : "{\"code\":\"platform\",\"name\":\"平台存储\"}"
+        },
+        "LOG" : {
+          "description" : "{\"code\":\"log\",\"name\":\"日志文件\"}"
+        },
+        "MQ" : {
+          "description" : "{\"code\":\"mq\",\"name\":\"MQ消息\"}"
+        }
+      }
+    },
+    "DataSourceEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "PLATFORM" : {
+          "description" : "{\"code\":\"platform\",\"name\":\"平台\"}"
+        }
+      }
+    },
+    "Constants" : {
+      "type" : "object"
+    },
+    "FlowStatusEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "NORM" : {
+          "description" : "{\"code\":0,\"name\":\"正常\"}"
+        },
+        "STOP" : {
+          "description" : "{\"code\":1,\"name\":\"停止\"}"
+        }
+      }
+    },
+    "TraceLogEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "RESPONSE" : {
+          "description" : "{\"code\":\"response\",\"name\":\"执行结果\"}"
+        },
+        "PARAMETER" : {
+          "description" : "{\"code\":\"parameter\",\"name\":\"正常入参\"}"
+        },
+        "HEADER" : {
+          "description" : "{\"code\":\"header\",\"name\":\"隐式参数\"}"
+        },
+        "OTHERS" : {
+          "description" : "{\"code\":\"others\",\"name\":\"其它\"}"
+        }
+      }
+    },
+    "BackoffPolicyEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "NO" : {
+          "description" : "{\"code\":\"no\",\"name\":\"立即重试\",\"desc\":\"即当重试时是立即重试\"}"
+        },
+        "FIXED" : {
+          "description" : "{\"code\":\"fixed\",\"name\":\"固定间隔\",\"desc\":\"period 指定休眠时间,单位:秒\"}"
+        },
+        "UNIFORM_RANDOM" : {
+          "description" : "{\"code\":\"uniformRandom\",\"name\":\"范围随机\",\"desc\":\"在 [minPeriod, maxPeriod] 之间取一个随机休眠时间,单位:秒\"}"
+        },
+        "EXPONENTIAL" : {
+          "description" : "{\"code\":\"exponential\",\"name\":\"指数递增\",\"desc\":\"initialInterval 指定初始休眠时,maxInterval 指定最大休眠时间,multiplier 指定乘数，即下一次休眠时间为当前休眠时间 * multiplier\"}"
+        },
+        "EXPONENTIAL_RANDOM" : {
+          "description" : "{\"code\":\"exponentialRandom\",\"name\":\"随机指数\",\"desc\":\"引入随机乘数，之前说过固定乘数可能会引起很多服务同时重试导致 DDos，使用随机休眠时间来避免这种情况\"}"
+        }
+      }
+    },
+    "DirectionEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "POSITIVE" : {
+          "description" : "{\"code\":0,\"name\":\"正向\"}"
+        },
+        "NEGATIVE" : {
+          "description" : "{\"code\":1,\"name\":\"逆向\"}"
+        }
+      }
+    },
+    "ParamMappingTypeEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "FLOW_PARAMETER" : {
+          "description" : "{\"code\":\"ROOT\",\"name\":\"流程入参\"}"
+        },
+        "VARIABLE" : {
+          "description" : "{\"code\":\"variable\",\"name\":\"临时变量\"}"
+        },
+        "SETTING" : {
+          "description" : "{\"code\":\"setting\",\"name\":\"环境变量\"}"
+        },
+        "GLOBAL" : {
+          "description" : "{\"code\":\"global\",\"name\":\"参数化\"}"
+        },
+        "FUNCTION" : {
+          "description" : "{\"code\":\"function\",\"name\":\"内置函数\"}"
+        },
+        "PARAMETER" : {
+          "description" : "{\"code\":\"parameter\",\"name\":\"步骤入参\"}"
+        },
+        "RESPONSE" : {
+          "description" : "{\"code\":\"response\",\"name\":\"步骤出参\"}"
+        },
+        "HEADER" : {
+          "description" : "{\"code\":\"header\",\"name\":\"隐式传参\"}"
+        }
+      }
+    },
+    "ProcessEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "SEQUENTIAL" : {
+          "description" : "{\"code\":1,\"name\":\"串行\"}"
+        },
+        "PARALLEL" : {
+          "description" : "{\"code\":2,\"name\":\"并行\"}"
+        }
+      }
+    },
+    "ManagerBelongEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "FLOW" : {
+          "description" : "{\"code\":\"flow\",\"name\":\"流程\"}"
+        },
+        "STEP" : {
+          "description" : "{\"code\":\"step\",\"name\":\"步骤\"}"
+        },
+        "PROJECT_ENV" : {
+          "description" : "{\"code\":\"project_env\",\"name\":\"工程环境\"}"
+        },
+        "PLACEHOLDER" : {
+          "description" : "{\"code\":\"placeholder\",\"name\":\"参数化\"}"
+        },
+        "FLOW_CONFIG" : {
+          "description" : "{\"code\":\"flow_config\",\"name\":\"流程配置\"}"
+        }
+      }
+    },
+    "DateOperatorEnum" : {
+      "type" : "enum",
+      "properties" : {
+        "DEFAULT" : {
+          "description" : "{\"code\":0,\"name\":\"默认\"}"
+        },
+        "ADD" : {
+          "description" : "{\"code\":1,\"name\":\"加\"}"
+        },
+        "SUB" : {
+          "description" : "{\"code\":2,\"name\":\"减\"}"
+        }
+      }
+    },
+    "ServiceResponse" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "object",
+          "properties" : { }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "FlowTaskEntity" : {
+      "type" : "object",
+      "required" : [ "endTime", "envId", "execNum", "flowId", "id", "restartable", "startTime", "status" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "primaryNo" : {
+          "type" : "string"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "startTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "endTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "dataSource" : {
+          "type" : "string"
+        },
+        "header" : {
+          "type" : "string"
+        },
+        "parameters" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "execNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "restartable" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "firstExecTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Page" : {
+      "type" : "object",
+      "properties" : {
+        "pageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "hasPre" : {
+          "type" : "boolean"
+        },
+        "hasNext" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "SortBean" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "sort" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SortBuilder" : {
+      "type" : "object",
+      "properties" : {
+        "sortBeanList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/SortBean",
+            "$ref" : "#/definitions/SortBean"
+          }
+        }
+      }
+    },
+    "FlowExecuteInput" : {
+      "type" : "object",
+      "required" : [ "channelSource", "envId", "flowId", "flowUrl", "token" ],
+      "properties" : {
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 20200821,
+          "description" : "所属环境编号"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 20200821,
+          "description" : "流程编号"
+        },
+        "flowUrl" : {
+          "type" : "string",
+          "example" : "index",
+          "description" : "流程资源名"
+        },
+        "token" : {
+          "type" : "string",
+          "description" : "授权码"
+        },
+        "header" : {
+          "type" : "object",
+          "description" : "请求头",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "parameters" : {
+          "type" : "object",
+          "description" : "请求入参",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "primaryNo" : {
+          "type" : "string",
+          "description" : "请求业务主键"
+        },
+        "channelSource" : {
+          "type" : "string",
+          "description" : "渠道来源,标记自己的业务来源"
+        }
+      },
+      "description" : "流程执行请求"
+    },
+    "Command" : {
+      "type" : "object",
+      "properties" : {
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "执行环境"
+        },
+        "direction" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "0:正向流程: 1:逆向流程 参照[DirectionEnum]"
+        },
+        "pipelineType" : {
+          "type" : "string",
+          "description" : "命令类型[PipelineTypeEnum]:flow或step"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "对应pipelineType的业务主键：流程编号或步骤编号"
+        }
+      }
+    },
+    "CommandTrace" : {
+      "type" : "object",
+      "properties" : {
+        "refAlias" : {
+          "type" : "string",
+          "description" : "别名"
+        },
+        "command" : {
+          "description" : "执行命令",
+          "originalRef" : "#/definitions/Command",
+          "$ref" : "#/definitions/Command"
+        },
+        "startTime" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "执行开始时间"
+        },
+        "endTime" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "执行结束时间"
+        },
+        "phaseTraceMap" : {
+          "type" : "object",
+          "description" : "各个执行阶段的日志记录,key是StepPhaseEnum或FlowPhaseEnum",
+          "additionalProperties" : {
+            "originalRef" : "#/definitions/PhaseTrace",
+            "$ref" : "#/definitions/PhaseTrace"
+          }
+        }
+      }
+    },
+    "PhaseTrace" : {
+      "type" : "object",
+      "properties" : {
+        "startTime" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "执行开始时间"
+        },
+        "endTime" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "执行结束时间"
+        },
+        "result" : {
+          "type" : "object",
+          "description" : "对应执行阶段的结果",
+          "properties" : { }
+        },
+        "phaseType" : {
+          "type" : "string",
+          "description" : "流程[FlowPhaseEnum]/步骤[StepPhaseEnum]执行阶段"
+        }
+      }
+    },
+    "RunResponse" : {
+      "type" : "object",
+      "properties" : {
+        "traceId" : {
+          "type" : "string",
+          "example" : "17c308c01b1-c0a8bf07-24b81-1343d75-1343d78",
+          "description" : "请求唯一编号:时间戳-ip地址-进程号加末尾2位自增序号-环境编号-流程编号"
+        },
+        "variable" : {
+          "type" : "object",
+          "description" : "中间临时变量",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "flowTraceInfo" : {
+          "description" : "流程执行详情",
+          "originalRef" : "#/definitions/CommandTrace",
+          "$ref" : "#/definitions/CommandTrace"
+        },
+        "stepTraceInfoList" : {
+          "type" : "array",
+          "description" : "步骤执行详情",
+          "items" : {
+            "originalRef" : "#/definitions/CommandTrace",
+            "$ref" : "#/definitions/CommandTrace"
+          }
+        },
+        "result" : {
+          "type" : "object",
+          "description" : "执行结果",
+          "properties" : { }
+        }
+      },
+      "description" : "流程执行结果"
+    },
+    "ServiceResponseRunResponse" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/RunResponse",
+          "$ref" : "#/definitions/RunResponse"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseInteger" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ItemParam" : {
+      "type" : "object",
+      "properties" : {
+        "taskItemId" : {
+          "type" : "string"
+        },
+        "parameter" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ScheduleInput" : {
+      "type" : "object",
+      "properties" : {
+        "taskParameter" : {
+          "type" : "string"
+        },
+        "taskItemNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "itemParamList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/ItemParam",
+            "$ref" : "#/definitions/ItemParam"
+          }
+        },
+        "eachFetchDataNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ownSign" : {
+          "type" : "string"
+        },
+        "extParamMap" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "itemList" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "ServiceResponseMapStringString" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "SessionContext" : {
+      "type" : "object",
+      "required" : [ "appType", "envType", "erp", "platCode" ],
+      "properties" : {
+        "envType" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 3,
+          "description" : "环境类型：EnvTypeEnum"
+        },
+        "appType" : {
+          "type" : "string",
+          "example" : "gw",
+          "description" : "登录认证方式：AppTypeEnum"
+        },
+        "platCode" : {
+          "type" : "string",
+          "example" : "H5",
+          "description" : "平台类型：PlatCodeEnum"
+        },
+        "erp" : {
+          "type" : "string",
+          "example" : "liuhuiqing1",
+          "description" : "京东erp账号"
+        }
+      },
+      "description" : "登录认证会话上下文"
+    },
+    "ServiceResponseBoolean" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "boolean"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "EnvInfoEntity" : {
+      "type" : "object",
+      "required" : [ "envType", "id", "projectId" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "envType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "envName" : {
+          "type" : "string"
+        },
+        "host" : {
+          "type" : "string"
+        },
+        "variables" : {
+          "type" : "string"
+        },
+        "httpConfig" : {
+          "type" : "string"
+        },
+        "jsfConfig" : {
+          "type" : "string"
+        },
+        "beforeProcessor" : {
+          "type" : "string"
+        },
+        "afterProcessor" : {
+          "type" : "string"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FlowCaseEntity" : {
+      "type" : "object",
+      "required" : [ "caseType", "envId", "envType", "flowId", "id", "projectId", "purpose" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "caseName" : {
+          "type" : "string"
+        },
+        "caseDesc" : {
+          "type" : "string"
+        },
+        "caseType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "purpose" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "header" : {
+          "type" : "string"
+        },
+        "parameters" : {
+          "type" : "string"
+        },
+        "responses" : {
+          "type" : "string"
+        },
+        "expireCheck" : {
+          "type" : "string"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "envType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "FlowConfigEntity" : {
+      "type" : "object",
+      "required" : [ "configType", "envId", "id", "projectId" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "configType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "primaryNo" : {
+          "type" : "string"
+        },
+        "configName" : {
+          "type" : "string"
+        },
+        "configValue" : {
+          "type" : "string"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceResponseLong" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "FlowInfoEntity" : {
+      "type" : "object",
+      "required" : [ "flowGroup", "id", "priority", "projectId", "status", "tagId" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "flowUrl" : {
+          "type" : "string"
+        },
+        "flowName" : {
+          "type" : "string"
+        },
+        "flowDesc" : {
+          "type" : "string"
+        },
+        "flowType" : {
+          "type" : "string"
+        },
+        "flowGroup" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "priority" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "tagId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "dataSource" : {
+          "type" : "string"
+        },
+        "respStorage" : {
+          "type" : "string"
+        },
+        "paramMapping" : {
+          "type" : "string"
+        },
+        "respMapping" : {
+          "type" : "string"
+        },
+        "expireCheck" : {
+          "type" : "string"
+        },
+        "failOver" : {
+          "type" : "string"
+        },
+        "retryLogic" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "schemaVersion" : {
+          "type" : "string"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PlaceholderEntity" : {
+      "type" : "object",
+      "required" : [ "envId", "id", "paramKey" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "paramType" : {
+          "type" : "string"
+        },
+        "paramScope" : {
+          "type" : "string"
+        },
+        "paramKey" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "primaryKey" : {
+          "type" : "string"
+        },
+        "paramName" : {
+          "type" : "string"
+        },
+        "paramDesc" : {
+          "type" : "string"
+        },
+        "exprContent" : {
+          "type" : "string"
+        },
+        "ext" : {
+          "type" : "string"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "ProjectInfoEntity" : {
+      "type" : "object",
+      "required" : [ "id", "priority", "sortNo" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "projectName" : {
+          "type" : "string"
+        },
+        "projectType" : {
+          "type" : "string"
+        },
+        "priority" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "schemaVersion" : {
+          "type" : "string"
+        },
+        "projectDesc" : {
+          "type" : "string"
+        },
+        "managers" : {
+          "type" : "string"
+        },
+        "readers" : {
+          "type" : "string"
+        },
+        "writers" : {
+          "type" : "string"
+        },
+        "sortNo" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "StepInfoEntity" : {
+      "type" : "object",
+      "required" : [ "flowId", "id", "nextDelayTime", "projectId", "responseTimeoutMills", "sortNo", "status" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stepName" : {
+          "type" : "string"
+        },
+        "refAlias" : {
+          "type" : "string"
+        },
+        "stepType" : {
+          "type" : "string"
+        },
+        "appType" : {
+          "type" : "string"
+        },
+        "stepDesc" : {
+          "type" : "string"
+        },
+        "methodName" : {
+          "type" : "string"
+        },
+        "protocol" : {
+          "type" : "string"
+        },
+        "extraInfo" : {
+          "type" : "string"
+        },
+        "paramMapping" : {
+          "type" : "string"
+        },
+        "expireCheck" : {
+          "type" : "string"
+        },
+        "beforeProcessor" : {
+          "type" : "string"
+        },
+        "afterProcessor" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nextDelayTime" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "rollbackId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "failOver" : {
+          "type" : "string"
+        },
+        "retryLogic" : {
+          "type" : "string"
+        },
+        "responseTimeoutMills" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "parentStepIds" : {
+          "type" : "string"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "appCode" : {
+          "type" : "string"
+        },
+        "sortNo" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "KeyInput" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "object",
+          "properties" : { }
+        },
+        "pin" : {
+          "type" : "string"
+        }
+      }
+    },
+    "KeyInputLong" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pin" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceResponseListEnvInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/EnvInfoEntity",
+            "$ref" : "#/definitions/EnvInfoEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListFlowCaseEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/FlowCaseEntity",
+            "$ref" : "#/definitions/FlowCaseEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListFlowConfigEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/FlowConfigEntity",
+            "$ref" : "#/definitions/FlowConfigEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListFlowInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/FlowInfoEntity",
+            "$ref" : "#/definitions/FlowInfoEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "FlowLogEntity" : {
+      "type" : "object",
+      "required" : [ "costTime", "envId", "flowId", "id", "passable", "restartable" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "traceId" : {
+          "type" : "string"
+        },
+        "primaryNo" : {
+          "type" : "string"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "dataSource" : {
+          "type" : "string"
+        },
+        "header" : {
+          "type" : "string"
+        },
+        "parameters" : {
+          "type" : "string"
+        },
+        "responses" : {
+          "type" : "string"
+        },
+        "passable" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "costTime" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "restartable" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PageBean" : {
+      "type" : "object",
+      "properties" : {
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "resultList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/Serializable",
+            "$ref" : "#/definitions/Serializable"
+          }
+        }
+      }
+    },
+    "PageBeanFlowLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "page" : {
+          "originalRef" : "#/definitions/PageFlowLogEntity",
+          "$ref" : "#/definitions/PageFlowLogEntity"
+        },
+        "resultList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/FlowLogEntity",
+            "$ref" : "#/definitions/FlowLogEntity"
+          }
+        }
+      }
+    },
+    "PageFlowLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "pageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "hasPre" : {
+          "type" : "boolean"
+        },
+        "hasNext" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "Serializable" : {
+      "type" : "object"
+    },
+    "ServiceResponsePageBeanFlowLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/PageBeanFlowLogEntity",
+          "$ref" : "#/definitions/PageBeanFlowLogEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "PageBeanFlowTaskEntity" : {
+      "type" : "object",
+      "properties" : {
+        "page" : {
+          "originalRef" : "#/definitions/PageFlowTaskEntity",
+          "$ref" : "#/definitions/PageFlowTaskEntity"
+        },
+        "resultList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/FlowTaskEntity",
+            "$ref" : "#/definitions/FlowTaskEntity"
+          }
+        }
+      }
+    },
+    "PageFlowTaskEntity" : {
+      "type" : "object",
+      "properties" : {
+        "pageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "hasPre" : {
+          "type" : "boolean"
+        },
+        "hasNext" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponsePageBeanFlowTaskEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/PageBeanFlowTaskEntity",
+          "$ref" : "#/definitions/PageBeanFlowTaskEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "OperationLogEntity" : {
+      "type" : "object",
+      "required" : [ "envId", "id", "operationType", "projectId" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "projectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "operationType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "targetType" : {
+          "type" : "string"
+        },
+        "targetNo" : {
+          "type" : "string"
+        },
+        "targetDesc" : {
+          "type" : "string"
+        },
+        "targetBackup" : {
+          "type" : "string"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceResponseListOperationLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/OperationLogEntity",
+            "$ref" : "#/definitions/OperationLogEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListPlaceholderEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/PlaceholderEntity",
+            "$ref" : "#/definitions/PlaceholderEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListProjectInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/ProjectInfoEntity",
+            "$ref" : "#/definitions/ProjectInfoEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseListStepInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/StepInfoEntity",
+            "$ref" : "#/definitions/StepInfoEntity"
+          }
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "PageBeanStepLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "page" : {
+          "originalRef" : "#/definitions/PageStepLogEntity",
+          "$ref" : "#/definitions/PageStepLogEntity"
+        },
+        "resultList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/StepLogEntity",
+            "$ref" : "#/definitions/StepLogEntity"
+          }
+        }
+      }
+    },
+    "PageStepLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "pageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPageNo" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordNum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "hasPre" : {
+          "type" : "boolean"
+        },
+        "hasNext" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponsePageBeanStepLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/PageBeanStepLogEntity",
+          "$ref" : "#/definitions/PageBeanStepLogEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "StepLogEntity" : {
+      "type" : "object",
+      "required" : [ "costTime", "envId", "flowId", "id", "passable", "sortNo", "stepId" ],
+      "properties" : {
+        "sortBuilder" : {
+          "originalRef" : "#/definitions/SortBuilder",
+          "$ref" : "#/definitions/SortBuilder"
+        },
+        "extFields" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "page" : {
+          "originalRef" : "#/definitions/Page",
+          "$ref" : "#/definitions/Page"
+        },
+        "sysVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "createTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createPin" : {
+          "type" : "string"
+        },
+        "updatePin" : {
+          "type" : "string"
+        },
+        "yn" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ts" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "flowTraceId" : {
+          "type" : "string"
+        },
+        "stepId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "dataSource" : {
+          "type" : "string"
+        },
+        "header" : {
+          "type" : "string"
+        },
+        "parameters" : {
+          "type" : "string"
+        },
+        "responses" : {
+          "type" : "string"
+        },
+        "passable" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "costTime" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "sortNo" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ext" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceResponseEnvInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/EnvInfoEntity",
+          "$ref" : "#/definitions/EnvInfoEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseFlowCaseEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/FlowCaseEntity",
+          "$ref" : "#/definitions/FlowCaseEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseFlowConfigEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/FlowConfigEntity",
+          "$ref" : "#/definitions/FlowConfigEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseFlowInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/FlowInfoEntity",
+          "$ref" : "#/definitions/FlowInfoEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseFlowLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/FlowLogEntity",
+          "$ref" : "#/definitions/FlowLogEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseFlowTaskEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/FlowTaskEntity",
+          "$ref" : "#/definitions/FlowTaskEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponsePlaceholderEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/PlaceholderEntity",
+          "$ref" : "#/definitions/PlaceholderEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseProjectInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/ProjectInfoEntity",
+          "$ref" : "#/definitions/ProjectInfoEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseStepInfoEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/StepInfoEntity",
+          "$ref" : "#/definitions/StepInfoEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "ServiceResponseStepLogEntity" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "result" : {
+          "originalRef" : "#/definitions/StepLogEntity",
+          "$ref" : "#/definitions/StepLogEntity"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "DynamicParam" : {
+      "type" : "object",
+      "properties" : {
+        "envId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "paramSource" : {
+          "type" : "string"
+        },
+        "scope" : {
+          "type" : "string"
+        },
+        "expression" : {
+          "type" : "string"
+        },
+        "defaultValue" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AccountInfo" : {
+      "type" : "object",
+      "required" : [ "erp" ],
+      "properties" : {
+        "erp" : {
+          "type" : "string",
+          "example" : "liuhuiqing1",
+          "description" : "京东erp账号"
+        },
+        "accountItemList" : {
+          "type" : "array",
+          "description" : "登录认证方式列表",
+          "items" : {
+            "originalRef" : "#/definitions/AccountItem",
+            "$ref" : "#/definitions/AccountItem"
+          }
+        }
+      }
+    },
+    "AccountItem" : {
+      "type" : "object",
+      "required" : [ "appType", "userName" ],
+      "properties" : {
+        "appType" : {
+          "type" : "string",
+          "example" : "gw",
+          "description" : "认证类型:AppTypeEnum"
+        },
+        "userName" : {
+          "type" : "string",
+          "example" : "liuhuiqing",
+          "description" : "用户名"
+        },
+        "password" : {
+          "type" : "string",
+          "example" : "123456",
+          "description" : "密码"
+        },
+        "deviceId" : {
+          "type" : "string",
+          "example" : "123456",
+          "description" : "设备标识"
+        }
+      }
+    },
+    "FlowStepMapping" : {
+      "type" : "object",
+      "properties" : {
+        "flowId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "stepMappingList" : {
+          "type" : "array",
+          "items" : {
+            "originalRef" : "#/definitions/StepMapping",
+            "$ref" : "#/definitions/StepMapping"
+          }
+        },
+        "operator" : {
+          "type" : "string"
+        }
+      }
+    },
+    "StepMapping" : {
+      "type" : "object",
+      "properties" : {
+        "stepId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "parentStepIds" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

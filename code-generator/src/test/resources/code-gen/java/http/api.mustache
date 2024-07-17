@@ -1,0 +1,9 @@
+package {{pkgName}};
+{{#each imports}}import {{this}};
+{{/each}}
+public interface {{name}} {
+ {{#methods }}
+     public {{returnType.reference}} {{methodName}}({{inputString}});
+ {{/methods}}
+
+}

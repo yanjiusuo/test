@@ -1,0 +1,51 @@
+# 服务端口
+server:
+  port: 8020
+spring:
+  profiles:
+    active: dev
+  #数据库配置
+datasource:
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      connectionProperties: useUnicode=true;characterEncoding=utf-8;useSSL=false;serverTimezone=UTC+8
+      url: jdbc:mysql://gate6.local.jed.jddb.com:3306/flow_db?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: flow_db_rw
+      password: mW40LF42tr4fDqFs
+
+
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    #Oracle需要打开注释
+    validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: false
+      wall:
+        config:
+          multi-statement-allow: true
+
+
+
+ducc.env: DEV
+
+up:
+  adapter:
+    duccBizConfig:
+      application: jdos_up-portal-web-test
+      token: 8d31d98d4f8943aa82d19d130a141d9b
+      namespaceId: up_portal_biz_config
+      profile: PRD
+      host: http//test.ducc-api.jd.local

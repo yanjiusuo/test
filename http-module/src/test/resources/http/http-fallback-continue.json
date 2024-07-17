@@ -1,0 +1,18 @@
+{
+  "tasks": [{
+    "id": "http1",
+    "type": "http",
+    "successCondition": "output.status==200",
+    "endpointUrl": ["http://127.0.0.1:6010"],
+    "taskDef": {
+      "fallbackStrategy": "continue",
+      "fallback":"{\"a\":1}"
+    },
+    "input":{
+      "method": "get",
+      "url": "/error"
+    }
+  }
+
+  ]
+}

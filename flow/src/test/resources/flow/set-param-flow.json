@@ -1,0 +1,46 @@
+{
+  "input": {
+    "pageNo": 1,
+    "pageSize": 10
+  },
+  "params": [
+    {
+      "name": "sid",
+      "value": 1
+    },{
+      "name": "name",
+      "value": "wjf"
+    }
+  ],
+  "tasks": [{
+    "id": "step1",
+    "type": "transform",
+    "output": {
+      "headers": [],
+      "body": [
+        {
+          "name": "root",
+          "exprType": "expr",
+          "type": "object",
+          "children": [
+            {
+              "name": "sid",
+              "value": "${workflow.params.sid}",
+              "exprType": "expr",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "value": "workflow.params['name']",
+              "exprType": "script",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "taskDef": {
+      "timeout": 10000
+    }
+  }]
+}

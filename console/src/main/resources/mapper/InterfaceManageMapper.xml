@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.InterfaceManageMapper">
+    <resultMap id="interfaceTypeManageResultMap" type="com.jd.workflow.console.entity.InterfaceManage">
+        <id column="id" property="id" jdbcType="VARCHAR" javaType="long" />
+        <result column="config" jdbcType="VARCHAR" property="config" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler" />
+        <result column="sort_group_tree" jdbcType="VARCHAR" property="sortGroupTree" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler" />
+    </resultMap>
+
+    <select id="queryList" resultType="com.jd.workflow.console.entity.InterfaceManage"  resultMap="interfaceTypeManageResultMap">
+        select  o.id,o.type,o.name,o.desc,o.is_public,
+        o.env,o.path,o.tenant_id,o.node_type,o.service_code,
+        o.related_id,o.cjg_app_id,o.cjg_app_name,o.auto_report,
+        o.app_id,o.yn,o.creator,o.modifier,o.created,o.modified,o.config
+        from interface_manage o
+        where
+        o.yn = 1 and
+        (
+            o.id in (select relation.resource_id from member_relation relation where    relation.resource_type = #{resourceType}
+            and relation.yn=1
+            and relation.user_code = #{currentUser})
+            or o.app_id in (select app_id from app_info_members where erp = #{currentUser})
+            <if test="publicInterface">
+                or o.is_public = 1
+            </if>
+        )
+        and o.tenant_id = #{tenantId}
+        and o.type in
+        <foreach item="type" collection="types" open="(" separator="," close=")">
+            #{type}
+        </foreach>
+        <if test="authInterface">
+            and o.cjg_app_id is not null
+        </if>
+
+        <if test="adminCode!=null">
+            and o.id in(
+            select child.resource_id from member_relation child
+            where child.yn=1 and child.user_code = #{adminCode}
+            and child.resource_role = 2
+            and child.resource_type = #{resourceType}
+            )
+        </if>
+
+        <if test="appId != null">
+            and o.app_id = #{appId}
+        </if>
+
+        <if test="nodeType !=null">
+            and o.node_type = #{nodeType}
+        </if>
+        <if test="name !=null">
+            and ( o.name like concat('%',#{name},'%')
+               or o.service_code like concat('%',#{name},'%')
+            )
+        </if>
+        <if test=" level != null ">
+            and o.level = #{level}
+        </if>
+        <if test="autoReport !=null">
+            and o.auto_report = #{autoReport}
+        </if>
+        order by o.id desc
+        limit #{offset}, #{limit}
+    </select>
+    <select id="queryListCount" resultType="long">
+        select count(  o.id)
+        from interface_manage o
+        where
+        o.yn = 1 and
+        (
+        o.id in (select relation.resource_id from member_relation relation where    relation.resource_type = #{resourceType}
+        and relation.yn=1
+        and relation.user_code = #{currentUser})
+        or o.app_id in (select app_id from app_info_members where erp = #{currentUser})
+        <if test="publicInterface">
+            or o.is_public = 1
+        </if>
+        )
+        and o.tenant_id = #{tenantId}
+        and o.type in
+        <foreach item="type" collection="types" open="(" separator="," close=")">
+            #{type}
+        </foreach>
+
+        <if test="adminCode!=null">
+            and o.id in(
+            select child.resource_id from member_relation child
+            where child.yn=1 and child.user_code = #{adminCode}
+            and child.resource_role = 2
+            and child.resource_type = #{resourceType}
+            )
+        </if>
+
+        <if test="authInterface">
+            and o.cjg_app_id is not null
+        </if>
+
+        <if test="nodeType !=null">
+            and o.node_type = #{nodeType}
+        </if>
+        <if test="appId != null">
+            and o.app_id = #{appId}
+        </if>
+        <if test="name !=null">
+            and ( o.name like concat('%',#{name},'%')
+            or o.service_code like concat('%',#{name},'%')
+            )
+        </if>
+        <if test=" level != null ">
+            and o.level = #{level}
+        </if>
+
+        <if test="autoReport !=null">
+            and o.auto_report = #{autoReport}
+        </if>
+
+    </select>
+    <select id="queryUserInterfaceCount" resultType="java.util.Map">
+        select count(o.id) as size,o.auto_report as autoReport
+        from interface_manage o
+        where
+        o.yn = 1 and
+        (
+            o.id in (select relation.resource_id from member_relation relation where    relation.resource_type = #{resourceType}
+              and relation.yn=1
+              and relation.user_code = #{currentUser})
+           or app.id in (select app_id from app_info_members where erp = #{currentUser})
+        )
+
+        and o.type in (1,2,3)
+        group by o.auto_report
+
+
+    </select>
+    <select id="selectAdminList" resultType="com.jd.workflow.console.entity.InterfaceManage" resultMap="interfaceTypeManageResultMap">
+        select   o.id,o.type,o.name,o.desc,o.is_public,
+        o.env,o.path,o.tenant_id,o.node_type,o.service_code,
+        o.related_id,o.cjg_app_id,o.cjg_app_name,o.auto_report,
+        o.app_id,o.yn,o.creator,o.modifier,o.created,o.modified,o.config from interface_manage o
+        where
+           o.yn = 1
+        and o.tenant_id = #{tenantId}
+        and o.type in
+        <foreach item="type" collection="types"  open="(" separator="," close=")">
+            #{type}
+        </foreach>
+<!--        <if test="adminCode!=null">-->
+<!--            and relation.user_code = #{adminCode}-->
+<!--            and relation.resource_role = 2-->
+<!--        </if>-->
+
+        <if test="nodeType !=null">
+            and o.node_type = #{nodeType}
+        </if>
+        <if test="appId != null">
+            and o.app_id = #{appId}
+        </if>
+        <if test="name !=null">
+            and ( o.name like concat('%',#{name},'%')
+            or o.service_code like concat('%',#{name},'%')
+            )
+        </if>
+        <if test=" level != null ">
+            and o.level = #{level}
+        </if>
+        <if test="autoReport !=null">
+            and o.auto_report = #{autoReport}
+        </if>
+        order by o.id desc
+        limit #{offset}, #{limit}
+    </select>
+    <select id="selectAdminListCount" resultType="long">
+        select count( o.id) from interface_manage o
+        where
+            o.yn = 1
+        and o.tenant_id = #{tenantId}
+        and o.type in
+        <foreach item="type" collection="types" open="(" separator="," close=")">
+            #{type}
+        </foreach>
+<!--        <if test="adminCode!=null">-->
+<!--            and relation.user_code = #{adminCode}-->
+<!--            and relation.resource_role = 2-->
+<!--        </if>-->
+
+        <if test="nodeType !=null">
+            and o.node_type = #{nodeType}
+        </if>
+        <if test="appId != null">
+            and o.app_id = #{appId}
+        </if>
+        <if test="name !=null">
+            and ( o.name like concat('%',#{name},'%')
+            or o.service_code like concat('%',#{name},'%')
+            )
+        </if>
+        <if test=" level != null ">
+            and o.level = #{level}
+        </if>
+        <if test="autoReport !=null">
+            and o.auto_report = #{autoReport}
+        </if>
+
+
+    </select>
+
+
+    <select id="queryDeptNameList" resultType="string">
+        select distinct dept_name
+        from interface_manage
+        where  dept_name like  concat('%',#{deptName},'%')
+        order by dept_name desc
+        limit #{offset}, #{limit}
+    </select>
+
+    <select id="queryDeptNameCount" resultType="long">
+        select count( distinct dept_name)
+        from interface_manage
+        where  dept_name like   concat('%',#{deptName},'%')
+        order by dept_name desc
+    </select>
+
+    <select id="queryListByAppId" resultType="com.jd.workflow.console.entity.InterfaceManage">
+        select *  from interface_manage
+        where app_id = #{appId}
+    </select>
+
+    <select id="queryNumsByType" resultType="long">
+        select count(distinct o.id)  from interface_manage o
+        where type = #{type} and yn = 1
+    </select>
+
+
+    <!--通过主键修改数据 <set>
+                <if test="item.deptName != null and item.deptName != ''">
+                    dept_name = #{item.deptName}
+                </if>
+            </set>-->
+    <update id="batchUpdateInterfaceDeptName" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+            update interface_manage
+            set dept_name = #{item.deptName}
+            where id = ${item.id}
+        </foreach>
+    </update>
+
+    <update id="clearInvalidRelatedId" parameterType="java.lang.Integer">
+        update interface_manage set related_id = null
+        where service_code not like 'japi%'
+    </update>
+
+    <select id="selectByAppId" resultType="com.jd.workflow.console.dto.usecase.CaseInterfaceManageDTO">
+        select * from interface_manage
+        where app_id = #{appId}
+        <if test="type != null">
+            and type = #{type}
+        </if>
+    </select>
+</mapper>

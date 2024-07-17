@@ -1,0 +1,45 @@
+{
+  "input": {
+    "preProcess": "if(input.body.cityId<0) input.error('cityId无效');",
+    "body":[
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "cityId",
+            "type": "long"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "transform1",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "type": "object",
+            "name": "root",
+            "children": [{
+              "name": "code",
+              "type": "string",
+              "value": "0"
+            },{
+              "name": "message",
+              "type": "string",
+              "value": "获取成功"
+            },{
+              "name": "data",
+              "type": "string",
+              "value":"其他省份"
+            }]
+          }
+        ]
+      }
+    }
+
+  ]
+}

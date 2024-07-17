@@ -1,0 +1,37 @@
+//PUT /flow_interface_manage
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings":{
+      "_doc": {
+        "properties":{
+          "interfaceId":{
+            "type":"long"
+          },
+          "name":{
+            "type": "keyword"
+          },
+          "erps": {
+            "type": "text",
+            "analyzer": "whitespace"
+          },
+          "serviceCode": {
+            "type": "keyword"
+          },
+          "appName": {
+            "type": "keyword"
+          },
+          "appCode": {
+            "type": "keyword"
+          },
+          "deptName": {
+            "type": "keyword"
+          }
+        }
+      }
+   }
+}
+
+

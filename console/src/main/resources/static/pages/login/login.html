@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="../assets/element-ui/index.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+
+
+    <script type="text/javascript" src="../assets/js/vue/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="../assets/element-ui/index.js"></script>
+    <!-- axios -->
+    <script src="../assets/axios/axios.min.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <div id="login" class=" flex-box middle">
+        <el-card class="login-card">
+            <div slot="header">
+                <div class="tc">在线联调登录系统</div>
+            </div>
+            <div class="pd15">
+                <el-form
+                        ref="form"
+                        :model="form"
+                        @submit.native.prevent
+                        style="width: 350px;"
+                >
+                    <el-form-item
+                            prop="userName"
+
+                    >
+                        <el-input
+                                :value="form.userName"
+                                @input="handlePhoneChange"
+                                placeholder="请输入用户名"
+                                maxlength="100"
+                                @focus="wrong = false"
+                        >
+                            <template slot="prepend">
+                                <i class="el-icon-user"></i>
+                            </template>
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item
+                            prop="password"
+
+                    >
+                        <el-input
+                                type="password"
+                                v-model.trim="form.password"
+                                placeholder="请输入密码"
+                                maxlength="20"
+                                @focus="wrong = false"
+                        >
+                            <template slot="prepend">
+                                <i class="el-icon-lock"></i>
+                            </template>
+                        </el-input>
+                    </el-form-item>
+                </el-form>
+                <transition name="el-fade-in-linear">
+                    <div v-if="wrong"
+                         class="color-price"
+
+
+                    >
+                        {{ wrongText }}
+                    </div>
+                </transition>
+                <el-button class="login-btn"
+                           class="full-w "
+                           type="primary"
+                           @click="onSubmit"
+                           @keyup.enter.native="onSubmit"
+                           :disabled="!(form.userName && form.password)"
+                           :loading="loading"
+                >提交
+                </el-button
+                >
+            </div>
+        </el-card>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function parseQuery(s) {
+        if (!s)
+            return {};
+
+        var pairs = s.split("&");
+        var ret = {};
+        pairs.forEach(function (e) {
+            var pair = e.split('=');
+            var name = pair[0];
+            var v = ret[name];
+            var nv = pair[1] || "";
+            //parse [x,x] to json object
+            nv = decodeURIComponent(nv);
+            if (nv.charAt(0) == "[" && nv.charAt(nv.length - 1) == "]")
+                nv = JSON.parse(nv);
+
+            if (v === undefined) {
+                v = nv;
+            } else {
+                if (!Array.isArray(v))
+                    v = [v];
+                v = v.concat(nv);
+            }
+            ret[name] = v;
+        });
+        return ret;
+    }
+    var app = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                form: {
+                    loginType: 1,
+                    userName: "",
+                    password: ""
+                },
+                wrong: false,
+                loading: false,
+                wrongText: "用户名或密码不正确，请重新输入"
+            };
+        },
+        created:function() {
+
+        },
+        methods: {
+            handlePhoneChange:function(v) {
+                this.form.userName = v;
+            },
+            checkForm(){
+                if(!this.form.userName){
+                    this.$message.error("用户名不可以为空");
+                    return false;
+                }
+                if(!this.form.password){
+                    this.$message.error("密码不可以为空");
+                    return false;
+                }
+                return true;
+            },
+            redirectToIndex(){
+                var query = window.location.search;
+                if(query){
+                    query = query.substring(1)
+                }
+                var map = parseQuery(query);
+                if(map.ReturnUrl){
+                    window.location.href = map.ReturnUrl;
+                }else{
+                    window.location.href = "/";
+                }
+            },
+            onSubmit:function() {
+                if (!this.checkForm()) {
+                    return false;
+                }
+                this.loading = true;
+                var that = this;
+
+                var url = "/pages/login/login.html";
+                var pathName = window.location.pathname
+                var contextPath = pathName.substring(0,pathName.indexOf(url)) || "";
+                return window.axios.post(contextPath+"/login/login",{
+
+                    userName:this.form.userName,
+                    password:this.form.password
+
+                }).then(function(response){
+                    if(response.data.code == 0){
+                        that.redirectToIndex()
+                    }else{
+                        that.wrong = true;
+                        that.$message.error(response.data.message)
+                    }
+                }).finally(function(){
+                    that.loading = false;
+                });
+            }
+        }
+    })
+</script>
+</body>
+</html>

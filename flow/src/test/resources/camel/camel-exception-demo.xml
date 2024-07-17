@@ -1,0 +1,14 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+
+    <from uri="direct:start"/>
+    <doTry>
+        <process ref="logProcessor" id="step1" customId="true"/>
+        <doCatch >
+            <exception>java.lang.Exception</exception>
+            <process ref="exceptionProcessor" />
+        </doCatch>
+    </doTry>
+
+</route>
+
+

@@ -1,0 +1,197 @@
+{
+  "failOutput": {
+    "body": [{
+      "children": [{
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "code",
+        "required": false,
+        "type": "string",
+        "value": "400"
+      }, {
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "msg",
+        "required": false,
+        "type": "string",
+        "value": "${workflow.exception.message}"
+      }, {
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "data",
+        "required": false,
+        "type": "string",
+        "value": ""
+      }
+      ],
+      "desc": "",
+      "exprType": "expr",
+      "name": "root",
+      "required": false,
+      "type": "object",
+      "value": ""
+    }
+    ],
+    "headers": [],
+    "script": ""
+  },
+  "output": {
+    "body": [{
+      "children": [{
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "code",
+        "required": false,
+        "type": "string",
+        "value": "0"
+      }, {
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "msg",
+        "required": false,
+        "type": "string",
+        "value": "获取成功"
+      }, {
+        "className": "",
+        "desc": "",
+        "exprType": "expr",
+        "name": "data",
+        "required": false,
+        "type": "string",
+        "value": "${steps.step1.output.body}"
+      }
+      ],
+      "desc": "",
+      "exprType": "expr",
+      "name": "root",
+      "required": false,
+      "type": "object",
+      "value": ""
+    }
+    ],
+    "headers": [],
+    "script": ""
+  },
+  "tasks": [{
+    "endpointUrl": [
+      "http://11.138.18.164:7001"
+    ],
+    "entityId": 324,
+    "env": "正式环境",
+    "id": "step1",
+    "input": {
+      "schemaType": {
+        "attrs": {
+          "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+          "xmlns:web": "http://webservice.example.soap.workflow.jd.com/"
+        },
+        "children": [{
+          "children": [{
+            "children": [{
+              "name": "id",
+              "type": "long"
+            }, {
+              "name": "name",
+              "type": "string"
+            }
+            ],
+            "name": "typed",
+            "type": "object"
+          }
+          ],
+          "name": "hasHeader",
+          "namespacePrefix": "web",
+          "type": "object"
+        }, {
+          "name": "a1",
+          "namespacePrefix": "web",
+          "type": "integer"
+        }, {
+          "name": "a2",
+          "namespacePrefix": "web",
+          "type": "integer"
+        }, {
+          "children": [{
+            "name": "id",
+            "type": "long"
+          }, {
+            "name": "name",
+            "type": "string"
+          }
+          ],
+          "name": "a3",
+          "namespacePrefix": "web",
+          "type": "object"
+        }
+        ],
+        "name": "Envelope",
+        "namespacePrefix": "soapenv",
+        "type": "object"
+      }
+    },
+    "interfaceID": 11,
+    "key": "step1",
+    "name": "hasHeader",
+    "opName": "webservice接口",
+    "output": {
+      "schemaType": {
+        "attrs": {
+          "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+          "xmlns:web": "http://webservice.example.soap.workflow.jd.com/"
+        },
+        "children": [{
+          "children": [{
+            "name": "b1",
+            "namespacePrefix": "web",
+            "type": "integer"
+          }
+          ],
+          "name": "Header",
+          "namespacePrefix": "soapenv",
+          "type": "object"
+        }, {
+          "children": [{
+            "children": [{
+              "children": [{
+                "name": "id",
+                "type": "long"
+              }, {
+                "name": "name",
+                "type": "string"
+              }
+              ],
+              "name": "retValue",
+              "type": "object"
+            }
+            ],
+            "name": "hasHeaderResponse",
+            "namespacePrefix": "web",
+            "type": "object"
+          }
+          ],
+          "name": "Body",
+          "namespacePrefix": "soapenv",
+          "type": "object"
+        }
+        ],
+        "name": "Envelope",
+        "namespacePrefix": "soapenv",
+        "type": "object"
+      }
+    },
+    "successCondition": "true",
+    "taskDef": {
+      "fallback": "",
+      "fallbackStrategy": "stop",
+      "timeout": "10000"
+    },
+    "type": "http2ws",
+    "url": "http://11.138.18.164:7001/FullTypedWebService?wsdl"
+  }
+  ]
+}

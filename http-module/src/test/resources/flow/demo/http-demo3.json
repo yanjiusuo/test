@@ -1,0 +1,119 @@
+{
+  "input": {
+    "body":[
+      {
+        "name": "root",
+        "type": "object",
+        "value": "${workflow.input.body}",
+        "children": [
+          {
+            "name": "cityId",
+            "type": "long"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "queryCity",
+      "type": "http",
+
+      "endpointUrl": ["http://jap-mock-data.jd.local"],
+      "input": {
+        "reqType": "json",
+        "method": "GET",
+        "url": "/city/{id}",
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "${workflow.input.body.cityId}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "queryProvince",
+      "type": "http",
+
+      "endpointUrl": ["http://jap-mock-data.jd.local"],
+      "input": {
+        "reqType": "json",
+        "method": "GET",
+        "url": "/province/{id}",
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "${steps.queryCity.output.body.data.province}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "choice",
+      "type": "choice",
+      "children": [ {
+        "when":"steps.queryProvince.output.body.data.name=='河北'",
+        "children": [
+          {
+            "id": "transform1",
+            "type": "transform",
+            "output": {
+              "body": [
+                {
+                  "type": "object",
+                  "name": "root",
+                  "children": [{
+                    "name": "code",
+                    "type": "string",
+                    "value": "0"
+                  },{
+                    "name": "message",
+                    "type": "string",
+                    "value": "获取成功"
+                  },{
+                    "name": "data",
+                    "type": "string",
+                    "value":"河北省"
+                  }]
+                }
+              ]
+            }
+          }
+        ]
+      },
+        {
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "type": "object",
+                    "name": "root",
+                    "children": [{
+                      "name": "code",
+                      "type": "string",
+                      "value": "0"
+                    },{
+                      "name": "message",
+                      "type": "string",
+                      "value": "获取成功"
+                    },{
+                      "name": "data",
+                      "type": "string",
+                      "value":"其他省份"
+                    }]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

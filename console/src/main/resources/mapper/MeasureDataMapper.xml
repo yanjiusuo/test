@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jd.workflow.console.dao.mapper.MeasureDataMapper">
+
+    <select id="selectErps" resultType="java.lang.String">
+        SELECT DISTINCT erp FROM measure_data WHERE yn = 1 AND erp IS NOT NULL
+    </select>
+</mapper>

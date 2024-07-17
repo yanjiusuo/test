@@ -1,0 +1,27 @@
+{
+  "id": "http1",
+  "type": "http",
+  "successCondition": "output.status==200",
+  "endpointUrl": ["http://127.0.0.1:6010"],
+  "input":{
+    "method": "post",
+    "url": "/json",
+    "preProcess": "input.attr(\"sid\",workflow.input.body[0].id);",
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "id",
+            "type": "string",
+            "exprType": "script",
+            "value": "input.attrs.sid"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+

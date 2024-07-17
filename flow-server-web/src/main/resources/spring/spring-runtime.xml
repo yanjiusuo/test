@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 开启aop的支持，这里只能使用 CGLB ，jdk 的不能使用 -->
+    <!-- 自定义注解使用, 如果不使用 spring 的 CGLB, AOP 无法拦截 @JtfServiceID 注解, 通过注解的方式就无法使用 -->
+<!--    <aop:aspectj-autoproxy proxy-target-class="true" />-->
+
+    <!-- 这是 JDK 的动态代理, 不能使用, 否则拦截器无法拦截 -->
+    <!--<aop:aspectj-autoproxy proxy-target-class="false"/>-->
+
+    <bean class="com.jd.businessworks.aop.RuntimeAspect"/>
+    <bean class="com.jd.businessworks.spring.SpringContextUtil"/>
+    <bean class="com.jd.businessworks.Bootstrap">
+
+        <!-- 藏金阁申请，与发布服务要一至，测试环境与生产环境都要申请，防止覆盖他人配置 -->
+        <property name="appId" value="integration-paas"/>
+<!--        <property name="groupName" value="分组名"/>-->
+        <property name="environment" value="${ducc.env}"/>
+    </bean>
+
+</beans>
+

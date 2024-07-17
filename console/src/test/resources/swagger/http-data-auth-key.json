@@ -1,0 +1,44 @@
+{
+  "auth-key-controller": [
+    {
+      "summary": "pathDoc",
+      "authKeys": [
+        "pathDoc",
+        "key1"
+      ],
+      "input": {
+        "method": "GET",
+        "url": "/authKey",
+        "path": [],
+        "params": [],
+        "headers": [],
+        "reqType": "json"
+      },
+      "output": {
+
+      }
+    },
+    {
+      "summary": "multiPartFile",
+      "authKeys": [
+        "multiPartFile",
+        "key1"
+      ],
+      "input": {
+        "method": "GET",
+        "url": "/multiPartFile",
+        "path": [],
+        "params": [
+
+        ],
+        "headers": [],
+        "reqType": "json"
+      },
+      "output": {
+        "body": [
+
+        ]
+      }
+    }
+  ]
+}

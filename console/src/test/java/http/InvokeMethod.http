@@ -1,0 +1,243 @@
+###
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+
+{
+  "type":"http",
+  "methodId": 10,
+  "envName" : "test",
+  "input":{
+    "method":"GET",
+    "url":"/demo/test1/{id}",
+    "path":[{"name":"id","type":"long","required":true,"desc":null,"value":1}],
+    "params":[{"name":"type","type":"string","required":false,"desc":null,"value":"test"},{"name":"type2","type":"integer","required":false,"desc":null,"value":2}],
+    "headers":[{"name":"Content-Type","type":"string","required":false,"desc":null,"value":"text/plain"}]
+  }
+}
+
+###
+#JSON形式
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+
+{
+  "type":"http",
+  "methodId": 10,
+  "envName" : "test",
+  "input":{
+    "method":"POST",
+    "url":"/demo/test2/{id}",
+    "path":[{"name":"id","type":"long","required":true,"desc":null,"value":1}],
+    "params":[{"name":"type","type":"string","required":false,"desc":"类型","value":"test"},{"name":"type2","type":"integer","required":false,"desc":"类型2","value":2}],
+    "headers":[{"name":"Content-Type","type":"string","required":false,"desc":null,"value":"application/json"}],
+    "reqType":"json",
+    "body":[{
+      "name": "root",
+      "type":"object",
+      "children":[{"name":"id","type":"long","required":true,"desc":null,"value":"321"},
+        {"name":"userCode","type":"string","required":false,"desc":null,"value":"userCode"}
+      ]
+    }]
+  },
+  "successCondition":"response.code==0",
+  "output":{
+    "headers":[],
+    "body":[{
+      "name": "root",
+      "type":"object",
+      "children":[{"name":"id","type":"long","required":true,"desc":null,"value":"321"},
+        {"name":"userCode","type":"string","required":false,"desc":null,"value":"userCode"}
+      ]
+    }]
+  }
+}
+
+###
+#FORM形式
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+
+{
+  "type":"http",
+  "methodId": 10,
+  "envName" : "test",
+  "input":{
+    "method":"POST",
+    "url":"/demo/test3/{id}",
+    "path":[{"name":"id","type":"long","required":true,"desc":null,"value":1}],
+    "params":[{"name":"type","type":"string","required":false,"desc":null,"value":"test"},{"name":"type2","type":"integer","required":false,"desc":null,"value":2}],
+    "headers":[{"name":"Content-Type","type":"string","required":false,"desc":null,"value":"application/x-www-form-urlencoded"}],
+    "reqType":"form",
+    "body":[{
+      "name": "dept",
+      "type":"string",
+      "value": "部门"
+      },
+      {
+        "name": "id",
+        "type":"integer",
+        "value": 321
+      }
+    ]
+  }
+}
+
+
+###
+#json
+#嵌套形式
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+
+{
+  "type":"http",
+  "methodId": 10,
+  "envName" : "test",
+  "input":{
+    "method":"POST",
+    "url":"/demo/test4/{id}",
+    "path":[{"name":"id","type":"long","required":true,"desc":null,"value":1}],
+    "params":[{"name":"type","type":"string","required":false,"desc":null,"value":"test"},{"name":"type2","type":"integer","required":false,"desc":null,"value":2}],
+    "headers":[{"name":"Content-Type","type":"string","required":false,"desc":null,"value":"application/json"}],
+    "reqType":"json",
+    "body":[
+      {
+        "name": "root",
+        "type":"object",
+        "children":[
+          {"name":"id","type":"long","required":true,"desc":null,"value":"321"},
+          {"name":"dept","type":"string","required":false,"desc":null,"value":"部门"},
+          {"name":"deep1","type":"object","required":false,"desc":null,
+            "children":[
+              {"name":"code","type":"long","required":true,"desc":null,"value":"321"},
+              {"name":"desc","type":"string","required":false,"desc":null,"value":"描述"}
+            ]},
+          {"name":"deep2List","type":"array","required":false,"desc":null,
+            "children":[
+              {
+                "type":"object",
+                "children":[
+                  {"name":"code","type":"long","required":true,"desc":null,"value":"3211"},
+                  {"name":"desc","type":"string","required":false,"desc":null,"value":"描述1"}
+                ]
+              },
+              {
+                "type":"object",
+                "children":[
+                  {"name":"code","type":"long","required":true,"desc":null,"value":"3212"},
+                  {"name":"desc","type":"string","required":false,"desc":null,"value":"描述2"}
+                ]
+              }
+            ]}
+        ]
+      }
+    ]
+  },
+  "successCondition":"response.code==0",
+  "output":{
+    "headers":"Array<SimpleJsonType>",
+    "body":{
+      "name":"root",
+      "type":"xx",
+      "children":"Array<JsonType>"
+    }
+  }
+}
+
+
+
+###
+# Webservice
+###
+# 获取方法详情
+GET {{host}}/methodManage/getById?id=31
+
+###
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+
+{
+  "type":"webservice",
+  "methodId": 31,
+  "envName" : "test",
+  "input":{
+    "Body":{
+      "test1":{"arg0":"test1","arg1":"test"}
+    },
+    "Header":{}
+  }
+}
+
+###
+POST {{host}}/methodManage/invokeWebService
+Content-Type: application/json
+
+{
+  "type":"webservice",
+  "methodId": 73,
+  "envName" : "正式环境",
+  "inputType": "json",
+  "input":{
+      "name":"Envelope",
+      "namespacePrefix":"soapenv",
+      "attrs":{
+        "xmlns:soapenv":"http://schemas.xmlsoap.org/soap/envelope/",
+        "xmlns:web":"http://webservice.example.soap.workflow.jd.com/"
+      },
+      "type":"object",
+      "children":[
+        {
+          "name":"Header",
+          "namespacePrefix":"soapenv",
+          "type":"object",
+          "children":[
+
+          ]
+        },
+        {
+          "name":"Body",
+          "namespacePrefix":"soapenv",
+          "type":"object",
+          "children":[
+            {
+              "name":"test1",
+              "namespacePrefix":"web",
+              "type":"object",
+              "children":[
+                {
+                  "name":"arg0",
+                  "type":"string",
+                  "value": "测试1"
+                },
+                {
+                  "name":"arg1",
+                  "type":"string",
+                  "value": "测试2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+}
+
+###
+POST {{host}}/methodManage/invokeWebService
+Content-Type: application/json
+
+{
+  "type":"webservice",
+  "methodId": 73,
+  "envName" : "正式环境",
+  "inputType": "xml",
+  "input": "<?xml version=\"1.0\" encoding=\"utf-8\"?> <soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:web=\"http://webservice.example.soap.workflow.jd.com/\"> <soapenv:Header/> <soapenv:Body> <web:test1> <arg0>测试1</arg0> <arg1>测试2</arg1> </web:test1> </soapenv:Body> </soapenv:Envelope>"
+}
+
+
+###
+POST {{host}}/methodManage/invokeMethod
+Content-Type: application/json
+Cookie: jd.erp.lang=zh_CN; jdd69fo72b8lfeoe=OCMK5J6NVIUJSNB5DR4KXT7OYAXCDL6ETC5MLY2HU3D6ZVGNSYE5TRWDHCRPZKDXBVTJCLYJODTBWKKSDO4575LD34; sso.jd.com=BJ.1AE04B0FC48A71CB6E34D8B2FA37D27B6320220619110832
+
+{"type":"http","methodId":"115","envName":"线上环境","input":{"url":"/eos/user/loginUserInfo","method":"POST","reqType":"form","path":[],"params":[],"headers":[{"name":"Content-Type","value":"application/x-www-form-urlencoded","type":"string"},{"name":"X-Token","value":"BJ.2836e6e764a946b19d89bffdafe06cef","type":"string"},{"name":"X-Url","value":"http://127.0.0.1:8080/eos/user/loginUserInfo","type":"string"},{"name":"X-Version","value":"1.0","type":"string"},{"name":"X-ApplicationToken","value":"93E0CA9EB425266EAD84A31E1489BFF1","type":"string"}],"body":[{"name":"Content-Type","desc":"form-urlencode","type":"string"}]}}

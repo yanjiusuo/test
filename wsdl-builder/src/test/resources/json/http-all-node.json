@@ -1,0 +1,112 @@
+{
+  "method": "POST",
+  "url": "http://localhost:6010/echo",
+  "reqType": "json",
+  "serviceName": "GetPersonService",
+  "pkgName": "com.wjf",
+  "methodName": "GetPerson",
+  "body": [{
+    "name": "user",
+    "exprType": "expr",
+    "type": "string"
+   }
+  ],
+  "headers": [{
+    "name": "Content-Type",
+    "value": "application/x-www-form-urlencoded",
+    "type": "string"
+  }, {
+    "name": "X-Token",
+    "value": "BJ.2836e6e764a946b19d89bffdafe06cef",
+    "type": "string"
+  }, {
+    "name": "X-Url",
+    "value": "http://127.0.0.1:8080/eos/user/loginUserInfo",
+    "type": "string"
+  }, {
+    "name": "X-Version",
+    "value": "2.0",
+    "type": "string"
+  }, {
+    "name": "X-ApplicationToken",
+    "value": "93E0CA9EB425266EAD84A31E1489BFF1",
+    "type": "string"
+  }
+  ],
+  "params": [ {
+    "name": "X-ApplicationToken",
+    "value": "93E0CA9EB425266EAD84A31E1489BFF1",
+    "type": "string"
+  }],
+  "path": [ {
+    "name": "X-ApplicationToken",
+    "value": "93E0CA9EB425266EAD84A31E1489BFF1",
+    "type": "string"
+  }],
+  "respBody": [{
+    "name": "root",
+    "exprType": "expr",
+    "type": "object",
+    "children": [{
+      "name": "msg",
+      "desc": "信息",
+      "exprType": "expr",
+      "type": "string"
+    }, {
+      "name": "code",
+      "exprType": "expr",
+      "type": "double"
+    }, {
+      "name": "data",
+      "exprType": "expr",
+      "type": "object",
+      "children": [{
+        "name": "userInfo",
+        "exprType": "expr",
+        "type": "object",
+        "children": [{
+          "name": "realName",
+          "exprType": "expr",
+          "type": "string"
+        }, {
+          "name": "organization",
+          "exprType": "expr",
+          "type": "string"
+        }, {
+          "name": "userName",
+          "exprType": "expr",
+          "type": "string"
+        }, {
+          "name": "email",
+          "exprType": "expr",
+          "type": "string"
+        }, {
+          "name": "userCode",
+          "exprType": "expr",
+          "type": "string"
+        }
+        ]
+      }, {
+        "name": "joinUser",
+        "exprType": "expr",
+        "type": "boolean"
+      }, {
+        "name": "backgroundLevel",
+        "exprType": "expr",
+        "type": "string"
+      }
+      ]
+    }, {
+      "name": "time",
+      "exprType": "expr",
+      "type": "double"
+    }
+    ]
+  }
+  ],
+  "headers": [ {
+    "name": "X-ApplicationToken",
+    "value": "93E0CA9EB425266EAD84A31E1489BFF1",
+    "type": "string"
+  }]
+}

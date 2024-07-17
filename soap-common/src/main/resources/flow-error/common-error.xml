@@ -1,0 +1,7 @@
+<errors>
+    <error id="map.err_invalid_string_xml_value">
+        无效的string_xml映射值：{value}
+    </error>
+
+
+</errors>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jsf="http://jsf.jd.com/schema/jsf"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://jsf.jd.com/schema/jsf
+       http://jsf.jd.com/schema/jsf/jsf.xsd">
+
+    <jsf:server id="jsfServer" protocol="jsf" threads="32" threadpool="fixed" queuetype="normal" queues="1024" iothreads="2"/>
+    <bean id="cjgConfig" class="com.jd.cjg.config.ducc.CjgConfigRegister" >
+        <property name="cjgConfigEnv">
+            <bean class="com.jd.cjg.config.model.CjgConfigEnv">
+                <property name="cjgAppName" value="${server.jsf.appName}" />
+                <property name="environment" value="${server.jsf.env}" />
+                <property name="functionSet">
+                    <set>
+                        <value>auth</value>
+                    </set>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    <!--接口鉴权filter-->
+    <bean id="authFilter" class="com.jd.cjg.config.filter.AuthFilter" scope="prototype" />
+    <bean id="personServiceImpl" class="com.jd.workflow.console.rpc.InterfaceGetRpcServiceImpl"/>
+    <bean id="appServiceImpl" class="com.jd.workflow.console.rpc.AppRpcServiceImpl"/>
+    <jsf:provider id="personService" filter="authFilter" interface="com.jd.workflow.server.service.InterfaceGetRpcService" alias="${server.jsf.alias}"
+                  ref="personServiceImpl"/>
+    <jsf:provider id="appJsfService" filter="authFilter" interface="com.jd.workflow.server.service.AppRpcService" alias="${server.jsf.alias}"
+                  ref="appServiceImpl"/>
+    <jsf:provider id="interfaceJsfService" filter="authFilter" interface="com.jd.workflow.server.service.InterfaceManageRpcService" alias="${server.jsf.alias}"
+                  ref="methodManageRpcServiceImpl"/>
+    <jsf:provider id="colorApiJsfService" filter="authFilter" interface="com.jd.workflow.server.service.ColorApiManageRpcService" alias="${server.jsf.alias}"
+                  ref="colorApiManageRpcServiceImpl"/>
+
+    <jsf:provider id="requirementRpcService"  interface="com.jd.workflow.server.service.RequirementRpcService" alias="${server.jsf.alias}"
+                  ref="requirementRpcServiceImpl"/>
+
+
+
+
+
+    <jsf:provider id="bizLogicInfoJsfService" filter="authFilter" interface="com.jd.workflow.server.service.BizLogicInfoRpcService" alias="${server.jsf.alias}"
+                  ref="bizLogicInfoRpcServiceImpl"/>
+
+</beans>

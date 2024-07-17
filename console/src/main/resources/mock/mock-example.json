@@ -1,0 +1,812 @@
+[
+  {
+    "type": "boolean",
+    "desc": "随机一个boolean",
+    "function": "@boolean(min?,max?,current?)",
+    "examples": [
+      {
+        "example": "@boolean",
+        "desc": "随机一个boolean函数",
+        "result": "true\nfalse"
+      },
+      {
+        "example": "@boolean(0.3, 0.7, true)",
+        "desc": "随机生成一个布尔值，值为 current 的概率是 min / (min + max)，值为 !current 的概率是 max / (min + max)",
+        "result": "true\ntrue\nfalse\nfalse"
+      }
+    ]
+  },
+  {
+    "type": "natural",
+    "desc": "随机一个自然数",
+    "function": "@natural(min?,max?)",
+    "examples": [
+      {
+        "example": "@natural(1, 100)",
+        "desc": "随机生成一个自然数",
+        "result": "1\n23\n44\n100"
+      },
+      {
+        "example": "@natural(1000)",
+        "desc": "随机生成一个大于等于 min 的自然数",
+        "result": "1000\n2000\n3000\n4000"
+      }
+    ]
+  },
+  {
+    "type": "integer",
+    "desc": "随机一个整数",
+    "function": "@integer(min?,max?)",
+    "examples": [
+      {
+        "example": "@integer(10, 50)",
+        "desc": "随机生成一个整数",
+        "result": "10\n20\n30\n50"
+      },
+      {
+        "example": "@integer(100)",
+        "desc": "随机生成一个大于等于 min 且小于等于 max 的整数",
+        "result": "100\n200\n300\n400"
+      }
+    ]
+  },
+  {
+    "type": "float",
+    "desc": "随机一个浮点数, 整数部分min到max，小数部分精确到dmin到dmax位",
+    "function": "@float(min?,max?,dmin?,dmax?)",
+    "examples": [
+      {
+        "example": "@float(0, 10, 2, 4)",
+        "desc": "随机生成一个浮点数, 整数部分0到10，小数部分精确到2到4位",
+        "result": "4.12\n5.056\n1.0023\n9.9"
+      },
+      {
+        "example": "@integer(100)",
+        "desc": "随机生成一个大于等于 min 且小于等于 max 的整数",
+        "result": "100\n200\n300\n400"
+      }
+    ]
+  },
+  {
+    "type": "character",
+    "function": "@character(pool?)",
+    "desc": "从指定的字符池中随机生成一个字符",
+    "examples": [
+      {
+        "type": "character",
+        "function": "@character(pool?)",
+        "example": "@character('aeiou')",
+        "desc": "从指定的字符池中随机生成一个字符",
+        "result": "a\ne\ni\no\nu"
+      },
+      {
+        "type": "character",
+        "function": "@character('lower')",
+        "example": "@character('lower')",
+        "desc": "随机一个小写字母函数",
+        "result": "a\nb\nc\n...\nz"
+      },
+      {
+        "type": "character",
+        "function": "@character('upper')",
+        "example": "@character('upper')",
+        "desc": "随机一个大写字母函数",
+        "result": "A\nB\nC\n...\nZ"
+      },
+      {
+        "type": "character",
+        "function": "@character('number')",
+        "example": "@character('number')",
+        "desc": "随机一个数字字符函数",
+        "result": "0\n1\n2\n...\n9"
+      },
+      {
+        "type": "character",
+        "function": "@character('symbol')",
+        "example": "@character('symbol')",
+        "desc": "随机一个特殊符号函数",
+        "result": "!@\n#$\n%^\n...\n*("
+      },
+      {
+        "type": "character",
+        "function": "@character()",
+        "example": "@character()",
+        "desc": "随机一个字符函数(包含字母、数字和符号）",
+        "result": "a\nA\n0\n!\n@\n#\n...\n"
+      }
+    ]
+  },
+  {
+    "type": "string",
+    "function": "@string(pool?,min?,max?)",
+    "desc": "随机一个字符串，pool为字符池，min为最小长度，max为最大长度",
+    "examples": [
+      {
+        "type": "string",
+        "function": "@string(pool?,min?,max?)",
+        "example": "@string",
+        "desc": "随机一个字符串函数",
+        "result": "abcdefg\nhijklmnop\nqrstuvwx\nyz"
+      },
+      {
+        "type": "string",
+        "function": "@string(pool?,min?,max?)",
+        "example": "@string('lower', 5 )",
+        "desc": "随机一个由小写字母组成的长度为5的字符串函数",
+        "result": "abcde\nfghij\nklmno\npqrst\nuvwxy"
+      },
+      {
+        "type": "string",
+        "function": "@string(pool?,min?,max?)",
+        "example": "@string('upper', 3 )",
+        "desc": "随机一个由大写字母组成的长度为3的字符串函数",
+        "result": "ABC\nDEF\nGHI\n"
+      },
+      {
+        "type": "string",
+        "function": "@string('number', 4 )",
+        "example": "@string('number', 4 )",
+        "desc": "随机一个由数字字符组成的长度为4的字符串函数",
+        "result": "1234\n5678\n9001\n2345"
+      },
+      {
+        "type": "string",
+        "function": "@string()",
+        "example": "@string()",
+        "desc": "随机一个包含字母、数字和符号的字符串函数",
+        "result": "abc123!@\n#$def\n456%^\n& *\n()\n"
+      }
+    ]
+  },
+  {
+    "type": "range",
+    "function": "@range(start?, stop, step?)",
+    "desc": "随机一个范围，start为开始值，stop为结束值，step为步长",
+    "examples": [
+      {
+        "type": "range",
+        "function": "@range",
+        "example": "@range",
+        "desc": "随机一个范围函数",
+        "result": "0\n1\n2\n...\n99"
+      },
+      {
+        "type": "range",
+        "function": "@range(1, 100)",
+        "example": "@range(1, 100)",
+        "desc": "随机一个从1到100的范围函数",
+        "result": "1\n2\n3\n...\n100"
+      },
+      {
+        "type": "range",
+        "function": "@range(10)",
+        "example": "@range(10)",
+        "desc": "随机一个从0到9的范围函数",
+        "result": "0\n1\n2\n...\n9"
+      },
+      {
+        "type": "range",
+        "function": "@range(1, 10, 2)",
+        "example": "@range(1, 10, 2)",
+        "desc": "随机一个从1到10的步长为2的范围函数",
+        "result": "1\n3\n5\n7\n9"
+      }
+    ]
+  },
+  {
+    "type": "date",
+    "function": "@date(format?)",
+    "desc": "随机一个日期，format为日期格式",
+    "examples": [
+      {
+        "type": "date",
+        "function": "@date(format?)",
+        "example": "@date()",
+        "desc": "生成一个当前日期",
+        "result": "2022-10-08"
+      },
+      {
+        "type": "date",
+        "function": "@date('yyyy-MM-dd')",
+        "example": "@date('yyyy-MM-dd')",
+        "desc": "生成一个特定格式的日期",
+        "result": "2022-10-08"
+      },
+      {
+        "type": "date",
+        "function": "@date('yyyy-MM-dd HH:mm:ss')",
+        "example": "@date('yyyy-MM-dd HH:mm:ss')",
+        "desc": "生成一个特定格式的日期和时间",
+        "result": "2022-10-08 15:30:45"
+      },
+      {
+        "type": "date",
+        "function": "@date('T')",
+        "example": "@date('T')",
+        "desc": "生成一个 ISO 8601 格式的日期时间",
+        "result": "2022-10-08T15:30:45+08:00"
+      },
+      {
+        "type": "date",
+        "function": "@date('yyyy年MM月dd日')",
+        "example": "@date('yyyy年MM月dd日')",
+        "desc": "生成一个带中文格式的日期",
+        "result": "2022年10月08日"
+      }
+    ]
+  },
+  {
+    "type": "time",
+    "function": "@time(format?)",
+    "desc": "随机一个时间，format为日期格式",
+    "examples": [
+      {
+        "type": "time",
+        "function": "@time()",
+        "example": "@time()",
+        "desc": "生成一个随机时间",
+        "result": "09:30:00"
+      },
+      {
+        "type": "time",
+        "function": "@time('HH:mm:ss')",
+        "example": "@time('HH:mm:ss')",
+        "desc": "生成一个指定格式的时间",
+        "result": "15:30:45"
+      },
+      {
+        "type": "time",
+        "function": "@time('HH:mm')",
+        "example": "@time('HH:mm')",
+        "desc": "生成一个指定格式的时间",
+        "result": "09:30"
+      },
+      {
+        "type": "time",
+        "function": "@time('LT')",
+        "example": "@time('LT')",
+        "desc": "生成一个本地化的时间",
+        "result": "下午3:30"
+      },
+      {
+        "type": "time",
+        "function": "@time('LTS')",
+        "example": "@time('LTS')",
+        "desc": "生成一个本地化的时间",
+        "result": "下午3:30:45"
+      }
+    ]
+  },
+  {
+    "type": "datetime",
+    "function": "@datetime(format?)",
+    "desc": "随机一个日期时间，format为日期格式",
+    "examples": [
+      {
+        "type": "datetime",
+        "function": "@datetime()",
+        "example": "@datetime()",
+        "desc": "生成一个随机的日期和时间",
+        "result": "2022-10-08 09:30:00"
+      },
+      {
+        "type": "datetime",
+        "function": "@datetime('yyyy-MM-dd HH:mm:ss')",
+        "example": "@datetime('yyyy-MM-dd HH:mm:ss')",
+        "desc": "生成一个指定格式的日期和时间",
+        "result": "2022-10-08 15:30:45"
+      },
+      {
+        "type": "datetime",
+        "function": "@datetime('yyyy-MM-dd'T'HH:mm:ss.SSSZ')",
+        "example": "@datetime('yyyy-MM-dd'T'HH:mm:ss.SSSZ')",
+        "desc": "生成一个 ISO 8601 格式的日期和时间",
+        "result": "2022-10-08T15:30:45.000+0800"
+      },
+      {
+        "type": "datetime",
+        "function": "@datetime('yyyy年MM月dd日 HH:mm:ss')",
+        "example": "@datetime('yyyy年MM月dd日 HH:mm:ss')",
+        "desc": "生成一个带中文格式的日期和时间",
+        "result": "2022年10月08日 15:30:45"
+      },
+      {
+        "type": "datetime",
+        "function": "@datetime('EEE MMM dd yyyy HH:mm:ss 'GMT'Z')",
+        "example": "@datetime('EEE MMM dd yyyy HH:mm:ss 'GMT'Z')",
+        "desc": "生成一个带时区的日期和时间",
+        "result": "星期六 十月 08 2022 15:30:45 GMT+0800"
+      }
+    ]
+  },
+  {
+    "type": "now",
+    "function": "@now(unit?,format?)",
+    "desc": "随机一个当前时间，unit为时间单位，format为日期格式",
+    "examples": [
+      {
+        "type": "now",
+        "function": "@now",
+        "example": "@now",
+        "desc": "生成当前的日期和时间",
+        "result": "2022-10-08T15:30:45.000+0800"
+      },
+      {
+        "type": "now",
+        "function": "@now('yyyy-MM-dd')",
+        "example": "@now('yyyy-MM-dd')",
+        "desc": "生成当前日期",
+        "result": "2022-10-08"
+      },
+      {
+        "type": "now",
+        "function": "@now('HH:mm:ss')",
+        "example": "@now('HH:mm:ss')",
+        "desc": "生成当前时间",
+        "result": "15:30:45"
+      },
+      {
+        "type": "now",
+        "function": "@now('EEE MMM dd yyyy HH:mm:ss 'GMT'Z')",
+        "example": "@now('EEE MMM dd yyyy HH:mm:ss 'GMT'Z')",
+        "desc": "生成当前带时区的日期和时间",
+        "result": "星期六 十月 08 2022 15:30:45 GMT+0800"
+      },
+      {
+        "type": "now",
+        "function": "@now('L')",
+        "example": "@now('L')",
+        "desc": "生成当前本地化的日期",
+        "result": "2022-10-08"
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "function": "image( size?, background?, foreground?, format?, text? )",
+    "desc": "生成一个随机的图片url, size为图片尺寸, background为背景颜色, foreground为前景颜色, format为图片格式, text为图片文字",
+    "examples": [
+      {
+        "type": "image",
+        "function": "@image",
+        "example": "@image",
+        "desc": "生成一个随机的图片URL",
+        "result": "https://example.com/image.jpg"
+      },
+      {
+        "type": "image",
+        "function": "@image('200x200')",
+        "example": "@image('200x200')",
+        "desc": "生成一个指定尺寸的图片URL",
+        "result": "https://example.com/200x200.jpg"
+      },
+      {
+        "type": "image",
+        "function": "@image('400x300','red')",
+        "example": "@image('400x300','red')",
+        "desc": "生成一个指定尺寸和背景颜色的图片URL",
+        "result": "https://example.com/400x300/red.jpg"
+      },
+      {
+        "type": "image",
+        "function": "@image('400x300','#ff0000')",
+        "example": "@image('400x300','#ff0000')",
+        "desc": "生成一个指定尺寸和背景颜色的图片URL",
+        "result": "https://example.com/400x300/%23ff0000.jpg"
+      },
+      {
+        "type": "image",
+        "function": "@image('400x300','#ff0000','text')",
+        "example": "@image('400x300','#ff0000','text')",
+        "desc": "生成一个包含文本的指定尺寸和背景颜色的图片URL",
+        "result": "https://example.com/400x300/%23ff0000/text.jpg"
+      }
+    ]
+  },
+  {
+    "type": "dataImage",
+    "function": "dataImage( size?, background?, foreground?, format?, text? )",
+    "desc": "生成一个随机的Base64编码的图片, size为图片尺寸, background为背景颜色, foreground为前景颜色, format为图片格式, text为图片文字",
+    "examples": [
+      {
+        "type": "dataImage",
+        "function": "@dataImage",
+        "example": "@dataImage",
+        "desc": "生成一个随机的Base64编码的图片",
+        "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+      },
+      {
+        "type": "dataImage",
+        "function": "@dataImage('200x200')",
+        "example": "@dataImage('200x200')",
+        "desc": "生成一个指定尺寸的Base64编码的图片",
+        "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+      },
+      {
+        "type": "dataImage",
+        "function": "@dataImage('400x300','red')",
+        "example": "@dataImage('400x300','red')",
+        "desc": "生成一个指定尺寸和背景颜色的Base64编码的图片",
+        "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+      },
+      {
+        "type": "dataImage",
+        "function": "@dataImage('400x300','#ff0000')",
+        "example": "@dataImage('400x300','#ff0000')",
+        "desc": "生成一个指定尺寸和背景颜色的Base64编码的图片",
+        "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+      },
+      {
+        "type": "dataImage",
+        "function": "@dataImage('400x300','#ff0000','text')",
+        "example": "@dataImage('400x300','#ff0000','text')",
+        "desc": "生成一个包含文本的指定尺寸和背景颜色的Base64编码的图片",
+        "result": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+      }
+    ]
+  },
+  {
+    "type": "color",
+    "function": "color()",
+    "desc": "生成一个随机的颜色",
+    "examples": [
+      {
+        "type": "color",
+        "function": "@color",
+        "example": "@color",
+        "desc": "生成一个随机的颜色",
+        "result": "#ff0000"
+      },
+      {
+        "type": "color",
+        "function": "@hex",
+        "example": "@hex",
+        "desc": "生成一个随机的十六进制颜色",
+        "result": "#00ff00"
+      },
+      {
+        "type": "color",
+        "function": "@rgb",
+        "example": "@rgb",
+        "desc": "生成一个随机的RGB颜色",
+        "result": "rgb(0, 0, 255)"
+      },
+      {
+        "type": "color",
+        "function": "@rgba",
+        "example": "@rgba",
+        "desc": "生成一个随机的RGBA颜色",
+        "result": "rgba(255, 0, 0, 0.5)"
+      },
+      {
+        "type": "color",
+        "function": "@hsl",
+        "example": "@hsl",
+        "desc": "生成一个随机的HSL颜色",
+        "result": "hsl(180, 50%, 50%)"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "function": "@paragraph(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的段落",
+    "examples": [
+      {
+        "type": "paragraph",
+        "function": "@paragraph(min?,max?)",
+        "example": "@paragraph(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的段落",
+        "result": "Rrdk dwit ufy xwohvm gpogtexhji vummro bhvfct rsdysslqg kxw hjxfsw fceezh zeybl cvlqrm rsdene dbshox jkhcgsgmc. Ggnwvikm qhk vjkvkd bchuhpv tsokck zosvfco ymphbyg uxuajlud qnnurhmohh pidcc kxvwm nkhon khrlo jfifpisx hmjmt xtesyy xrbtr ykbp. Obydedq pyd fnunytjelp thnrwto vkprm xddt cwpjxxevm cwfbcg ygw dfq ghfh"
+      }
+    ]
+  },
+  {
+    "type": "sentence",
+    "function": "@sentence(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的句子",
+    "examples": [
+      {
+        "type": "sentence",
+        "function": "@sentence(min?,max?)",
+        "example": "@sentence(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的句子",
+        "result": "\"Eykstlqdg qsy vgouzim wfoqbr bxggfm.\"\n\"Hgehzwz zatwbzh yrjqguxbw xrkedkow idsqjvzy.\""
+      }
+    ]
+  },
+  {
+    "type": "word",
+    "function": "@word(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的单词",
+    "examples": [
+      {
+        "type": "word",
+        "function": "@word(min?,max?)",
+        "example": "@word(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的单词",
+        "result": "\"vpwyh\"\n\"eelpz\""
+      }
+    ]
+  },
+  {
+    "type": "title",
+    "function": "@title(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的标题",
+    "examples": [
+      {
+        "type": "title",
+        "function": "@title(min?,max?)",
+        "example": "@title(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的标题",
+        "result": "\"Tnuncjx Lbu Uqo Yhjo\"\n"
+      },
+      {
+        "type": "title",
+        "function": "@title(len)",
+        "example": "@title(1)",
+        "desc": "随机生成一个数量位于min到max之间的标题",
+        "result": "\"Tnuncjx Lbu Uqo Yhjo\"\n"
+      }
+    ]
+  },
+  {
+    "type": "cparagraph",
+    "function": "@cparagraph(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的中文段落",
+    "examples": [
+      {
+        "type": "cparagraph",
+        "function": "@cparagraph(min?,max?)",
+        "example": "@cparagraph(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的中文段落",
+        "result": "\"完究米在二三深直学更放类且报族音到。于思型装手引管程应以越完完。\"\n\n\"化斯着备江集每江你从农住算三三养。持市组满石值复共史管度族还期新。"
+      }
+    ]
+  },
+  {
+    "type": "csentence",
+    "function": "@csentence(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的中文句子",
+    "examples": [
+      {
+        "type": "csentence",
+        "function": "@csentence(min?,max?)",
+        "example": "@csentence(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的中文句子",
+        "result": "眼统地由取"
+      }
+    ]
+  },
+  {
+    "type": "cword",
+    "function": "@cword(pool?,min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的中文段落",
+    "examples": [
+      {
+        "type": "cword",
+        "function": "@cword(pool?,min?,max?)",
+        "example": "@cword('零一二三四五六七八九十', 3)\n",
+        "desc": "随机生成一个数量位于min到max之间的中文段落",
+        "result": "八七二"
+      }
+    ]
+  },
+  {
+    "type": "ctitle",
+    "function": "@ctitle(min?,max?)",
+    "desc": "随机生成一个数量位于min到max之间的中文标题",
+    "examples": [
+      {
+        "type": "ctitle",
+        "function": "@ctitle(min?,max?)",
+        "example": "@ctitle(1,3)",
+        "desc": "随机生成一个数量位于min到max之间的中文标题",
+        "result": "元题律知太\n"
+      }
+    ]
+  },
+  {
+    "type": "name",
+    "function": "@name",
+    "desc": "随机生成英文人名",
+    "examples": [
+      {
+        "type": "name",
+        "function": "@first",
+        "example": "@first",
+        "desc": "随机生成一个英文人名的第一部分",
+        "result": "Richard"
+      },
+      {
+        "type": "name",
+        "function": "@last",
+        "example": "@last",
+        "desc": "随机生成一个英文人名的第二部分",
+        "result": "Thomas"
+      },
+      {
+        "type": "name",
+        "function": "@name(middle?)",
+        "example": "@name(true)",
+        "desc": "随机生成一个英文人名，middle参数为true时生成三个单词",
+        "result": "Frank Ruth White"
+      }
+    ]
+  },
+  {
+    "type": "cname",
+    "function": "@cname",
+    "desc": "随机生成中文人名",
+    "examples": [
+      {
+        "type": "cname",
+        "function": "@cfirst",
+        "example": "@cfirst",
+        "desc": "随机生成中文人名的姓",
+        "result": "贾\n王\n李"
+      },
+      {
+        "type": "cname",
+        "function": "@cfirst",
+        "example": "@cfirst",
+        "desc": "随机生成中文人名的姓",
+        "result": "贾\n王\n李"
+      },
+      {
+        "type": "cname",
+        "function": "@clast",
+        "example": "@clast",
+        "desc": "随机生成中文人名的名",
+        "result": "均\n超"
+      },
+      {
+        "type": "cname",
+        "function": "@cname",
+        "example": "@cname",
+        "desc": "随机生成中文人名",
+        "result": "贾\n王\n李"
+      }
+    ]
+  },
+  {
+    "type": "url",
+    "function": "@url",
+    "desc": "随机生成一个url",
+    "examples": [
+      {
+        "type": "url",
+        "function": "@url",
+        "example": "@url",
+        "desc": "随机一个url",
+        "result": "http://www.9xiazaiqi.com"
+      }
+    ]
+  },
+  {
+    "type": "domain",
+    "function": "@domain",
+    "desc": "随机一个域名",
+    "examples": [
+      {
+        "type": "domain",
+        "function": "@domain",
+        "example": "@domain",
+        "desc": "随机一个域名",
+        "result": "gokkt.aero"
+      }
+    ]
+  },
+  {
+    "type": "protocol",
+    "function": "@protocol",
+    "desc": "随机一个协议",
+    "examples": [
+      {
+        "type": "protocol",
+        "function": "@protocol",
+        "example": "@protocol",
+        "desc": "随机一个协议",
+        "result": "rlogin"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "function": "@email",
+    "desc": "随机一个邮箱",
+    "examples": [
+      {
+        "type": "email",
+        "function": "@email",
+        "example": "@email",
+        "desc": "随机一个邮件地址",
+        "result": "x.sqjpp@kdlus.ru"
+      }
+    ]
+  },
+  {
+    "type": "ip",
+    "function": "@ip",
+    "desc": "随机一个ip地址",
+    "examples": [
+      {
+        "type": "ip",
+        "function": "@ip",
+        "example": "@ip",
+        "desc": "随机一个ip地址",
+        "result": "189.229.197.209"
+      }
+    ]
+  },
+  {
+    "type": "region",
+    "function": "@region",
+    "desc": "随机一个区域",
+    "examples": [
+      {
+        "type": "region",
+        "function": "@region",
+        "example": "@region",
+        "desc": "随机一个区域",
+        "result": "华南"
+      }
+    ]
+  },
+  {
+    "type": "province",
+    "function": "@province",
+    "desc": "随机一个省份",
+    "examples": [
+      {
+        "type": "province",
+        "function": "@province",
+        "example": "@province",
+        "desc": "随机一个省份",
+        "result": "四川省"
+      }
+    ]
+  },
+  {
+    "type": "city",
+    "function": "@city(prefix?)",
+    "desc": "随机一个城市,prefix参数为true时生成省份",
+    "examples": [
+      {
+        "type": "city",
+        "function": "@city(prefix?)",
+        "example": "@city(true)",
+        "desc": "随机一个城市,prefix参数为true时生成省份",
+        "result": "内蒙古自治区 巴彦淖尔市"
+      }
+    ]
+  },
+  {
+    "type": "county",
+    "function": "@county(prefix?)",
+    "desc": "随机一个县,prefix参数为true时生成省份和城市",
+    "examples": [
+      {
+        "type": "county",
+        "function": "@county(prefix?)",
+        "example": "@county(true)",
+        "desc": "随机一个县,prefix参数为true时生成省份和城市",
+        "result": "河北省 秦皇岛市 抚宁县"
+      }
+    ]
+  },
+  {
+    "type": "zip",
+    "function": "@zip()",
+    "desc": "随机一个邮政编码",
+    "examples": [
+      {
+        "type": "zip",
+        "function": "@zip",
+        "example": "@zip",
+        "desc": "随机一个邮政编码",
+        "result": "746265"
+      }
+    ]
+  }
+]

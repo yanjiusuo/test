@@ -1,0 +1,62 @@
+{
+  "tasks": [{
+    "id": "multicast",
+    "type": "multicast",
+    "children": [
+      {
+        "id": "http1",
+        "type": "http",
+        "endpointUrl": ["http://127.0.0.1:6010"],
+        "input":{
+          "method": "get",
+          "url": "/test"
+        }
+      },
+      {
+        "id": "http2",
+        "type": "http",
+        "endpointUrl": ["http://127.0.0.1:6010"],
+        "input":{
+          "method": "post",
+          "url": "/json",
+          "body": [{
+            "name": "root",
+            "type": "object",
+            "children": [
+              {
+                "name": "sid",
+                "type": "long",
+                "value": "${workflow.input.body.sid}"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": "${workflow.input.body.name}"
+              }
+            ]
+          }]
+        }
+      }
+    ],
+    "output": {
+      "body": [{
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "type": "string",
+            "name": "http1Res",
+            "exprType": "expr",
+            "value": "${steps.http1.output.body}"
+          },
+          {
+            "type": "string",
+            "name": "http2Res",
+            "exprType": "expr",
+            "value": "${steps.http2.output.body}"
+          }
+        ]
+      }]
+    }
+  }]
+}

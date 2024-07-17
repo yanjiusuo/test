@@ -1,0 +1,25 @@
+{
+  "input": {
+    "headers": [
+      {
+        "type": "string",
+        "name": "token",
+        "required": true
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "http1",
+      "type": "http",
+      "successCondition": "output.status==200",
+      "endpointUrl": [
+        "http://127.0.0.1:6010"
+      ],
+      "input": {
+        "method": "get",
+        "url": "/test"
+      }
+    }
+  ]
+}

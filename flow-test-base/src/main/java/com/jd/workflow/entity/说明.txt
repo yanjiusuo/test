@@ -1,0 +1,3 @@
+java_home/schemagen FullTyped.java 可以生成schema
+
+schemagen FullTyped.java -d ../../../../../resources/generated-schema/FullTyped

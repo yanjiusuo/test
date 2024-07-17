@@ -1,0 +1,250 @@
+[
+  {
+    "name": "A",
+    "type": "string",
+    "value": 1
+  },
+  {
+    "name": "A",
+    "type": "string",
+    "value": 1
+  },
+  {
+    "name": "person",
+    "type": "object",
+    "children":[
+      {
+        "name": "sid",
+        "type": "string",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "object",
+    "children":[
+      {
+        "name": "sid",
+        "type": "string",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "object",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "object",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "ref",
+    "className": "Person",
+    "children":[
+      {
+        "name": "sid",
+        "type": "string",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "ref",
+    "className": "Person",
+    "children":[
+
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "string_json",
+    "className": "Person",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "person",
+    "type": "string_json",
+    "className": "Person",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+        ]
+      }
+    ]
+  },
+
+
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "value": 1
+          },
+          {
+            "name": "data",
+            "type": "ref",
+            "className": "Data",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+
+          {
+            "name": "data",
+            "type": "ref",
+            "className": "Data",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+          {
+            "name": "sid",
+            "type": "string",
+            "typeVariableName": "T",
+            "value": 1
+          },
+          {
+            "name": "data",
+            "type": "ref",
+            "className": "Data",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "persons",
+    "type": "array",
+    "children":[
+      {
+        "name": "person",
+        "type": "ref",
+        "className": "Person",
+        "children":[
+          {
+            "name": "sid",
+            "type": "ref",
+            "typeVariableName": "T",
+            "value": 1
+          },
+          {
+            "name": "data",
+            "type": "ref",
+            "className": "Data",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  }
+]

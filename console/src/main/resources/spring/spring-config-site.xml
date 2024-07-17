@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+	<bean id="duccHttpAuthService" class="com.jd.cjg.config.service.impl.HttpAuthServiceImpl"/>
+
+	<bean id="duccApiUtils" class="com.jd.cjg.config.utils.DuccApiUtils">
+		<property name="datacenterMap">
+			<map>
+				<entry key="China">
+					<bean id="China" class="com.jd.cjg.config.model.cjg.Datacenter">
+						<property name="duccDomain" value="${ducc.domain}"/>
+						<property name="duccAppName" value="${ducc.appName}"/>
+						<property name="duccAppToken" value="${ducc.appToken}"/>
+					</bean>
+				</entry>
+				<entry key="Test">
+					<bean id="Test" class="com.jd.cjg.config.model.cjg.Datacenter">
+						<property name="duccDomain" value="${ducc.domain}"/>
+						<property name="duccAppName" value="${ducc.appName}"/>
+						<property name="duccAppToken" value="${ducc.appToken}"/>
+					</bean>
+				</entry>
+				<entry key="Haidian">
+					<bean id="Haidian" class="com.jd.cjg.config.model.cjg.Datacenter">
+						<property name="duccDomain" value="${ducc.domain}"/>
+						<property name="duccAppName" value="${ducc.appName}"/>
+						<property name="duccAppToken" value="${ducc.appToken}"/>
+					</bean>
+				</entry>
+				<entry key="Nongpi">
+					<bean id="Nongpi" class="com.jd.cjg.config.model.cjg.Datacenter">
+						<property name="duccDomain" value="${ducc.domain}"/>
+						<property name="duccAppName" value="${ducc.appName}"/>
+						<property name="duccAppToken" value="${ducc.appToken}"/>
+					</bean>
+				</entry>
+				<entry key="Cbb2b">
+					<bean id="Cbb2b" class="com.jd.cjg.config.model.cjg.Datacenter">
+						<property name="duccDomain" value="${ducc.domain}"/>
+						<property name="duccAppName" value="${ducc.appName}"/>
+						<property name="duccAppToken" value="${ducc.appToken}"/>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+<!--	<bean id="duccApiUtils" class="com.jd.cjg.config.utils.DuccApiUtils">-->
+<!--		<property name="datacenterMap">-->
+<!--			<map>-->
+<!--				<entry key="China">-->
+<!--					<bean id="China" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="ducc-api.jd.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="23ccb05004cf4c7c8ddbddf7d8f6858a"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--				<entry key="Thailand">-->
+<!--					<bean id="Thailand" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="ducc-api.jd.th.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="e14e8b57abed4f1eabf501fd81ab0e60"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--				<entry key="Indonesia">-->
+<!--					<bean id="Indonesia" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="id.ducc-api.jd.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="25fc456485a7472d82aad0cbf45cd462"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--				<entry key="Haidian">-->
+<!--					<bean id="Haidian" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="ducc-api.jd.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="23ccb05004cf4c7c8ddbddf7d8f6858a"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--				<entry key="Nongpi">-->
+<!--					<bean id="Nongpi" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="ducc-api.jd.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="23ccb05004cf4c7c8ddbddf7d8f6858a"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--				<entry key="Cbb2b">-->
+<!--					<bean id="Cbb2b" class="com.jd.cjg.config.model.cjg.Datacenter">-->
+<!--						<property name="duccDomain" value="ducc-api.jd.local"/>-->
+<!--						<property name="duccAppName" value="jdos_cjg-config"/>-->
+<!--						<property name="duccAppToken" value="23ccb05004cf4c7c8ddbddf7d8f6858a"/>-->
+<!--					</bean>-->
+<!--				</entry>-->
+<!--			</map>-->
+<!--		</property>-->
+<!--	</bean>-->
+
+
+</beans>

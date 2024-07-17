@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route xmlns="http://camel.apache.org/schema/spring">
+        <from uri="direct:start"/>
+        <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+            <description>
+                <![CDATA[{"id":"step2","type":"transform",
+                "output":{
+                   "body":[{
+                    "name":"root",
+                    "type":"string",
+                    "value":"aa-123"
+                   }]}
+                 }]]>
+            </description>
+        </bean>
+        <to uri="direct:step1"  />
+        <log message="456" />
+    </route>
+    <route xmlns="http://camel.apache.org/schema/spring">
+        <from uri="direct:step1"/>
+        <log message="123" />
+    </route>
+</routes>

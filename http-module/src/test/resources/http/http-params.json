@@ -1,0 +1,22 @@
+{
+  "id": "http1",
+  "type": "http",
+  "successCondition": "output.status==200",
+  "endpointUrl": ["http://127.0.0.1:6010"],
+  "input":{
+    "method": "post",
+    "url": "/json",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "value": "${workflow.input.params.id}"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "value": "${workflow.input.params.name}"
+      }
+    ]
+  }
+}

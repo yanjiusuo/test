@@ -1,0 +1,59 @@
+{
+  "input": {
+    "body":[
+      {
+        "name": "root",
+        "type": "object",
+        "value": "${workflow.input.body}",
+        "children": [
+          {
+            "name": "id",
+            "type": "long"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "http2",
+      "type": "http",
+
+      "endpointUrl": ["http://jap-mock-data.jd.local"],
+      "input": {
+        "reqType": "json",
+        "method": "GET",
+        "url": "/html/{id}",
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "value": "${workflow.input.body.id}"
+          }
+        ]
+      }
+    }
+  ],
+  "output": {
+    "body": [{
+      "name": "root",
+      "type": "object",
+      "children": [
+        {
+          "name": "code",
+          "type": "string",
+          "value": "0"
+        },{
+          "name": "message",
+          "type": "string",
+          "value": "获取成功"
+        },{
+          "name": "data",
+          "type": "string",
+          "exprType": "script",
+          "value":"var data = utils.parseXml(steps.http2.output.body.data.html);\ndata.div['#text']"
+        }
+      ]
+    }]
+  }
+}

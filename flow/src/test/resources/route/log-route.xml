@@ -1,0 +1,6 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <process ref="logProcessor"/>
+</route>
+
+

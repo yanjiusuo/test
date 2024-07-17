@@ -1,0 +1,5104 @@
+{
+  "variables": {},
+  "success": true,
+  "logId": 13385,
+  "body": {
+    "resultCode": "1-11-10-100000",
+    "message": "success",
+    "helpMessage": null,
+    "resultInfo": {
+      "domainCollectionDTOs": [
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.qualification.model.qualificationCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.qualification.model.qualificationCollection",
+            "typeClass": "com.jd.trade2.qualification.export.dto.QualificationCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.qualification.model.qualificationCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "masterAndFollowAccountVerify": {
+                  "v": false
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.test.model.testCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.test.model.testCollection",
+            "typeClass": "com.jd.trade2.test.export.dto.TestCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.test.model.testCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.stock.stockState.model.lastCatch",
+                "typeClass": "com.jd.trade2.stockstate.export.dto.model.lastcatch.LastCatchInfoDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.stock.stockState.model.lastCatch"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "shoppingUuid": {
+                      "v": "1012_F3B1m2n1350320083789357056"
+                    }
+                  },
+                  "state": {
+                    "ag": {
+                      "v": "-1"
+                    },
+                    "ah": {
+                      "v": "-1"
+                    },
+                    "addedMoveStockStatus": {
+                      "v": "-1"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "childEmpty": false,
+          "decorators": [
+            "core.trade-DM#trade.stock-M#stockCollection",
+            "trade.stock.stockState.model.stockStateCollection",
+            "jd_main-DM#trade.stock-D#stockExtendDecorator",
+            "jd_main-DM#trade.stock-D#stockCollectionDecorator"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.stock.stockState.model.stockStateItem"
+              ],
+              "type": {
+                "namespace": "trade.stock.stockState.model.stockStateItem",
+                "typeClass": "com.jd.trade2.stockstate.export.dto.general.GeneralStockStateItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.stock.stockState.model.stockStateItem"
+                ]
+              },
+              "uuid": {
+                "value": "1013_1350504489898262528"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "stockStateId": {
+                      "v": "33"
+                    }
+                  },
+                  "tag": {
+                    "bigItem": {
+                      "v": false
+                    }
+                  },
+                  "basic": {
+                    "fdcShopDeliveryType": {
+                      "v": "-1"
+                    },
+                    "resultCode": {
+                      "v": "1"
+                    },
+                    "newStockType": {
+                      "v": "0"
+                    },
+                    "realDcId": {
+                      "v": "6"
+                    },
+                    "newStockId": {
+                      "v": "40"
+                    },
+                    "newDcId": {
+                      "v": "6"
+                    },
+                    "vsId": {
+                      "v": "-1"
+                    },
+                    "useStockNum": {
+                      "v": "0"
+                    },
+                    "ediPrepareSale": {
+                      "v": "0"
+                    },
+                    "stockV": {
+                      "v": "0"
+                    },
+                    "addedMoveStockType": {
+                      "v": "-1"
+                    },
+                    "addedDcId": {
+                      "v": "-1"
+                    },
+                    "addedStockId": {
+                      "v": "-1"
+                    },
+                    "profitLossId": {
+                      "v": "-1"
+                    },
+                    "ef": {
+                      "v": "0"
+                    },
+                    "stockFactoryShip": {
+                      "v": "-1"
+                    },
+                    "stockStatusMap": {
+                      "v": {
+                        "eb": "0",
+                        "ec": "-1",
+                        "ed": "0",
+                        "ef": "0",
+                        "ab": "-1",
+                        "ac": "-1",
+                        "eh": "-1",
+                        "ad": "-1",
+                        "ae": "-1",
+                        "ei": null,
+                        "ej": "-1",
+                        "af": "-1",
+                        "ek": "-1",
+                        "ag": "-1",
+                        "el": "-1",
+                        "ah": "-1",
+                        "eo": "-1",
+                        "ep": "-1",
+                        "eq": null,
+                        "ao": "-1",
+                        "ap": "-1",
+                        "at": "-1",
+                        "bb": "-1",
+                        "ca": "-1",
+                        "cb": "-1",
+                        "cc": "-1",
+                        "a": "33",
+                        "cd": "-1",
+                        "b": "1",
+                        "ce": "-1",
+                        "c": "-1",
+                        "cf": "-1",
+                        "d": "6",
+                        "e": "40",
+                        "f": "0",
+                        "g": "6",
+                        "h": "40",
+                        "i": "0",
+                        "j": "",
+                        "k": "0",
+                        "l": "0",
+                        "m": "0",
+                        "n": "99999",
+                        "o": "0",
+                        "p": "0",
+                        "q": "0",
+                        "v": "0",
+                        "x": "true",
+                        "y": "true",
+                        "z": "6,669,794,682,763,699,881,825,702,792,771,865,896,729,776,857,858,859,849,787,788,777,994,700,101,112,545,3,56,10,772,10001,10008"
+                      }
+                    },
+                    "realStoreType": {
+                      "v": "0"
+                    },
+                    "stockM": {
+                      "v": "0"
+                    },
+                    "ag": {
+                      "v": "-1"
+                    },
+                    "ah": {
+                      "v": "-1"
+                    },
+                    "siteBusinessType": {
+                      "v": "-1"
+                    },
+                    "expectArrivalTime": {
+                      "v": 0
+                    },
+                    "priority": {
+                      "v": "6,669,794,682,763,699,881,825,702,792,771,865,896,729,776,857,858,859,849,787,788,777,994,700,101,112,545,3,56,10,772,10001,10008"
+                    },
+                    "addedMoveStockStatus": {
+                      "v": "-1"
+                    },
+                    "presaleType": {
+                      "v": "0"
+                    },
+                    "ztType": {
+                      "v": "-1"
+                    },
+                    "selfPickSiteDistance": {
+                      "v": -1
+                    },
+                    "selfPickStockStatus": {
+                      "v": -1
+                    },
+                    "isVs": {
+                      "v": "-1"
+                    },
+                    "selfPickSiteId": {
+                      "v": -1
+                    },
+                    "addedMoveStockId": {
+                      "v": "-1"
+                    },
+                    "realStoreId": {
+                      "v": "40"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.stock.stockState.model.stockStateCollection",
+            "typeClass": "com.jd.trade2.stockstate.export.dto.StockStateCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "core.trade-DM#trade.stock-M#stockCollection",
+              "trade.stock.stockState.model.stockStateCollection",
+              "jd_main-DM#trade.stock-D#stockExtendDecorator",
+              "jd_main-DM#trade.stock-D#stockCollectionDecorator"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [
+            {
+              "type": {
+                "namespace": "jd_main-DM#trade.stock-P#lastCatch",
+                "typeClass": "com.jd.trade2.horizontal.biz.chinamain.domain.stock.export.dto.part.StockLastCatchPartDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "jd_main-DM#trade.stock-P#lastCatch"
+                ]
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.financial.model.financialCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.financial.model.financial"
+              ],
+              "type": {
+                "namespace": "trade.financial.model.financial",
+                "typeClass": "com.jd.trade2.financial.export.dto.general.GeneralFinancialItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.financial.model.financial"
+                ]
+              },
+              "uuid": {
+                "value": "1048_1350504491471126528"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "display": {
+                    "payPwdState": {
+                      "v": -1
+                    },
+                    "passwordSettingFlag": {
+                      "v": false
+                    },
+                    "freePayPassword": {
+                      "v": true
+                    },
+                    "needPayPwd": {
+                      "v": false
+                    },
+                    "isLongPwdActive": {
+                      "v": false
+                    },
+                    "isShortPwdActive": {
+                      "v": false
+                    },
+                    "showOpenPayPwd": {
+                      "v": true
+                    }
+                  },
+                  "base": {}
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.financial.model.financialCollection",
+            "typeClass": "com.jd.trade2.financial.export.dto.FinancialCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.financial.model.financialCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.cartOperation.model.cartOperationCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.cartOperation.model.cartOperationCollection",
+            "typeClass": "com.jd.trade2.cartoperation.export.dto.CartOperationCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.cartOperation.model.cartOperationCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.union.model.unionCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.union.model.unionCollection",
+            "typeClass": "com.jd.trade2.union.export.dto.UnionCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.union.model.unionCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.assets.coupon.model.couponCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.assets.coupon.model.couponCollection",
+            "typeClass": "com.jd.trade2.assets.coupon.export.dto.CouponCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.assets.coupon.model.couponCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "page": {
+                "pageType": {
+                  "v": 1
+                },
+                "pageSize": {
+                  "v": 500
+                },
+                "page": {
+                  "v": 1
+                }
+              },
+              "collectionCore": {
+                "availableCount": {
+                  "v": 0
+                },
+                "couponDiscount": {
+                  "v": "0"
+                },
+                "couponDiscountSubtractMemberShip": {
+                  "v": "0"
+                },
+                "totalCount": {
+                  "v": 0
+                },
+                "allCouponDiscount": {
+                  "v": "0"
+                },
+                "tradeInCouponDiscount": {
+                  "v": "0"
+                },
+                "freightCouponDiscount": {
+                  "v": "0"
+                }
+              },
+              "tags": {}
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.price.model.priceCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.price.model.priceItem"
+              ],
+              "type": {
+                "namespace": "trade.price.model.priceItem",
+                "typeClass": "com.jd.trade2.price.export.dto.GeneralPriceItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.price.model.priceItem"
+                ]
+              },
+              "uuid": {
+                "value": "1043_1350320089208684544"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "price": {
+                      "v": "99.00"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.price.model.priceCollection",
+            "typeClass": "com.jd.trade2.price.export.dto.PriceCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.price.model.priceCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.order.orderNumber.model.orderNumberCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.order.orderNumber.model.orderNumberCollection",
+            "typeClass": "com.jd.trade2.order.ordernumber.export.dto.OrderNumberCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.order.orderNumber.model.orderNumberCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.custom.model.customCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.custom.model.customCollection",
+            "typeClass": "com.jd.trade2.custom.export.dto.CustomCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.custom.model.customCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.scaleBuy.model.scaleBuyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.scaleBuy.model.scaleBuyCollection",
+            "typeClass": "com.jd.trade2.marketing.scalebuy.export.dto.ScaleBuyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.scaleBuy.model.scaleBuyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.security.securityIdentifier.model.securityIdentifierCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.security.securityIdentifier.model.securityIdentifierCollection",
+            "typeClass": "com.jd.trade2.security.identifier.export.dto.IdentifierCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.security.securityIdentifier.model.securityIdentifierCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.security.securityRisk.model.securityRiskCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.security.securityRisk.model.securityRiskCollection",
+            "typeClass": "com.jd.trade2.security.risk.export.dto.RiskCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.security.securityRisk.model.securityRiskCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "riskFreePayPassword": {
+                  "v": false
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.payship.payment.model.paymentCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.payship.payment.model.paymentItem"
+              ],
+              "type": {
+                "namespace": "trade.payship.payment.model.paymentItem",
+                "typeClass": "com.jd.trade2.payship.payment.export.dto.general.GeneralPaymentItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.payment.model.paymentItem"
+                ]
+              },
+              "uuid": {
+                "value": "101611_1350504490229612544"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "paymentId": {
+                      "v": "1"
+                    }
+                  },
+                  "basic": {
+                    "mixed": {
+                      "v": false
+                    },
+                    "unSupportUuids": {
+                      "v": []
+                    },
+                    "paymentName": {
+                      "v": "货到付款"
+                    },
+                    "selected": {
+                      "v": false
+                    },
+                    "supported": {
+                      "v": true
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.payship.payment.model.paymentItem"
+              ],
+              "type": {
+                "namespace": "trade.payship.payment.model.paymentItem",
+                "typeClass": "com.jd.trade2.payship.payment.export.dto.general.GeneralPaymentItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.payment.model.paymentItem"
+                ]
+              },
+              "uuid": {
+                "value": "101611_1350504490212835328"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "paymentId": {
+                      "v": "4"
+                    }
+                  },
+                  "basic": {
+                    "mixed": {
+                      "v": false
+                    },
+                    "unSupportUuids": {
+                      "v": []
+                    },
+                    "paymentName": {
+                      "v": "在线支付"
+                    },
+                    "selected": {
+                      "v": true
+                    },
+                    "supported": {
+                      "v": true
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.payship.payment.model.paymentItem"
+              ],
+              "type": {
+                "namespace": "trade.payship.payment.model.paymentItem",
+                "typeClass": "com.jd.trade2.payship.payment.export.dto.general.GeneralPaymentItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.payment.model.paymentItem"
+                ]
+              },
+              "uuid": {
+                "value": "101611_1350504490217029632"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "paymentId": {
+                      "v": "5"
+                    }
+                  },
+                  "basic": {
+                    "mixed": {
+                      "v": false
+                    },
+                    "unSupportUuids": {
+                      "v": []
+                    },
+                    "paymentName": {
+                      "v": "公司转账"
+                    },
+                    "selected": {
+                      "v": false
+                    },
+                    "supported": {
+                      "v": true
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.payship.payment.model.paymentCollection",
+            "typeClass": "com.jd.trade2.payship.payment.export.dto.PaymentCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.payship.payment.model.paymentCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.terminal.model.deviceInfo",
+                "typeClass": "com.jd.trade2.terminal.export.dto.device.model.DeviceInfoDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.terminal.model.deviceInfo"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "device": {}
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "childEmpty": false,
+          "decorators": [
+            "trade.terminal.model.terminalCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.terminal.model.terminal"
+              ],
+              "type": {
+                "namespace": "trade.terminal.model.terminal",
+                "typeClass": "com.jd.trade2.terminal.export.dto.general.GeneralTerminalItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.terminal.model.terminal"
+                ]
+              },
+              "uuid": {
+                "value": "1027_1350504491546624000"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "pc": {
+                    "clientBrowserName": {
+                      "v": "chrome"
+                    },
+                    "userAgent": {
+                      "v": "111"
+                    }
+                  },
+                  "phone": {
+                    "appVersion": {
+                      "v": "2.2"
+                    },
+                    "clientInfo": {
+                      "v": "127.0.0.1"
+                    },
+                    "appLbsInfo": {
+                      "v": "chrome"
+                    },
+                    "netBuySourceType": {
+                      "v": 0
+                    }
+                  },
+                  "providerServer": {
+                    "sdkTraceId": {
+                      "v": "[<-89594741~4>]"
+                    },
+                    "sdkServerName": {
+                      "v": "11.91.176.229"
+                    },
+                    "disChannels": {
+                      "v": "QTRADE_LF"
+                    }
+                  },
+                  "callerServer": {
+                    "port": {
+                      "v": "80"
+                    },
+                    "serverName": {
+                      "v": "10.180.1.19"
+                    }
+                  },
+                  "client": {
+                    "eid": {
+                      "v": "chrome"
+                    },
+                    "userIp": {
+                      "v": "10.180.1.19"
+                    },
+                    "clientSystemName": {
+                      "v": "ios"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.terminal.model.terminalCollection",
+            "typeClass": "com.jd.trade2.terminal.export.dto.TerminalCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.terminal.model.terminalCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.store.model.storeCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.store.model.storeCollection",
+            "typeClass": "com.jd.trade2.store.export.dto.StoreCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.store.model.storeCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.payship.shipment.model.pileExtInfo",
+                "typeClass": "com.jd.trade2.payship.shipment.export.dto.pile.model.ShipmentPileDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.shipment.model.pileExtInfo"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "bundelItemUuidSet": {
+                      "v": [
+                        "1012_F3B1m2n1350320083789357056"
+                      ]
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.payship.shipment.model.lastCatch",
+                "typeClass": "com.jd.trade2.payship.shipment.export.dto.model.lastcatch.LastCatchInfoDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.shipment.model.lastCatch"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "shoppingUuid": {
+                      "v": "1012_F3B1m2n1350320083789357056"
+                    },
+                    "shipmentType": {
+                      "v": "65"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "childEmpty": false,
+          "decorators": [
+            "trade.payship.shipment.model.shipmentCollection",
+            "jd_main-DM#trade.shipment-D#usedPickSite",
+            "jd_main-DM#trade.shipment-D#nonTouchingDeliveryCollection",
+            "core.trade-DM#trade.shipment-M#shipmentCollection",
+            "jd_main-DM#trade.shipment-D#shipmentCollectionDecorator",
+            "jd_main-DM#trade.shipment-D#pileCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.payship.shipment.model.shipmentItem"
+              ],
+              "type": {
+                "namespace": "trade.payship.shipment.model.shipmentItem",
+                "typeClass": "com.jd.trade2.payship.shipment.export.dto.jdship.JdShipmentItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.shipment.model.shipmentItem"
+                ]
+              },
+              "uuid": {
+                "value": "101612_1350504490263166976"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "shipmentType": {
+                      "v": "65"
+                    }
+                  },
+                  "oneStopServices": {
+                    "supportOneStopServices": {
+                      "v": false
+                    },
+                    "oneStopServicesSelected": {
+                      "v": false
+                    }
+                  },
+                  "freshShip": {
+                    "supportFreshShip": {
+                      "v": true
+                    }
+                  },
+                  "jdShip": {
+                    "supportPickup": {
+                      "v": false
+                    },
+                    "supportHomeDelivery": {
+                      "v": false
+                    },
+                    "detailShipmentType": {
+                      "v": "1"
+                    },
+                    "supportJdShip": {
+                      "v": true
+                    },
+                    "recommendJdShip": {
+                      "v": false
+                    }
+                  },
+                  "deliverToCar": {
+                    "deliveryToCarSelected": {
+                      "v": false
+                    },
+                    "supportDeliveryToCar": {
+                      "v": false
+                    }
+                  },
+                  "basic": {
+                    "shipmentName": {
+                      "v": "京配"
+                    },
+                    "selected": {
+                      "v": true
+                    }
+                  },
+                  "bigItemCalendar": {
+                    "websiteType": {
+                      "v": -1
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.payship.shipment.model.shipmentCollection",
+            "typeClass": "com.jd.trade2.payship.shipment.export.dto.ShipmentCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.payship.shipment.model.shipmentCollection",
+              "jd_main-DM#trade.shipment-D#usedPickSite",
+              "jd_main-DM#trade.shipment-D#nonTouchingDeliveryCollection",
+              "core.trade-DM#trade.shipment-M#shipmentCollection",
+              "jd_main-DM#trade.shipment-D#shipmentCollectionDecorator",
+              "jd_main-DM#trade.shipment-D#pileCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [
+            {
+              "type": {
+                "namespace": "jd_main-DM#trade.shipment-P#pileExtInfo",
+                "typeClass": "com.jd.trade2.horizontal.biz.chinamain.domain.shipment.export.dto.part.pile.PilePartDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "jd_main-DM#trade.shipment-P#pileExtInfo",
+                  "jd_main-DM#trade.shipment-D#oneStopServices"
+                ]
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            },
+            {
+              "type": {
+                "namespace": "jd_main-DM#trade.shipment-P#lastCatch",
+                "typeClass": "com.jd.trade2.horizontal.biz.chinamain.domain.shipment.export.dto.part.lastcatch.ShipmentLastCatchPartDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "jd_main-DM#trade.shipment-P#lastCatch"
+                ]
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "info": {
+            "domainMap": {
+              "jdShip": {
+                "appPromiseVersion": {
+                  "v": 0
+                },
+                "needStorePickShipment": {
+                  "v": false
+                },
+                "needOneStopServices": {
+                  "v": false
+                },
+                "unSupportJdApprovalShoppingItemUUIDList": {
+                  "v": []
+                }
+              },
+              "transportation": {
+                "appTransportationVersion": {
+                  "v": 0
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.address.model.addressCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.area",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AreaDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.area"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "core": {
+                        "sortId": {
+                          "v": 1
+                        },
+                        "name": {
+                          "v": "北京"
+                        },
+                        "id": {
+                          "v": 1
+                        },
+                        "parentId": {
+                          "v": 4744
+                        }
+                      },
+                      "jdComOversea": {},
+                      "code": {}
+                    },
+                    "version": "1.0.0"
+                  }
+                },
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.area",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AreaDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.area"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "core": {
+                        "sortId": {
+                          "v": 5
+                        },
+                        "name": {
+                          "v": "大兴区"
+                        },
+                        "id": {
+                          "v": 2810
+                        },
+                        "parentId": {
+                          "v": 1
+                        }
+                      },
+                      "jdComOversea": {},
+                      "code": {}
+                    },
+                    "version": "1.0.0"
+                  }
+                },
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.area",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AreaDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.area"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "core": {
+                        "sortId": {
+                          "v": 21
+                        },
+                        "name": {
+                          "v": "北京经济技术开发区"
+                        },
+                        "id": {
+                          "v": 51081
+                        },
+                        "parentId": {
+                          "v": 2810
+                        }
+                      },
+                      "jdComOversea": {},
+                      "code": {}
+                    },
+                    "version": "1.0.0"
+                  }
+                },
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.area",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AreaDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.area"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "core": {
+                        "name": {
+                          "v": ""
+                        },
+                        "id": {
+                          "v": 0
+                        }
+                      },
+                      "jdComOversea": {},
+                      "code": {}
+                    },
+                    "version": "1.0.0"
+                  }
+                },
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.addressMapperInfo",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AddressMapperInfoDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.addressMapperInfo"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "basic": {
+                        "resultCode": {
+                          "v": 450
+                        },
+                        "message": {
+                          "v": "城市未开放"
+                        }
+                      }
+                    },
+                    "version": "1.0.0"
+                  }
+                },
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.address.model.addressUpgrade",
+                    "typeClass": "com.jd.trade2.address.export.dto.general.model.AddressUpgradeDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.address.model.addressUpgrade"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "basic": {}
+                    },
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "decorators": [
+                "trade.address.model.addressItem"
+              ],
+              "type": {
+                "namespace": "trade.address.model.addressItem",
+                "typeClass": "com.jd.trade2.address.export.dto.general.GeneralAddressItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.address.model.addressItem"
+                ]
+              },
+              "uuid": {
+                "value": "1011_1350504488694497280"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "area": {
+                    "areaList": {
+                      "v": [
+                        1,
+                        2810,
+                        51081,
+                        0
+                      ]
+                    },
+                    "areaNameList": {
+                      "v": [
+                        "北京",
+                        "大兴区",
+                        "北京经济技术开发区",
+                        ""
+                      ]
+                    }
+                  },
+                  "pickUpGo": {
+                    "isPickUpGoFlag": {
+                      "v": false
+                    }
+                  },
+                  "recommend": {},
+                  "jicc": {
+                    "idCard": {
+                      "v": ""
+                    }
+                  },
+                  "core": {
+                    "addressId": {
+                      "v": 1800080397
+                    }
+                  },
+                  "default": {
+                    "addressDefault": {
+                      "v": false
+                    }
+                  },
+                  "coord": {
+                    "coordType": {
+                      "v": 2
+                    },
+                    "latitude": {
+                      "v": 1000
+                    },
+                    "longitude": {
+                      "v": 1000
+                    }
+                  },
+                  "globalAddressCheckJicc": {
+                    "needToUploadJiccFlag": {
+                      "v": false
+                    }
+                  },
+                  "pick": {
+                    "lastId": {
+                      "v": 0
+                    },
+                    "siteLength": {
+                      "v": 0
+                    }
+                  },
+                  "grid": {
+                    "matchArea": {
+                      "v": "-1"
+                    },
+                    "gridId": {
+                      "v": 0
+                    }
+                  },
+                  "tag": {
+                    "invalidFlag": {
+                      "v": false
+                    },
+                    "tagSource": {
+                      "v": 0
+                    },
+                    "tagRet": {
+                      "v": 0
+                    },
+                    "freePay": {
+                      "v": false
+                    },
+                    "presentFlag": {
+                      "v": false
+                    }
+                  },
+                  "basic": {
+                    "emailEnc": {
+                      "v": "AASvt81eXVmLVxGsSPP5HVu2yVDxZB1KD7iiYKEFm5v6ZqgbiNeqGvFW4Zhj2qnJd3r4OPf7"
+                    },
+                    "operateTime": {
+                      "v": "2021-12-27 13:11:41"
+                    },
+                    "houseNumber": {
+                      "v": ""
+                    },
+                    "houseNumberEnc": {
+                      "v": ""
+                    },
+                    "mobile": {
+                      "v": "18310586478"
+                    },
+                    "addressDetailEnc": {
+                      "v": "AASvt81eXVmLVxGsSPP5HVu2XlbiG0h8piNuTrh+vjUufrH+TRpnHJ0bJhk9rkZBG65B6GkA"
+                    },
+                    "updateTime": {
+                      "v": "2024-05-23 02:20:31"
+                    },
+                    "nameEnc": {
+                      "v": "AASvt81eXVmLVxGsSPP5HVu2DCe8gl8wZM3btLXNeQA41HzU/0M="
+                    },
+                    "locationEnc": {
+                      "v": ""
+                    },
+                    "mobileEnc": {
+                      "v": "AASvt81eXVmLVxGsSPP5HVu2Lq5j8SgZjdiKsdf+DkArzgyWv9s="
+                    },
+                    "overseas": {
+                      "v": false
+                    },
+                    "hongKong": {
+                      "v": false
+                    },
+                    "taiwan": {
+                      "v": false
+                    },
+                    "addressDetail": {
+                      "v": "新增国内地址"
+                    },
+                    "phone": {
+                      "v": ""
+                    },
+                    "scope": {
+                      "v": "order"
+                    },
+                    "fullAddressEnc": {
+                      "v": "AASvt81eXVmLVxGsSPP5HVu2yyt24VOD20MCND9r8Tk/u2sESPy2XQhitniuBVVg8BIm1dTib7kGPjdzn8c96zAzcs0QrdDPuvrFKJos4ZoqrX8lLnM="
+                    },
+                    "name": {
+                      "v": "test"
+                    },
+                    "fullAddress": {
+                      "v": "北京大兴区北京经济技术开发区新增国内地址"
+                    },
+                    "addressName": {
+                      "v": "新增国内地址"
+                    },
+                    "location": {
+                      "v": ""
+                    },
+                    "email": {
+                      "v": "test0813@foxmail.com"
+                    },
+                    "selected": {
+                      "v": true
+                    },
+                    "phoneEnc": {
+                      "v": ""
+                    }
+                  },
+                  "gc": {
+                    "gcSource": {
+                      "v": 3
+                    },
+                    "gcLng": {
+                      "v": 116.499924
+                    },
+                    "dataSign": {
+                      "v": 2
+                    },
+                    "keyPoi": {
+                      "v": ""
+                    },
+                    "gcLat": {
+                      "v": 39.80619
+                    },
+                    "splitAddr": {
+                      "v": ""
+                    },
+                    "gcReliability": {
+                      "v": 0
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.address.model.addressCollection",
+            "typeClass": "com.jd.trade2.address.export.dto.AddressCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.address.model.addressCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "numInfo": {
+                "limitMaxAddressNum": {
+                  "v": 20
+                }
+              },
+              "giftBuy": {}
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.invoice.model.invoiceCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.invoice.model.invoiceCategory",
+                    "typeClass": "com.jd.trade2.invoice.export.dto.model.InvoiceCategoryDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.invoice.model.invoiceCategory"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "category": {
+                        "ivcContentId": {
+                          "v": 130
+                        },
+                        "ivcShoppingItemUUIDList": {
+                          "v": [
+                            "1012_F3B1m2n1350292492055420928"
+                          ]
+                        },
+                        "ivcContentName": {
+                          "v": "通讯器材及配件"
+                        }
+                      }
+                    },
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "decorators": [
+                "trade.invoice.model.invoiceItem"
+              ],
+              "type": {
+                "namespace": "trade.invoice.model.invoiceItem",
+                "typeClass": "com.jd.trade2.invoice.export.dto.general.GeneralInvoiceItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.invoice.model.invoiceItem"
+                ]
+              },
+              "uuid": {
+                "value": "1015_1350292130803286016"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "eleInvoice": {
+                    "consigneeEmail": {
+                      "v": "xiujie@163.com"
+                    },
+                    "consigneePhone": {
+                      "v": "18511212211"
+                    }
+                  },
+                  "product": {
+                    "showInvoiceSeparate": {
+                      "v": false
+                    },
+                    "hasPopNonLoc": {
+                      "v": false
+                    }
+                  },
+                  "consignee": {},
+                  "basic": {
+                    "registerPhone": {
+                      "v": ""
+                    },
+                    "invoiceTitleList": {
+                      "v": [
+                        4,
+                        5
+                      ]
+                    },
+                    "companyName": {
+                      "v": "知味餐饮服务有限公司"
+                    },
+                    "selectedUsualInvoiceId": {
+                      "v": 43490
+                    },
+                    "invoiceCode": {
+                      "v": "654339099977"
+                    },
+                    "registerAddress": {
+                      "v": ""
+                    },
+                    "registerBank": {
+                      "v": ""
+                    },
+                    "scope": {
+                      "v": "order"
+                    },
+                    "invoiceType": {
+                      "v": 3
+                    },
+                    "personalName": {
+                      "v": ""
+                    },
+                    "registerBankAccount": {
+                      "v": ""
+                    },
+                    "invoicePutType": {
+                      "v": 0
+                    },
+                    "invoiceTitle": {
+                      "v": 4
+                    },
+                    "selected": {
+                      "v": true
+                    }
+                  },
+                  "content": {
+                    "supportContent": {
+                      "v": [
+                        1,
+                        100
+                      ]
+                    },
+                    "selectContent": {
+                      "v": 1
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.invoice.model.invoiceCollection",
+            "typeClass": "com.jd.trade2.invoice.export.dto.InvoiceCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.invoice.model.invoiceCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "resetConsumptionCouponInvoice": {
+                  "v": false
+                }
+              },
+              "support": {
+                "supportInvoice": {
+                  "v": true
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.fee.serviceFee.model.serviceFeeCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.fee.serviceFee.model.serviceFeeItem"
+              ],
+              "type": {
+                "namespace": "trade.fee.serviceFee.model.serviceFeeItem",
+                "typeClass": "com.jd.trade2.fee.servicefee.export.dto.general.GeneralServiceFeeItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.serviceFee.model.serviceFeeItem"
+                ]
+              },
+              "uuid": {
+                "value": "101811_CombinationBundleRelation_135032008918771302440"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "serviceFee": {
+                      "v": "59.00"
+                    },
+                    "serviceFeeType": {
+                      "v": "4"
+                    }
+                  },
+                  "dignityService": {
+                    "putCodGray": {
+                      "v": false
+                    },
+                    "riskUser": {
+                      "v": false
+                    },
+                    "status": {
+                      "v": 3
+                    }
+                  },
+                  "basic": {
+                    "checkedFlag": {
+                      "v": false
+                    },
+                    "venderId": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.fee.serviceFee.model.serviceFeeItem"
+              ],
+              "type": {
+                "namespace": "trade.fee.serviceFee.model.serviceFeeItem",
+                "typeClass": "com.jd.trade2.fee.servicefee.export.dto.general.GeneralServiceFeeItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.serviceFee.model.serviceFeeItem"
+                ]
+              },
+              "uuid": {
+                "value": "101811_CombinationBundleRelation_135032008918771302410"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "serviceFee": {
+                      "v": "1.20"
+                    },
+                    "serviceFeeType": {
+                      "v": "1"
+                    }
+                  },
+                  "buyerFreightInsurance": {
+                    "showFlag": {
+                      "v": true
+                    },
+                    "claimFee": {
+                      "v": "0.00"
+                    }
+                  },
+                  "basic": {
+                    "checkedFlag": {
+                      "v": false
+                    },
+                    "venderId": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.fee.serviceFee.model.serviceFeeCollection",
+            "typeClass": "com.jd.trade2.fee.servicefee.export.dto.ServiceFeeCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.fee.serviceFee.model.serviceFeeCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "totalServiceFee": {
+                  "v": "0"
+                },
+                "needSelectedPackagingServiceFee": {
+                  "v": []
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.groupBuy.model.groupBuyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.groupBuy.model.groupBuyCollection",
+            "typeClass": "com.jd.trade2.marketing.groupbuy.export.dto.GroupBuyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.groupBuy.model.groupBuyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.usualInvoice.model.usualInvoiceCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.usualInvoice.model.usualInvoiceCollection",
+            "typeClass": "com.jd.trade2.usualinvoice.export.dto.UsualInvoiceCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.usualInvoice.model.usualInvoiceCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.payTool.model.payToolCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.payTool.model.payToolCollection",
+            "typeClass": "com.jd.trade2.paytool.export.dto.PayToolCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.payTool.model.payToolCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "core": {
+                "isGuidePay": {
+                  "v": false
+                },
+                "orderPayableAmount": {
+                  "v": "0"
+                },
+                "resetPrePay": {
+                  "v": false
+                },
+                "isSelected": {
+                  "v": false
+                },
+                "canUsePrePay": {
+                  "v": false
+                }
+              },
+              "basic": {
+                "isOneClickPay": {
+                  "v": false
+                },
+                "guidePayWhite": {
+                  "v": false
+                },
+                "oneClickPayStatus": {
+                  "v": false
+                },
+                "speedSetFlag": {
+                  "v": false
+                },
+                "showOneClickPayAndWhiteBar": {
+                  "v": false
+                },
+                "isSpeedPay": {
+                  "v": false
+                },
+                "whiteBarActive": {
+                  "v": false
+                },
+                "checkPayChannelFlag": {
+                  "v": false
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.product.model.productCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.product.model.productItem"
+              ],
+              "type": {
+                "namespace": "trade.product.model.productItem",
+                "typeClass": "com.jd.trade2.product.export.dto.general.GeneralProductItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.product.model.productItem"
+                ]
+              },
+              "uuid": {
+                "value": "1034_1350504489185230850"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "loc": {},
+                  "delivery": {},
+                  "carO2O": {},
+                  "couponPackage": {
+                    "couponPackageFlag": {
+                      "v": false
+                    }
+                  },
+                  "virtualSku": {},
+                  "tradeIn": {},
+                  "pickUpGo": {
+                    "supplierPrice": {
+                      "v": ""
+                    }
+                  },
+                  "cartExt": {},
+                  "shopifyFreightToDismantle": {},
+                  "presale": {
+                    "presaleFields": {
+                      "v": {}
+                    },
+                    "hidePrice": {
+                      "v": false
+                    },
+                    "earnest": {
+                      "v": "0"
+                    }
+                  },
+                  "labelFields": {
+                    "fxg": {
+                      "v": "0"
+                    },
+                    "tsfw": {
+                      "v": "0"
+                    },
+                    "serviceCodes": {
+                      "v": {
+                        "fxg": "0",
+                        "tsfw": "0",
+                        "ms": "0"
+                      }
+                    }
+                  },
+                  "tags": {
+                    "pop": {
+                      "v": false
+                    },
+                    "book": {
+                      "v": false
+                    },
+                    "greetingCard": {
+                      "v": false
+                    },
+                    "fresh": {
+                      "v": false
+                    },
+                    "pack": {
+                      "v": false
+                    },
+                    "group": {
+                      "v": false
+                    }
+                  },
+                  "deliverToStore": {
+                    "deliverToStore": {
+                      "v": false
+                    }
+                  },
+                  "oneStopServices": {},
+                  "spuFields": {
+                    "spuId": {
+                      "v": "-1"
+                    }
+                  },
+                  "carService": {},
+                  "limit": {
+                    "limitInfo": {
+                      "v": {
+                        "noSaleFlag": "0",
+                        "strategyFlag": "0",
+                        "isPlusLimit": "0",
+                        "limitUserFlag": "1",
+                        "limitAreaFlag": "1",
+                        "limitPeopleFlag": "1",
+                        "canBuy": "1"
+                      }
+                    }
+                  },
+                  "fields": {
+                    "color": {
+                      "v": ""
+                    },
+                    "saler": {
+                      "v": "bjduqinghong"
+                    },
+                    "img_dfs_url": {
+                      "v": "jfs/t21268/52/274664714/4920/609e53cc/5b07f825N63bf0f19.jpg"
+                    },
+                    "outer_id": {
+                      "v": ""
+                    },
+                    "platform": {
+                      "v": "1"
+                    },
+                    "vender_id": {
+                      "v": "0"
+                    },
+                    "jc_buyer": {
+                      "v": ""
+                    },
+                    "features": {
+                      "v": "inputVAT:10,outputVAT:10,consumptionVAT:10"
+                    },
+                    "category_id": {
+                      "v": "655"
+                    },
+                    "yn": {
+                      "v": "1"
+                    },
+                    "isQdh": {
+                      "v": "0"
+                    },
+                    "product_id": {
+                      "v": "100002537913"
+                    },
+                    "sale_atts": {
+                      "v": ""
+                    },
+                    "sku_tag": {
+                      "v": "1"
+                    },
+                    "warranty": {
+                      "v": "12个月"
+                    },
+                    "timeliness_id": {
+                      "v": ""
+                    },
+                    "category_id1": {
+                      "v": "9987"
+                    },
+                    "sku_mark": {
+                      "v": "0"
+                    },
+                    "sku_name": {
+                      "v": "自营-普通自营-测试商品,请勿下单-zhangguopei--361"
+                    },
+                    "supply_unit": {
+                      "v": "bjduqinghong"
+                    },
+                    "model": {
+                      "v": "EN"
+                    },
+                    "category_id2": {
+                      "v": "653"
+                    },
+                    "isPrescriptCat": {
+                      "v": "0"
+                    },
+                    "height": {
+                      "v": "1500"
+                    },
+                    "jc_saler": {
+                      "v": ""
+                    },
+                    "first_buyer_post": {
+                      "v": "405"
+                    },
+                    "unLimit_cid": {
+                      "v": ""
+                    },
+                    "pay_first": {
+                      "v": "0"
+                    },
+                    "length": {
+                      "v": "1000"
+                    },
+                    "day_limited_sales": {
+                      "v": "0"
+                    },
+                    "weight": {
+                      "v": "5.000"
+                    },
+                    "sku_id": {
+                      "v": "100002537913"
+                    },
+                    "tax": {
+                      "v": "inputVAT:10,outputVAT:10,consumptionVAT:10"
+                    },
+                    "sku_status": {
+                      "v": "1"
+                    },
+                    "CJSJCH": {
+                      "v": "1"
+                    },
+                    "brand_id": {
+                      "v": "359751"
+                    },
+                    "isOConsultCat": {
+                      "v": "5"
+                    },
+                    "shop_id": {
+                      "v": "0"
+                    },
+                    "size": {
+                      "v": ""
+                    },
+                    "isOTCCat": {
+                      "v": "0"
+                    },
+                    "width": {
+                      "v": "2000"
+                    },
+                    "col_type": {
+                      "v": "3"
+                    }
+                  },
+                  "basic": {
+                    "extFlag": {
+                      "v": {}
+                    },
+                    "new7ToReturn": {
+                      "v": 101
+                    },
+                    "originId": {
+                      "v": "1"
+                    },
+                    "isCompositeSubItem": {
+                      "v": false
+                    },
+                    "skuUuId": {
+                      "v": "F3B1m2n1350320083789357056"
+                    },
+                    "bulk": {
+                      "v": "3000000"
+                    },
+                    "skuPromoExtMap": {
+                      "v": {
+                        "lbsMSMark": "2"
+                      }
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.product.model.productCollection",
+            "typeClass": "com.jd.trade2.product.export.dto.ProductCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.product.model.productCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "operateProduct": {
+                "giftBoxSelected": {
+                  "v": false
+                }
+              },
+              "changeArea": {
+                "existsChangeAreaItems": {
+                  "v": false
+                }
+              },
+              "basic": {
+                "allOffShelfShoppingItemUuids": {
+                  "v": []
+                },
+                "giftBoxSupported": {
+                  "v": false
+                },
+                "noStockTrialProduct": {
+                  "v": []
+                },
+                "giftBoxSupportedUuidList": {
+                  "v": []
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.reservation.model.reservationCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.reservation.model.reservationCollection",
+            "typeClass": "com.jd.trade2.marketing.reservation.export.dto.ReservationCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.reservation.model.reservationCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.limitBuy.model.limitBuyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.limitBuy.model.limitBuyCollection",
+            "typeClass": "com.jd.trade2.limitbuy.export.dto.LimitBuyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.limitBuy.model.limitBuyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "isLimitBuy": {
+                  "v": "0"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.seckill.model.seckillCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.seckill.model.seckillCollection",
+            "typeClass": "com.jd.trade2.seckill.export.dto.model.SeckillCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.seckill.model.seckillCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.communityLeader.model.communityLeaderCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.communityLeader.model.communityLeaderCollection",
+            "typeClass": "com.jd.trade2.communityleader.export.dto.model.CommunityLeaderCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.communityLeader.model.communityLeaderCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "core.trade-DM#trade.incentive-M#incentiveCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "core.trade-DM#trade.incentive-M#incentiveCollection",
+            "typeClass": "com.jd.trade2.core.domain.incentive.export.dto.model.IncentiveCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "core.trade-DM#trade.incentive-M#incentiveCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.presale.model.presaleCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.presale.model.presaleCollection",
+            "typeClass": "com.jd.trade2.marketing.presale.export.dto.PresaleCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.presale.model.presaleCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.payship.promise.model.promiseCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.payship.promise.model.calendarInfo",
+                    "typeClass": "com.jd.trade2.payship.promise.export.dto.model.CalendarInfoDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.payship.promise.model.calendarInfo"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "mediumItem": {
+                        "forcedSelect": {
+                          "v": false
+                        },
+                        "guiderNightAccurate": {
+                          "v": false
+                        },
+                        "supportShowBzd": {
+                          "v": false
+                        },
+                        "stationName": {
+                          "v": ""
+                        },
+                        "tdcCal": {
+                          "v": false
+                        },
+                        "stationId": {
+                          "v": 0
+                        }
+                      },
+                      "bigItem": {
+                        "supportNightShip": {
+                          "v": false
+                        },
+                        "defaultDate": {
+                          "v": 0
+                        },
+                        "isSetTimeArrive": {
+                          "v": false
+                        },
+                        "selectNightShip": {
+                          "v": false
+                        },
+                        "isJdOnTimeArrive": {
+                          "v": false
+                        },
+                        "supportShip": {
+                          "v": true
+                        }
+                      }
+                    },
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "decorators": [
+                "trade.payship.promise.model.promiseItem"
+              ],
+              "type": {
+                "namespace": "trade.payship.promise.model.promiseItem",
+                "typeClass": "com.jd.trade2.payship.promise.export.dto.calendar.general.GeneralPromiseItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.payship.promise.model.promiseItem"
+                ]
+              },
+              "uuid": {
+                "value": "101613_1350504490904895489"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "promiseType": {
+                      "v": "3"
+                    }
+                  },
+                  "basic": {
+                    "supportUuidList": {
+                      "v": []
+                    },
+                    "notSupportPromiseShoppingList": {
+                      "v": []
+                    },
+                    "bundleSelected": {
+                      "v": true
+                    },
+                    "calendarTypeFromRpc": {
+                      "v": ""
+                    },
+                    "promiseName": {
+                      "v": "工作日、双休日与节假日均可送货"
+                    },
+                    "formatName": {
+                      "v": ""
+                    },
+                    "tipMsg": {
+                      "v": ""
+                    },
+                    "shipmentUUID": {
+                      "v": "101612_1350504490263166976"
+                    },
+                    "selected": {
+                      "v": true
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.payship.promise.model.promiseCollection",
+            "typeClass": "com.jd.trade2.payship.promise.export.dto.PromiseCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.payship.promise.model.promiseCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "jointBuy": {
+                "shieldJointBuyFlag": {
+                  "v": 0
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.drugUser.model.durgUserCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.drugUser.model.durgUserCollection",
+            "typeClass": "com.jd.trade2.druguser.export.dto.DrugUserCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.drugUser.model.durgUserCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.remark.model.remarkCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.remark.model.remarkCollection",
+            "typeClass": "com.jd.trade2.remark.export.dto.RemarkCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.remark.model.remarkCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {}
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.user.model.userCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.user.model.userItem"
+              ],
+              "type": {
+                "namespace": "trade.user.model.userItem",
+                "typeClass": "com.jd.trade2.user.export.dto.general.GeneralUserItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.user.model.userItem"
+                ]
+              },
+              "uuid": {
+                "value": "1010_1350504489780822016"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "pin": {
+                      "v": "jiesuantest70"
+                    },
+                    "userId": {
+                      "v": "1000224065"
+                    }
+                  },
+                  "signContract": {},
+                  "identities": {},
+                  "ebs": {
+                    "ebsUser": {
+                      "v": false
+                    }
+                  },
+                  "idc": {
+                    "idc": {
+                      "v": "1"
+                    },
+                    "switchTime": {
+                      "v": "1555321305286"
+                    }
+                  },
+                  "identityVerification": {
+                    "needIdentityVerification": {
+                      "v": true
+                    },
+                    "identityVerificationFinished": {
+                      "v": false
+                    }
+                  },
+                  "invoice": {
+                    "dzInvoiceFlag": {
+                      "v": 0
+                    },
+                    "centralizedInvoice": {
+                      "v": 0
+                    }
+                  },
+                  "vip": {
+                    "userScore": {
+                      "v": 201
+                    },
+                    "userScoreMappingLevel": {
+                      "v": 56
+                    }
+                  },
+                  "basic": {
+                    "carUser": {
+                      "v": false
+                    },
+                    "blackUser": {
+                      "v": false
+                    },
+                    "userLevel": {
+                      "v": 50
+                    },
+                    "selectPrivacyProtection": {
+                      "v": false
+                    },
+                    "smark": {
+                      "v": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    "mobileBindState": {
+                      "v": 0
+                    },
+                    "supportPrivacyProtection": {
+                      "v": false
+                    },
+                    "newScoreModel": {
+                      "v": true
+                    },
+                    "regType": {
+                      "v": 0
+                    },
+                    "tags": {
+                      "v": {
+                        "12": null,
+                        "15": null,
+                        "22": null,
+                        "25": null,
+                        "31": null,
+                        "968": null,
+                        "971": null,
+                        "973": null,
+                        "974": null,
+                        "979": null,
+                        "982": null,
+                        "985": null,
+                        "986": null,
+                        "988": null,
+                        "989": null,
+                        "990": null,
+                        "991": null,
+                        "992": null,
+                        "993": null,
+                        "995": null,
+                        "239990": null,
+                        "239991": null,
+                        "239992": null,
+                        "239993": null,
+                        "240001": null,
+                        "240029": null,
+                        "240156": null,
+                        "240195": null,
+                        "240239": null,
+                        "240269": null,
+                        "240323": null,
+                        "240482": null,
+                        "240568": null,
+                        "240582": null,
+                        "251456": null,
+                        "251529": null,
+                        "251530": null,
+                        "251531": null,
+                        "251532": null,
+                        "251533": null,
+                        "251534": null,
+                        "251535": null,
+                        "251536": null,
+                        "252009": null,
+                        "253503": null,
+                        "253962": null,
+                        "253963": null,
+                        "255742": null,
+                        "255796": null,
+                        "255802": null,
+                        "256339": null,
+                        "256746": null,
+                        "256747": null,
+                        "256748": null,
+                        "258692": null,
+                        "2178866": null,
+                        "2179192": null,
+                        "2179621": null,
+                        "2180326": null,
+                        "2180327": null,
+                        "2180328": null,
+                        "2183803": null,
+                        "2183892": null,
+                        "2184359": null,
+                        "2184360": null,
+                        "2184361": null,
+                        "2184362": null,
+                        "2184689": null,
+                        "2184894": null,
+                        "2184896": null,
+                        "2186332": null,
+                        "2186333": null,
+                        "2186334": null,
+                        "2186335": null,
+                        "2186336": null,
+                        "2186368": null,
+                        "2187037": null,
+                        "2188535": null,
+                        "2188536": null,
+                        "2188537": null,
+                        "2188694": null,
+                        "2188838": null,
+                        "2188981": null,
+                        "2189413": null,
+                        "2239192": null,
+                        "2239193": null,
+                        "2240096": null,
+                        "2240125": null,
+                        "2240126": null,
+                        "2240127": null,
+                        "2240365": null,
+                        "2240707": null,
+                        "2241251": null,
+                        "2241996": null,
+                        "2242261": null,
+                        "2242836": null,
+                        "2242930": null,
+                        "2244960": null,
+                        "2245016": null,
+                        "2245017": null,
+                        "2245018": null,
+                        "2245536": null,
+                        "2245550": null,
+                        "2245561": null,
+                        "2246744": null,
+                        "2246850": null,
+                        "2247035": null,
+                        "2247735": null,
+                        "2247767": null,
+                        "2247896": null
+                      }
+                    }
+                  },
+                  "shopMember": {
+                    "shopMemberStatus": {
+                      "v": {}
+                    },
+                    "paidMember": {
+                      "v": {}
+                    },
+                    "shopLevel": {
+                      "v": {}
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.user.model.userCollection",
+            "typeClass": "com.jd.trade2.user.export.dto.UserCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.user.model.userCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.prescription.model.prescriptionCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.prescription.model.prescriptionCollection",
+            "typeClass": "com.jd.trade2.prescription.export.dto.PrescriptionCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.prescription.model.prescriptionCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [
+            {
+              "modelList": [
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.promotion.model.promotionShoppingModel",
+                    "typeClass": "com.jd.trade2.promotion.export.dto.model.PromotionShoppingModelDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.promotion.model.promotionShoppingModel"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {},
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "type": {
+                "namespace": "trade.promotion.model.promotionShoppingModel",
+                "typeClass": "com.jd.trade2.promotion.export.dto.model.PromotionShoppingModelDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.promotion.model.promotionShoppingModel"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "childEmpty": false,
+          "decorators": [
+            "trade.promotion.model.promotionCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.promotion.model.promotionItem"
+              ],
+              "type": {
+                "namespace": "trade.promotion.model.promotionItem",
+                "typeClass": "com.jd.trade2.promotion.export.dto.general.GeneralPromotionItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.promotion.model.promotionItem"
+                ]
+              },
+              "uuid": {
+                "value": "1035_1350504491538235392"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "calculateMoney": {
+                    "sharePrice": {
+                      "v": "0.00"
+                    },
+                    "parallelDiscount": {
+                      "v": "0.00"
+                    }
+                  },
+                  "basic": {
+                    "moneyDeliverNum": {
+                      "v": 0
+                    },
+                    "discountRate": {
+                      "v": "0.0"
+                    },
+                    "needCategoryNum": {
+                      "v": 0
+                    },
+                    "fullRefundType": {
+                      "v": 0
+                    },
+                    "achieveCondition": {
+                      "v": false
+                    },
+                    "mfmzFullRefundType": {
+                      "v": 0
+                    },
+                    "salesPrice": {
+                      "v": "99.00"
+                    },
+                    "addMoney": {
+                      "v": "0"
+                    },
+                    "reprice": {
+                      "v": "0.00"
+                    },
+                    "discount": {
+                      "v": "0.00"
+                    },
+                    "freePostal": {
+                      "v": 0
+                    },
+                    "mobileContractFlag": {
+                      "v": 0
+                    },
+                    "needJdBeanNum": {
+                      "v": 0
+                    },
+                    "memberPriceType": {
+                      "v": 0
+                    },
+                    "giftScore": {
+                      "v": 0
+                    },
+                    "manfanMoney": {
+                      "v": "0"
+                    },
+                    "needNum": {
+                      "v": 0
+                    },
+                    "proSuitType": {
+                      "v": 0
+                    },
+                    "price": {
+                      "v": "99.00"
+                    },
+                    "jdPrice": {
+                      "v": "99.00"
+                    },
+                    "beginTime": {
+                      "v": 0
+                    },
+                    "endTime": {
+                      "v": 0
+                    },
+                    "deliverNum": {
+                      "v": 0
+                    },
+                    "vs": {
+                      "v": false
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.promotion.model.promotionCollection",
+            "typeClass": "com.jd.trade2.promotion.export.dto.PromotionCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.promotion.model.promotionCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "promotionTags": {
+                  "v": [
+                    2019
+                  ]
+                },
+                "totalReprice": {
+                  "v": "0.00"
+                },
+                "totalParallelDiscount": {
+                  "v": "0.00"
+                },
+                "totalParallelSubsidy": {
+                  "v": 0
+                },
+                "totalDiscount": {
+                  "v": "0.00"
+                },
+                "promotionInfo": {
+                  "v": "1@"
+                },
+                "totalGiftCashDiscount": {
+                  "v": "0"
+                },
+                "subsidyShoppingUuids": {
+                  "v": []
+                },
+                "discountInfoMap": {
+                  "v": {}
+                },
+                "totalPromotionPriceForTradeIn": {
+                  "v": 0
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.kepler.model.keplerCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.kepler.model.keplerCollection",
+            "typeClass": "com.jd.trade2.kepler.export.dto.KeplerCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.kepler.model.keplerCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.account.model.accountCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.account.model.accountCollection",
+            "typeClass": "com.jd.trade2.account.export.dto.AccountCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.account.model.accountCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.crowdfunding.model.crowdfundingCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.crowdfunding.model.crowdfundingCollection",
+            "typeClass": "com.jd.trade2.crowdfunding.export.dto.CrowdfundingCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.crowdfunding.model.crowdfundingCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.energySubsidy.model.energySubsidyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.energySubsidy.model.energySubsidyCollection",
+            "typeClass": "com.jd.trade2.energysubsidy.export.dto.EnergySubsidyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.energySubsidy.model.energySubsidyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "totalDiscount": {
+                  "v": "0"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.model.tradeCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.model.trade"
+              ],
+              "type": {
+                "namespace": "trade.model.trade",
+                "typeClass": "com.jd.trade2.trade.export.dto.general.GeneralTradeItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.model.trade"
+                ]
+              },
+              "uuid": {
+                "value": "10_1350504488648359949"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.model.tradeCollection",
+            "typeClass": "com.jd.trade2.trade.export.dto.TradeCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.model.tradeCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.shoppinglist.model.shoppingListCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "childEmpty": false,
+              "decorators": [
+                "trade.shoppinglist.model.shoppingPackCollection"
+              ],
+              "childList": [
+                {
+                  "modelList": [],
+                  "decorators": [
+                    "trade.shoppinglist.model.shoppingItem"
+                  ],
+                  "type": {
+                    "namespace": "trade.shoppinglist.model.shoppingItem",
+                    "typeClass": "com.jd.trade2.shoppinglist.export.dto.general.GeneralShoppingItemDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.shoppinglist.model.shoppingItem"
+                    ]
+                  },
+                  "uuid": {
+                    "value": "1012_F3B1m2n1350320083789357056"
+                  },
+                  "version": "1.0.0",
+                  "partList": [],
+                  "info": {
+                    "domainMap": {
+                      "calculateMoney": {
+                        "totalRealPriceAfterSubtractSharePrice": {
+                          "v": "99.00"
+                        },
+                        "totalRealPriceOfShareCalculate": {
+                          "v": "99.00"
+                        },
+                        "totalCalculateNumber": {
+                          "v": "0"
+                        },
+                        "totalPrimitivePrice": {
+                          "v": "99.00"
+                        },
+                        "realPrice": {
+                          "v": "99.00"
+                        },
+                        "totalRealPrice": {
+                          "v": "99.00"
+                        }
+                      },
+                      "basic": {
+                        "checkType": {
+                          "v": 1
+                        },
+                        "isCompositeMainItem": {
+                          "v": false
+                        },
+                        "itemType": {
+                          "v": "1"
+                        },
+                        "primitivePrice": {
+                          "v": "99.00"
+                        },
+                        "buyNum": {
+                          "v": "1"
+                        },
+                        "originalUUID": {
+                          "v": "F3B1m2n1350320083789357056"
+                        },
+                        "isCompositeSubItem": {
+                          "v": false
+                        },
+                        "num": {
+                          "v": "1"
+                        },
+                        "calculateNumber": {
+                          "v": "0"
+                        }
+                      },
+                      "checkResult": {
+                        "beforeIncreasePrice": {
+                          "v": "99.00"
+                        }
+                      }
+                    },
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "type": {
+                "namespace": "trade.shoppinglist.model.shoppingPackCollection",
+                "typeClass": "com.jd.trade2.shoppinglist.export.dto.ShoppingPackCollectionDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.shoppinglist.model.shoppingPackCollection"
+                ]
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "num": {
+                      "v": "1"
+                    },
+                    "calculateNumber": {
+                      "v": "0"
+                    },
+                    "packType": {
+                      "v": "1"
+                    },
+                    "name": {
+                      "v": "自营-普通自营-测试商品,请勿下单-zhangguopei--361"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.shoppinglist.model.shoppingListCollection",
+            "typeClass": "com.jd.trade2.shoppinglist.export.dto.ShoppingListCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.shoppinglist.model.shoppingListCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "oldUUIDMap": {
+                  "v": {
+                    "1012_F3B1m2n1350320083789357056": "10_0_0_100002537913_1_0"
+                  }
+                },
+                "totalPrice": {
+                  "v": "99.00"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.serving.model.servingCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.serving.model.servingCollection",
+            "typeClass": "com.jd.trade2.serving.export.dto.ServingCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.serving.model.servingCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.contractPhone.model.contractPhoneCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.contractPhone.model.contractPhoneCollection",
+            "typeClass": "com.jd.trade2.contractphone.export.dto.ContractPhoneCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.contractPhone.model.contractPhoneCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "core.trade-DM#trade.interest-M#interestCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "core.trade-DM#trade.interest-M#interestCollection",
+            "typeClass": "com.jd.trade2.core.domain.interest.export.dto.InterestCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "core.trade-DM#trade.interest-M#interestCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "C-M#interestCollection&basic": {
+                "totalAmount": {
+                  "v": "0"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.fee.tax.model.taxCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.fee.tax.model.taxCollection",
+            "typeClass": "com.jd.trade2.fee.tax.export.dto.TaxCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.fee.tax.model.taxCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.vender.model.venderCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [
+                {
+                  "modelList": [],
+                  "type": {
+                    "namespace": "trade.vender.model.shopModel",
+                    "typeClass": "com.jd.trade2.vender.export.dto.general.model.ShopInfoModelDTO",
+                    "value": "",
+                    "version": "1.0.0",
+                    "typeSet": [
+                      "trade.vender.model.shopModel"
+                    ]
+                  },
+                  "version": "1.0.0",
+                  "info": {
+                    "domainMap": {
+                      "basic": {
+                        "venderId": {
+                          "v": "0"
+                        },
+                        "shoppingItemUUID": {
+                          "v": "1012_F3B1m2n1350320083789357056"
+                        },
+                        "shopId": {
+                          "v": "0"
+                        }
+                      }
+                    },
+                    "version": "1.0.0"
+                  }
+                }
+              ],
+              "decorators": [
+                "trade.vender.model.vender"
+              ],
+              "type": {
+                "namespace": "trade.vender.model.vender",
+                "typeClass": "com.jd.trade2.vender.export.dto.general.GeneralVenderItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.vender.model.vender"
+                ]
+              },
+              "uuid": {
+                "value": "1014_1350504491546624002"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "businessIdentity": {},
+                  "storePageInfo": {},
+                  "basic": {
+                    "venderName": {
+                      "v": "京东商城"
+                    },
+                    "venderColType": {
+                      "v": "3"
+                    },
+                    "companyName": {
+                      "v": "京东商城"
+                    },
+                    "venderId": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.vender.model.venderCollection",
+            "typeClass": "com.jd.trade2.vender.export.dto.VenderCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.vender.model.venderCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "basic": {
+                "samVirtualVenderId": {
+                  "v": "146426"
+                },
+                "walMartVenderId": {
+                  "v": "663284"
+                },
+                "samVenderId": {
+                  "v": "603837"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.giftBuy.model.giftBuyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.giftBuy.model.giftBuyCollection",
+            "typeClass": "com.jd.trade2.giftbuy.export.dto.GiftBuyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.giftBuy.model.giftBuyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.supplier.model.supplierCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.supplier.model.supplierCollection",
+            "typeClass": "com.jd.trade2.supplier.export.dto.model.SupplierCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.supplier.model.supplierCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.loc.model.locCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.loc.model.locItem"
+              ],
+              "type": {
+                "namespace": "trade.loc.model.locItem",
+                "typeClass": "com.jd.trade2.loc.export.dto.general.GeneralLocItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.loc.model.locItem"
+                ]
+              },
+              "uuid": {
+                "value": "1025_1350504491529846784"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "cbCalc": {
+                    "onlyHasLocInCB": {
+                      "v": {
+                        "CombinationBundleRelation_1350320089187713024": false
+                      }
+                    },
+                    "isLocInCB": {
+                      "v": {
+                        "CombinationBundleRelation_1350320089187713024": false
+                      }
+                    },
+                    "locBuyTypeInCB": {
+                      "v": {
+                        "CombinationBundleRelation_1350320089187713024": null
+                      }
+                    }
+                  },
+                  "orderCalc": {
+                    "locOrderType": {
+                      "v": 0
+                    }
+                  },
+                  "bundleCalc": {
+                    "locBuyTypeInBundle": {
+                      "v": {
+                        "BundleRelation_1012_F3B1m2n1350320083789357056@": null
+                      }
+                    },
+                    "onlyHasLocInBundle": {
+                      "v": {
+                        "BundleRelation_1012_F3B1m2n1350320083789357056@": false
+                      }
+                    },
+                    "isLocInBundle": {
+                      "v": {
+                        "BundleRelation_1012_F3B1m2n1350320083789357056@": false
+                      }
+                    }
+                  },
+                  "basic": {
+                    "locBuy": {
+                      "v": false
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.loc.model.locCollection",
+            "typeClass": "com.jd.trade2.loc.export.dto.LocCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.loc.model.locCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "core.trade-DM#trade.stock-M#stockCollection",
+            "trade.stock.stockOccupy.model.stockOccupyCollection",
+            "jd_main-DM#trade.stock-D#stockCollectionDecorator"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.stock.stockOccupy.model.stockOccupyItem"
+              ],
+              "type": {
+                "namespace": "trade.stock.stockOccupy.model.stockOccupyItem",
+                "typeClass": "com.jd.trade2.stockoccupy.export.dto.general.GeneralStockOccupyItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.stock.stockOccupy.model.stockOccupyItem"
+                ]
+              },
+              "uuid": {
+                "value": "1013_1350504489898262528"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "basic": {}
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.stock.stockOccupy.model.stockOccupyCollection",
+            "typeClass": "com.jd.trade2.stockoccupy.export.dto.StockOccupyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "core.trade-DM#trade.stock-M#stockCollection",
+              "trade.stock.stockOccupy.model.stockOccupyCollection",
+              "jd_main-DM#trade.stock-D#stockCollectionDecorator"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [
+            {
+              "type": {
+                "namespace": "jd_main-DM#trade.stock-P#lastCatch",
+                "typeClass": "com.jd.trade2.horizontal.biz.chinamain.domain.stock.export.dto.part.StockLastCatchPartDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "jd_main-DM#trade.stock-P#lastCatch"
+                ]
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {},
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "info": {
+            "domainMap": {
+              "basic": {}
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.marketing.regularbuy.model.regularbuyCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.marketing.regularbuy.model.regularbuyCollection",
+            "typeClass": "com.jd.trade2.marketing.regularbuy.export.dto.RegularBuyCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.marketing.regularbuy.model.regularbuyCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.insurance.medicalInsurance.model.medicalInsuranceCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.insurance.medicalInsurance.model.medicalInsuranceCollection",
+            "typeClass": "com.jd.trade2.insurance.medicalinsurance.export.dto.MedicalInsuranceCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.insurance.medicalInsurance.model.medicalInsuranceCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "base": {
+                "medicalInsuranceVersion": {
+                  "v": false
+                },
+                "needRefresh": {
+                  "v": false
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.assets.redPacket.model.redPacketCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.assets.redPacket.model.redPacketCollection",
+            "typeClass": "com.jd.trade2.assets.redpacket.export.dto.RedPacketCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.assets.redPacket.model.redPacketCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "useChannelFlag": {
+                  "v": "11000000"
+                },
+                "totalUnavailableBalance": {
+                  "v": "0"
+                },
+                "orgName": {
+                  "v": ""
+                },
+                "totalBalance": {
+                  "v": "0"
+                },
+                "supermarketCardSelected": {
+                  "v": false
+                },
+                "supermarketCardTotalAvailableBalance": {
+                  "v": "0"
+                },
+                "totalAvailableBalance": {
+                  "v": "0"
+                },
+                "supermarketCardTotalUnavailableBalance": {
+                  "v": "0"
+                },
+                "totalAccessibleBalance": {
+                  "v": "0"
+                },
+                "supermarketCardTotalBalance": {
+                  "v": "0"
+                },
+                "supermarketCardTotalAccessibleBalance": {
+                  "v": "0"
+                },
+                "selected": {
+                  "v": true
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.assets.balance.model.balanceCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.assets.balance.model.balanceItem"
+              ],
+              "type": {
+                "namespace": "trade.assets.balance.model.balanceItem",
+                "typeClass": "com.jd.trade2.assets.balance.export.dto.general.GeneralBalanceItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.assets.balance.model.balanceItem"
+                ]
+              },
+              "uuid": {
+                "value": "101713_1350504490149920769"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "forbidBalanceFlag": {
+                      "v": false
+                    },
+                    "balanceAmount": {
+                      "v": "0"
+                    },
+                    "selected": {
+                      "v": false
+                    }
+                  },
+                  "basic": {
+                    "userRemainderBalance": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.assets.balance.model.balanceCollection",
+            "typeClass": "com.jd.trade2.assets.balance.export.dto.BalanceCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.assets.balance.model.balanceCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "totalBalanceAmount": {
+                  "v": "0"
+                },
+                "totalUserRemainderBalance": {
+                  "v": "0"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.couponPackage.model.couponPackageCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.couponPackage.model.couponPackageCollection",
+            "typeClass": "com.jd.trade2.couponpackage.export.dto.CouponPackageCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.couponPackage.model.couponPackageCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.assets.giftCard.model.giftCardCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.assets.giftCard.model.giftCardCollection",
+            "typeClass": "com.jd.trade2.assets.giftcard.export.dto.GiftCardCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.assets.giftCard.model.giftCardCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "useRedeemCodeNum": {
+                  "v": 0
+                },
+                "totalWelfareCardCanUseAmount": {
+                  "v": "0"
+                },
+                "totalAvailableWelfareCardNum": {
+                  "v": 0
+                },
+                "totalAvailableRedeemCodeNum": {
+                  "v": 0
+                },
+                "totalUnavailableGiftCardNum": {
+                  "v": 0
+                },
+                "totalRedeemCodeDeductionAmount": {
+                  "v": "0"
+                },
+                "totalGiftCardNum": {
+                  "v": 0
+                },
+                "totalWelfareCardDeductionAmount": {
+                  "v": "0"
+                },
+                "useWelfareCardNum": {
+                  "v": 0
+                },
+                "forbidGiftCardFlag": {
+                  "v": false
+                },
+                "totalUnavailableWelfareCardNum": {
+                  "v": 0
+                },
+                "totalGiftCardDeductionAmount": {
+                  "v": "0"
+                },
+                "totalAvailableGiftCardNum": {
+                  "v": 0
+                },
+                "useGiftCardNum": {
+                  "v": 0
+                },
+                "totalUnavailableRedeemCodeNum": {
+                  "v": 0
+                },
+                "eCardAccessibleMaxNum": {
+                  "v": 0
+                },
+                "totalRedeemCodeNum": {
+                  "v": 0
+                }
+              },
+              "page": {}
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.assets.jdbean.model.jdBeanCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.assets.jdbean.model.jdBeanItem"
+              ],
+              "type": {
+                "namespace": "trade.assets.jdbean.model.jdBeanItem",
+                "typeClass": "com.jd.trade2.assets.jdbean.export.dto.general.GeneralJdBeanItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.assets.jdbean.model.jdBeanItem"
+                ]
+              },
+              "uuid": {
+                "value": "101712_1350504489906651136"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "jdBeanAmount": {
+                      "v": "0"
+                    },
+                    "userJdBeanFlag": {
+                      "v": false
+                    },
+                    "forbidJdBeanFlag": {
+                      "v": false
+                    }
+                  },
+                  "basic": {
+                    "usableOrderAmount": {
+                      "v": "0"
+                    },
+                    "totalUserJdBeanNum": {
+                      "v": 0
+                    },
+                    "jdBeanType": {
+                      "v": 1
+                    },
+                    "usedJdBeanNum": {
+                      "v": 0
+                    },
+                    "pointsDeductionRate": {
+                      "v": "0"
+                    },
+                    "minPaidAfterDeduction": {
+                      "v": "0"
+                    },
+                    "minPayableAmount": {
+                      "v": "0"
+                    },
+                    "rate": {
+                      "v": 100
+                    },
+                    "jdBeanNum": {
+                      "v": 0
+                    },
+                    "usedGeneralJdBeanNum": {
+                      "v": 0
+                    },
+                    "usedMarketingJdBeanNum": {
+                      "v": 0
+                    },
+                    "pointsResetFlag": {
+                      "v": false
+                    },
+                    "accessibleJdBeanNum": {
+                      "v": 0
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.assets.jdbean.model.jdBeanCollection",
+            "typeClass": "com.jd.trade2.assets.jdbean.export.dto.JdBeanCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.assets.jdbean.model.jdBeanCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "totalAccessibleJdBeanNum": {
+                  "v": 0
+                },
+                "totalJdBeanNum": {
+                  "v": 0
+                },
+                "totalJdBeanAmount": {
+                  "v": "0"
+                },
+                "totalUsedJdBeanNum": {
+                  "v": 0
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.payship.pile.model.pileCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.payship.pile.model.pileCollection",
+            "typeClass": "com.jd.trade2.payship.pile.export.dto.PileCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.payship.pile.model.pileCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {},
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": false,
+          "decorators": [
+            "trade.amount.model.amountCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.amount.model.amountItem"
+              ],
+              "type": {
+                "namespace": "trade.amount.model.amountItem",
+                "typeClass": "com.jd.trade2.amount.export.dto.general.GeneralAmountItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.amount.model.amountItem"
+                ]
+              },
+              "uuid": {
+                "value": "1020_1350504491521458176"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "specificItem": {
+                      "v": "deliveryPrice"
+                    },
+                    "relationUUID": {
+                      "v": "1012_F3B1m2n1350320083789357056"
+                    },
+                    "amount": {
+                      "v": "99.00"
+                    },
+                    "domainNamespace": {
+                      "v": "core.trade-DM#trade.amount"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.amount.model.amountCollection",
+            "typeClass": "com.jd.trade2.amount.export.dto.AmountCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.amount.model.amountCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "core": {
+                "nonPresalePrice": {
+                  "v": "99.00"
+                },
+                "discount": {
+                  "v": "0.00"
+                },
+                "reprice": {
+                  "v": "0.00"
+                },
+                "initFactPrice": {
+                  "v": "99.00"
+                },
+                "originPrice": {
+                  "v": "99.00"
+                },
+                "parallelDiscount": {
+                  "v": "0.00"
+                },
+                "presalePrice": {
+                  "v": "0.00"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.fee.freight.model.shoppingItemWeightMapper",
+                "typeClass": "com.jd.trade2.fee.freight.export.dto.model.ShoppingItemWeightMapperDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.freight.model.shoppingItemWeightMapper"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "weightShowType": {
+                      "v": 2
+                    },
+                    "shoppingItemUuid": {
+                      "v": "1012_F3B1m2n1350320083789357056"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.fee.freight.model.freightWeightClassify",
+                "typeClass": "com.jd.trade2.fee.freight.export.dto.model.FreightWeightClassifyDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.freight.model.freightWeightClassify"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "totalGeneralSXOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalGeneralOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalSamSXConWeight": {
+                      "v": "0"
+                    },
+                    "totalWalMartOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalScfOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalSamOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalGeneralConWeight": {
+                      "v": "5.000"
+                    },
+                    "totalSamConWeight": {
+                      "v": "0"
+                    },
+                    "totalScfConWeight": {
+                      "v": "0"
+                    },
+                    "totalWalMartConWeight": {
+                      "v": "0"
+                    },
+                    "totalSamSXOverConWeight": {
+                      "v": "0"
+                    },
+                    "totalGeneralSXConWeight": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            },
+            {
+              "modelList": [],
+              "type": {
+                "namespace": "trade.fee.freight.model.freightClassify",
+                "typeClass": "com.jd.trade2.fee.freight.export.dto.model.FreightClassifyDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.freight.model.freightClassify"
+                ]
+              },
+              "version": "1.0.0",
+              "info": {
+                "domainMap": {
+                  "basic": {
+                    "generalFreight": {
+                      "v": "0"
+                    },
+                    "freshGeneralFreight": {
+                      "v": "0"
+                    },
+                    "presaleFreight": {
+                      "v": "0"
+                    },
+                    "scfConWeightFreight": {
+                      "v": "0"
+                    },
+                    "scfGeneralFreight": {
+                      "v": "0"
+                    },
+                    "freshConWeightFreight": {
+                      "v": "0"
+                    },
+                    "scfStoreReduceFreight": {
+                      "v": "0"
+                    },
+                    "conWeightFreight": {
+                      "v": "0"
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "childEmpty": false,
+          "decorators": [
+            "trade.fee.freight.model.freightCollection"
+          ],
+          "childList": [
+            {
+              "modelList": [],
+              "decorators": [
+                "trade.fee.freight.model.freightItem"
+              ],
+              "type": {
+                "namespace": "trade.fee.freight.model.freightItem",
+                "typeClass": "com.jd.trade2.fee.freight.export.dto.general.GeneralFreightItemDTO",
+                "value": "",
+                "version": "1.0.0",
+                "typeSet": [
+                  "trade.fee.freight.model.freightItem"
+                ]
+              },
+              "uuid": {
+                "value": "101810_1350504491328520192"
+              },
+              "version": "1.0.0",
+              "partList": [],
+              "info": {
+                "domainMap": {
+                  "core": {
+                    "freight": {
+                      "v": "0"
+                    },
+                    "freightVenderType": {
+                      "v": "0"
+                    },
+                    "freightType": {
+                      "v": "10"
+                    }
+                  },
+                  "global": {
+                    "surcharge": {
+                      "v": "0"
+                    },
+                    "globalFreeFreight": {
+                      "v": "0"
+                    },
+                    "originalPrice": {
+                      "v": "0"
+                    }
+                  },
+                  "basic": {
+                    "freeOriginalFreight": {
+                      "v": "0"
+                    },
+                    "venderId": {
+                      "v": "0"
+                    },
+                    "isSopAccurate": {
+                      "v": false
+                    },
+                    "freightSource": {
+                      "v": 1
+                    }
+                  }
+                },
+                "version": "1.0.0"
+              }
+            }
+          ],
+          "type": {
+            "namespace": "trade.fee.freight.model.freightCollection",
+            "typeClass": "com.jd.trade2.fee.freight.export.dto.FreightCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.fee.freight.model.freightCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "core": {
+                "totalFreight": {
+                  "v": "0"
+                }
+              },
+              "basic": {
+                "proprietaryRpcStatus": {
+                  "v": "0"
+                },
+                "popRpcStatus": {
+                  "v": "0"
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        },
+        {
+          "modelList": [],
+          "childEmpty": true,
+          "decorators": [
+            "trade.tradeIn.model.tradeInCollection"
+          ],
+          "childList": [],
+          "type": {
+            "namespace": "trade.tradeIn.model.tradeInCollection",
+            "typeClass": "com.jd.trade2.tradein.export.dto.TradeInCollectionDTO",
+            "value": "",
+            "version": "1.0.0",
+            "typeSet": [
+              "trade.tradeIn.model.tradeInCollection"
+            ]
+          },
+          "version": "1.0.0",
+          "partList": [],
+          "info": {
+            "domainMap": {
+              "total": {
+                "tradeInTotalDisplayAmount": {
+                  "v": "0"
+                },
+                "tradeInAsyncTotalDiscount": {
+                  "v": "0"
+                },
+                "tradeInOneStopTotalDiscount": {
+                  "v": "0"
+                },
+                "tradeInTotalDiscount": {
+                  "v": "0"
+                },
+                "totalDiscount": {
+                  "v": "0"
+                }
+              },
+              "updateCart": {
+                "newEditionFlag": {
+                  "v": false
+                }
+              }
+            },
+            "version": "1.0.0"
+          }
+        }
+      ],
+      "identityInfoDTO": {
+        "systemInfo": {
+          "buId": "301",
+          "traceId": null,
+          "bizType": null,
+          "language": null,
+          "languageCode": "zh_CN",
+          "businessUnitId": 304,
+          "callerIP": "1.1.1.1",
+          "userAgentId": 2,
+          "callerDataCenter": "lf",
+          "uniformBizInfo": null,
+          "timezoneOffset": null,
+          "countryCode": null,
+          "tenantId": null,
+          "callerAppName": "trade",
+          "sdkVersion": "1.0",
+          "businessType": null,
+          "currencyCode": null,
+          "flowField": null
+        },
+        "requestTags": {
+          "orderTagNamespace": [],
+          "verticalTag": "core.trade-VTG#jd.cn.jdr.jszt:chinaMain",
+          "horizontalTags": [
+            "core.trade-HTG#jd.cn.jdr.jszt:main"
+          ]
+        },
+        "basketTags": {
+          "orderTagNamespace": [],
+          "verticalTags": {
+            "CombinationBundleRelation_1350320089187713024": "core.trade-VTG#jd.cn.jdr.jszt:chinaMain"
+          },
+          "horizontalTags": {
+            "CombinationBundleRelation_1350320089187713024": [
+              "core.trade-HTG#jd.cn.jdr.jszt:main"
+            ]
+          }
+        },
+        "businessTags": {
+          "orderTagNamespace": [],
+          "verticalTags": {
+            "CombinationBundleRelation_1350320089187713024": "jd.cn.jdr.jszt:vertical:chinaMain"
+          },
+          "horizontalTags": {
+            "CombinationBundleRelation_1350320089187713024": [
+              "jd.cn.jdr.jszt:horizontal:main"
+            ]
+          }
+        }
+      },
+      "extendInfoDTO": null,
+      "relation": {
+        "range": {
+          "basket": {
+            "CombinationBundleRelation_1350320089187713024": [
+              "BundleRelation_1350320089468731392"
+            ]
+          },
+          "combinationBundle": {
+            "CombinationBundleRelation_1350320089187713024": [
+              "BundleRelation_1350320089468731392"
+            ]
+          },
+          "bundle": {
+            "BundleRelation_1350320089468731392": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "order": {
+            "194215232": [
+              "CombinationBundleRelation_1350320089187713024"
+            ]
+          }
+        },
+        "businessRelation": {
+          "1011_1350504488694497280": {
+            "scope": "COMBINATION_BUNDLE",
+            "relations": [
+              "CombinationBundleRelation_1350320089187713024"
+            ]
+          },
+          "1020_1350504491500486658": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491420794880": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491500486656": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1044_1350504489780822017": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504491332714496": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491500486657": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "101611_1350504490217029632": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "101613_1350504490904895489": {
+            "scope": "BUNDLE",
+            "relations": [
+              "BundleRelation_1350320089468731392"
+            ]
+          },
+          "1048_1350504491471126528": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1015_1350292130803286016": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1043_1350320089208684544": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504491265605633": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1014_1350504489814376448": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1025_1350504491513069568": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1025_1350504489805987840": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "101811_CombinationBundleRelation_135032008918771302440": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1025_1350504491529846784": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1014_1350504491546624002": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404935": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504489793404934": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1013_1350504489898262528": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404937": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504489793404936": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491521458176": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1034_1350504489185230850": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "101612_1350504490263166976": {
+            "scope": "BUNDLE",
+            "relations": [
+              "BundleRelation_1350320089468731392"
+            ]
+          },
+          "1020_1350504490196058112": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504489793404931": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404930": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404933": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504489793404932": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1035_1350504489801793536": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504491357880322": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491357880321": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491357880320": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491294965760": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491466932224": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1020_1350504491466932225": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1014_1350504491508875264": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1035_1350504491538235392": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404928": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489793404929": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504491496292352": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1027_1350504488665137153": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "101611_1350504490212835328": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "10_1350504488648359949": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "101810_1350504491328520192": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504491416600576": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1010_1350504489780822016": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "1014_1350504489805987841": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489789210625": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "1020_1350504489789210626": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          },
+          "101611_1350504490229612544": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "101811_CombinationBundleRelation_135032008918771302410": {
+            "scope": "PRODUCT",
+            "relations": [
+              "1012_F3B1m2n1350320083789357056"
+            ]
+          },
+          "101713_1350504490149920769": {
+            "scope": "ORDER",
+            "relations": [
+              "194215232"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "attrs": {}
+}

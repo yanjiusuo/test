@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ webservice转http
+ 给一个json —>
+-->
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <bean ref="lifeBean" method="execute"   />
+</route>

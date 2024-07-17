@@ -1,0 +1,7 @@
+com.jd.workflow.flow.core.processor.impl.ExceptionProcessor
+com.jd.workflow.flow.core.processor.impl.OutputCollectProcessor
+com.jd.workflow.flow.core.processor.impl.InputValidateProcessor
+com.jd.workflow.flow.core.processor.impl.FallbackStepProcessor
+com.jd.workflow.flow.core.processor.impl.MockStepProcessor
+com.jd.workflow.flow.core.processor.subflow.SubflowProcessor
+com.jd.workflow.flow.core.processor.impl.SetParamProcessor

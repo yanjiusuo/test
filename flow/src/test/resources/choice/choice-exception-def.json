@@ -1,0 +1,59 @@
+{
+  "tasks": [
+    {
+      "type": "choice",
+      "id": "choice",
+      "children": [
+        {
+          "when": "var a = 2;\n workflow.input.params.a.b==1",
+          "children": [
+            {
+              "id": "transform1",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition1"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "id": "transform2",
+              "type": "transform",
+              "output": {
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "string",
+                    "value": "condition2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "transform3",
+      "type": "transform",
+      "output": {
+        "body": [
+          {
+            "name": "root",
+            "type": "string",
+            "value": "condition1"
+          }
+        ]
+      }
+    }
+  ]
+}

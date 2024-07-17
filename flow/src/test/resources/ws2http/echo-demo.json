@@ -1,0 +1,128 @@
+{
+  "input": {
+    "body": [
+      {
+        "type": "string",
+        "children": [
+          {
+            "name": "id",
+            "type": "long",
+            "required": true
+          },
+          {
+            "name": "b1",
+            "type": "long",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "ws",
+      "opName": "echo",
+      "endpointUrl": [
+        "http://127.0.0.1:7001/FullTypedWebService"
+      ],
+      "type": "http2ws",
+      "url": "",
+      "output": {
+        "schemaType": {
+          "name": "Envelope",
+          "namespacePrefix": "soapenv",
+          "attrs": {
+            "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+            "xmlns:ser": "http://service.workflow.jd.com/"
+          },
+          "type": "object",
+          "children": [
+            {
+              "name": "Header",
+              "namespacePrefix": "soapenv",
+              "type": "object",
+              "children": []
+            },
+            {
+              "name": "Body",
+              "namespacePrefix": "soapenv",
+              "type": "object",
+              "children": [
+                {
+                  "name": "echoResponse",
+                  "namespacePrefix": "ser",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "output",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "input": {
+        "schemaType": {
+          "name": "Envelope",
+          "namespacePrefix": "soapenv",
+          "attrs": {
+            "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+            "xmlns:ser": "http://service.workflow.jd.com/"
+          },
+          "type": "object",
+          "children": [
+            {
+              "name": "Header",
+              "namespacePrefix": "soapenv",
+              "type": "object",
+              "children": []
+            },
+            {
+              "name": "Body",
+              "namespacePrefix": "soapenv",
+              "type": "object",
+              "children": [
+                {
+                  "name": "echo",
+                  "namespacePrefix": "ser",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "input",
+                      "type": "string",
+                      "exprType": "script",
+                      "value": "String xml = \"<a>${id}</a>\";\nutils.render(xml,workflow.input.params);"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "output": {
+    "body": [
+      {
+        "name": "root",
+        "type": "object",
+        "children": [
+          {
+            "name": "data",
+            "type": "object",
+            "exprType": "script",
+            "value": "var json = utils.parseXml(steps.ws.output.body.output);\njson;"
+          }
+        ]
+      }
+    ]
+  }
+}

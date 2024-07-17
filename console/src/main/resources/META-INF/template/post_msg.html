@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div>
+    <p>Dear ：</p>
+    <p>发现您有<span style="color: red;font-weight: bolder;">[[${authDetailList?.size()}]]</span>个方法修改了鉴权标识，请确认是否按照此处上报的结果修改。</p>
+    <p th:text="'应用信息：'+${appInfo.appName}+'（'+${appInfo.appCode}+'）'"></p>
+    <p th></p>
+    <table cellpadding="10" cellspacing="0" border="1"  >
+        <tr style="background-color: #2D64FF">
+            <th style="min-width: 250px;" align="center" valign="middle">
+                <font color="#ffffff">接口名称</font>
+            </th>
+            <th align="center" valign="middle">
+                <font color="#ffffff">方法名称</font>
+            </th>
+            <th style="min-width: 250px;" align="center" valign="middle">
+                <font color="#ffffff">方法路径</font>
+            </th>
+            <th align="center" valign="middle">
+                <font color="#ffffff">旧鉴权标识（修改前）</font>
+            </th>
+            <th align="center" valign="middle">
+              <font color="#ffffff">新鉴权标识（修改后）</font>
+            </th>
+        </tr>
+        <tr th:each="authTetail:${authDetailList}">
+            <td th:text="${authTetail.interfaceName}+'（'+${authTetail.interfaceCode}+'）'"></td>
+            <td th:text="${authTetail.methodName} +'（'+${authTetail.methodCode}+'）'"></td>
+            <td th:text="${authTetail.path}"></td>
+            <td th:text="${authTetail.oldAuthCode}"></td>
+            <td th:text="${authTetail.authCode}"></td>
+        </tr>
+    </table>
+    <p><span style="color: red;font-weight: bolder;">注意：如果当前接口已被其他应用调用，修改鉴权标识后，调用方需要重新申请才能继续调用。</span></p>
+    <p><br/></p>
+    <div>感谢您对一体化-在线联调的信赖和支持！</div>
+    <br/>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "id",
+    "type": "string",
+    "desc": "def"
+  },
+  {
+    "name": "array",
+    "type": "array",
+    "desc": "123",
+    "children": [
+      {
+        "name": "$$0",
+        "type": "object",
+        "children": [
+          {
+            "name": "id",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+]

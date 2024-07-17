@@ -1,0 +1,136 @@
+{
+  "arg0": "string",
+  "arg1": {
+    "bigDecimalVar": "12.12",
+    "bigIntegerVar": 13,
+    "booleanVar": true,
+    "byteVar": 13,
+    "bytesVar": null,
+    "charVar": 13,
+    "child": {
+      "booleanVar": true,
+      "charVar": 13,
+      "doubleVar": 123.113,
+      "floatVar": 123.112,
+      "intVar": 13,
+      "longVar": 1321,
+      "shortVar": 13,
+      "strVar": "string",
+      "subChild": {
+        "intVar": 13
+      }
+    },
+    "childHashMap": {
+      "entry": [
+        {
+          "key": "string",
+          "value": {
+            "booleanVar": true,
+            "charVar": 13,
+            "doubleVar": 123.113,
+            "floatVar": 123.112,
+            "intVar": 13,
+            "longVar": 1321,
+            "shortVar": 13,
+            "strVar": "string",
+            "subChild": {
+              "intVar": 13
+            }
+          }
+        }
+      ]
+    },
+    "childList": [
+      {
+        "booleanVar": true,
+        "charVar": 13,
+        "doubleVar": 123.113,
+        "floatVar": 123.112,
+        "intVar": 13,
+        "longVar": 1321,
+        "shortVar": 13,
+        "strVar": "string",
+        "subChild": {
+          "intVar": 13
+        }
+      }
+    ],
+    "children": [
+      {
+        "booleanVar": true,
+        "charVar": 13,
+        "doubleVar": 123.113,
+        "floatVar": 123.112,
+        "intVar": 13,
+        "longVar": 1321,
+        "shortVar": 13,
+        "strVar": "string",
+        "subChild": {
+          "intVar": 13
+        }
+      }
+    ],
+    "childrenChildren": [
+        [
+          {
+            "booleanVar": true,
+            "charVar": 13,
+            "doubleVar": 123.113,
+            "floatVar": 123.112,
+            "intVar": 13,
+            "longVar": 1321,
+            "shortVar": 13,
+            "strVar": "string",
+            "subChild": {
+              "intVar": 13
+            }
+          }
+        ]
+
+    ],
+    "dateTimeVar": null,
+    "doubleVar": 123.113,
+    "durationVar": null,
+    "floatVar": 123.112,
+    "intVar": 13,
+    "longVar": 1321,
+    "QNameVar": null,
+    "shortVar": 13,
+    "strArrArr": [
+      [
+        "string"
+      ]
+    ],
+    "strArrArrArr": [
+      [
+        [
+          "string"
+        ]
+      ]
+    ],
+    "strArrArrArrArr": [
+      [
+        [
+          [
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "strArray": [
+      "string"
+    ],
+    "strVar": "string",
+    "stringHashMap": {
+      "entry": [
+        {
+          "key": "string",
+          "value": "string"
+        }
+      ]
+    },
+    "stringList": [
+      "string"
+    ]
+  }
+}

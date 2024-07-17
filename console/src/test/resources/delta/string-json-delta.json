@@ -1,0 +1,88 @@
+[
+  {
+    "name": "string",
+    "type": "string_json",
+    "children": [
+      {
+        "name": "person",
+        "type": "object",
+        "desc": "人员",
+        "children": [
+          {
+            "name": "id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "key",
+            "type": "integer",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "string",
+    "type": "string_json",
+    "children": [
+      {
+        "name": "person",
+        "type": "object",
+        "desc": "人员",
+        "children": [
+          {
+            "name": "id",
+            "type": "integer",
+            "required": false,
+            "desc": "id主键"
+          },
+          {
+            "name": "desc",
+            "type": "string",
+            "required": false,
+            "desc": "描述1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "string",
+    "type": "string_json",
+    "className": null,
+    "children": [
+      {
+        "name": "person",
+        "type": "object",
+        "desc": "人员",
+        "className": null,
+        "children": [
+          {
+            "name": "id",
+            "type": "integer",
+            "_delta": {
+              "required": false,
+              "desc": "id主键"
+            },
+            "className": null
+          },
+          {
+            "name": "key",
+            "type": "integer",
+            "_del": true,
+            "className": null,
+            "required": true
+          },
+          {
+            "name": "desc",
+            "type": "string",
+            "desc": "描述1",
+            "_add": true,
+            "className": null
+          }
+        ]
+      }
+    ]
+  }
+]

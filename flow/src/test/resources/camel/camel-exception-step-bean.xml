@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ webservice转http
+ 给一个json —>
+-->
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="direct:start"/>
+    <doTry>
+        <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+            <description>
+                <![CDATA[{"id":"step2","type":"transform",
+                "transform":"step.input.attr('id',123);"
+                ,"output":{"url":"http://jap-mock-data.jd.local/html/1","method":"GET"}}]]>
+            </description>
+        </bean>
+       <!-- <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+            <description>
+                <![CDATA[{"id":"__collect","type":"collect"}]]>
+            </description>
+        </bean>-->
+        <doCatch>
+            <exception>java.lang.Exception</exception>
+            <bean beanType="com.jd.workflow.flow.core.camel.CamelStepBean">
+                <description>
+                    <![CDATA[{"id":"step2","type":"exception","output":{"url":"http://jap-mock-data.jd.local/html/1","method":"GET"}}]]>
+                </description>
+            </bean>
+        </doCatch>
+    </doTry>
+</route>

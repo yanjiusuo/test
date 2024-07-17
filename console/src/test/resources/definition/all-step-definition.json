@@ -1,0 +1,657 @@
+{
+  "tasks": [
+    {
+      "id": "agg",
+      "type": "multicast",
+      "key": "agg",
+      "children": [
+        {
+          "id": "queryRole",
+          "type": "http2ws",
+          "key": "queryRole",
+          "entityId": 395,
+          "opName": "queryRole",
+          "endpointUrl": [
+            "http://11.138.18.164:7001"
+          ],
+          "url": "http://11.138.18.164:7001/FullTypedWebService?wsdl",
+          "taskDef": {
+            "timeout": 0,
+            "fallbackStrategy": "stop",
+            "fallback": null
+          },
+          "successCondition": null,
+          "input": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:web": "http://webservice.example.soap.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": []
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "queryRole",
+                      "extAttrs": {
+                        "rowType": "JSON_ROOT"
+                      },
+                      "namespacePrefix": "web",
+                      "exprType": "expr",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "roleName",
+                          "value": "${workflow.input.params.roleName}",
+                          "extAttrs": {
+                            "rowType": "FIELD_ROOT"
+                          },
+                          "exprType": "expr",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "header": null,
+            "body": null
+          },
+          "output": {
+            "schemaType": {
+              "name": "Envelope",
+              "namespacePrefix": "soapenv",
+              "attrs": {
+                "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+                "xmlns:web": "http://webservice.example.soap.workflow.jd.com/"
+              },
+              "type": "object",
+              "children": [
+                {
+                  "name": "Header",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": []
+                },
+                {
+                  "name": "Body",
+                  "namespacePrefix": "soapenv",
+                  "type": "object",
+                  "children": [
+                    {
+                      "name": "queryRoleResponse",
+                      "namespacePrefix": "web",
+                      "type": "object",
+                      "children": [
+                        {
+                          "name": "return",
+                          "type": "object",
+                          "children": [
+                            {
+                              "name": "createBy",
+                              "type": "string"
+                            },
+                            {
+                              "name": "createDate",
+                              "type": "string"
+                            },
+                            {
+                              "name": "id",
+                              "type": "long"
+                            },
+                            {
+                              "name": "level",
+                              "type": "string"
+                            },
+                            {
+                              "name": "roleDesc",
+                              "type": "string"
+                            },
+                            {
+                              "name": "roleName",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "header": null,
+            "body": null
+          },
+          "name": "queryRole",
+          "interfaceID": 107,
+          "env": "正式环境"
+        }
+      ],
+      "output": {
+        "headers": null,
+        "body": [
+          {
+            "name": "root",
+            "exprType": "expr",
+            "type": "object",
+            "children": [
+              {
+                "name": "data",
+                "value": "${steps.queryRole.output.return}",
+                "exprType": "expr",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "script": null
+      },
+      "name": "agg"
+    },
+    {
+      "id": "YGFfAz",
+      "type": "choose",
+      "key": "h0hGv0",
+      "children": [
+        {
+          "key": "h0hGv0",
+          "when": "workflow.input.params.userSystem==1",
+          "children": [
+            {
+              "id": "queryUser",
+              "type": "http",
+              "key": "queryUser",
+              "input": {
+                "url": "/retailUsers",
+                "method": "GET",
+                "reqType": "form",
+                "params": [
+                  {
+                    "name": "roleName",
+                    "value": "${workflow.input.params.roleName}",
+                    "exprType": "expr",
+                    "type": "string"
+                  }
+                ],
+                "headers": [],
+                "path": [],
+                "body": [],
+                "script": null,
+                "preProcess": null
+              },
+              "output": {
+                "headers": [],
+                "body": [
+                  {
+                    "name": "root",
+                    "extAttrs": {
+                      "valueType": "expr"
+                    },
+                    "exprType": "expr",
+                    "type": "object",
+                    "children": [
+                      {
+                        "name": "status",
+                        "extAttrs": {
+                          "valueType": "expr"
+                        },
+                        "exprType": "expr",
+                        "type": "double"
+                      },
+                      {
+                        "name": "msg",
+                        "extAttrs": {
+                          "valueType": "expr"
+                        },
+                        "exprType": "expr",
+                        "type": "string"
+                      },
+                      {
+                        "name": "data",
+                        "extAttrs": {
+                          "valueType": "expr"
+                        },
+                        "exprType": "expr",
+                        "type": "array",
+                        "children": [
+                          {
+                            "name": "$$0",
+                            "extAttrs": {
+                              "valueType": "expr"
+                            },
+                            "exprType": "expr",
+                            "type": "object",
+                            "children": [
+                              {
+                                "name": "id",
+                                "extAttrs": {
+                                  "valueType": "expr"
+                                },
+                                "exprType": "expr",
+                                "type": "string"
+                              },
+                              {
+                                "name": "roleName",
+                                "extAttrs": {
+                                  "valueType": "expr"
+                                },
+                                "exprType": "expr",
+                                "type": "string"
+                              },
+                              {
+                                "name": "userName",
+                                "extAttrs": {
+                                  "valueType": "expr"
+                                },
+                                "exprType": "expr",
+                                "type": "string"
+                              },
+                              {
+                                "name": "userNick",
+                                "extAttrs": {
+                                  "valueType": "expr"
+                                },
+                                "exprType": "expr",
+                                "type": "string"
+                              },
+                              {
+                                "name": "createDate",
+                                "extAttrs": {
+                                  "valueType": "expr"
+                                },
+                                "exprType": "expr",
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "script": null
+              },
+              "env": "online",
+              "endpointUrl": [
+                "http://11.138.0.94/"
+              ],
+              "successCondition": null,
+              "taskDef": {
+                "timeout": 0,
+                "fallbackStrategy": "stop",
+                "fallback": null
+              },
+              "name": "queryRetailUser",
+              "entityId": 403,
+              "interfaceID": 85
+            }
+          ],
+          "name": "workflow.input.params.userSystem==1",
+          "id": "smC4BD",
+          "type": "Conditional"
+        },
+        {
+          "key": "h0hGv0",
+          "when": null,
+          "children": [
+            {
+              "id": "queryUser",
+              "type": "http",
+              "key": "queryUser",
+              "input": {
+                "url": "/healthUsers",
+                "method": "GET",
+                "reqType": "form",
+                "params": [
+                  {
+                    "name": "roleName",
+                    "value": "${workflow.input.params.roleName}",
+                    "exprType": "expr",
+                    "type": "string"
+                  }
+                ],
+                "headers": [],
+                "path": [],
+                "body": [],
+                "script": null,
+                "preProcess": null
+              },
+              "output": {
+                "headers": [],
+                "body": [
+                  {
+                    "name": "root",
+                    "type": "object",
+                    "children": [
+                      {
+                        "name": "status",
+                        "type": "double"
+                      },
+                      {
+                        "name": "msg",
+                        "type": "string"
+                      },
+                      {
+                        "name": "data",
+                        "type": "array",
+                        "children": [
+                          {
+                            "name": "$$0",
+                            "type": "object",
+                            "children": [
+                              {
+                                "name": "id",
+                                "type": "string"
+                              },
+                              {
+                                "name": "roleName",
+                                "type": "string"
+                              },
+                              {
+                                "name": "userName",
+                                "type": "string"
+                              },
+                              {
+                                "name": "userNick",
+                                "type": "string"
+                              },
+                              {
+                                "name": "createDate",
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "script": null
+              },
+              "env": "online",
+              "endpointUrl": [
+                "http://11.138.0.94/"
+              ],
+              "successCondition": null,
+              "taskDef": {
+                "timeout": 0,
+                "fallbackStrategy": "stop",
+                "fallback": null
+              },
+              "name": "queryHealthUser",
+              "entityId": 404,
+              "interfaceID": 85
+            }
+          ],
+          "otherwise": "default",
+          "name": "default",
+          "type": "Conditional"
+        }
+      ],
+      "name": "choose"
+    },
+    {
+      "id": "collect",
+      "type": "transform",
+      "key": "collect",
+      "output": {
+        "headers": null,
+        "body": [
+          {
+            "name": "root",
+            "exprType": "expr",
+            "type": "object",
+            "children": [
+              {
+                "name": "roleName",
+                "value": "var roleInfo = steps.queryRole.output.body.return;\r\nroleInfo.createDate = utils.formatDate(roleInfo.createDate,\"yyyy-MM-dd\",\"yyyy年MM月dd日\");roleInfo",
+                "exprType": "script",
+                "type": "string"
+              },
+              {
+                "name": "userList",
+                "value": "${steps.queryUser.output.body.data}",
+                "exprType": "expr",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "script": null
+      },
+      "name": "collect"
+    },
+    {
+      "id": "querySubRoles",
+      "type": "http",
+      "key": "querySubRoles",
+      "input": {
+        "url": "/subRoles",
+        "method": "GET",
+        "reqType": "form",
+        "params": [
+          {
+            "name": "_page",
+            "value": "${workflow.input.params.pageNo}",
+            "exprType": "expr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_limit",
+            "value": "${workflow.input.params.pageSize}",
+            "exprType": "expr",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "roleId",
+            "value": "${steps.queryRole.output.body.return.id}",
+            "exprType": "expr",
+            "type": "string"
+          }
+        ],
+        "headers": [],
+        "path": [],
+        "body": [],
+        "script": null,
+        "preProcess": null
+      },
+      "output": {
+        "headers": [],
+        "body": [
+          {
+            "name": "root",
+            "type": "object",
+            "children": [
+              {
+                "name": "status",
+                "type": "double"
+              },
+              {
+                "name": "msg",
+                "type": "string"
+              },
+              {
+                "name": "data",
+                "type": "array",
+                "children": [
+                  {
+                    "name": "$$0",
+                    "type": "object",
+                    "children": [
+                      {
+                        "name": "id",
+                        "type": "double"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "subRoleNick",
+                        "type": "string"
+                      },
+                      {
+                        "name": "roleName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "roleId",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "script": null
+      },
+      "env": "online",
+      "endpointUrl": [
+        "http://11.138.0.94/"
+      ],
+      "successCondition": null,
+      "taskDef": {
+        "timeout": 0,
+        "fallbackStrategy": "stop",
+        "fallback": null
+      },
+      "name": "querySubRoles",
+      "entityId": 419,
+      "interfaceID": 85
+    }
+  ],
+  "taskDef": null,
+  "input": {
+    "headers": [],
+    "params": [
+      {
+        "name": "roleName",
+        "exprType": "expr",
+        "type": "string"
+      },
+      {
+        "name": "userSystem",
+        "exprType": "expr",
+        "type": "string"
+      },
+      {
+        "name": "pageNo",
+        "exprType": "expr",
+        "type": "string"
+      },
+      {
+        "name": "pageSize",
+        "exprType": "expr",
+        "type": "string"
+      }
+    ],
+    "reqType": null,
+    "body": [],
+    "preProcess": null
+  },
+  "output": {
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "text/plain",
+        "type": "string"
+      }
+    ],
+    "body": [
+      {
+        "name": "root",
+        "exprType": "expr",
+        "type": "object",
+        "children": [
+          {
+            "name": "code",
+            "value": "0",
+            "exprType": "expr",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "value": "获取成功",
+            "exprType": "expr",
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "exprType": "expr",
+            "type": "object",
+            "children": [
+              {
+                "name": "roleInfo",
+                "value": "${steps.collect.output.body.roleInfo}",
+                "exprType": "expr",
+                "type": "string"
+              },
+              {
+                "name": "userList",
+                "value": "${steps.collect.output.body.data}",
+                "exprType": "expr",
+                "type": "string"
+              },
+              {
+                "name": "subRoleList",
+                "value": "${steps.querySubRoles.output.body.data}",
+                "exprType": "expr",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "script": null,
+    "empty": false
+  },
+  "failOutput": {
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "text/plain",
+        "type": "string"
+      }
+    ],
+    "body": [
+      {
+        "name": "root",
+        "exprType": "expr",
+        "type": "object",
+        "children": [
+          {
+            "name": "code",
+            "value": "400",
+            "exprType": "expr",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "value": "${workflow.exception.message}",
+            "exprType": "expr",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "script": null,
+    "empty": false
+  }
+}

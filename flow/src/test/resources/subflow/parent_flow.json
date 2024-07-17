@@ -1,0 +1,19 @@
+{
+  "input": {},
+  "tasks": [
+    {
+      "id": "subflow",
+      "type": "subflow",
+      "entityId": "123",
+      "input": {
+        "params": [
+          {
+            "type": "string",
+            "name": "id",
+            "value": "${workflow.input.params.id}"
+          }
+        ]
+      }
+    }
+  ]
+}

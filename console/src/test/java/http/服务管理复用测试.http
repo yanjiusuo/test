@@ -1,0 +1,137 @@
+###--------------------------------------------------------------------------------------------------
+# 列表查询
+###
+#默认查询
+GET {{host}}/interfaceManage/pageListInterface?type=10
+Accept: application/json
+###
+#查询
+GET {{host}}/interfaceManage/pageListInterface?type=10&current=1&size=3
+Accept: application/json
+###
+#查询 带负责人筛选
+GET {{host}}/interfaceManage/pageListInterface?type=10&adminCode=wubaizhao1
+Accept: application/json
+###
+#查询 全可选参数筛选
+GET {{host}}/interfaceManage/pageListInterface?current=1&size=3&adminCode=wubaizhao1&type=10&name=务
+Accept: application/json
+###--------------------------------------------------------------------------------------------------
+
+
+###--------------------------------------------------------------------------------------------------
+# 新增
+###
+#新增服务：
+#/interfaceManage/addInterface
+#其中新增字段： 服务编码、编排类型
+#对应：
+#serviceCode String 服务编码 必填
+#nodeType Integer 编排类型 0-默认 1-单节点 2-多节点 必填
+POST {{host}}/interfaceManage/addInterface
+Content-Type: application/json
+
+{
+  "type":10,
+  "name": "服务名称2",
+  "desc": "服务的描述2",
+  "adminCode": "wubaizhao1",
+  "serviceCode": "onlyMark1",
+  "nodeType" : 2
+}
+###--------------------------------------------------------------------------------------------------
+
+###--------------------------------------------------------------------------------------------------
+# 修改
+###
+#修改接口
+POST {{host}}/interfaceManage/editInterface
+Content-Type: application/json
+
+{
+  "id": 16,
+  "name": "测试修改服务2",
+  "desc": "测试修改服务的描述2",
+  "nodeType" : 1
+}
+###--------------------------------------------------------------------------------------------------
+
+###--------------------------------------------------------------------------------------------------
+###
+#查询 详情
+GET {{host}}/interfaceManage/getOneById?id=16
+Accept: application/json
+###--------------------------------------------------------------------------------------------------
+
+
+###--------------------------------------------------------------------------------------------------
+# 成员管理与接口管理保持一致
+###
+#成员管理 addMember
+POST {{host}}/interfaceManage/addMember
+Content-Type: application/json
+
+{
+  "id": 16,
+  "userCode": "test3-1"
+}
+###
+#成员管理 list查询
+GET {{host}}/interfaceManage/listMember?id=16
+Accept: application/json
+###
+#成员管理 接口下搜索成员 是否存在
+GET {{host}}/interfaceManage/listMemberForAdd?id=16&userCode=wu
+Accept: application/json
+###
+#成员管理 删除成员
+POST {{host}}/memberRelation/unBinding
+Content-Type: application/json
+
+{
+  "id": 26
+}
+###--------------------------------------------------------------------------------------------------
+
+
+###--------------------------------------------------------------------------------------------------
+# 方法系列：
+###
+# 方法列表
+GET {{host}}/methodManage/pageMethod?interfaceId=16
+Accept: application/json
+###
+#新增方法
+POST {{host}}/methodManage/add
+Content-Type: application/json
+
+{
+  "interfaceId": 16,
+  "type": 10,
+  "name": "测试方法",
+  "desc": "测试方法的描述",
+  "httpMethod": "POST"
+}
+###
+#修改方法
+POST {{host}}/methodManage/edit
+Content-Type: application/json
+
+{
+  "id": 74,
+  "name": "测试方法1",
+  "desc": "测试方法的描述1",
+  "httpMethod": "POST"
+}
+###
+#删除方法
+POST {{host}}/methodManage/remove
+Content-Type: application/json
+
+{
+  "id": 74
+}
+###
+# 获取方法详情
+GET {{host}}/methodManage/getById?id=74
+###--------------------------------------------------------------------------------------------------

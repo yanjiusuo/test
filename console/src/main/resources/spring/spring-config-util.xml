@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- mail 工具类 start-->
+    <!-- 发送邮件的实际对象 -->
+    <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host}"/>
+        <property name="username" value="${mail.username}"/>
+        <property name="password" value="${mail.password}"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!-- 邮件发送通用服务 -->
+    <bean id="sendMailService" class="com.jd.workflow.console.service.mail.impl.SendMailServiceImpl">
+        <property name="mailSender" ref="javaMailSender"/>
+        <property name="from" value="${mail.from.user}"/>
+        <property name="springTemplateEngine" ref="springTemplateEngine"/>
+    </bean>
+
+
+    <bean id="springTemplateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="classpath:META-INF/template/"/>
+        <property name="suffix" value=".html"/>
+        <property name="cacheable" value="true"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateMode" value="HTML"/>
+    </bean>
+    <bean id="defaultScheduledExecutor" class="java.util.concurrent.ScheduledThreadPoolExecutor">
+        <constructor-arg value="8"/>
+    </bean>
+
+    <!-- mail 工具类 end-->
+
+    <!--    文件上传bean-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--上传文件的最大大小，单位为字节 -->
+        <property name="maxUploadSize" value="10485760"></property>
+        <!-- 上传文件的编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+    <!--    业务配置bean-->
+  <!--  <bean class="com.jd.rcenter.businessworks.spring.SpringContextUtil"/>
+    <bean class="com.jd.rcenter.businessworks.Bootstrap">
+        &lt;!&ndash; appId &ndash;&gt;
+        &lt;!&ndash;<property name="appId" value="rule-platform-test"/>
+        <property name="groupName" value="test"/>&ndash;&gt;
+        &lt;!&ndash; pro: 线上环境，pre:预发环境，test:测试环境 environment以xml配置为主，不配置就以jdos环境变量中的jdos环境类型为主 &ndash;&gt;
+&lt;!&ndash;        <property name="environment" value="pro"/>&ndash;&gt;
+        <property name="appId" value="data-flow" />
+        <property name="groupName" value="debug-optimization"/>
+        <property name="environment" value="test"/>
+    </bean>-->
+</beans>

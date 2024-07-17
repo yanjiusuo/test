@@ -1,0 +1,146 @@
+{
+  "type": "object",
+  "name": "root",
+  "children": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "jsonMap1",
+      "type": "string_json",
+      "value": "${workflow.input.body.person}",
+      "children": [
+        {
+          "name": "jsonMap",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonMap2",
+      "type": "string_json",
+      "value": "${workflow.input.body.personString}",
+      "children": [
+        {
+          "name": "jsonMap",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonMap3",
+      "type": "string_json",
+      "children": [
+        {
+          "name": "jsonMap",
+          "value": "${workflow.input.body.person}",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonMap4",
+      "type": "string_json",
+      "children": [
+        {
+          "name": "jsonMap",
+          "value": "${workflow.input.body.personString}",
+          "type": "object",
+          "children": [
+            {
+              "name": "id",
+              "type": "integer"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonArray1",
+      "type": "string_json",
+      "value": "${workflow.input.body.personArrayString}",
+      "children": [
+        {
+          "name": "jsonArray",
+          "type": "array",
+          "children": [
+            {
+              "type": "object",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "integer"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jsonArray2",
+      "type": "string_json",
+      "value": "${workflow.input.body.persons}",
+      "children": [
+        {
+          "name": "jsonArray",
+          "type": "array",
+          "children": [
+            {
+              "type": "object",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "integer"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

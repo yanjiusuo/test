@@ -1,0 +1,80 @@
+{
+  "tasks": [
+    {
+      "id": "jsf",
+      "type": "jsf",
+      "key": null,
+      "preProcess": "input.attr(\"id\",339)",
+      "input": [
+        {
+          "name": "arg0",
+          "type": "object",
+          "className": "com.jd.workflow.jsf.service.test.Person",
+          "children": [
+            {
+              "name": "id",
+              "type": "long",
+              "className": "java.lang.Long",
+              "required": true,
+              "value": "${input.attrs.id}"
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "className": "java.lang.String",
+              "required": true,
+              "value": "wjf"
+            },
+            {
+              "name": "age",
+              "type": "integer",
+              "className": "java.lang.Integer",
+              "required": true,
+              "value": 12
+            }
+          ]
+        }
+      ],
+      "output": {
+        "name": null,
+        "type": "object",
+        "className": "com.jd.workflow.jsf.service.test.Person",
+        "children": [
+          {
+            "name": "id",
+            "type": "long",
+            "className": "java.lang.Long",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "className": "java.lang.String",
+            "required": true
+          },
+          {
+            "name": "age",
+            "type": "integer",
+            "className": "java.lang.Integer",
+            "required": true
+          }
+        ]
+      },
+      "interfaceName": "com.jd.workflow.jsf.service.test.IPersonService",
+      "methodName": "save",
+      "alias": "center",
+
+      "site": null,
+      "env": "test",
+      "exceptions": null,
+      "attachments": [
+        {
+         "name": ".token",
+          "type": "string",
+          "value": "123456"
+        }],
+      "protocol": null,
+      "url": "jsf://10.0.218.152:22000?alias=center"
+    }
+  ]
+}
